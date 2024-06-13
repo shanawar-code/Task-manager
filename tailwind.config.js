@@ -7,8 +7,16 @@ module.exports = {
   ],
   theme: {
     extend: {
+      backgroundImage: {
+        'btn-gradient': 'linear-gradient(90deg, #F33F41 0%, #FB6D72 100%)',
+      },
       colors: {
-        "btn-gradient": ""
+        "btn-gradient": "",
+        gray: {
+          1: "#333333",
+          4: "#828282"
+
+        }
       }
     },
   },

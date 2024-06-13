@@ -2,24 +2,33 @@ import './App.css';
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import { LoginPage } from './pages/OnBoarding/LoginPage';
 import { SignUpPage } from './pages/OnBoarding/SignUpPage';
-import { Dashboard } from './pages/Dashboard';
+import { SideBar } from './components/SideBar';
+import { NavBar } from './components/NavBar';
+import { Dashboard } from './pages/Dashboard/Dashboard';
 
 function App() {
 
   const router = createBrowserRouter([
     {
       path: "/",
-      element: <Dashboard />
+      element: <LoginPage />
     },
     {
       path: "/SignUp",
       element: <SignUpPage />
     },
+    {
+      path: "/Dashboard",
+      element: <Dashboard />
+    },
   ])
 
 
   return (
-    <RouterProvider router={router} />
+    <>
+
+      <RouterProvider router={router} />
+    </>
 
   );
 }
