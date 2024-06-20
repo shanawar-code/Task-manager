@@ -24,16 +24,18 @@
 
 // export default Input
 
-import React from 'react'
+import React from "react";
 
 export const Input = ({ label, placeholder, value, onChange }) => {
-    return (
-        <div className='flex flex-col w-full gap-y-2'>
-            <label htmlFor="">{label}</label>
-            <input
-                value={value}
-                type="text"
-                placeholder={placeholder}
-                className='border-2 rounded-lg w-full px-4 py-2' />
-        </div>)
-}
+  return (
+    <div className="flex flex-col w-full gap-y-2">
+      <label htmlFor="">{label}</label>
+      <input
+        value={value}
+        type="text"
+        placeholder={placeholder}
+        className="border-2 rounded-lg w-full px-4 py-2"
+      />
+    </div>
+  );
+};

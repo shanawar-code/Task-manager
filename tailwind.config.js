@@ -23,5 +23,12 @@ module.exports = {
   plugins: [
     require('@tailwindcss/aspect-ratio'),
   ],
+  theme: {
+    extend: {
+      screens: {
+        'xs': '420px',
+      },
+    },
+  },
 }
 
