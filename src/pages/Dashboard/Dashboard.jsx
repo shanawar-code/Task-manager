@@ -10,9 +10,9 @@ import 'react-circular-progressbar/dist/styles.css';
 export const Dashboard = () => {
     return (
         <>
-            <NavBar />
-            <div className="flex flex-row w-full ">
-                <SideBar />
+            {/* <NavBar /> */}
+            <div className="flex flex-row w-full">
+                {/* <SideBar /> */}
                 <div className='p-6 w-full flex flex-col space-y-8'>
                     <div className='grid grid-cols-4 gap-x-6'>
                         <Card title={"My Task"} value={5} footerText={"4 new tasks"} />

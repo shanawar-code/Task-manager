@@ -7,7 +7,7 @@ export const SideBar = () => {
     }]
 
     return (
-        <div className='flex flex-col relative left-0 px-4 bg-white py-8 border-r-2 w-1/6  h-[89vh] items-center justify-between'>
+        <div className='flex flex-col relative left-0 px-4 bg-white py-8 border-r-2 w-full  h-[89vh] items-center justify-between'>
             <div className='w-full flex flex-col space-y-4'>
                 <div
                     className='bg-gradient-to-r from-[#F33F41] to-[#FB6D72] p-4 rounded-lg flex flex-row space-x-4 text-white w-full'>

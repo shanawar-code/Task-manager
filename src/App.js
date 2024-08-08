@@ -8,6 +8,7 @@ import { NavBar } from "./components/NavBar";
 import { Dashboard } from "./Pages/Dashboard/Dashboard";
 
 import Employees from "./Pages/Employees/Employees";
+import { Layout } from "./components/Layout";
 
 function App() {
   const router = createBrowserRouter([
@@ -19,9 +20,16 @@ function App() {
       path: "/SignUp",
       element: <SignUpPage />,
     },
+
     {
-      path: "/Dashboard",
-      element: <Dashboard />,
+      path: "/dashboard",
+      element: <Layout/>,
+      children:[
+        {
+          path: '',
+          element:<Dashboard/>
+        }
+      ]
     },
 
     {
