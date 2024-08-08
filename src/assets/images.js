@@ -3,7 +3,6 @@ const IMAGES = {
     profilePic: require("../assets/profilePic.png"),
     teamProfilePic: require("../assets/teamProfilePic.png"),
     playButtonPic: require("../assets/play.png"),
-
 }
 
 export default IMAGES
