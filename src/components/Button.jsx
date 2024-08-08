@@ -5,8 +5,8 @@ const Button = ({ text, className, type, handleClick }) => {
         <button
             onClick={handleClick}
             type={type ? type : ''}
-            className={`rounded-full w-fit bg-btn-gradient hover:bg-gradient-r hover:scale-105  text-white sm:text-lg text-sm font-semibold transition-all ${className}`}>
-            {text}
+            className={`  text-base font-mulish font-bold bg-gradient-to-r from-[#F33F41] to-[#FB6D72] text-white flex items-center justify-center rounded-lg bg-btn-gradien hover:bg-gradient-r hover:scale-x-105 transition-all ${className}`}>
+            {text}       
         </button>
     )
 }

@@ -3,7 +3,6 @@ import { useState } from "react";
 import profilePic from '../../assets/profilePic.png'
 import { Document } from "../../assets/SVG";
 
-
 function Employees() {
   const employeeCard = [
     {

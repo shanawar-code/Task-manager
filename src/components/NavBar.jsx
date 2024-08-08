@@ -55,75 +55,136 @@ import arrow from "../assets/SVG"
 //     )
 // }
 
-import React from 'react'
+// import React from 'react'
+
+// export const NavBar = () => {
+//     return (
+//         <nav className='bg-white border-b-2 px-8 py-4'>
+//             <div className='flex flex-row items-center justify-between'>
+
+//                 <div className='flex flex-row items-center justify-between w-[12%]'>
+//                     <a href="">
+//                         <img src={IMAGES.logo} alt="" className='h-12' />
+//                     </a>
+//                     <button>
+//                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+//                             <path d="M18.9629 17.9297L12.9996 11.9664L18.9658 6.00015" stroke="#333333" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" />
+//                             <path d="M11.9626 17.9297L5.99932 11.9664L11.9655 6.00015" stroke="#333333" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" />
+//                         </svg>
+//                     </button>
+
+//                 </div>
+
+//                 <div className='flex flex-row items-center space-x-8 w-2/5 justify-end'>
+
+
+//                     <div
+//                         className='bg-gray-100 rounded-lg flex flex-row space-x-4 items-center py-2 px-4 w-[60%]'>
+//                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+//                             <path d="M8.6805 15.3334C12.3164 15.3334 15.2638 12.386 15.2638 8.75008C15.2638 5.11421 12.3164 2.16675 8.6805 2.16675C5.04463 2.16675 2.09717 5.11421 2.09717 8.75008C2.09717 12.386 5.04463 15.3334 8.6805 15.3334Z" stroke="#828282" stroke-width="1.3" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+//                             <path d="M13.3472 13.4167L17.1805 17.2501" stroke="#828282" stroke-width="1.3" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+//                         </svg>
+
+//                         <input
+//                             className='bg-transparent focus:outline-none w-full  text-sm'
+//                             type="text"
+//                             name=""
+//                             id=""
+//                             placeholder='Search' />
+
+//                     </div>
+
+//                     <div className='flex flex-row space-x-4 items-center'>
+
+
+//                         <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+//                             <rect x="0.5" y="0.5" width="39" height="39" rx="19.5" stroke="#BDBDBD" />
+//                             <path d="M26.3923 25.4349H13.6074V18.0111C13.6074 14.5072 16.4479 11.6667 19.9518 11.6667V11.6667C23.4557 11.6667 26.2962 14.5072 26.2962 18.0111V25.4349H26.3923Z" stroke="#828282" stroke-width="1.3" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+//                             <path d="M11.6667 25.4351H28.3334" stroke="#828282" stroke-width="1.2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+//                             <path d="M18.2495 28.3342H21.7495" stroke="#828282" stroke-width="1.3" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+//                             <circle cx="26" cy="14" r="3.5" fill="url(#paint0_linear_36_577)" stroke="#FEFEFE" />
+//                             <defs>
+//                                 <linearGradient id="paint0_linear_36_577" x1="25.7333" y1="18" x2="25.7333" y2="10.4" gradientUnits="userSpaceOnUse">
+//                                     <stop stop-color="#F33F41" />
+//                                     <stop offset="1" stop-color="#FB6D72" />
+//                                 </linearGradient>
+//                             </defs>
+//                         </svg>
+
+//                         <div>
+//                             <img src={IMAGES.profilePic} alt="" className='h-8' />
+//                         </div>
+
+//                     </div>
+
+
+//                 </div>
+
+
+
+//             </div>
+
+//         </nav>
+//     )
+// }
+
+
+import React from 'react';
 
 export const NavBar = () => {
-    return (
-        <nav className='bg-white border-b-2 px-8 py-4'>
-            <div className='flex flex-row items-center justify-between'>
+  return (
+    <nav className='bg-white border-b-2 px-4 sm:px-6 md:px-8 py-4'>
+      <div className='flex flex-row items-center justify-between'>
 
-                <div className='flex flex-row items-center justify-between w-[12%]'>
-                    <a href="">
-                        <img src={IMAGES.logo} alt="" className='h-12' />
-                    </a>
-                    <button>
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M18.9629 17.9297L12.9996 11.9664L18.9658 6.00015" stroke="#333333" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" />
-                            <path d="M11.9626 17.9297L5.99932 11.9664L11.9655 6.00015" stroke="#333333" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" />
-                        </svg>
-                    </button>
+        {/* Logo and Menu Button */}
+        <div className='flex flex-row items-center space-x-4 md:space-x-6'>
+          <a href="">
+            <img src={IMAGES.logo} alt="" className='h-10 md:h-12' />
+          </a>
+          <button className='md:hidden'>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M18.9629 17.9297L12.9996 11.9664L18.9658 6.00015" stroke="#333333" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" />
+              <path d="M11.9626 17.9297L5.99932 11.9664L11.9655 6.00015" stroke="#333333" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+          </button>
+        </div>
 
-                </div>
+        {/* Search and Profile */}
+        <div className='flex flex-row items-center space-x-4 md:space-x-8 w-2/5 justify-end'>
+          <div className='hidden md:flex bg-gray-100 rounded-lg items-center py-2 px-4 w-full lg:w-3/5'>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M8.6805 15.3334C12.3164 15.3334 15.2638 12.386 15.2638 8.75008C15.2638 5.11421 12.3164 2.16675 8.6805 2.16675C5.04463 2.16675 2.09717 5.11421 2.09717 8.75008C2.09717 12.386 5.04463 15.3334 8.6805 15.3334Z" stroke="#828282" strokeWidth="1.3" strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round" />
+              <path d="M13.3472 13.4167L17.1805 17.2501" stroke="#828282" strokeWidth="1.3" strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
 
-                <div className='flex flex-row items-center space-x-8 w-2/5 justify-end'>
+            <input
+              className='bg-transparent focus:outline-none w-full text-sm'
+              type="text"
+              placeholder='Search'
+            />
+          </div>
 
+          <div className='flex flex-row space-x-4 items-center'>
+            <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="0.5" y="0.5" width="39" height="39" rx="19.5" stroke="#BDBDBD" />
+              <path d="M26.3923 25.4349H13.6074V18.0111C13.6074 14.5072 16.4479 11.6667 19.9518 11.6667V11.6667C23.4557 11.6667 26.2962 14.5072 26.2962 18.0111V25.4349H26.3923Z" stroke="#828282" strokeWidth="1.3" strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round" />
+              <path d="M11.6667 25.4351H28.3334" stroke="#828282" strokeWidth="1.2" strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round" />
+              <path d="M18.2495 28.3342H21.7495" stroke="#828282" strokeWidth="1.3" strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round" />
+              <circle cx="26" cy="14" r="3.5" fill="url(#paint0_linear_36_577)" stroke="#FEFEFE" />
+              <defs>
+                <linearGradient id="paint0_linear_36_577" x1="25.7333" y1="18" x2="25.7333" y2="10.4" gradientUnits="userSpaceOnUse">
+                  <stop stopColor="#F33F41" />
+                  <stop offset="1" stopColor="#FB6D72" />
+                </linearGradient>
+              </defs>
+            </svg>
 
-                    <div
-                        className='bg-gray-100 rounded-lg flex flex-row space-x-4 items-center py-2 px-4 w-[60%]'>
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M8.6805 15.3334C12.3164 15.3334 15.2638 12.386 15.2638 8.75008C15.2638 5.11421 12.3164 2.16675 8.6805 2.16675C5.04463 2.16675 2.09717 5.11421 2.09717 8.75008C2.09717 12.386 5.04463 15.3334 8.6805 15.3334Z" stroke="#828282" stroke-width="1.3" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
-                            <path d="M13.3472 13.4167L17.1805 17.2501" stroke="#828282" stroke-width="1.3" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
-                        </svg>
-
-                        <input
-                            className='bg-transparent focus:outline-none w-full  text-sm'
-                            type="text"
-                            name=""
-                            id=""
-                            placeholder='Search' />
-
-                    </div>
-
-                    <div className='flex flex-row space-x-4 items-center'>
-
-
-                        <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <rect x="0.5" y="0.5" width="39" height="39" rx="19.5" stroke="#BDBDBD" />
-                            <path d="M26.3923 25.4349H13.6074V18.0111C13.6074 14.5072 16.4479 11.6667 19.9518 11.6667V11.6667C23.4557 11.6667 26.2962 14.5072 26.2962 18.0111V25.4349H26.3923Z" stroke="#828282" stroke-width="1.3" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
-                            <path d="M11.6667 25.4351H28.3334" stroke="#828282" stroke-width="1.2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
-                            <path d="M18.2495 28.3342H21.7495" stroke="#828282" stroke-width="1.3" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
-                            <circle cx="26" cy="14" r="3.5" fill="url(#paint0_linear_36_577)" stroke="#FEFEFE" />
-                            <defs>
-                                <linearGradient id="paint0_linear_36_577" x1="25.7333" y1="18" x2="25.7333" y2="10.4" gradientUnits="userSpaceOnUse">
-                                    <stop stop-color="#F33F41" />
-                                    <stop offset="1" stop-color="#FB6D72" />
-                                </linearGradient>
-                            </defs>
-                        </svg>
-
-                        <div>
-                            <img src={IMAGES.profilePic} alt="" className='h-8' />
-                        </div>
-
-                    </div>
-
-
-                </div>
-
-
-
+            <div>
+              <img src={IMAGES.profilePic} alt="" className='h-8' />
             </div>
-
-        </nav>
-    )
-}
+          </div>
+        </div>
+      </div>
+    </nav>
+  );
+};

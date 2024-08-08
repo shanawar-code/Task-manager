@@ -2,6 +2,7 @@ import React from 'react'
 import IMAGES from '../../assets/images'
 import Button from "../../components/Button"
 import { Link, useNavigate } from 'react-router-dom'
+import { Input } from '../../components/Input'
 
 export const LoginPage = () => {
     const navigate = useNavigate();
@@ -31,28 +32,17 @@ export const LoginPage = () => {
                     <form onSubmit={handleSubmit} action="" className='space-y-8 w-full'>
 
                         <div className='flex flex-col w-full gap-y-2'>
-                            <label htmlFor="" className='font-mulish text-gray-1 font-bold text-base '>Email</label>
-                            <input
-                                type="text"
-                                placeholder='input your email in here'
-                                className='border-2 rounded-lg w-full md:w-[400px] h-[44px] flex items-center justify-center px-[16px] py-[10px] ' />
+                        <Input label={'Email'} placeholder={'input your Email in here'}/>
+
                         </div>
 
-                        <div className='space-y-2 flex flex-col w-full gap-y-2'>
-                            <label htmlFor="" className='font-mulish text-gray-1 font-bold text-base '>Password</label>
-                            <input
-                                type="text"
-                                placeholder='input your email in here'
-                                className='border-2 rounded-lg  w-full md:w-[400px] h-[44px] flex items-center justify-center px-[16px] py-[10px] ' />
+                        <div className='flex flex-col w-full gap-y-2'>
+                            <Input label={'Password'} placeholder={'input your password in here'}/>
                             <div className='text-right font-mulish text-gray-2 font-bold text-base'>Forgot Password?</div>
-                            {/* </div> */}
                         </div>
-
-
-                        <button onClick={()=>{navigate('/dashboard')}}
-                            className=' text-base font-mulish font-bold bg-gradient-to-r from-[#F33F41] to-[#FB6D72] text-white w-full md:w-[400px] h-[48px] flex items-center justify-center py-[14px] px-[24px] rounded-lg'>
-                            Sign In
-                        </button>
+                        
+                        <Button handleClick={()=>{navigate('/dashboard')}} text={'Sign In'}/>
+                       
                     </form>
 
 
