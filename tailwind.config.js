@@ -56,7 +56,11 @@ module.exports = {
         "plus-jakarta-sans": ["Plus Jakarta Sans"],
         "public-sans": ["Public Sans"],
         "mulish": ["Mulish"],
+        "epilogue":["Epilogue"]
       },
+      backgroundImage: {
+                "btn-gradient": "linear-gradient(90deg, #F33F41 0%, #FB6D72 100%)",
+              },
       colors: {
         "custom-red": "#F43A3A",
         "custom-blue": "#6F9CFF",
@@ -67,7 +71,8 @@ module.exports = {
           "2": "#4F4F4F",
           "4": "#828282",
           "5": "#E0E0E0"
-        }
+        },
+
       },
     },
   },

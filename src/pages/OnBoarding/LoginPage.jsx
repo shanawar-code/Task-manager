@@ -1,13 +1,17 @@
-import React from 'react'
+import React, { useState } from 'react'
 import IMAGES from '../../assets/images'
 import Button from "../../components/Button"
 import { Link, useNavigate } from 'react-router-dom'
 import { Input } from '../../components/Input'
-
 export const LoginPage = () => {
     const navigate = useNavigate();
     const handleSubmit=(e)=>{
         e.preventDefault()
+    }
+    const [show, setshow]=useState(true)
+
+    const handleHideShow=(value)=>{
+        setshow(value)
     }
     return (
         <div className='grid grid-cols-12  bg-white h-screen'>
@@ -36,26 +40,25 @@ export const LoginPage = () => {
 
                         </div>
 
-                        <div className='flex flex-col w-full gap-y-2'>
-                            <Input label={'Password'} placeholder={'input your password in here'}/>
+                        <div className='flex flex-col w-full gap-y-2 relative'>
+                            <Input label={'Password'} placeholder={'input your password in here'} type={`${show===true? 'password':'text'}`}/>
+                            <span className=' absolute top-10 right-5 cursor-pointer'><img onClick={()=>{handleHideShow(!show)}} src={'images/eyeIcon.png'} className='flex items-center' alt="" /></span>
                             <div className='text-right font-mulish text-gray-2 font-bold text-base'>Forgot Password?</div>
                         </div>
                         
-                        <Button handleClick={()=>{navigate('/dashboard')}} text={'Sign In'}/>
+                        <Button handleClick={()=>{navigate('/dashboard')}} text={'Sign In'} className={'w-[400px]'}/>
                        
                     </form>
 
 
                     <div className='flex items-center lg:gap-2'>
                         <h1 className=' text-base font-mulish font-normal text-gray-4'>Doesn’t have an account?&nbsp;</h1>
-                        <Link to="/SignUp" className='bg-gradient-to-r from-[#F33F41] to-[#FB6D72] text-transparent bg-clip-text text-base font-bold font-mulish '>Sign up Now</Link>
+                        <Link to="/sign-up" className='bg-gradient-to-r from-[#F33F41] to-[#FB6D72] text-transparent bg-clip-text text-base font-bold font-mulish '>Sign up Now</Link>
                     </div>
                 </div>
 
             </div>
-
-
-
+       
         </div>
     )
 }

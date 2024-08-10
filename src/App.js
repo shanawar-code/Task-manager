@@ -9,6 +9,9 @@ import { Dashboard } from "./Pages/Dashboard/Dashboard";
 
 import Employees from "./Pages/Employees/Employees";
 import { Layout } from "./components/Layout";
+import Calendar from "./Pages/Dashboard/Calendar";
+import Tasks from "./Pages/My Tasks/Tasks";
+import MyTaskCard from "./Pages/My Tasks/MyTaskCard";
 
 function App() {
   const router = createBrowserRouter([
@@ -17,10 +20,22 @@ function App() {
       element: <LoginPage />,
     },
     {
-      path: "/SignUp",
+      path: "/sign-up",
       element: <SignUpPage />,
     },
 
+    {
+      path: '/calendar',
+      element: <Calendar/>
+    },
+    {
+      path: '/tasks',
+      element:<Tasks/>
+    },
+    {
+      path: 'mytaskcard',
+      element:<MyTaskCard/>
+    },
     {
       path: "/dashboard",
       element: <Layout/>,
@@ -28,7 +43,8 @@ function App() {
         {
           path: '',
           element:<Dashboard/>
-        }
+        },
+      
       ]
     },
 

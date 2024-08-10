@@ -1,4 +1,4 @@
-export const Team =({color})=>{
+const Team =({color})=>{
     return(
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M17.1685 9.5385C18.2043 8.20307 17.9614 6.28081 16.626 5.24502C15.2906 4.20922 13.3683 4.45212 12.3325 5.78755C11.2967 7.12299 11.5396 9.04524 12.875 10.081C14.2105 11.1168 16.1327 10.8739 17.1685 9.5385Z" stroke={color || "#828282"} stroke-width="1.3" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
@@ -10,7 +10,7 @@ export const Team =({color})=>{
     )
 }
 
-export const Chat =({color})=>{
+ const Chat =({color})=>{
     return(
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M19.0422 4.90944C17.1612 3.05826 14.6278 2.02075 11.9886 2.02075C9.34945 2.02075 6.81606 3.05826 4.93502 4.90944V4.90944C3.45412 6.38451 2.47427 8.28771 2.13399 10.35C1.79371 12.4123 2.11022 14.5294 3.03875 16.402L2.59342 20.0797C2.56977 20.2569 2.58729 20.4373 2.64463 20.6066C2.70196 20.776 2.79755 20.9299 2.924 21.0564C3.05045 21.1828 3.20436 21.2784 3.37374 21.3357C3.54313 21.3931 3.72343 21.4106 3.90069 21.387L7.57832 20.9416C9.45094 21.8702 11.5681 22.1867 13.6304 21.8464C15.6927 21.5061 17.5959 20.5262 19.0709 19.0453V19.0453C20.002 18.118 20.7403 17.0154 21.2432 15.8013C21.7461 14.5872 22.0036 13.2855 22.001 11.9714C21.9983 10.6573 21.7355 9.35667 21.2276 8.14461C20.7198 6.93255 19.9771 5.83302 19.0422 4.90944V4.90944Z" stroke={color || "#828282"} stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
@@ -22,7 +22,7 @@ export const Chat =({color})=>{
     )
 }
 
-export const AttendanceSvg=({color})=>{
+ const AttendanceSvg=({color})=>{
     return(
 
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -33,7 +33,7 @@ export const AttendanceSvg=({color})=>{
     )
 }
 
-export const Setting =({color})=>{
+const Setting =({color})=>{
     return(
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M20.2436 5.48656C20.0817 5.28128 19.8606 5.13086 19.6102 5.05574C19.3598 4.98062 19.0923 4.98447 18.8442 5.06675C18.3998 5.19305 17.9345 5.22872 17.476 5.17165C17.0174 5.11457 16.5751 4.96592 16.1752 4.73451C15.7752 4.5031 15.4259 4.19366 15.1479 3.82458C14.87 3.4555 14.669 3.03431 14.557 2.58604C14.5028 2.34623 14.3802 2.12728 14.2041 1.9557C14.028 1.78411 13.8059 1.66723 13.5648 1.6192C12.5277 1.46027 11.4724 1.46027 10.4353 1.6192C10.1925 1.66815 9.96923 1.78692 9.79297 1.96093C9.6167 2.13493 9.49506 2.35661 9.44298 2.59876C9.33536 3.05535 9.13536 3.48505 8.8553 3.86138C8.57524 4.2377 8.22107 4.55267 7.81462 4.78687C7.41012 5.01976 6.96297 5.16905 6.49969 5.22586C6.03641 5.28268 5.56643 5.24588 5.11765 5.11763C4.86873 5.04098 4.60228 5.04257 4.3543 5.1222C4.10632 5.20183 3.88875 5.35565 3.73099 5.56289C3.1165 6.35933 2.62348 7.24248 2.26801 8.18353C2.16548 8.43067 2.14348 8.70386 2.20515 8.96422C2.26681 9.22459 2.409 9.45889 2.6115 9.63379C2.94396 9.95313 3.20847 10.3364 3.38915 10.7605C3.56984 11.1846 3.66298 11.6408 3.66298 12.1018C3.66298 12.5628 3.56984 13.019 3.38915 13.4431C3.20847 13.8672 2.94396 14.2504 2.6115 14.5698C2.41384 14.7453 2.27577 14.9781 2.21649 15.2357C2.15722 15.4933 2.17967 15.763 2.28074 16.0073C2.4638 16.4475 2.68072 16.8728 2.92954 17.2795C3.17828 17.7232 3.45889 18.1484 3.76916 18.5516C3.93102 18.7569 4.15219 18.9073 4.40257 18.9824C4.65296 19.0575 4.92041 19.0537 5.16853 18.9714C5.61125 18.8426 6.07532 18.8039 6.53327 18.8575C6.99122 18.9112 7.43375 19.0562 7.83467 19.284C8.23559 19.5117 8.58675 19.8176 8.86737 20.1834C9.14799 20.5493 9.35238 20.9677 9.46842 21.414C9.5227 21.6538 9.6453 21.8727 9.82141 22.0443C9.99751 22.2159 10.2196 22.3328 10.4607 22.3808C11.4978 22.5397 12.5531 22.5397 13.5902 22.3808C13.833 22.3318 14.0562 22.2131 14.2325 22.0391C14.4088 21.8651 14.5304 21.6434 14.5825 21.4012C14.6887 20.9491 14.8855 20.5232 15.161 20.1493C15.4366 19.7754 15.785 19.4612 16.1854 19.2259C16.5899 18.993 17.0371 18.8437 17.5003 18.7869C17.9636 18.73 18.4336 18.7668 18.8824 18.8951C19.1313 18.9717 19.3977 18.9702 19.6457 18.8905C19.8937 18.8109 20.1113 18.6571 20.269 18.4498C20.8771 17.6769 21.3698 16.8199 21.732 15.9055C21.8345 15.6584 21.8565 15.3852 21.7949 15.1248C21.7332 14.8645 21.591 14.6302 21.3885 14.4553C21.0561 14.1359 20.7916 13.7527 20.6109 13.3286C20.4302 12.9045 20.337 12.4483 20.337 11.9873C20.337 11.5263 20.4302 11.0701 20.6109 10.646C20.7916 10.2219 21.0561 9.83864 21.3885 9.5193C21.5862 9.34375 21.7243 9.11099 21.7835 8.85336C21.8428 8.59573 21.8204 8.32604 21.7193 8.08176C21.5393 7.61979 21.3223 7.17309 21.0705 6.74599C20.8253 6.30696 20.549 5.88607 20.2436 5.48656V5.48656Z" stroke={color || "#828282"} stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
@@ -43,7 +43,7 @@ export const Setting =({color})=>{
     )
 }
 
-export const Dashboard=({color})=>{
+ const Dashboard=({color})=>{
     return(
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 <rect width="8" height="8" rx="2" transform="matrix(-1 0 0 1 22.001 1.99927)" stroke={color || "#828282"} stroke-width="1.3" />
@@ -54,7 +54,7 @@ export const Dashboard=({color})=>{
     )
 }
 
-export const MyTasks=({color})=>{
+const MyTasks=({color})=>{
     return(
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M8 10L16 10"  stroke={color || "#828282"} stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
@@ -66,7 +66,7 @@ export const MyTasks=({color})=>{
     )
 }
 
-export const Logout=()=>{
+const Logout=()=>{
     return(
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M11.7988 2H5C3.34315 2 2 3.34315 2 5V19C2 20.6569 3.34315 22 5 22H11.7988" stroke="#828282" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" />
@@ -76,7 +76,7 @@ export const Logout=()=>{
     )
 }
 
-export const MyLeave=()=>{
+const MyLeave=()=>{
     return(
         <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M12.0769 13.3077V15.7692C12.0769 16.0957 11.9473 16.4087 11.7164 16.6395C11.4856 16.8703 11.1726 17 10.8462 17H2.23077C1.90435 17 1.5913 16.8703 1.36048 16.6395C1.12967 16.4087 1 16.0957 1 15.7692V2.23077C1 1.90435 1.12967 1.5913 1.36048 1.36048C1.5913 1.12967 1.90435 1 2.23077 1H10.8462C11.1726 1 11.4856 1.12967 11.7164 1.36048C11.9473 1.5913 12.0769 1.90435 12.0769 2.23077V4.69231M8.38462 9H17M17 9L14.5385 6.53846M17 9L14.5385 11.4615" stroke="url(#paint0_linear_38_1131)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
@@ -91,7 +91,7 @@ export const MyLeave=()=>{
 }
 
 
-export const Calender=()=>{
+const Calender=()=>{
     return(
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 <g clip-path="url(#clip0_38_1206)">
@@ -171,7 +171,7 @@ export const Calender=()=>{
     )
 }
 
-export const Meeting =()=>{
+const Meeting =()=>{
     return(
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 <g clip-path="url(#clip0_38_1206)">
@@ -251,7 +251,7 @@ export const Meeting =()=>{
     )
 }
 
-export const Tasks=()=>{
+const Tasks=()=>{
     return(
         <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M12.6686 8.87988H17.835" stroke="url(#paint0_linear_38_956)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -285,3 +285,60 @@ export const Tasks=()=>{
 
     )
 }
+
+const BackArrowDouble=()=>{
+    return(
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M18.9629 17.9297L12.9996 11.9664L18.9658 6.00015" stroke="#333333" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" />
+        <path d="M11.9626 17.9297L5.99932 11.9664L11.9655 6.00015" stroke="#333333" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" />
+      </svg>
+    )
+}
+
+const SearchBar=()=>{
+    return(
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M8.6805 15.3334C12.3164 15.3334 15.2638 12.386 15.2638 8.75008C15.2638 5.11421 12.3164 2.16675 8.6805 2.16675C5.04463 2.16675 2.09717 5.11421 2.09717 8.75008C2.09717 12.386 5.04463 15.3334 8.6805 15.3334Z" stroke="#828282" strokeWidth="1.3" strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round" />
+        <path d="M13.3472 13.4167L17.1805 17.2501" stroke="#828282" strokeWidth="1.3" strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round" />
+      </svg>
+    )
+}
+
+const Notification=()=>{
+    return(
+        <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="0.5" y="0.5" width="39" height="39" rx="19.5" stroke="#BDBDBD" />
+        <path d="M26.3923 25.4349H13.6074V18.0111C13.6074 14.5072 16.4479 11.6667 19.9518 11.6667V11.6667C23.4557 11.6667 26.2962 14.5072 26.2962 18.0111V25.4349H26.3923Z" stroke="#828282" strokeWidth="1.3" strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round" />
+        <path d="M11.6667 25.4351H28.3334" stroke="#828282" strokeWidth="1.2" strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round" />
+        <path d="M18.2495 28.3342H21.7495" stroke="#828282" strokeWidth="1.3" strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round" />
+        <circle cx="26" cy="14" r="3.5" fill="url(#paint0_linear_36_577)" stroke="#FEFEFE" />
+        <defs>
+          <linearGradient id="paint0_linear_36_577" x1="25.7333" y1="18" x2="25.7333" y2="10.4" gradientUnits="userSpaceOnUse">
+            <stop stopColor="#F33F41" />
+            <stop offset="1" stopColor="#FB6D72" />
+          </linearGradient>
+        </defs>
+      </svg>
+    )
+}
+
+const AddIcon=()=>{
+    return(
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M7 1V13" stroke="url(#paint0_linear_95_2598)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M13 7L0.999999 7" stroke="url(#paint1_linear_95_2598)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<defs>
+<linearGradient id="paint0_linear_95_2598" x1="7.46667" y1="13" x2="7.46666" y2="1.6" gradientUnits="userSpaceOnUse">
+<stop stop-color="#F33F41"/>
+<stop offset="1" stop-color="#FB6D72"/>
+</linearGradient>
+<linearGradient id="paint1_linear_95_2598" x1="0.999999" y1="6.53333" x2="12.4" y2="6.53334" gradientUnits="userSpaceOnUse">
+<stop stop-color="#F33F41"/>
+<stop offset="1" stop-color="#FB6D72"/>
+</linearGradient>
+</defs>
+</svg>
+    )
+}
+
+export {Team, Chat, AttendanceSvg, Setting, Dashboard, MyTasks, Logout, MyLeave, Calender, Meeting, Tasks, BackArrowDouble, SearchBar, Notification, AddIcon}

@@ -15,9 +15,9 @@ export const SideBar = () => {
     }
     const navigate = useNavigate()
     return (
-        <div className='flex flex-col relative left-0 px-4 bg-white py-8 border-r-2 w-full  h-[89vh] items-center justify-between'>
+        <div className='flex flex-col relative left-0 px-4 bg-white py-8 border-r-2 w-full h-full items-center justify-between'>
             <div className='w-full flex flex-col'>
-                <div onClick={()=>{handleTabClick('dashboard')}}
+                <div onClick={()=>{handleTabClick('dashboard');  if (activeTab === 'dashboard') {navigate('/dashboard')}}}
                     className={`${activeTab==='dashboard'? 'bg-gradient-to-r from-[#F33F41] to-[#FB6D72] ':''} p-4 rounded-lg flex flex-row space-x-4 w-full cursor-pointer`}>
                         <Dashboard color={activeTab==='dashboard'? '#fff': '#828282'} />
                     <p className={`${activeTab==='dashboard'? 'text-white text-base font-normal font-public-sans ': 'text-gray-4 text-base font-normal font-public-sans' }`} >
@@ -26,7 +26,7 @@ export const SideBar = () => {
                 </div>
 
 
-                <div onClick={()=>{handleTabClick('mytasks')}}
+                <div onClick={()=>{handleTabClick('mytasks') ;  if (activeTab === 'mytasks') {navigate('/dashboard/tasks')} }}
                     className={`${activeTab==='mytasks'? 'bg-gradient-to-r from-[#F33F41] to-[#FB6D72] ':''} p-4 rounded-lg flex flex-row space-x-4 w-full cursor-pointer`}>
                         <MyTasks color={activeTab==='mytasks'? '#fff': '#828282'} />
                     <p className={`${activeTab==='mytasks'? 'text-white text-base font-normal font-public-sans ': 'text-gray-4 text-base font-normal font-public-sans' }`} >

@@ -52,7 +52,7 @@ export const SignUpPage = () => {
                             <input type="checkbox" className=' h-4 w-4' />
                             <h1 className=' text-sm font-normal font-mulish text-gray-4'>I have read and agree to the Terms of Service</h1>
                         </div>
-                        <Button handleClick={()=>{navigate('/')}} text={'Sign Up'} onClick={()=>{navigate('/dashboard')}}/>
+                        <Button handleClick={()=>{navigate('/')}} text={'Sign Up'} onClick={()=>{navigate('/dashboard')}} className={'w-[400px]'}/>
                        
                     </form>
 
