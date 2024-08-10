@@ -4,10 +4,11 @@ import {
     RouterProvider,
     useLocation,
   } from "react-router-dom";
-import { NavBar } from "./NavBar";
-import { SideBar } from "./SideBar";
 import { useEffect } from "react";
-import { DropdownSidebar } from "./DropdownSidebar";
+import { NavBar } from "../NavBar";
+import { DropdownSidebar } from "../DropdownSidebar";
+import { SideBar } from "../SideBar";
+
 
 
 export const Layout = () => {

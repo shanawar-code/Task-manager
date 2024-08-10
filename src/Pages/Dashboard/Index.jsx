@@ -1,12 +1,13 @@
 import React from 'react'
 import MyTeamCard from './MyTeamCard'
-import Cards from '../../components/Elements/Dashboard/Cards'
+import Cards from '../../components/Elements/DashboardCard.jsx'
 import MeetingCard from './MeetingCard'
 import { useState } from 'react'
 import VerifiedSuccessful from './VerifiedSuccessful'
 import Svgs from '../../assets/svgs/Index.js'
 import Button from '../../components/Button.jsx'
-import UltimateCard from '../../components/Elements/Ultimate/UltimateCard.jsx'
+import TaskCompletionScore from './TaskCompletionScore.jsx'
+import UltimateCard from '../../components/Elements/UltimateCard.jsx'
 
 
 
@@ -37,28 +38,7 @@ import UltimateCard from '../../components/Elements/Ultimate/UltimateCard.jsx'
         </div>
         <div className='col-span-12 lg:col-span-6 '>
             <div className=' rounded-xl p-5 border bg-white'>
-                <div className=' flex items-center justify-between'>
-                    <h1 className=' text-base font-semibold font-public-sans text-gray-1'>Task completion score</h1>
-                    <span className=' text-base font-normal font-public-sans text-gray-2 flex items-center gap-2 border rounded-lg py-[2px] px-[4px]'>Weekly <img src='images/calendar.png' alt="" /></span>
-                </div>
-                <div className='flex flex-wrap items-center justify-between gap-4 my-20 mx-8'>
-                    <img src='images/ChartsScore.png' className=' ' alt="" />
-                    <img src='images/ChartsAchived.png' className='' alt='' />
-                </div>
-                <div className='flex items-center justify-between my-5 mx-8'>
-                    <div className='flex items-center gap-3'>
-                        <div>
-                        <img src={'images/playbutton.png'} alt="" />
-                        </div>
-                        <div>
-                            <h1 className=' text-xs font-public-sans font-bold text-gray-1'>Completed Task</h1>
-                            <h1 className=' text-[10px] font-public-sans text-gray-2 font-normal'>Development team</h1>
-                        </div>
-                    </div>
-                    <div>
-                        <h1 className=' text-[13px] font-epilogue font-bold text-gray-1'>455</h1>
-                    </div>
-                </div>
+                <TaskCompletionScore/>
             </div>
         </div>
     </div>

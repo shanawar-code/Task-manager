@@ -2,11 +2,11 @@ import "./App.css";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import { Dashboard } from "./Pages/Dashboard/Index";
 import Employees from "./Pages/Employees/Index";
-import { Layout } from "./components/Layout";
 import Tasks from "./Pages/My Tasks/Index";
 import MyTaskCard from "./Pages/My Tasks/MyTaskCard";
-import { LoginPage } from "./components/Auth/LoginPage";
-import { SignUpPage } from "./components/Auth/SignUpPage";
+import { LoginPage } from "./Pages/Auth/LogIn/Index";
+import { SignUpPage } from "./Pages/Auth/SignUp/Index";
+import { Layout } from "./components/Layout/DashboardLayout";
 
 function App() {
   const router = createBrowserRouter([

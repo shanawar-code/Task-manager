@@ -2,67 +2,70 @@ import React, { useState } from 'react'
 import { AttendanceSvg, Chat, Dashboard, Logout, MyTasks, Setting, Team } from '../assets/svgs/Index'
 import { useNavigate } from 'react-router-dom'
 import Svgs from '../assets/svgs/Index.js'
+import { useLocation } from "react-router-dom";
 
 
-export const SideBar = () => {
-    const data = [{
-        label: "Dashboard",
-        icon: ""
-    }]
+export const SideBar = ({active}) => {
 
-    const [activeTab,setActiveTab]= useState('dashboard')
+    const navigate = useNavigate() ;
 
-    const handleTabClick=(value)=>{
-        setActiveTab(value)
-    }
-    const navigate = useNavigate()
+    const sideBarData =[
+        {
+            name: 'Dashboard',
+            icon: <Svgs.Dashboard/>,
+            navigate: '/dashboard',
+            active: active=== 'Dashboard'? true: false,
+        },
+        {
+            name: 'My Tasks',
+            icon: <Svgs.Tasks/>,
+            navigate: '/dashboard',
+            active: active=== 'My Tasks'? true: false,
+        },
+        {
+            name: 'My Team',
+            icon: <Svgs.Team/>,
+            navigate: '/dashboard',
+            active: active=== 'My Team'? true: false,
+        },
+        {
+            name: 'Chat',
+            icon: <Svgs.Chat/>,
+            navigate: '/dashboard',
+            active: active=== 'Chat'? true: false,
+        },
+        {
+            name: 'Attendance & Leave',
+            icon: <Svgs.AttendanceSvg/>,
+            navigate: '/dashboard',
+            active: active=== 'Attendance & Leave'? true: false,
+        },
+        {
+            name: 'My profile',
+            icon: <Svgs.Setting/>,
+            navigate: '/dashboard',
+            active: active=== 'My profile'? true: false,
+        },
+    ]
+
+
+   
     return (
         <div className='flex flex-col relative left-0 px-4 bg-white py-8 border-r-2 w-full h-full items-center justify-between'>
             <div className='w-full flex flex-col'>
-                <div onClick={()=>{handleTabClick('dashboard');  if (activeTab === 'dashboard') {navigate('/dashboard')}}}
-                    className={`${activeTab==='dashboard'? 'bg-gradient-to-r from-[#F33F41] to-[#FB6D72] ':''} p-4 rounded-lg flex flex-row space-x-4 w-full cursor-pointer`}>
-                        <Svgs.Dashboard color={activeTab==='dashboard'? '#fff': '#828282'} />
-                    <p className={`${activeTab==='dashboard'? 'text-white text-base font-normal font-public-sans ': 'text-gray-4 text-base font-normal font-public-sans' }`} >
-                        Dashboard
-                    </p>
-                </div>
+                {sideBarData.map((value, index)=>(
 
-
-                <div onClick={()=>{handleTabClick('mytasks') ;  if (activeTab === 'mytasks') {navigate('/dashboard/tasks')} }}
-                    className={`${activeTab==='mytasks'? 'bg-gradient-to-r from-[#F33F41] to-[#FB6D72] ':''} p-4 rounded-lg flex flex-row space-x-4 w-full cursor-pointer`}>
-                        <Svgs.MyTasks color={activeTab==='mytasks'? '#fff': '#828282'} />
-                    <p className={`${activeTab==='mytasks'? 'text-white text-base font-normal font-public-sans ': 'text-gray-4 text-base font-normal font-public-sans' }`} >
-                        My Tasks
-                    </p>
-                </div>
-                <div onClick={()=>{handleTabClick('team')}}
-                    className={`${activeTab==='team'? 'bg-gradient-to-r from-[#F33F41] to-[#FB6D72] ':''} p-4 rounded-lg flex flex-row space-x-4 w-full cursor-pointer`}>
-                        <Svgs.Team color={activeTab==='team'? '#fff': '#828282'} />
-                    <p className={`${activeTab==='team'? 'text-white text-base font-normal font-public-sans ': 'text-gray-4 text-base font-normal font-public-sans' }`} >
-                        Team
-                    </p>
-                </div>
-                <div onClick={()=>{handleTabClick('chat')}}
-                    className={`${activeTab==='chat'? 'bg-gradient-to-r from-[#F33F41] to-[#FB6D72] ':''} p-4 rounded-lg flex flex-row space-x-4 w-full cursor-pointer`}>
-                        <Svgs.Chat color={activeTab==='chat'? '#fff': '#828282'} />
-                    <p className={`${activeTab==='chat'? 'text-white text-base font-normal font-public-sans ': 'text-gray-4 text-base font-normal font-public-sans' }`} >
-                        Chat
-                    </p>
-                </div>
-                <div onClick={()=>{handleTabClick('attendanc')}}
-                    className={`${activeTab==='attendanc'? 'bg-gradient-to-r from-[#F33F41] to-[#FB6D72] ':''} p-4 rounded-lg flex flex-row space-x-4 w-full cursor-pointer`}>
-                        <Svgs.AttendanceSvg color={activeTab==='attendanc'? '#fff': '#828282'} />
-                    <p className={`${activeTab==='attendanc'? 'text-white text-base font-normal font-public-sans ': 'text-gray-4 text-base font-normal font-public-sans' }`} >
-                    Attendanc
-                    </p>
-                </div>
-                <div onClick={()=>{handleTabClick('Setting')}}
-                    className={`${activeTab==='Setting'? 'bg-gradient-to-r from-[#F33F41] to-[#FB6D72] ':''} p-4 rounded-lg flex flex-row space-x-4 w-full cursor-pointer`}>
-                        <Svgs.Setting color={activeTab==='Setting'? '#fff': '#828282'} />
-                    <p className={`${activeTab==='Setting'? 'text-white text-base font-normal font-public-sans ': 'text-gray-4 text-base font-normal font-public-sans' }`} >
-                    Setting
-                    </p>
-                </div>
+                    <div key={index}
+                        className={`${ value?.active === true ? ' bg-btn-gradient ':'bg-white'} p-4 rounded-lg flex flex-row space-x-4 w-full cursor-pointer`}>
+                            <Svgs.Dashboard color={value?.active===true? '#fff': '#828282'} />
+                        <p className={`${value?.active===true ? 'text-white text-base font-normal font-public-sans ': 'text-gray-4 text-base font-normal font-public-sans' }`} >
+                            {value.name}
+                        </p>
+                    </div>  
+                        
+                )       
+                      
+                )}
             </div>
 
             <div

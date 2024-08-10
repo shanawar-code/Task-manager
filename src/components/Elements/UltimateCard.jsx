@@ -1,5 +1,4 @@
 import React from 'react'
-import Button from '../../Button'
 
 function UltimateCard({fullname, role, numberoftasks, attendance ,btnText, heading, buttonBtn}) {
   return (

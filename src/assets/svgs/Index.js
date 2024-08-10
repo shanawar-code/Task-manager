@@ -295,14 +295,7 @@ const BackArrowDouble=()=>{
     )
 }
 
-// const SearchBar=()=>{
-//     return(
-//         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-//         <path d="M8.6805 15.3334C12.3164 15.3334 15.2638 12.386 15.2638 8.75008C15.2638 5.11421 12.3164 2.16675 8.6805 2.16675C5.04463 2.16675 2.09717 5.11421 2.09717 8.75008C2.09717 12.386 5.04463 15.3334 8.6805 15.3334Z" stroke="#828282" strokeWidth="1.3" strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round" />
-//         <path d="M13.3472 13.4167L17.1805 17.2501" stroke="#828282" strokeWidth="1.3" strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round" />
-//       </svg>
-//     )
-// }
+
 
 const Notification=()=>{
     return(
@@ -351,7 +344,25 @@ const SearchBar =()=>{
     )
 }
 
-export default {Team, Chat, AttendanceSvg, Setting, Dashboard, MyTasks, Logout, MyLeave, Calender, Meeting, Tasks, BackArrowDouble, Notification, AddIcon, SearchBar}
+const CalendarIcon =()=>{
+    return(
+        <svg width="19" height="18" viewBox="0 0 19 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M6.5 1.5V3.75" stroke="#4F4F4F" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M12.5 1.5V3.75" stroke="#4F4F4F" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M3.125 6.81738H15.875" stroke="#4F4F4F" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M16.25 6.375V12.75C16.25 15 15.125 16.5 12.5 16.5H6.5C3.875 16.5 2.75 15 2.75 12.75V6.375C2.75 4.125 3.875 2.625 6.5 2.625H12.5C15.125 2.625 16.25 4.125 16.25 6.375Z" stroke="#4F4F4F" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M12.271 10.2749H12.2778" stroke="#4F4F4F" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M12.271 12.5249H12.2778" stroke="#4F4F4F" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M9.49661 10.2749H9.50335" stroke="#4F4F4F" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M9.49661 12.5249H9.50335" stroke="#4F4F4F" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M6.72073 10.2749H6.72747" stroke="#4F4F4F" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M6.72073 12.5249H6.72747" stroke="#4F4F4F" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+    )
+}
+
+
+export default {Team, Chat, AttendanceSvg, Setting, Dashboard, MyTasks, Logout, MyLeave, Calender, Meeting, Tasks, BackArrowDouble, Notification, AddIcon, SearchBar, CalendarIcon}
 
 
 

@@ -20,7 +20,9 @@ module.exports = {
       },
       backgroundImage: {
                 "btn-gradient": "linear-gradient(90deg, #F33F41 0%, #FB6D72 100%)",
-              },
+                'gradient-r': 'linear-gradient(to right, #F33F41 20%, #FEC93E)', 
+              },       
+
       colors: {
         "custom-red": "#F43A3A",
         "custom-blue": "#6F9CFF",

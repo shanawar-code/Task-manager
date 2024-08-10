@@ -1,10 +1,10 @@
 import React from 'react'
-import Button from "../Button"
 import { Link, useNavigate } from 'react-router-dom'
-import { Input } from '../Input'
 import { useState } from 'react'
 import { pink, red } from '@mui/material/colors';
 import Checkbox from '@mui/material/Checkbox';
+import { Input } from '../../../components/Input';
+import Button from '../../../components/Button';
 
 const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
 
