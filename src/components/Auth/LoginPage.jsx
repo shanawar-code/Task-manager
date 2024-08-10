@@ -55,7 +55,7 @@ export const LoginPage = () => {
 
                     <div className='flex items-center lg:gap-2'>
                         <h1 className=' text-base font-mulish font-normal text-gray-4'>Doesn’t have an account?&nbsp;</h1>
-                        <Link to="/sign-up" className='bg-gradient-to-r from-[#F33F41] to-[#FB6D72] text-transparent bg-clip-text text-base font-bold font-mulish '>Sign up Now</Link>
+                        <Link to="/sign-up" className='bg-btn-gradient text-transparent bg-clip-text text-base font-bold font-mulish '>Sign up Now</Link>
                     </div>
                 </div>
 
