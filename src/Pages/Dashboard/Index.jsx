@@ -1,10 +1,15 @@
 import React from 'react'
 import MyTeamCard from './MyTeamCard'
-import Cards from './Cards'
-import { Calender, Meeting, MyLeave, Tasks } from '../../assets/svgs/Index'
+import Cards from '../../components/Elements/Dashboard/Cards'
 import MeetingCard from './MeetingCard'
 import { useState } from 'react'
 import VerifiedSuccessful from './VerifiedSuccessful'
+import Svgs from '../../assets/svgs/Index.js'
+import Button from '../../components/Button.jsx'
+import UltimateCard from '../../components/Elements/Ultimate/UltimateCard.jsx'
+
+
+
  export function Dashboard() {
 
     const [showPopup, setShowPopup] = useState(false);
@@ -21,14 +26,14 @@ import VerifiedSuccessful from './VerifiedSuccessful'
    <>
    <div className=' md:p-5'>
     <div className=' grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5'>
-    <Cards tasks={'My tasks'} tasksCount={'4 new tasks'} value={'5'} svg={<Tasks/>}/>
-    <Cards tasks={'Meetings'} tasksCount={'Upcoming meeting: 12:00 Pm today'} value={'2'} svg={<Meeting/>}/>
-    <Cards tasks={'My Attendance'} tasksCount={'Log in: 10:04 AM today'} value={'98%'} svg={<Calender/>}/>
-    <Cards tasks={'My leaves'} tasksCount={'Last applied: 21st Jan 2024'} value={'12'} svg={<MyLeave/>}/>
+    <Cards tasks={'My tasks'} tasksCount={'4 new tasks'} value={'5'} svg={<Svgs.Tasks/>}/>
+    <Cards tasks={'Meetings'} tasksCount={'Upcoming meeting: 12:00 Pm today'} value={'2'} svg={<Svgs.Meeting/>}/>
+    <Cards tasks={'My Attendance'} tasksCount={'Log in: 10:04 AM today'} value={'98%'} svg={<Svgs.Calender/>}/>
+    <Cards tasks={'My leaves'} tasksCount={'Last applied: 21st Jan 2024'} value={'12'} svg={<Svgs.MyLeave/>}/>
     </div>
     <div className=' grid grid-cols-12 my-5 gap-5'>
         <div className='col-span-12 lg:col-span-6'>
-    <MyTeamCard fullname={'Rudolph'} role={'Python developer'} numberoftasks={'14 Tasks'} attendance={'98%'}/>
+    <UltimateCard fullname={'Rudolph'} role={'Python developer'} numberoftasks={'14 Tasks'} attendance={'98%'} buttonBtn={<Button text={'Collaborate'} customPadding={'px-[16px] py-[8px]'} className={'text-sm font-semibold font-public-sans'}/>}  heading={'My Team'}/>
         </div>
         <div className='col-span-12 lg:col-span-6 '>
             <div className=' rounded-xl p-5 border bg-white'>

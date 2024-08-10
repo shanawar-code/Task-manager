@@ -1,7 +1,5 @@
 import React from "react";
 import { useState } from "react";
-import profilePic from '../../assets/profilePic.png'
-import { Document } from "../../assets/SVG";
 
 function Employees() {
   const employeeCard = [
@@ -187,7 +185,7 @@ function Employees() {
                 <div className="">
                   <img
                     className="w-[80px] h-[80px] rounded-full bg-gray-400 object-cover"
-                    src={profilePic}
+                    src={'images/profilePic.png'}
                     alt=""
                   />
                 </div>
@@ -367,7 +365,7 @@ function Employees() {
                 placeholder="Name here"
                 className="hidden w-full  px-3 py-2 border rounded-lg"
                 />
-              <label htmlFor="" className=" absolute right-4 top-3"><Document/></label>
+              <label htmlFor="" className=" absolute right-4 top-3"></label>
               </label>
                 
             </div>
@@ -380,7 +378,7 @@ function Employees() {
                 placeholder="Name here"
                 className="hidden w-full  px-3 py-2 border rounded-lg"
                 />
-              <label htmlFor="" className=" absolute right-4 top-3"><Document/></label>
+              <label htmlFor="" className=" absolute right-4 top-3"></label>
               </label>
                 
             </div>
@@ -393,7 +391,7 @@ function Employees() {
                 placeholder="Name here"
                 className="hidden w-full  px-3 py-2 border rounded-lg"
                 />
-              <label htmlFor="" className=" absolute right-4 top-3"><Document/></label>
+              <label htmlFor="" className=" absolute right-4 top-3"></label>
               </label>
                 
             </div>
@@ -406,7 +404,7 @@ function Employees() {
                 placeholder="Name here"
                 className="hidden w-full  px-3 py-2 border rounded-lg"
                 />
-              <label htmlFor="" className=" absolute right-4 top-3"><Document/></label>
+              <label htmlFor="" className=" absolute right-4 top-3"></label>
               </label>
                 
             </div>

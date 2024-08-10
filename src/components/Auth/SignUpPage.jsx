@@ -1,14 +1,24 @@
 import React from 'react'
-import IMAGES from '../../assets/images'
-import Button from "../../components/Button"
+import Button from "../Button"
 import { Link, useNavigate } from 'react-router-dom'
-import { Input } from '../../components/Input'
+import { Input } from '../Input'
+import { useState } from 'react'
+import { pink, red } from '@mui/material/colors';
+import Checkbox from '@mui/material/Checkbox';
+
+const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
+
 
 export const SignUpPage = () => {
     const navigate = useNavigate();
     const handleSubmit=(e)=>{
         e.preventDefault()
     }
+
+    const [show, setshow]=useState(true)
+    const [show1, setshow1]=useState(true)
+
+    
     return (
         <div className='grid grid-cols-12  bg-white'>
             <div className=' col-span-12 lg:col-span-7 bg-gray-100 space-y-4 md:space-y-16 p-8 flex items-center flex-col '>
@@ -21,7 +31,7 @@ export const SignUpPage = () => {
                     </p>
                 </div>
 
-                <img src={IMAGES.logo} alt="logo" className='object-cover w-3/5' />
+                <img src={'images/logo.png'} alt="logo" className='object-cover w-3/5' />
             </div>
 
 
@@ -37,19 +47,26 @@ export const SignUpPage = () => {
                         <div className='flex flex-col w-full '>
                         <Input label={'Email'} placeholder={'Enter your email'}/>
                         </div>
-                        <div className='flex flex-col w-full '>
-                           <Input label={'Role'} placeholder={'Your Role'}/>
+                        <div className='flex flex-col w-full gap-y-2'>
+                           {/* <Input label={'Role'} placeholder={'Your Role'}/> */}
+                           <label htmlFor="" value='Select' className="text-base font-bold font-mulish text-gray-1">Role</label>
+                           <select className={`border outline-none rounded-lg w-full px-4 py-2 focus-within:ring-2 ring-custom-blue caret-custom-blue group `} name="" id="">
+                            <option value="Select1">Select1</option>
+                            <option value="Select2">Select2</option>
+                           </select>
                         </div>
-                        <div className='flex flex-col w-full '>
-                           <Input label={'Password'} placeholder={'Password'}/>
+                        <div className='flex flex-col w-full relative'>
+                            <Input label={'Password'} placeholder={'input your password in here'} type={`${show===true? 'password':'text'}`}/>
+                            <span className=' absolute top-10 right-5 cursor-pointer'><img onClick={()=>{setshow(!show)}} src={'images/eyeIcon.png'} className='flex items-center' alt="" /></span>
                         </div>
 
-                        <div className=' flex flex-col w-full '>
-                        <Input label={'Confirm Password'} placeholder={'Confirm password'}/>
+                        <div className='flex flex-col w-full relative'>
+                            <Input label={'Confirm Password'} placeholder={'input your password in here'} type={`${show1===true? 'password':'text'}`}/>
+                            <span className=' absolute top-10 right-5 cursor-pointer'><img onClick={()=>{setshow1(!show1)}} src={'images/eyeIcon.png'} className='flex items-center' alt="" /></span>
                         </div>
 
                         <div className='flex items-center gap-2'>
-                            <input type="checkbox" className=' h-4 w-4' />
+                            <Checkbox {...label} sx={{color: red['300'],'&.Mui-checked': {color: red['300'],},}}/>
                             <h1 className=' text-sm font-normal font-mulish text-gray-4'>I have read and agree to the Terms of Service</h1>
                         </div>
                         <Button handleClick={()=>{navigate('/')}} text={'Sign Up'} onClick={()=>{navigate('/dashboard')}} className={'w-[400px]'}/>

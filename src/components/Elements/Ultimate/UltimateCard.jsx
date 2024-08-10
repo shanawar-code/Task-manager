@@ -1,8 +1,7 @@
 import React from 'react'
-import Button from '../../components/Button'
-// import Button from '../../components/Button'
+import Button from '../../Button'
 
-function MyTeamCard({fullname, role, numberoftasks, attendance , buttonBtn , btntext, className, heading}) {
+function UltimateCard({fullname, role, numberoftasks, attendance ,btnText, heading, buttonBtn}) {
   return (
     <>
      <div className=''>
@@ -10,7 +9,7 @@ function MyTeamCard({fullname, role, numberoftasks, attendance , buttonBtn , btn
             <div className='flex flex-wrap items-center justify-between'>
             <h1 className=' text-base font-semibold font-public-sans text-gray-1'>{heading}</h1>
             {buttonBtn}
-            {/* <Button text={'Collaborate'} className={' w-[130px] px-[16px] py-[8px] font-public-sans text-sm font-semibold rounded-lg'}/> */}
+            {/* <Button text={btnText} className={' w-[130px] px-[16px] py-[8px] font-public-sans text-sm font-semibold rounded-lg'}/> */}
             </div>
             {Array(4).fill().map(()=>{
                 return(
@@ -40,4 +39,4 @@ function MyTeamCard({fullname, role, numberoftasks, attendance , buttonBtn , btn
   )
 }
 
-export default MyTeamCard
+export default UltimateCard

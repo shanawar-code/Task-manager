@@ -1,8 +1,10 @@
 import React, { useState } from 'react'
-import IMAGES from '../../assets/images'
-import Button from "../../components/Button"
 import { Link, useNavigate } from 'react-router-dom'
-import { Input } from '../../components/Input'
+import { Input } from '../Input';
+import Button from '../Button';
+
+
+
 export const LoginPage = () => {
     const navigate = useNavigate();
     const handleSubmit=(e)=>{
@@ -25,7 +27,7 @@ export const LoginPage = () => {
                     </p>
                 </div>
 
-                <img src={IMAGES.logo} alt="logo" className='object-cover w-3/5' />
+                <img src={'images/logo.png'} alt="logo" className='object-cover w-3/5' />
             </div>
 
 
@@ -43,7 +45,7 @@ export const LoginPage = () => {
                         <div className='flex flex-col w-full gap-y-2 relative'>
                             <Input label={'Password'} placeholder={'input your password in here'} type={`${show===true? 'password':'text'}`}/>
                             <span className=' absolute top-10 right-5 cursor-pointer'><img onClick={()=>{handleHideShow(!show)}} src={'images/eyeIcon.png'} className='flex items-center' alt="" /></span>
-                            <div className='text-right font-mulish text-gray-2 font-bold text-base'>Forgot Password?</div>
+                            <div className='text-right font-mulish text-gray-2 font-bold text-base cursor-pointer'>Forgot Password?</div>
                         </div>
                         
                         <Button handleClick={()=>{navigate('/dashboard')}} text={'Sign In'} className={'w-[400px]'}/>

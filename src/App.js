@@ -1,32 +1,22 @@
 import "./App.css";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
-import { LoginPage } from "./Pages/OnBoarding/LoginPage";
-import { SignUpPage } from "../src/Pages/OnBoarding/SignUpPage";
-import { SideBar } from "./components/SideBar";
-import { NavBar } from "./components/NavBar";
-// import { Dashboard } from './pages/Dashboard/Dashboard';
-import { Dashboard } from "./Pages/Dashboard/Dashboard";
-
-import Employees from "./Pages/Employees/Employees";
+import { Dashboard } from "./Pages/Dashboard/Index";
+import Employees from "./Pages/Employees/Index";
 import { Layout } from "./components/Layout";
-import Calendar from "./Pages/Dashboard/Calendar";
-import Tasks from "./Pages/My Tasks/Tasks";
+import Tasks from "./Pages/My Tasks/Index";
 import MyTaskCard from "./Pages/My Tasks/MyTaskCard";
+import { LoginPage } from "./components/Auth/LoginPage";
+import { SignUpPage } from "./components/Auth/SignUpPage";
 
 function App() {
   const router = createBrowserRouter([
     {
       path: "/",
-      element: <LoginPage />,
+      element: <LoginPage/>,
     },
     {
       path: "/sign-up",
-      element: <SignUpPage />,
-    },
-
-    {
-      path: '/calendar',
-      element: <Calendar/>
+      element:<SignUpPage/>,
     },
     {
       path: '/tasks',

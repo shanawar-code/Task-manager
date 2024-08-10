@@ -1,5 +1,5 @@
 import React from "react";
-import { Tasks } from "../../assets/svgs/Index";
+
 
 function Cards({ tasks, value, tasksCount , svg}) {
   return (
