@@ -1,10 +1,10 @@
 import React from "react";
 import { useState, useEffect, useRef } from "react";
-import { Input } from "../../components/Input";
-import Button from "../../components/Button";
+import { Input } from "../Input";
+import Button from "../Button";
 import { useNavigate } from "react-router-dom";
 
-function SuccessfulDialog({ show, onClose ,hidden}) {
+function SuccessfulDialog({ show, onClose ,hidden, heading}) {
     const navigate = useNavigate()
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -43,8 +43,7 @@ function SuccessfulDialog({ show, onClose ,hidden}) {
                <img src={'images/roundedGreentick.png'} alt="" />
               </div>
               <div className=" w-[60%] flex items-center justify-center text-center mx-auto">
-                <h1 className=" text-base font-normal font-public-sans text-gray-1">Meeting created
-                successfully.</h1>
+                <h1 className=" text-base font-normal font-public-sans text-gray-1">{heading}</h1>
               </div>
               <div className=" flex items-center justify-center mt-5">
                <Button handleClick={handleSubmit} text={'Close'} customPadding={'px-[24px] py-[14px]'} className={'h-[48px] w-[162px]'}/>

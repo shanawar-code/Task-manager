@@ -362,7 +362,22 @@ const CalendarIcon =()=>{
 }
 
 
-export default {Team, Chat, AttendanceSvg, Setting, Dashboard, MyTasks, Logout, MyLeave, Calender, Meeting, Tasks, BackArrowDouble, Notification, AddIcon, SearchBar, CalendarIcon}
+const PasswordHide = () =>{
+    return(
+        <>
+        <svg fill="none" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><g stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="m2 2 20 20"/><path d="m6.71277 6.7226c-3.04798 2.07267-4.71277 5.2774-4.71277 5.2774s3.63636 7 10 7c2.0503 0 3.8174-.7266 5.2711-1.7116m-6.2711-12.23018c.3254-.03809.6588-.05822 1-.05822 6.3636 0 10 7 10 7s-.6918 1.3317-2 2.8335"/><path d="m14 14.2362c-.5308.475-1.2316.7639-2 .7639-1.6569 0-3-1.3431-3-3 0-.8237.33193-1.5698.86932-2.11192"/></g></svg>
+        </>
+    )
+}
+const PasswordShow = () =>{
+    return(
+        <>
+<svg height="24" viewBox="0 0 8 8" width="24" xmlns="http://www.w3.org/2000/svg"><path d="m4.03 0c-2.53 0-4.03 3-4.03 3s1.5 3 4.03 3c2.47 0 3.97-3 3.97-3s-1.5-3-3.97-3zm-.03 1c1.11 0 2 .9 2 2 0 1.11-.89 2-2 2-1.1 0-2-.89-2-2 0-1.1.9-2 2-2zm0 1c-.55 0-1 .45-1 1s.45 1 1 1 1-.45 1-1c0-.1-.04-.19-.06-.28-.08.16-.24.28-.44.28-.28 0-.5-.22-.5-.5 0-.2.12-.36.28-.44-.09-.03-.18-.06-.28-.06z" transform="translate(0 1)"/></svg>        </>
+    )
+}
+
+
+export default {Team, Chat, AttendanceSvg, Setting, Dashboard, MyTasks, Logout, MyLeave, Calender, Meeting, Tasks, BackArrowDouble, Notification, AddIcon, SearchBar, CalendarIcon, PasswordHide, PasswordShow}
 
 
 

@@ -5,6 +5,7 @@ import { pink, red } from '@mui/material/colors';
 import Checkbox from '@mui/material/Checkbox';
 import { Input } from '../../../components/Input';
 import Button from '../../../components/Button';
+import SelectDropdown from '../../../components/SelectDropdown';
 
 const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
 
@@ -41,42 +42,35 @@ export const SignUpPage = () => {
                     <h1 className=' flex items-start text-start justify-start text-2xl lg:text-[31px] font-mulish text-gray-1 font-bold'>Create your account</h1>
                     <form onSubmit={handleSubmit} action="" className='space-y-8 w-full'>
 
-                        <div className='flex flex-col w-full '>
-                          <Input label={'Name'} placeholder={'Enter your name here'}/>
+                        <div className=' '>
+                          <Input  label={'Name'} placeholder={'Enter your name here'}/>
                         </div>
-                        <div className='flex flex-col w-full '>
+                        <div className=' '>
                         <Input label={'Email'} placeholder={'Enter your email'}/>
                         </div>
-                        <div className='flex flex-col w-full gap-y-2'>
-                           {/* <Input label={'Role'} placeholder={'Your Role'}/> */}
-                           <label htmlFor="" value='Select' className="text-base font-bold font-mulish text-gray-1">Role</label>
-                           <select className={`border outline-none rounded-lg w-full px-4 py-2 focus-within:ring-2 ring-custom-blue caret-custom-blue group `} name="" id="">
-                            <option value="Select1">Select1</option>
-                            <option value="Select2">Select2</option>
-                           </select>
+                        <div className=''>
+                           <SelectDropdown/>
                         </div>
-                        <div className='flex flex-col w-full relative'>
-                            <Input label={'Password'} placeholder={'input your password in here'} type={`${show===true? 'password':'text'}`}/>
-                            <span className=' absolute top-10 right-5 cursor-pointer'><img onClick={()=>{setshow(!show)}} src={'images/eyeIcon.png'} className='flex items-center' alt="" /></span>
+                        <div className=' '>
+                            <Input type={'password'} label={'Password'} placeholder={'input your password in here'}/>
                         </div>
 
-                        <div className='flex flex-col w-full relative'>
-                            <Input label={'Confirm Password'} placeholder={'input your password in here'} type={`${show1===true? 'password':'text'}`}/>
-                            <span className=' absolute top-10 right-5 cursor-pointer'><img onClick={()=>{setshow1(!show1)}} src={'images/eyeIcon.png'} className='flex items-center' alt="" /></span>
+                        <div className=''>
+                            <Input type={'password'} label={'Confirm Password'} placeholder={'input your password in here'}/>
                         </div>
 
                         <div className='flex items-center gap-2'>
                             <Checkbox {...label} sx={{color: red['300'],'&.Mui-checked': {color: red['300'],},}}/>
                             <h1 className=' text-sm font-normal font-mulish text-gray-4'>I have read and agree to the Terms of Service</h1>
                         </div>
-                        <Button handleClick={()=>{navigate('/')}} text={'Sign Up'} onClick={()=>{navigate('/dashboard')}} className={'w-[400px]'}/>
+                        <Button handleClick={()=>{navigate('/')}} text={'Sign Up'} onClick={()=>{navigate('/dashboard')}} className={'w-full'}/>
                        
                     </form>
 
 
                     <div className='flex items-center lg:gap-2'>
                         <h1 className=' text-base font-mulish font-normal text-gray-4'>Already have an account?&nbsp;</h1>
-                        <Link to="/" className='bg-gradient-to-r from-[#F33F41] to-[#FB6D72] text-transparent bg-clip-text text-base font-bold font-mulish '> Sign in now</Link>
+                        <Link to="/" className=' bg-btn-gradient text-transparent bg-clip-text text-base font-bold font-mulish '> Sign in now</Link>
                     </div>
                 </div>
 
