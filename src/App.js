@@ -8,6 +8,7 @@ import { LoginPage } from "./Pages/Auth/LogIn/index";
 import { SignUpPage } from "./Pages/Auth/SignUp/index";
 import { Layout } from "./components/Layout/DashboardLayout";
 import AttendanceAndLeave from "./Pages/Attendance and Leave/AttendanceAndLeave";
+import MyTeam from "./Pages/MY Team";
 
 function App() {
   const router = createBrowserRouter([
@@ -37,7 +38,7 @@ function App() {
     },
     {
       path: "/my-team",
-      element: <Dashboard />,
+      element: <MyTeam />,
     },
     {
       path: "/chat",

@@ -9,6 +9,7 @@ import UltimateCard from "../../components/Elements/UltimateCard.jsx";
 import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
 import { Layout } from "../../components/Layout/DashboardLayout.jsx";
+import RoundedCard from "../../components/Elements/RoundedCard.jsx";
 
 export function Dashboard() {
   const [showPopup, setShowPopup] = useState(false);
@@ -87,11 +88,12 @@ export function Dashboard() {
                 role={"Python developer"}
                 numberoftasks={"14 Tasks"}
                 attendance={"98%"}
+                
                 buttonBtn={
                   <Button
                     text={"Collaborate"}
                     customPadding={"px-[16px] py-[8px]"}
-                    className={"text-sm font-semibold font-public-sans"}
+                    className={"text-sm font-semibold font-public-sans "}
                   />
                 }
                 heading={"My Team"}
@@ -101,11 +103,11 @@ export function Dashboard() {
               <div className=" rounded-xl p-5 border bg-white">
                 <div className="">
                   <div className="flex justify-between items-center mb-4">
-                    <h2 className=" text-xs sm:text-base font-semibold font-public-sans text-gray-1">
+                    <h2 className="text-sm md:text-base font-semibold font-public-sans text-gray-1">
                       Task completion score
                     </h2>
                     <button className=" rounded-lg px-3 py-1 flex items-center gap-3 border">
-                      <span className=" text-base font-normal font-public-sans text-gray-2">
+                      <span className=" hidden sm:block text-base font-normal font-public-sans text-gray-2">
                         Weekly
                       </span>
                       <Svgs.CalendarIcon />
@@ -119,6 +121,7 @@ export function Dashboard() {
                         <CircularProgressbar
                           value={100}
                           text="100%"
+                          strokeWidth='12'
                           styles={buildStyles({
                             pathColor: "#3b82f6",
                             textColor: "#000",
@@ -136,6 +139,7 @@ export function Dashboard() {
                         <CircularProgressbar
                           value={82}
                           text="82%"
+                          strokeWidth='12'
                           styles={buildStyles({
                             pathColor: "#f59e0b",
                             textColor: "#000",
@@ -149,7 +153,7 @@ export function Dashboard() {
                     </div>
                   </div>
 
-                  <div className="flex justify-between items-center mx-10 my-2">
+                  <div className="flex justify-between items-center mx-3 lg:mx-10 my-2">
                     <div className="flex items-center space-x-2">
                       <img src="images/playbutton.png" alt="" />
                       <div>
@@ -171,9 +175,8 @@ export function Dashboard() {
           </div>
           <div className=" grid grid-cols-12 my-5 gap-5">
             <div className=" col-span-12 lg:col-span-6 ">
-              <div className="">
-                <div className=" border rounded-xl p-4 bg-white">
-                  <div className="flex flex-wrap items-center justify-between">
+             <RoundedCard>
+             <div className="flex items-center justify-between">
                     <h1 className=" text-base font-semibold font-epilogue text-gray-1">
                       Meeting
                     </h1>
@@ -192,11 +195,12 @@ export function Dashboard() {
                 />
               )}
                   </div>
+                  <div className=" overflow-x-auto">
                   {meetingCard
                     .map((value,index) => {
                       return (
                         <>
-                          <div className=" flex items-center gap-3 flex-wrap lg:flex-nowrap justify-between border-b-2 my-3 pb-3 mt-7">
+                          <div className=" min-w-[450px] flex items-center gap-3 overflow-x-auto justify-between border-b-2 my-3 pb-3 mt-7">
                             <div className="flex items-center gap-3">
                               <img src="/images/Img.png" alt="" />
                               <h1 className=" text-xs md:text-sm font-epilogue font-semibold text-gray-1">
@@ -217,13 +221,12 @@ export function Dashboard() {
                         </>
                       );
                     })}
-                </div>
-              </div>{" "}
+                    </div>
+             </RoundedCard>
             </div>
             <div className=" col-span-12 lg:col-span-6 ">
-              <div className="">
-                <div className=" border rounded-xl p-4 bg-white">
-                  <div className="flex flex-wrap items-center justify-between">
+                <RoundedCard>
+                <div className="flex overflow-x-auto items-center justify-between">
                     <h1 className=" text-base font-semibold font-epilogue text-gray-1">
                       Tasks
                     </h1>
@@ -236,11 +239,12 @@ export function Dashboard() {
                       customPadding={"px-[16px], py-[8px]"}
                     />
                   </div>
+                  <div className=" overflow-x-auto">
                   {taskCard
                     .map((value) => {
                       return (
                         <>
-                          <div className=" flex items-center gap-3 justify-between border-b-2 my-3 pb-3 mt-7 overflow-x-auto">
+                          <div className=" min-w-[450px] flex items-center overflow-x-auto gap-3 justify-between border-b-2 mb-3 pb-3 mt-7 ">
                             <div className="flex items-center gap-3">
                               <img src="/images/Img.png" alt="" />
                               <h1 className=" text-sm font-epilogue font-semibold text-gray-1">
@@ -261,8 +265,8 @@ export function Dashboard() {
                         </>
                       );
                     })}
-                </div>
-              </div>{" "}
+                    </div>
+                </RoundedCard>
             </div>
           </div>
         </div>
