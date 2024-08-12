@@ -1,5 +1,6 @@
 import React from "react";
 import { useState } from "react";
+import { Layout } from "../../components/Layout/DashboardLayout";
 
 function Employees() {
   const employeeCard = [
@@ -148,6 +149,8 @@ function Employees() {
 
 
   return (
+    <>
+    <Layout active={'Employees'}>
     <div>
       <div className="flex justify-between items-center p-5">
         <div className="xs:hidden sm:block">
@@ -533,6 +536,8 @@ function Employees() {
 
 
     </div>
+    </Layout>
+    </>
   );
 }
 

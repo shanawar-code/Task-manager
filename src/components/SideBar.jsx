@@ -22,13 +22,13 @@ console.log(active)
         {
             name: 'My Tasks',
             icon: <Svgs.MyTasks color={active === 'My Tasks' ? '#fff' : '#828282'}/>,
-            navigate: '/dashboard',
+            navigate: '/my-tasks',
             active: active=== 'My Tasks'? true: false,
         },
         {
             name: 'My Team',
             icon: <Svgs.Team color={active === 'My Team' ? '#fff' : '#828282'}/>,
-            navigate: '/dashboard',
+            navigate: '/my-team',
             active: active=== 'My Team'? true: false,
         },
         {
@@ -40,7 +40,7 @@ console.log(active)
         {
             name: 'Attendance & Leave',
             icon: <Svgs.AttendanceSvg color={active === 'Attendance & Leave' ? '#fff' : '#828282'}/>,
-            navigate: '/dashboard',
+            navigate: '/attendance-leave',
             active: active=== 'Attendance & Leave'? true: false,
         },
         {
@@ -51,8 +51,8 @@ console.log(active)
         },
     ]
 
-    const handleSideBarClick=(value)=>{
-        
+    const handleSideBarClick=(path)=>{
+        navigate(path)
     }
    
     return (
@@ -60,7 +60,7 @@ console.log(active)
             <div className='w-full flex flex-col'>
                 {sideBarData.map((value, index)=>(
                     <div key={index}
-                    onClick={()=>{handleSideBarClick(value.name)}}
+                    onClick={()=>{handleSideBarClick(value.navigate)}}
                         className={`${ value.active === true ? ' bg-btn-gradient ':'bg-white'} p-4 rounded-lg flex flex-row space-x-4 w-full cursor-pointer`}>
                          {<p>{value.icon}</p>}   {/* < color={value?.active===true? '#fff': '#828282'} /> */}
                         <p className={`${value?.active===true ? 'text-white text-base font-normal font-public-sans ': 'text-gray-4 text-base font-normal font-public-sans' }`} >

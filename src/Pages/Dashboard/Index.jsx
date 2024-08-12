@@ -101,7 +101,7 @@ export function Dashboard() {
               <div className=" rounded-xl p-5 border bg-white">
                 <div className="">
                   <div className="flex justify-between items-center mb-4">
-                    <h2 className="text-base font-semibold font-public-sans text-gray-1">
+                    <h2 className=" text-xs sm:text-base font-semibold font-public-sans text-gray-1">
                       Task completion score
                     </h2>
                     <button className=" rounded-lg px-3 py-1 flex items-center gap-3 border">
@@ -112,7 +112,7 @@ export function Dashboard() {
                     </button>
                   </div>
 
-                  <div className="flex flex-col md:flex-row items-center justify-between mx-10 my-20 ">
+                  <div className="flex flex-col gap-10 md:flex-row items-center justify-between mx-10 my-10 md:my-20 ">
                     {/* Expected Score */}
                     <div className="flex flex-col items-center">
                       <div className="w-36 h-36">
@@ -196,15 +196,15 @@ export function Dashboard() {
                     .map((value,index) => {
                       return (
                         <>
-                          <div className=" flex items-center flex-wrap lg:flex-nowrap justify-between border-b-2 my-3 pb-3 mt-7">
+                          <div className=" flex items-center gap-3 flex-wrap lg:flex-nowrap justify-between border-b-2 my-3 pb-3 mt-7">
                             <div className="flex items-center gap-3">
                               <img src="/images/Img.png" alt="" />
-                              <h1 className=" text-sm font-epilogue font-semibold text-gray-1">
+                              <h1 className=" text-xs md:text-sm font-epilogue font-semibold text-gray-1">
                                 {value.meeting}
                               </h1>
                             </div>
                             <div>
-                              <h1 className=" text-sm font-epilogue font-semibold text-gray-1">
+                              <h1 className="text-xs md:text-sm font-epilogue font-semibold text-gray-1">
                                 {value.time}
                               </h1>
                             </div>
@@ -240,7 +240,7 @@ export function Dashboard() {
                     .map((value) => {
                       return (
                         <>
-                          <div className=" flex items-center flex-wrap lg:flex-nowrap justify-between border-b-2 my-3 pb-3 mt-7">
+                          <div className=" flex items-center gap-3 justify-between border-b-2 my-3 pb-3 mt-7 overflow-x-auto">
                             <div className="flex items-center gap-3">
                               <img src="/images/Img.png" alt="" />
                               <h1 className=" text-sm font-epilogue font-semibold text-gray-1">

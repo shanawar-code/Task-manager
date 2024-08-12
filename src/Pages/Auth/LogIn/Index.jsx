@@ -73,7 +73,7 @@ export const LoginPage = () => {
     };
 
     return (
-        <div className='grid grid-cols-12 bg-white h-screen'>
+        <div className='grid grid-cols-12  h-screen '>
             {/* Left Side (Text and Image) */}
             <div className='col-span-12 lg:col-span-7 bg-gray-100 space-y-8 lg:space-y-16 p-8 flex flex-col items-center'>
                 <div className='flex items-center justify-start flex-col gap-5'>
@@ -89,17 +89,17 @@ export const LoginPage = () => {
 
             {/* Right Side (Form) */}
             
-            <div className='col-span-12 lg:col-span-5 flex flex-col items-center justify-center px-6 lg:px-20 py-8 lg:py-8'>
+            <div className='col-span-12 lg:col-span-5 flex flex-col items-center justify-center  lg:px-20 py-8 lg:py-8 bg-white'>
                 <div className='flex items-center justify-center flex-col gap-[64px]'>
                     <h1 className='text-2xl lg:text-[31px] font-mulish text-gray-1 font-bold text-center'>
                         Sign in to Dashboard
                     </h1>
                     <form onSubmit={handleSubmit} className=' w-full flex flex-col gap-[20px]'>
-                        <div>
-                            <Input type={'text'} label={'Email'} placeholder={'Input your Email here'}  className={'w-full sm:w-[400px]'} />
+                        <div className=''>
+                            <Input type={'text'} label={'Email'} placeholder={'Input your Email here'}  className={'w-full sm:w-[350px]'} />
                         </div>
                         <div>
-                            <Input type={'password'} label={'Password'} placeholder={'Input your password here'} className={' w-full sm:w-[400px]'}/>
+                            <Input type={'password'} label={'Password'} placeholder={'Input your password here'} className={' w-full sm:w-[350px]'}/>
                             <div className='text-right font-mulish text-gray-2 font-bold text-sm lg:text-base cursor-pointer mt-4'>
                                 Forgot Password?
                             </div>

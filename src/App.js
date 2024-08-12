@@ -7,6 +7,7 @@ import MyTaskCard from "./Pages/My Tasks/MyTaskCard";
 import { LoginPage } from "./Pages/Auth/LogIn/index";
 import { SignUpPage } from "./Pages/Auth/SignUp/index";
 import { Layout } from "./components/Layout/DashboardLayout";
+import AttendanceAndLeave from "./Pages/Attendance and Leave/AttendanceAndLeave";
 
 function App() {
   const router = createBrowserRouter([
@@ -32,7 +33,7 @@ function App() {
     },
     {
       path: "/my-tasks",
-      element: <Dashboard />,
+      element: <Tasks/>,
     },
     {
       path: "/my-team",
@@ -44,7 +45,7 @@ function App() {
     },
     {
       path: "/attendance-leave",
-      element: <Dashboard />,
+      element: <AttendanceAndLeave/>,
     },
     {
       path: "/my-profile",

@@ -1,9 +1,11 @@
 import React from 'react'
 import Button from '../../components/Button'
+import { Layout } from '../../components/Layout/DashboardLayout'
 
 function Tasks() {
   return (
     <>
+    <Layout active={'My Tasks'}>
     <div className=' p-5'>
         <div className='flex items-center justify-between'>
             <div className='flex flex-col gap-4'>
@@ -23,6 +25,7 @@ function Tasks() {
             </div>
         </div>
     </div>
+    </Layout>
     </>
   )
 }

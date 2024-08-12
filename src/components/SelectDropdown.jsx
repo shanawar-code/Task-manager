@@ -25,18 +25,18 @@
 
 import React from "react";
 
-function SelectDropdown({label, options, name, id , onChange}) {
+function SelectDropdown({label, options, name, id , onChange, className}) {
   return (
-    <div className="flex flex-col gap-y-1">
+    <div className="flex flex-col gap-y-1 bg-white">
       <label
         htmlFor="role"
         className="text-base font-bold font-mulish text-gray-1"
       >
         {label}
       </label>
-      <div className="border px-3 focus-within:ring-2 ring-custom-blue rounded-lg">
+      <div className={`border px-3 focus-within:ring-2 ring-custom-blue rounded-lg bg-white ${className}`}>
         <select
-          className="outline-none py-2 w-full min-w-[200px] caret-custom-blue group"
+          className="outline-none py-2 w-full min-w-[200px] caret-custom-blue group bg-white"
           name={name}
           id={id}
           onChange={onChange}

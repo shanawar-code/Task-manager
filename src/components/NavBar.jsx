@@ -18,7 +18,7 @@ export const NavBar = () => {
 
         {/* Search and Profile */}
         <div className="flex items-center space-x-4 md:space-x-8 w-2/5 justify-end">
-          <div className="flex gap-4 bg-gray-100 rounded-lg items-center py-2 px-4 w-full lg:w-3/5">
+          <div className="flex justify-center lg:gap-4 bg-gray-100 rounded-lg items-center py-2 px-4 w-[268px]">
           <span>
             <Svgs.SearchBar />
           </span>
@@ -31,7 +31,7 @@ export const NavBar = () => {
           <div className="flex flex-row space-x-4 items-center cursor-pointer">
             <Svgs.Notification />
             <div>
-              <img src={'images/profilePic.png'} alt="" className="h-8 cursor-pointer" />
+              <img src={'images/profilePic.png'} alt="" className="h-8 w-8 object-contain cursor-pointer" />
             </div>
           </div>
         </div>

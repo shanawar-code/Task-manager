@@ -46,27 +46,27 @@ export const SignUpPage = () => {
                     <form onSubmit={handleSubmit} action="" className=''>
                         <div className='flex flex-col gap-[20px]'>
                         <div className=' '>
-                          <Input  label={'Name'} placeholder={'Enter your name here'} className={'w-full sm:w-[400px]'}/>
+                          <Input  label={'Name'} placeholder={'Enter your name here'} className={'w-full sm:w-[350px]'}/>
                         </div>
                         <div className=' '>
-                        <Input label={'Email'} placeholder={'Enter your email'} className={' w-full sm:w-[400px]'}/>
+                        <Input label={'Email'} placeholder={'Enter your email'} className={' w-full sm:w-[350px]'}/>
                         </div>
                         <div className=''>
                             
-                           <SelectDropdown  label="Role" options={roleOptions} name="role" id="role" />
+                           <SelectDropdown  label="Role" options={roleOptions} name="role" id="role"  />
                             
                         </div>
                         <div className=' '>
-                            <Input type={'password'} label={'Password'} placeholder={'input your password in here'}/>
+                            <Input type={'password'} label={'Password'} placeholder={'input your password in here'} className={' w-full sm:w-[350px]'}/>
                         </div>
 
                         <div className=''>
-                            <Input type={'password'} label={'Confirm Password'} placeholder={'input your password in here'}/>
+                            <Input type={'password'} label={'Confirm Password'} placeholder={'input your password in here'} className={' w-full sm:w-[350px]'}/>
                         </div>
                         </div>
-                        <div className='flex items-center gap-2 -ml-2'>
-                            <Checkbox {...label} sx={{color: red['300'],'&.Mui-checked': {color: red['300'],},}}/>
-                            <h1 className=' text-sm font-normal font-mulish text-gray-4'>I have read and agree to the Terms of Service</h1>
+                        <div className='flex items-center -ml-2 mt-1'>
+                            <Checkbox {...label} sx={{color: red['300'],'&.Mui-checked': {color: red['300'],},}} className='w-8 h-8'/>
+                            <h1 className=' text-xs sm:text-sm font-normal font-mulish text-gray-4'>I have read and agree to the Terms of Service</h1>
                         </div>
 
                         <div className='mt-[40px]'>
