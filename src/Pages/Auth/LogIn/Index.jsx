@@ -88,25 +88,28 @@ export const LoginPage = () => {
             </div>
 
             {/* Right Side (Form) */}
-            <div className='col-span-12 lg:col-span-5 flex flex-col items-center justify-center px-6 lg:px-12 py-8 lg:py-0'>
-                <div className='flex items-center justify-center flex-col space-y-8 lg:space-y-12'>
+            
+            <div className='col-span-12 lg:col-span-5 flex flex-col items-center justify-center px-6 lg:px-20 py-8 lg:py-8'>
+                <div className='flex items-center justify-center flex-col gap-[64px]'>
                     <h1 className='text-2xl lg:text-[31px] font-mulish text-gray-1 font-bold text-center'>
                         Sign in to Dashboard
                     </h1>
-                    <form onSubmit={handleSubmit} className='space-y-8 w-full'>
+                    <form onSubmit={handleSubmit} className=' w-full flex flex-col gap-[20px]'>
                         <div>
-                            <Input type={'text'} label={'Email'} placeholder={'Input your Email here'} />
+                            <Input type={'text'} label={'Email'} placeholder={'Input your Email here'}  className={'w-full sm:w-[400px]'} />
                         </div>
                         <div>
-                            <Input type={'password'} label={'Password'} placeholder={'Input your password here'} />
-                            <div className='text-right font-mulish text-gray-2 font-bold text-sm lg:text-base cursor-pointer mt-2'>
+                            <Input type={'password'} label={'Password'} placeholder={'Input your password here'} className={' w-full sm:w-[400px]'}/>
+                            <div className='text-right font-mulish text-gray-2 font-bold text-sm lg:text-base cursor-pointer mt-4'>
                                 Forgot Password?
                             </div>
                         </div>
-                        <Button handleClick={() => { navigate('/dashboard') }} text={'Sign In'} className={'w-full'} />
+                        <div className='mt-[64px]'>
+                        <Button handleClick={() => { navigate('/dashboard') }} text={'Sign in'} className={'w-full'} customPadding={'px-[24px] py-[14px]'} />
+                        </div>
                     </form>
 
-                    <div className='flex items-center gap-2 lg:gap-2'>
+                    <div className='flex items-center gap-1'>
                         <h1 className='text-sm lg:text-base font-mulish font-normal text-gray-4 text-center'>
                             Doesn’t have an account?&nbsp;
                         </h1>
@@ -116,6 +119,7 @@ export const LoginPage = () => {
                     </div>
                 </div>
             </div>
+            
         </div>
     );
 };

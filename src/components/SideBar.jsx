@@ -15,37 +15,37 @@ console.log(active)
     const sideBarData =[
         {
             name: 'Dashboard',
-            icon: <Svgs.Dashboard/>,
+            icon: <Svgs.Dashboard color={active === 'Dashboard' ? '#fff' : '#828282'}/>,
             navigate: '/dashboard',
             active: active === 'Dashboard'? true: false,
         },
         {
             name: 'My Tasks',
-            icon: <Svgs.MyTasks/>,
+            icon: <Svgs.MyTasks color={active === 'My Tasks' ? '#fff' : '#828282'}/>,
             navigate: '/dashboard',
             active: active=== 'My Tasks'? true: false,
         },
         {
             name: 'My Team',
-            icon: <Svgs.Team/>,
+            icon: <Svgs.Team color={active === 'My Team' ? '#fff' : '#828282'}/>,
             navigate: '/dashboard',
             active: active=== 'My Team'? true: false,
         },
         {
             name: 'Chat',
-            icon: <Svgs.Chat/>,
+            icon: <Svgs.Chat color={active === 'Chat' ? '#fff' : '#828282'}/>,
             navigate: '/dashboard',
             active: active=== 'Chat'? true: false,
         },
         {
             name: 'Attendance & Leave',
-            icon: <Svgs.AttendanceSvg/>,
+            icon: <Svgs.AttendanceSvg color={active === 'Attendance & Leave' ? '#fff' : '#828282'}/>,
             navigate: '/dashboard',
             active: active=== 'Attendance & Leave'? true: false,
         },
         {
             name: 'My profile',
-            icon: <Svgs.Setting/>,
+            icon: <Svgs.Setting color={active === 'My profile' ? '#fff' : '#828282'}/>,
             navigate: '/dashboard',
             active: active=== 'My profile'? true: false,
         },
@@ -56,7 +56,7 @@ console.log(active)
     }
    
     return (
-        <div className='flex flex-col relative left-0  bg-white py-8 border-r-2 w-full h-full items-center justify-between'>
+        <div className='flex flex-col relative left-0  bg-white py-8 px-3 border-r-2 w-full h-full items-center justify-between'>
             <div className='w-full flex flex-col'>
                 {sideBarData.map((value, index)=>(
                     <div key={index}
