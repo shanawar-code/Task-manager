@@ -1,14 +1,14 @@
 import "./App.css";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
-import { LoginPage } from "./Pages/OnBoarding/LoginPage";
-import { SignUpPage } from "../src/Pages/OnBoarding/SignUpPage";
-import { SideBar } from "./components/SideBar";
-import { NavBar } from "./components/NavBar";
-// import { Dashboard } from './pages/Dashboard/Dashboard';
-import { Dashboard } from "./Pages/Dashboard/Dashboard";
-
-import Employees from "./Pages/Employees/Employees";
-import { Layout } from "./components/Layout";
+import { Dashboard } from "./Pages/Dashboard/index";
+import Employees from "./Pages/Employees/index";
+import Tasks from "./Pages/My Tasks/index";
+import MyTaskCard from "./Pages/My Tasks/MyTaskCard";
+import { LoginPage } from "./Pages/Auth/LogIn/index";
+import { SignUpPage } from "./Pages/Auth/SignUp/index";
+import { Layout } from "./components/Layout/DashboardLayout";
+import AttendanceAndLeave from "./Pages/Attendance and Leave/AttendanceAndLeave";
+import MyTeam from "./Pages/MY Team";
 
 function App() {
   const router = createBrowserRouter([
@@ -17,19 +17,40 @@ function App() {
       element: <LoginPage />,
     },
     {
-      path: "/SignUp",
+      path: "/sign-up",
       element: <SignUpPage />,
     },
-
+    {
+      path: "/tasks",
+      element: <Tasks />,
+    },
+    {
+      path: "mytaskcard",
+      element: <MyTaskCard />,
+    },
     {
       path: "/dashboard",
-      element: <Layout/>,
-      children:[
-        {
-          path: '',
-          element:<Dashboard/>
-        }
-      ]
+      element: <Dashboard />,
+    },
+    {
+      path: "/my-tasks",
+      element: <Tasks/>,
+    },
+    {
+      path: "/my-team",
+      element: <MyTeam />,
+    },
+    {
+      path: "/chat",
+      element: <Dashboard />,
+    },
+    {
+      path: "/attendance-leave",
+      element: <AttendanceAndLeave/>,
+    },
+    {
+      path: "/my-profile",
+      element: <Dashboard />,
     },
 
     {
