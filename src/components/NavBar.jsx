@@ -8,7 +8,7 @@ export const NavBar = () => {
     <nav className="bg-white border-b-2 px-4 sm:px-6 md:px-8 py-4">
       <div className="flex flex-row items-center justify-between">
         {/* Logo and Menu Button */}
-        <div className="flex flex-row items-center space-x-4 md:space-x-20">
+        <div className="flex flex-row items-center space-x-4 md:gap-24">
             <img onClick={()=>{navigate('/')}} src={'images/logo.png'} alt="" className="h-10 md:h-12 cursor-pointer" />
           <button className=" cursor-pointer">
             {/* <BackArrowDouble /> */}
@@ -23,7 +23,7 @@ export const NavBar = () => {
             <Svgs.SearchBar />
           </span>
             <input
-              className="bg-transparent focus:outline-none w-full text-sm"
+              className="bg-transparent focus:outline-none w-full text-sm font-normal font-public-sans text-gray-4"
               type="text"
               placeholder="Search"
             />

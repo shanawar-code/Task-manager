@@ -3,12 +3,27 @@ import { useState, useEffect, useRef } from "react";
 import { Input } from "../../components/Input";
 import Button from "../../components/Button";
 import { useNavigate } from "react-router-dom";
-
+import Svgs from '../../assets/svgs/Index.js'
+import CreateTaskDialog from "./CreateTaskDialog.jsx";
 function GroceryDialog({ show, onClose, hidden }) {
   const navigate = useNavigate();
   const handleSubmit = (e) => {
     e.preventDefault();
   };
+
+  const [showPopup, setShowPopup] = useState(false);
+
+  const handleShowPopup = () => {
+    setShowPopup(true);
+    console.log('*********************POpup')
+  };
+
+  const handleClosePopup = () => {
+    setShowPopup(false);
+    console.log('*********************POpup')
+  };
+
+
 
   const popupRef = useRef();
 
@@ -34,21 +49,21 @@ function GroceryDialog({ show, onClose, hidden }) {
 
   return (
     <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
-      <div ref={popupRef} className="bg-white w-[80vw]  rounded-xl p-5">
-        <div className="grid grid-cols-3">
+      <div ref={popupRef} className="bg-white w-[80vw]  rounded-xl p-5 overflow-auto h-full">
+        <div className="flex items-center justify-between">
           <div></div>
-          <div>
+          <div className="ml-20">
             <h1 className=" text-2xl font-semibold font-public-sans text-gray-1">
               Grocery dashboard
             </h1>
           </div>
           <div className="flex items-center justify-end gap-3">
             <button className=" text-base font-normal font-public-sans text-gray-2 flex items-center gap-2 border py-1 px-3 rounded-lg">
-              <img src="images/writingpencilblue.png" alt="" />
+             <Svgs.WritingPencilBlue/>
               Edit
             </button>
             <button className=" text-base font-normal font-public-sans text-gray-2 flex items-center gap-2 border py-1 px-3 rounded-lg">
-              <img src="images/shareblueicon.png" alt="" />
+             <Svgs.ShareIconBlue/>
               Share
             </button>
           </div>
@@ -123,31 +138,66 @@ function GroceryDialog({ show, onClose, hidden }) {
               Attachments
             </h1>
           </div>
-          <div className="my-5">
-            <div className="flex items-center gap-4">
-              <div className=" border rounded-xl p-5 bg-[#f3f3f3]  flex items-center justify-between w-full lg:w-[273px]">
-                <h1 className=" text-sm font-semibold text-gray-2 font-public-sans">
+          <div className="my-4 border-b border-dashed mb-[16px]">
+            <div className="flex items-center justify-between gap-4 my-[16px] ">
+              <button className=" border rounded-xl px-[14px] py-[10px] bg-[#f3f3f3]  flex items-center justify-between w-full lg:w-[273px]">
+                <span className=" text-sm font-semibold text-gray-2 font-public-sans">
                   Detailed document
-                </h1>
-                <span className=" rounded-full bg-white">
-                  <img src="images/download.png" className="" alt="" />
                 </span>
-              </div>
-              <div className=" border rounded-xl p-5 bg-[#f3f3f3]  flex items-center justify-between w-full lg:w-[273px]">
-                <h1 className=" text-sm font-semibold text-gray-2 font-public-sans">
+                <span className=" rounded-full bg-white">
+                  <Svgs.Oction_download/>
+                </span>
+              </button>
+              <button className=" border rounded-xl px-[14px] py-[10px] bg-[#f3f3f3]  flex items-center justify-between w-full lg:w-[273px]">
+                <span className=" text-sm font-semibold text-gray-2 font-public-sans">
                   Detailed document
-                </h1>
-                <span className=" rounded-full bg-white">
-                  <img src="images/download.png" className="" alt="" />
                 </span>
-              </div>
-              <div className=" border border-[#f7585c] rounded-xl p-5 flex items-center gap-4 w-full lg:w-[180px]">
-                <span><img src='images/reddocumenticon.png' alt="" /></span>
+                <span className=" rounded-full bg-white">
+                  <Svgs.Oction_download/>
+                </span>
+              </button>
+              <button onClick={handleShowPopup} className=" border border-[#f7585c] rounded-xl px-[12px] py-[11.5px] flex items-center gap-4 ">
+                <span><Svgs.DocumentRedIcon/></span>
                 <h1 className="text-[#f7585c] text-base font-medium font-public-sans">Add attachments</h1>
-              </div>
+              </button>
+              {showPopup && (
+                <CreateTaskDialog
+                  show={showPopup}
+                  onClose={handleClosePopup}
+                />
+              )}
             </div>
           </div>
         </div>
+        <div>
+        <div className="mt-[48px]">
+          <label htmlFor="" className="text-sm font-normal font-public-sans text-gray-2">Comments & discussions</label>
+          <div className="flex items-center gap-4 my-2">
+            <input type="text" className=" w-full border px-[14px] py-[10px] rounded-xl" /><Button text={'Send'} customPadding={'px-[14px] py-[10px]'}/>
+          </div>
+        </div>
+        </div>
+        {Array(4).fill().map(()=>(
+
+        <div className="px-[12px] py-[20px] border-b-2">
+          <div className="flex justify-between">
+          <div className="leftpart flex items-center gap-4">
+            <div>
+              <img src="images/beautifulGirlpic.png" alt="" />
+            </div>
+            <div>
+              <h1 className=" text-sm font-semibold font-public-sans text-gray-1">Anna</h1>
+              <h1 className=" text-sm font-normal font-public-sans text-gray-2">On which file I need to start the work?</h1>
+            </div>
+          </div>
+          <div className="rightpart flex gap-[14px]">
+            <span className="text-xs font-public-sans font-normal text-[#497CFF] flex gap-2"><Svgs.ReplyIcon/>Reply</span>
+            <h1 className="text-xs font-public-sans font-normal text-gray-4">5 hours ago</h1>
+          </div>
+          </div>
+        </div>
+
+        ))}
       </div>
     </div>
   );

@@ -34,7 +34,7 @@ console.log(active)
         {
             name: 'Chat',
             icon: <Svgs.Chat color={active === 'Chat' ? '#fff' : '#828282'}/>,
-            navigate: '/dashboard',
+            navigate: '/chat',
             active: active=== 'Chat'? true: false,
         },
         {
@@ -46,7 +46,7 @@ console.log(active)
         {
             name: 'My profile',
             icon: <Svgs.Setting color={active === 'My profile' ? '#fff' : '#828282'}/>,
-            navigate: '/dashboard',
+            navigate: '/my-profile',
             active: active=== 'My profile'? true: false,
         },
     ]

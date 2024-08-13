@@ -9,6 +9,8 @@ import { SignUpPage } from "./Pages/Auth/SignUp/index";
 import { Layout } from "./components/Layout/DashboardLayout";
 import AttendanceAndLeave from "./Pages/Attendance and Leave/AttendanceAndLeave";
 import MyTeam from "./Pages/MY Team";
+import MyProfile from "./Pages/My Profile";
+import Chat from "./Pages/Chat";
 
 function App() {
   const router = createBrowserRouter([
@@ -42,7 +44,7 @@ function App() {
     },
     {
       path: "/chat",
-      element: <Dashboard />,
+      element: <Chat />,
     },
     {
       path: "/attendance-leave",
@@ -50,7 +52,7 @@ function App() {
     },
     {
       path: "/my-profile",
-      element: <Dashboard />,
+      element: <MyProfile />,
     },
 
     {

@@ -80,7 +80,7 @@ export const Layout = ({ active, children }) => {
         </div>
 
         {/* Main Content Area */}
-        <main className="w-full xl:w-full 2xl:w-4/5 p-4 bg-gray-100">
+        <main className="w-full xl:w-full 2xl:w-4/5 p-[20px] md:p-[32px] bg-[#fbfbfb]">
           {children}
         </main>
       </div>
