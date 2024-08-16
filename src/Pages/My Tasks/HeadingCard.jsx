@@ -9,7 +9,6 @@ function HeadingCard({title, value}) {
                 <h1 className=' text-xs font-semibold font-public-sans text-gray-4 border rounded-full w-6 h-6 flex items-center justify-center'>{value}</h1>
             </div>
             <div>
-                {/* <img src='images/writingpencil.png' alt="" /> */}
                 <Svgs.WritingPencil/>
             </div>
         </div>

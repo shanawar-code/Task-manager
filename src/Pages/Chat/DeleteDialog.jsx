@@ -4,6 +4,7 @@ import { useState, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import Button from "../../components/Button";
 import SuccessfulDialog from "../../components/Elements/SuccessfulDialog";
+import ShareGroceryDialog from "./ShareGroceryDialog";
 
 function DeleteDialog({ show, onClose, content}) {
     const navigate = useNavigate()
@@ -17,6 +18,17 @@ function DeleteDialog({ show, onClose, content}) {
   
     const handleClosePopup=()=>{
       setShowPopup(false)
+    }
+
+
+    const [showGroceryPopup, setShowGroceryPopup] = useState(false)
+
+    const handleShowGroceryPopup=()=>{
+      setShowGroceryPopup(true)
+    }
+  
+    const handleCloseGroceryPopup=()=>{
+      setShowGroceryPopup(false)
     }
 
 

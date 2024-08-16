@@ -32,6 +32,12 @@ function CreateTaskDialog({ show, onClose }) {
     setShowDialog(false);
   };
 
+  const optionsRole = [
+    { value: "Priority", label: "Priority" },
+    { value: "Edit", label: "Edit" },
+    { value: "Delete", label: "Delete" }
+  ]
+
   const popupRef = useRef();
 
   const handleClickOutside = (event) => {
@@ -88,9 +94,7 @@ function CreateTaskDialog({ show, onClose }) {
                     <Svgs.AddIconRed/>
                   Add employees
                 </button>
-                <SelectDropdown options={[ { value: "Priority", label: "Priority" },
-                  { value: "user", label: "User" },
-                  { value: "guest", label: "Guest" }]} />
+                <SelectDropdown options={optionsRole} />
               </div>
               <div className="flex items-center justify-center mt-5">
                 <Button

@@ -4,7 +4,7 @@ import { Input } from "../Input";
 import Button from "../Button";
 import { useNavigate } from "react-router-dom";
 
-function SuccessfulDialog({ show, onClose ,hidden, heading}) {
+function SuccessfulDialog({ show, onClose ,hidden, heading, onClick}) {
     const navigate = useNavigate()
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -46,7 +46,7 @@ function SuccessfulDialog({ show, onClose ,hidden, heading}) {
                 <h1 className=" text-base font-normal font-public-sans text-gray-1">{heading}</h1>
               </div>
               <div className=" flex items-center justify-center mt-5">
-               <Button handleClick={onClose} text={'Close'} customPadding={'px-[24px] py-[14px]'} className={'h-[48px] w-[162px]'}/>
+               <Button handleClick={onClick?onClick: onClose} text={'Close'} customPadding={'px-[24px] py-[14px]'} className={'h-[48px] w-[162px]'}/>
               </div>
             </div>
           </div>

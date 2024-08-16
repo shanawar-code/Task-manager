@@ -7,7 +7,7 @@ import MyTaskCard from "./Pages/My Tasks/MyTaskCard";
 import { LoginPage } from "./Pages/Auth/LogIn/index";
 import { SignUpPage } from "./Pages/Auth/SignUp/index";
 import { Layout } from "./components/Layout/DashboardLayout";
-import AttendanceAndLeave from "./Pages/Attendance and Leave/AttendanceAndLeave";
+import AttendanceAndLeave from "./Pages/Attendance and Leave";
 import MyTeam from "./Pages/MY Team";
 import MyProfile from "./Pages/My Profile";
 import Chat from "./Pages/Chat";
