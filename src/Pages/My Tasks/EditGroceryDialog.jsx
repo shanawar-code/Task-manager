@@ -5,9 +5,9 @@ import Button from "../../components/Button";
 import { useNavigate } from "react-router-dom";
 import Svgs from '../../assets/svgs/Index.js'
 import CreateTaskDialog from "./CreateTaskDialog.jsx";
-import EditGroceryDialog from "./EditGroceryDialog.jsx";
-import ShareGroceryDialog from "../Chat/ShareGroceryDialog.jsx";
-function GroceryDialog({ show, onClose, hidden }) {
+import SelectDropdown from "../../components/SelectDropdown.jsx";
+import SuccessfulDialog from "../../components/Elements/SuccessfulDialog.jsx";
+function EditGroceryDialog({ show, onClose, hidden }) {
   const navigate = useNavigate();
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -17,33 +17,27 @@ function GroceryDialog({ show, onClose, hidden }) {
 
   const handleShowPopup = () => {
     setShowPopup(true);
+    console.log('*********************POpup')
   };
 
   const handleClosePopup = () => {
     setShowPopup(false);
+    console.log('*********************POpup')
   };
 
 
 
-  const [showEditPopup, setShowEditPopup] = useState(false);
+  const [showSuccessfulPopup, setShowSuccessfulPopup] = useState(false);
 
-  const handleShowEditPopup = () => {
-    setShowEditPopup(true);
+  const handleShowSuccessfulPopup = () => {
+    setShowSuccessfulPopup(true);
+   
   };
 
-  const handleCloseEditPopup = () => {
-    setShowEditPopup(false);
+  const handleCloseSuccessfulPopup = () => {
+    setShowSuccessfulPopup(false);
+   
   };
-  const [showGrocerySharePopup, setShowGrocerySharePopup] = useState(false);
-
-  const handleShowGrocerySharePopup = () => {
-    setShowGrocerySharePopup(true);
-  };
-
-  const handleCloseGrocerySharePopup = () => {
-    setShowGrocerySharePopup(false);
-  };
-
 
 
 
@@ -72,67 +66,20 @@ function GroceryDialog({ show, onClose, hidden }) {
   return (
     <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
       <div ref={popupRef} className="bg-white w-[80vw]  rounded-xl p-5 overflow-auto h-full">
-        <div className="flex items-center justify-between">
-          <div></div>
-          <div className="ml-20">
+        <div className="flex items-center justify-center">
+          <div className="">
             <h1 className=" text-2xl font-semibold font-public-sans text-gray-1">
-              Grocery dashboard
+             Edit Grocery dashboard
             </h1>
-          </div>
-          <div className="flex items-center justify-end gap-3">
-            <button onClick={handleShowEditPopup} className=" text-base font-normal font-public-sans text-gray-2 flex items-center gap-2 border py-1 px-3 rounded-lg">
-             <Svgs.WritingPencilBlue/>
-              Edit
-            </button>
-            {showEditPopup && (<EditGroceryDialog show={showEditPopup} onClose={handleCloseEditPopup} />)}
-            <button onClick={handleShowGrocerySharePopup} className=" text-base font-normal font-public-sans text-gray-2 flex items-center gap-2 border py-1 px-3 rounded-lg">
-             <Svgs.ShareIconBlue/>
-              Share
-            </button>
-            {showGrocerySharePopup && (<ShareGroceryDialog show={showGrocerySharePopup} onClose={handleCloseGrocerySharePopup} />)}
           </div>
         </div>
-        <div className="flex items-center justify-between mt-10">
-          <div className="flex flex-col gap-2">
-            <h1 className=" text-sm font-normal font-public-sans text-gray-2">
-              Members
-            </h1>
-            <img src="images/Member4.png" alt="" />
-          </div>
-          <div className="flex flex-col gap-2">
-            <h1 className=" text-sm font-normal font-public-sans text-gray-2">
-              Priority
-            </h1>
-            <select
-              className="bg-[#fff7ea] text-[#f4a012] text-xs font-semibold font-public-sans py-2 px-3 rounded-full"
-              value="Medium"
-              name=""
-              id=""
-            >
-              <option
-                value="Easy"
-                className="text-[#f4a012] text-xs font-semibold font-public-sans"
-              >
-                Easy
-              </option>
-              <option
-                value="Medium"
-                className="text-[#f4a012] text-xs font-semibold font-public-sans"
-              >
-                Medium
-              </option>
-              <option
-                value="High"
-                className="text-[#f4a012] text-xs font-semibold font-public-sans"
-              >
-                High
-              </option>
-            </select>
-          </div>
-        </div>
+      
+        <div className=" my-5 mt-[48px]">
         <div className=" my-5">
+          <Input label={"Task name"} className={""} placeholder={'Task name'} />
+          </div>
           <div>
-            <h1 className=" text-sm font-normal font-public-sans text-gray-1">
+            <h1 className=" text-base font-bold font-mulish text-gray-1">
               Description
             </h1>
           </div>
@@ -162,7 +109,7 @@ function GroceryDialog({ show, onClose, hidden }) {
               Attachments
             </h1>
           </div>
-          <div className="my-4 border-b border-dashed mb-[16px]">
+          <div className="my-4">
             <div className="flex items-center justify-between gap-4 my-[16px] ">
               <button className=" border rounded-xl px-[14px] py-[10px] bg-[#f3f3f3]  flex items-center justify-between w-full lg:w-[273px]">
                 <span className=" text-sm font-semibold text-gray-2 font-public-sans">
@@ -193,38 +140,34 @@ function GroceryDialog({ show, onClose, hidden }) {
             </div>
           </div>
         </div>
-        <div>
-        <div className="mt-[48px]">
-          <label htmlFor="" className="text-sm font-normal font-public-sans text-gray-2">Comments & discussions</label>
-          <div className="flex items-center gap-4 my-2">
-            <input type="text" className=" w-full border px-[14px] py-[10px] rounded-xl" /><Button text={'Send'} customPadding={'px-[14px] py-[10px]'}/>
+       
+        <div className="flex items-center justify-between my-6">
+          <div className="flex flex-col gap-2">
+            <h1 className=" text-sm font-normal font-public-sans text-gray-2">
+              Members
+            </h1>
+            <img src="images/Member4.png" alt="" />
+          </div>
+          <div className="flex flex-col gap-2">
+            <h1 className=" text-sm font-normal font-public-sans text-gray-2">
+              Priority
+            </h1>
+           <SelectDropdown options={[{value: 'Easy', label: 'Easy'},{value: 'Medium', label: 'Medium'},{value: 'High', label: 'High'},]}/>
           </div>
         </div>
-        </div>
-        {Array(4).fill().map(()=>(
-
-        <div className="px-[12px] py-[20px] border-b-2">
-          <div className="flex justify-between">
-          <div className="leftpart flex items-center gap-4">
-            <div>
-              <img src="images/beautifulGirlpic.png" alt="" />
-            </div>
-            <div>
-              <h1 className=" text-sm font-semibold font-public-sans text-gray-1">Anna</h1>
-              <h1 className=" text-sm font-normal font-public-sans text-gray-2">On which file I need to start the work?</h1>
-            </div>
-          </div>
-          <div className="rightpart flex gap-[14px]">
-            <span className="text-xs font-public-sans font-normal text-[#497CFF] flex gap-2"><Svgs.ReplyIcon/>Reply</span>
-            <h1 className="text-xs font-public-sans font-normal text-gray-4">5 hours ago</h1>
-          </div>
-          </div>
-        </div>
-
-        ))}
+       <div className="flex items-center justify-center mt-[48px]">
+        <Button  handleClick={handleShowSuccessfulPopup} text={'Update'} className={'w-[162px] h-[48px]'} customPadding={'px-[24px] py-[14px]'}/>
+        {showSuccessfulPopup && (
+                <SuccessfulDialog
+                heading={'Update Successful'}
+                  show={showSuccessfulPopup}
+                  onClose={handleCloseSuccessfulPopup}
+                />
+              )}
+       </div>
       </div>
     </div>
   );
 }
 
-export default GroceryDialog;
+export default EditGroceryDialog;

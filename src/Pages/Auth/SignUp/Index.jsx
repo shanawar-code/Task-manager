@@ -40,7 +40,7 @@ export const SignUpPage = () => {
 
 
             <div className=' col-span-12 lg:col-span-5 w-full flex flex-col items-center justify-center px-3 lg:px-0 my-10'>
-                <div className=' flex  flex-col gap-[40px]'>
+                <div className=' flex  flex-col gap-[40px] '>
 
                     <h1 className=' flex items-start text-start justify-start text-2xl lg:text-[31px] font-mulish text-gray-1 font-bold'>Create your account</h1>
                     <form onSubmit={handleSubmit} action="" className=''>

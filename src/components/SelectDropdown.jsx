@@ -25,7 +25,7 @@
 
 import React from "react";
 
-function SelectDropdown({label, options, name, id , onChange, className}) {
+function SelectDropdown({label, options, name, id , onChange, className, onClick}) {
   return (
     <div className="flex flex-col gap-y-1 bg-white">
       <label
@@ -42,7 +42,7 @@ function SelectDropdown({label, options, name, id , onChange, className}) {
           onChange={onChange}
         >
           {options.map((option, index)=>(
-            <option key={index} value={option.value}>{option.label}</option>
+            <option onClick={onClick} key={index} value={option.value}>{option.label}</option>
           ))
           }
         </select>

@@ -16,7 +16,8 @@ module.exports = {
         "plus-jakarta-sans": ["Plus Jakarta Sans"],
         "public-sans": ["Public Sans"],
         "mulish": ["Mulish"],
-        "epilogue":["Epilogue"]
+        "epilogue":["Epilogue"],
+        'Libre-franklin': ['Libre Franklin'],
       },
       backgroundImage: {
                 "btn-gradient": "linear-gradient(90deg, #F33F41 0%, #FB6D72 100%)",
