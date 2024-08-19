@@ -739,7 +739,32 @@ const TodayLineIcon=()=>(
 </svg>
 )
 
-export default {TodayLineIcon ,TimerIcon, AddIconWhite, CopyIcon, ZipIcon, VideoIcon , LogoFragment, DocsIcon, CrossIcon, AddWhiteIcon, VerticalGreenLine ,Count3, Count2, Count1, DocumentChatIcon, BlueIcon, SearchChatIcon ,AudioCallIcon ,VideoCallIcon ,GalleryIcon,SendIcon,OneIcon, AddIconRed, AddIconGray, ReplyIcon, Team, Chat, AttendanceSvg, Setting, Dashboard, MyTasks, Logout, MyLeave, Calender, Meeting, Tasks, BackArrowDouble, Notification, AddIcon, SearchBar, CalendarIcon, PasswordHide, PasswordShow, Verticaldots, PlayButton, Message, DocumentIcon, ShareIcon, WritingPencil, Four, ShareGray, AddPeople, Oction_download, DocumentRedIcon, WritingPencilBlue, ShareIconBlue}
+const Email=()=>(
+    <svg width="16" height="12" viewBox="0 0 16 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M8 9C8.5 9 9.03125 8.84375 9.46875 8.5L16 3.4375V10.5C16 11.3438 15.3125 12 14.5 12H1.5C0.65625 12 0 11.3438 0 10.5V3.4375L6.5 8.5C6.9375 8.84375 7.46875 9 8 9ZM0.5 2.5625C0.1875 2.3125 0 1.90625 0 1.5C0 0.6875 0.65625 0 1.5 0H14.5C15.3125 0 16 0.6875 16 1.5C16 1.90625 15.7812 2.3125 15.4688 2.5625L8.84375 7.71875C8.34375 8.09375 7.625 8.09375 7.125 7.71875L0.5 2.5625Z" fill="#BBBFC5"/>
+</svg>
+)
+
+const TextMessage=()=>(
+    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M9.33329 1.16675H4.66663C2.33329 1.16675 1.16663 2.33341 1.16663 4.66675V12.2501C1.16663 12.5709 1.42913 12.8334 1.74996 12.8334H9.33329C11.6666 12.8334 12.8333 11.6667 12.8333 9.33341V4.66675C12.8333 2.33341 11.6666 1.16675 9.33329 1.16675Z" stroke="#BDBDBD" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M4.08337 5.54175H9.91671" stroke="#BDBDBD" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M4.08337 8.4585H8.16671" stroke="#BDBDBD" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+)
+
+const HorizontalLine=()=>(
+    <svg width="280" height="2" viewBox="0 0 280 2" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect x="1.0003" y="0.752986" width="278.113" height="0.494253" fill="#FEFEFE" stroke="#E0E0E0" stroke-width="0.494253"/>
+</svg>
+)
+
+const PDF=()=>(
+    <svg width="13" height="16" viewBox="0 0 13 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M2.8 12H2V13H2.8C3.1 13 3.3 12.8 3.3 12.5C3.3 12.2 3.1 12 2.8 12ZM8 0H0V16H13V5L8 0ZM4.2 12.6C4.2 13.4 3.6 14 2.8 14H2V15H1V11H2.8C3.6 11 4.2 11.6 4.2 12.4V12.6ZM8.3 13.1C8.3 14.1 7.5 15 6.4 15H5V11H6.4C7.4 11 8.3 11.8 8.3 12.9V13.1ZM12 12H10V13H11.5V14H10V15H9V11H12V12ZM12 10H1V1H8V5H12V10ZM6.4 12H6V14H6.4C7 14 7.4 13.6 7.4 13C7.4 12.4 6.9 12 6.4 12Z" fill="#F54D4D"/>
+</svg>
+)
+export default {PDF ,HorizontalLine, TextMessage,Email,TodayLineIcon ,TimerIcon, AddIconWhite, CopyIcon, ZipIcon, VideoIcon , LogoFragment, DocsIcon, CrossIcon, AddWhiteIcon, VerticalGreenLine ,Count3, Count2, Count1, DocumentChatIcon, BlueIcon, SearchChatIcon ,AudioCallIcon ,VideoCallIcon ,GalleryIcon,SendIcon,OneIcon, AddIconRed, AddIconGray, ReplyIcon, Team, Chat, AttendanceSvg, Setting, Dashboard, MyTasks, Logout, MyLeave, Calender, Meeting, Tasks, BackArrowDouble, Notification, AddIcon, SearchBar, CalendarIcon, PasswordHide, PasswordShow, Verticaldots, PlayButton, Message, DocumentIcon, ShareIcon, WritingPencil, Four, ShareGray, AddPeople, Oction_download, DocumentRedIcon, WritingPencilBlue, ShareIconBlue}
 
 
 

@@ -36,7 +36,7 @@ function SelectDropdown({label, options, name, id , onChange, className, onClick
       </label>
       <div className={`border px-3 focus-within:ring-2 ring-custom-blue rounded-lg bg-white ${className}`}>
         <select
-          className="outline-none py-2 w-full min-w-[200px] caret-custom-blue group bg-white"
+          className="outline-none py-2 w-full caret-custom-blue group bg-white"
           name={name}
           id={id}
           onChange={onChange}

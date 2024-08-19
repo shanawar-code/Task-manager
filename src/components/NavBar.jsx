@@ -5,13 +5,13 @@ import { useState } from "react";
 
 
 
-export const NavBar = ({setOpen, sideOpen}) => {
+export const NavBar = ({setOpens, sideOpen}) => {
 
-  const [isOpen, setIsOpen] = useState(false);
+  // const [isOpen, setIsOpen] = useState(false);
 
-  const toggleSidebar = () => {
-    setIsOpen(!isOpen);
-  };
+  // const toggleSidebar = () => {
+  //   setIsOpen(!isOpen);
+  // };
 
   const navigate = useNavigate()
   return (
@@ -20,9 +20,9 @@ export const NavBar = ({setOpen, sideOpen}) => {
         {/* Logo and Menu Button */}
         <div className="flex flex-row items-center space-x-4 md:gap-24">
             <img onClick={()=>{navigate('/')}} src={'images/logo.png'} alt="" className="w-[36px] h-[24px] lg:w-full lg:h-12 cursor-pointer" />
-          <button onClick={()=>{setOpen(!sideOpen)}} className="hidden xl:block cursor-pointer">
-            <Svgs.BackArrowDouble/>
-            {/* {isOpen ? 'Close' : 'Open'} */}
+          <button onClick={()=>{setOpens(!sideOpen)}} className="hidden xl:block cursor-pointer">
+            {/* <Svgs.BackArrowDouble/> */}
+            {sideOpen ? 'Close' : 'Open'}
           </button>
         </div>
         

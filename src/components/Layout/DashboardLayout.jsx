@@ -47,13 +47,13 @@ import { SideBar } from "../SideBar";
 import { useState } from "react";
 
 
-export const Layout = ({ active, children, isOpen }) => {
+export const Layout = ({ active, children }) => {
 
   
   const { pathname } = useLocation();
 
-  const [sideOpen, setOpen] = useState(true)
-
+  const [sideOpen, setOpens] = useState(true)
+  console.log(sideOpen)
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [pathname]);
@@ -66,7 +66,7 @@ export const Layout = ({ active, children, isOpen }) => {
       
       {/* Top Navbar */}
       <div className="w-full flex flex-col sticky top-0 lg:relative z-20">
-        <NavBar setOpen={setOpen} sideOpen={sideOpen} />
+        <NavBar setOpens={setOpens} sideOpen={sideOpen} />
       </div>
      
 
@@ -82,14 +82,15 @@ export const Layout = ({ active, children, isOpen }) => {
       <div className="flex flex-grow">
         {/* Sidebar for larger screens */}
 
-        <div className={`hidden xl:block xl:w-1/4 2xl:w-1/5 ${isOpen ? 'w-64' : 'w-20'}`}>
+        <div className={`hidden xl:block  ${sideOpen ? 'xl:w-1/4 2xl:w-1/5 ' : 'w-20'}`}>
 
+        {/* xl:w-1/4 2xl:w-1/5 */}
 
           <SideBar active={active} sideOpen={sideOpen} />
         </div>
 
         {/* Main Content Area */}
-        <main className="w-full xl:w-full 2xl:w-4/5 px-[10px] md:p-[32px] bg-white lg:bg-[#fbfbfb]">
+        <main className=" w-full px-[10px] md:p-[32px] bg-white lg:bg-[#fbfbfb]">
           {children}
         </main>
       </div>

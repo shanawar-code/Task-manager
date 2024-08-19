@@ -26,15 +26,18 @@ function MyTaskCard() {
   return (
     <>
     <div className=''>
-    <div className='flex items-center justify-center sm:justify-start flex-wrap xl:flex-nowrap gap-4 w-full xl:w-[75vw] scrollbar-none overflow-x-scroll '>
-       {Array(10).fill().map((_,index)=>{
+    <div className='flex items-center justify-center sm:justify-start flex-wrap xl:flex-nowrap gap-4  scrollbar-none overflow-x-scroll '>
+       {Array(4).fill().map((_,index)=>{
            return(
                <>
         <div className='my-5 '>
         <HeadingCard title={'TODAY'} value={'2'}/>
-       <div className=' h-[70vh] md:h-[40vh] 2xl:h-[50vh] overflow-y-auto scrollbar-none overflow-x-hidden my-5'>
+       <div className=' h-[70vh] md:h-[40vh] 2xl:h-[50vh] overflow-y-auto scrollbar-none overflow-x-hidden my-5 '>
        < TaskDataCard handleClick={()=>{handleShowPopup(index)}} title={'MOBILE APP'} value1={'2'} value2={'4'} bgcolor={'bg-[#efeeff]'} textcolor={'text-[#5046e4]'} descrip={'Grocery Mobile App'}/>
        < TaskDataCard handleClick={()=>{handleShowPopup(index)}} title={'LANDING PAGE'} value1={'5'} value2={'8'} bgcolor={'bg-[#fff7ea]'} textcolor={'text-[#f4a012]'} descrip={'MR Corporation Website'}/>
+       < TaskDataCard handleClick={()=>{handleShowPopup(index)}} title={'DASHBOARD'} value1={'3'} value2={'6'} bgcolor={'bg-[#ffebf5]'} textcolor={'text-[#e94a9b]'} descrip={'Grocery Dashboard'}/>
+       < TaskDataCard handleClick={()=>{handleShowPopup(index)}} title={'MOBILE APP'} value1={'2'} value2={'4'} bgcolor={'bg-[#efeeff]'} textcolor={'text-[#5046e4]'} descrip={'Grocery Mobile App'}/>
+       {/* < TaskDataCard handleClick={()=>{handleShowPopup(index)}} title={'LANDING PAGE'} value1={'5'} value2={'8'} bgcolor={'bg-[#fff7ea]'} textcolor={'text-[#f4a012]'} descrip={'MR Corporation Website'}/>
        < TaskDataCard handleClick={()=>{handleShowPopup(index)}} title={'DASHBOARD'} value1={'3'} value2={'6'} bgcolor={'bg-[#ffebf5]'} textcolor={'text-[#e94a9b]'} descrip={'Grocery Dashboard'}/>
        < TaskDataCard handleClick={()=>{handleShowPopup(index)}} title={'MOBILE APP'} value1={'2'} value2={'4'} bgcolor={'bg-[#efeeff]'} textcolor={'text-[#5046e4]'} descrip={'Grocery Mobile App'}/>
        < TaskDataCard handleClick={()=>{handleShowPopup(index)}} title={'LANDING PAGE'} value1={'5'} value2={'8'} bgcolor={'bg-[#fff7ea]'} textcolor={'text-[#f4a012]'} descrip={'MR Corporation Website'}/>
@@ -53,10 +56,7 @@ function MyTaskCard() {
        < TaskDataCard handleClick={()=>{handleShowPopup(index)}} title={'DASHBOARD'} value1={'3'} value2={'6'} bgcolor={'bg-[#ffebf5]'} textcolor={'text-[#e94a9b]'} descrip={'Grocery Dashboard'}/>
        < TaskDataCard handleClick={()=>{handleShowPopup(index)}} title={'MOBILE APP'} value1={'2'} value2={'4'} bgcolor={'bg-[#efeeff]'} textcolor={'text-[#5046e4]'} descrip={'Grocery Mobile App'}/>
        < TaskDataCard handleClick={()=>{handleShowPopup(index)}} title={'LANDING PAGE'} value1={'5'} value2={'8'} bgcolor={'bg-[#fff7ea]'} textcolor={'text-[#f4a012]'} descrip={'MR Corporation Website'}/>
-       < TaskDataCard handleClick={()=>{handleShowPopup(index)}} title={'DASHBOARD'} value1={'3'} value2={'6'} bgcolor={'bg-[#ffebf5]'} textcolor={'text-[#e94a9b]'} descrip={'Grocery Dashboard'}/>
-       < TaskDataCard handleClick={()=>{handleShowPopup(index)}} title={'MOBILE APP'} value1={'2'} value2={'4'} bgcolor={'bg-[#efeeff]'} textcolor={'text-[#5046e4]'} descrip={'Grocery Mobile App'}/>
-       < TaskDataCard handleClick={()=>{handleShowPopup(index)}} title={'LANDING PAGE'} value1={'5'} value2={'8'} bgcolor={'bg-[#fff7ea]'} textcolor={'text-[#f4a012]'} descrip={'MR Corporation Website'}/>
-       < TaskDataCard handleClick={()=>{handleShowPopup(index)}} title={'DASHBOARD'} value1={'3'} value2={'6'} bgcolor={'bg-[#ffebf5]'} textcolor={'text-[#e94a9b]'} descrip={'Grocery Dashboard'}/>
+       < TaskDataCard handleClick={()=>{handleShowPopup(index)}} title={'DASHBOARD'} value1={'3'} value2={'6'} bgcolor={'bg-[#ffebf5]'} textcolor={'text-[#e94a9b]'} descrip={'Grocery Dashboard'}/> */}
        {popupCardIndex === index && showPopup && <GroceryDialog show={showPopup} onClose={handleClosePopup} />}
         </div>
         <div className=' sticky bottom-6 flex items-center justify-center'>
