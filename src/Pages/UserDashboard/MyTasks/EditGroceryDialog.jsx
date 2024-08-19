@@ -1,32 +1,15 @@
 import React from "react";
 import { useState, useEffect, useRef } from "react";
-import { Input } from "../../components/Input";
-import Button from "../../components/Button";
+import { Input } from "../../../components/Input";
+import Button from "../../../components/Button";
 import { useNavigate } from "react-router-dom";
-import Svgs from '../../assets/svgs/Index.js'
-import CreateTaskDialog from "./CreateTaskDialog.jsx";
-import SelectDropdown from "../../components/SelectDropdown.jsx";
-import SuccessfulDialog from "../../components/Elements/SuccessfulDialog.jsx";
+import Svgs from '../../../assets/svgs/Index.js'
+import SelectDropdown from "../../../components/SelectDropdown.jsx";
+import SuccessfulDialog from "../../../components/Elements/SuccessfulDialog.jsx";
+
+
 function EditGroceryDialog({ show, onClose, hidden }) {
-  const navigate = useNavigate();
-  const handleSubmit = (e) => {
-    e.preventDefault();
-  };
-
-  const [showPopup, setShowPopup] = useState(false);
-
-  const handleShowPopup = () => {
-    setShowPopup(true);
-    console.log('*********************POpup')
-  };
-
-  const handleClosePopup = () => {
-    setShowPopup(false);
-    console.log('*********************POpup')
-  };
-
-
-
+ 
   const [showSuccessfulPopup, setShowSuccessfulPopup] = useState(false);
 
   const handleShowSuccessfulPopup = () => {
@@ -127,16 +110,11 @@ function EditGroceryDialog({ show, onClose, hidden }) {
                   <Svgs.Oction_download/>
                 </span>
               </button>
-              <button onClick={handleShowPopup} className=" border border-[#f7585c] rounded-xl px-[12px] py-[11.5px] flex items-center gap-4 ">
+              <button  className=" border border-[#f7585c] rounded-xl px-[12px] py-[11.5px] flex items-center gap-4 ">
                 <span><Svgs.DocumentRedIcon/></span>
                 <h1 className="text-[#f7585c] text-base font-medium font-public-sans">Add attachments</h1>
               </button>
-              {showPopup && (
-                <CreateTaskDialog
-                  show={showPopup}
-                  onClose={handleClosePopup}
-                />
-              )}
+             
             </div>
           </div>
         </div>

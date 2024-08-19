@@ -120,7 +120,7 @@ function CalendarDialog({ show, onClose, hidden}) {
   return (
     <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
     <div ref={popupRef}>
-      <form onSubmit={handleSubmit}>
+     
         <div className=" mx-auto p-5 scroll-smooth bg-white rounded-xl border">
         <div className="w-80 mx-auto p-4 rounded-lg">
       {renderHeader()}
@@ -128,7 +128,7 @@ function CalendarDialog({ show, onClose, hidden}) {
       {renderCells()}
     </div>
         </div>
-      </form>
+     
     </div>
   </div>
   )

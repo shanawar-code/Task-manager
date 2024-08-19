@@ -1,10 +1,11 @@
 import React from "react";
 import { useState, useEffect, useRef } from "react";
-import { Input } from "../../components/Input";
-import Button from "../../components/Button";
-import { AddIcon, Calender } from "../../assets/svgs/Index";
-import SuccessfulDialog from "../../components/Elements/SuccessfulDialog";
-import CalendarDialog from "./CalendarDialog";
+import { Input } from "../../../components/Input.jsx";
+import Button from "../../../components/Button.jsx";
+import SuccessfulDialog from "../../../components/Elements/SuccessfulDialog.jsx";
+import CalendarDialog from "./CalendarDialog.jsx";
+import Svgs from '../../../assets/svgs/Index.js'
+
 
 function VerifiedSuccessful({ show, onClose }) {
   const handleSubmit = (e) => {
@@ -55,37 +56,29 @@ function VerifiedSuccessful({ show, onClose }) {
 
   return (
     <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
-      <div ref={popupRef} className="max-w-full  w-['848px'] md:h-auto flex items-center justify-center">
+      <div ref={popupRef} className="  flex items-center justify-center">
         <form onSubmit={handleSubmit}>
-          <div className=" p-5 bg-white shadow-lg rounded-xl border mx-5">
+          <div className=" p-5 bg-white shadow-lg rounded-xl border lg:w-[848px] mx-4">
             <div className="flex flex-col gap-3">
               <div className="flex items-center justify-center text-center">
-                <h1 className="text-2xl font-semibold font-public-sans text-gray-700">
+                <h1 className="text-xl md:text-2xl font-semibold font-public-sans text-gray-700">
                   Create a meeting
                 </h1>
               </div>
               <div>
-                <Input label={"Title"} className={"w-full"} />
+                <Input label={"Title"} className={"text-xs md:text-base"} />
               </div>
-              <div className="flex items-center gap-5">
+              <div className="grid grid-cols-2 gap-3">
                 <div className=" relative">
-                <Input label={"Date"} className={"max-w-full"} />
-                <img
-                  onClick={handleShowDialog}
-                  src="images/calendar.png"
-                  alt="Calendar"
-                  className="absolute right-4 top-[38px] cursor-pointer"
-                />
+                <Input label={"Date"} className={"text-base"} placeholder={'00/00/0000'}/>
+                <span  className="absolute right-4 top-[38px] cursor-pointer" onClick={handleShowDialog}><Svgs.CalendarIcon/></span>
                   {showDialog && (
                     <CalendarDialog show={showDialog} onClose={handleCloseDialog} />
                   )}
                 </div>
-                <div>
-                <Input
-                  label={"Select time"}
-                  className={"max-w-full"}
-                />
-
+                <div className=" relative">
+                <Input label={"Select time"} className={"text-base"} placeholder={'00:00'}/>
+                <span  className="absolute right-4 top-[38px] cursor-pointer" onClick={handleShowDialog}><Svgs.TimerIcon/></span>
                 </div>
               </div>
               <div>
@@ -95,8 +88,8 @@ function VerifiedSuccessful({ show, onClose }) {
                 >
                   Meeting notes
                 </label>
-                <textarea
-                  className="rounded-xl border w-full h-[130px] p-4 my-2 outline-none"
+                <textarea 
+                  className=" resize-none rounded-xl border w-full h-[130px] p-4 my-2 outline-none"
                   placeholder="Description"
                 ></textarea>
               </div>
@@ -114,7 +107,7 @@ function VerifiedSuccessful({ show, onClose }) {
                   className={"h-[48px] w-[162px]"}
                 />
                 {showPopup && (
-                  <SuccessfulDialog show={showPopup} onClose={handleClosePopup} />
+                  <SuccessfulDialog heading={'Meeting created successfully.'} show={showPopup} onClose={handleClosePopup} />
                 )}
               </div>
             </div>

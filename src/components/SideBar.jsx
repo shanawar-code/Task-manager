@@ -5,7 +5,7 @@ import Svgs from '../assets/svgs/Index.js'
 import { useLocation } from "react-router-dom";
 
 
-export const SideBar = ({active}) => {
+export const SideBar = ({active, sideOpen}) => {
     const location = useLocation();
 
 
@@ -57,6 +57,7 @@ console.log(active)
    
     return (
         <div className='flex flex-col relative left-0  bg-white py-8 px-3 border-r-2 w-full h-full items-center justify-between'>
+            {sideOpen && (
             <div className='w-full flex flex-col'>
                 {sideBarData.map((value, index)=>(
                     <div key={index}
@@ -72,6 +73,7 @@ console.log(active)
                       
                 )}
             </div>
+            )}
 
             <div
             onClick={()=>{navigate('/')}}

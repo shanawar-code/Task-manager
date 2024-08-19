@@ -1,11 +1,65 @@
 import React, { useState } from 'react';
 import Svgs from '../assets/svgs/Index.js'
-export const DropdownSidebar = () => {
-  const [activeTab, setActiveTab] = useState('dashboard');
+import { useNavigate } from 'react-router-dom';
+
+
+
+
+export const DropdownSidebar = ({active}) => {
+
+const navigate = useNavigate()
+
+  const [activeTab, setActiveTab] = useState(active);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
+  const sideBarData =[
+    {
+        name: 'Dashboard',
+        icon: <Svgs.Dashboard color={active === 'Dashboard' ? '#fff' : '#828282'}/>,
+        navigate: '/dashboard',
+        active: active === 'Dashboard'? true: false,
+    },
+    {
+        name: 'My Tasks',
+        icon: <Svgs.MyTasks color={active === 'My Tasks' ? '#fff' : '#828282'}/>,
+        navigate: '/my-tasks',
+        active: active=== 'My Tasks'? true: false,
+    },
+    {
+        name: 'My Team',
+        icon: <Svgs.Team color={active === 'My Team' ? '#fff' : '#828282'}/>,
+        navigate: '/my-team',
+        active: active=== 'My Team'? true: false,
+    },
+    {
+        name: 'Chat',
+        icon: <Svgs.Chat color={active === 'Chat' ? '#fff' : '#828282'}/>,
+        navigate: '/chat',
+        active: active=== 'Chat'? true: false,
+    },
+    {
+        name: 'Attendance & Leave',
+        icon: <Svgs.AttendanceSvg color={active === 'Attendance & Leave' ? '#fff' : '#828282'}/>,
+        navigate: '/attendance-leave',
+        active: active=== 'Attendance & Leave'? true: false,
+    },
+    {
+        name: 'My profile',
+        icon: <Svgs.Setting color={active === 'My profile' ? '#fff' : '#828282'}/>,
+        navigate: '/my-profile',
+        active: active=== 'My profile'? true: false,
+    },
+]
+
+const handleSideBarClick=(path)=>{
+  navigate(path)
+}
+
+
+
+
   const handleTabClick = (value) => {
-    setActiveTab(value);
+   
     setIsDropdownOpen(false); // close dropdown after selecting a tab
   };
 
@@ -14,17 +68,17 @@ export const DropdownSidebar = () => {
   };
 
   return (
-    <div className='relative'>
+    <div className='relative mx-2'>
       {/* Toggle Button for Dropdown */}
       <button 
         onClick={toggleDropdown} 
-        className='bg-white p-4 rounded-lg flex items-center justify-between w-full'
+        className='bg-white p-4 my-2 rounded-lg flex items-center justify-between w-full border-2 border-[#fc6e73]'
       >
-        <span className='text-gray-700'>Menu</span>
+        <span className='text-gray-700 bg-btn-gradient text-transparent bg-clip-text'>{activeTab}</span>
         <svg
           className={`w-5 h-5 transition-transform duration-300 ${isDropdownOpen ? 'rotate-180' : ''}`}
           fill="none"
-          stroke="currentColor"
+          stroke="#fc6e73"
           viewBox="0 0 24 24"
           xmlns="http://www.w3.org/2000/svg"
         >
@@ -34,73 +88,31 @@ export const DropdownSidebar = () => {
 
       {/* Sidebar Content as Dropdown */}
       {isDropdownOpen && (
-        <div className='flex flex-col absolute left-0 mt-2 px-4 bg-white py-8 border-r-2 w-full h-auto items-center justify-between z-10'>
+        <div className='flex flex-col left-0  bg-white py-3  w-full h-auto items-center justify-between z-10'>
           <div className='w-full flex flex-col'>
-            {/* Dashboard Tab */}
-            <div 
-              onClick={() => handleTabClick('dashboard')}
-              className={`${activeTab === 'dashboard' ? 'bg-gradient-to-r from-[#F33F41] to-[#FB6D72]' : ''} p-4 rounded-lg flex flex-row space-x-4 w-full cursor-pointer`}
-            >
-              <Svgs.Dashboard color={activeTab === 'dashboard' ? '#fff' : '#828282'} />
-              <p className={`${activeTab === 'dashboard' ? 'text-white' : 'text-gray-400'} text-base font-normal font-public-sans`}>
-                Dashboard
-              </p>
+                {sideBarData.map((value, index)=>(
+                    <div key={index}
+                    onClick={()=>{handleSideBarClick(value.navigate)}}
+                        className={`${ value.active === true ? ' bg-btn-gradient ':'bg-white'} p-4 rounded-lg flex flex-row space-x-4 w-full cursor-pointer`}>
+                         {<p>{value.icon}</p>}   {/* < color={value?.active===true? '#fff': '#828282'} /> */}
+                        <p className={`${value?.active===true ? 'text-white text-base font-normal font-public-sans ': 'text-gray-4 text-base font-normal font-public-sans' }`} >
+                            {value.name}
+                        </p>
+                    </div>  
+                      
+                )       
+                      
+                )}
             </div>
 
-            {/* Other tabs (MyTasks, Team, Chat, Attendance, Setting) */}
-            {/* ... Add the remaining tabs in a similar fashion ... */}
-
-            <div onClick={() => handleTabClick('mytasks')}
-              className={`${activeTab === 'mytasks' ? 'bg-gradient-to-r from-[#F33F41] to-[#FB6D72]' : ''} p-4 rounded-lg flex flex-row space-x-4 w-full cursor-pointer`}>
-              <Svgs.MyTasks color={activeTab === 'mytasks' ? '#fff' : '#828282'} />
-              <p className={`${activeTab === 'mytasks' ? 'text-white text-base font-normal font-public-sans ' : 'text-gray-400 text-base font-normal font-public-sans'}`} >
-                My Tasks
-              </p>
+            <div
+            onClick={()=>{navigate('/')}}
+                className='bg-white p-4 cursor-pointer rounded-lg flex flex-row space-x-4 text-[#828282] w-full'>
+                    <Svgs.Logout/>
+                <p>
+                    Logout
+                </p>
             </div>
-
-            <div onClick={() => handleTabClick('team')}
-              className={`${activeTab === 'team' ? 'bg-gradient-to-r from-[#F33F41] to-[#FB6D72]' : ''} p-4 rounded-lg flex flex-row space-x-4 w-full cursor-pointer`}>
-              <Svgs.Team color={activeTab === 'team' ? '#fff' : '#828282'} />
-              <p className={`${activeTab === 'team' ? 'text-white text-base font-normal font-public-sans ' : 'text-gray-400 text-base font-normal font-public-sans'}`} >
-                Team
-              </p>
-            </div>
-
-            <div onClick={() => handleTabClick('chat')}
-              className={`${activeTab === 'chat' ? 'bg-gradient-to-r from-[#F33F41] to-[#FB6D72]' : ''} p-4 rounded-lg flex flex-row space-x-4 w-full cursor-pointer`}>
-              <Svgs.Chat color={activeTab === 'chat' ? '#fff' : '#828282'} />
-              <p className={`${activeTab === 'chat' ? 'text-white text-base font-normal font-public-sans ' : 'text-gray-400 text-base font-normal font-public-sans'}`} >
-                Chat
-              </p>
-            </div>
-
-            <div onClick={() => handleTabClick('attendanc')}
-              className={`${activeTab === 'attendanc' ? 'bg-gradient-to-r from-[#F33F41] to-[#FB6D72]' : ''} p-4 rounded-lg flex flex-row space-x-4 w-full cursor-pointer`}>
-              <Svgs.AttendanceSvg color={activeTab === 'attendanc' ? '#fff' : '#828282'} />
-              <p className={`${activeTab === 'attendanc' ? 'text-white text-base font-normal font-public-sans ' : 'text-gray-400 text-base font-normal font-public-sans'}`} >
-                Attendance
-              </p>
-            </div>
-
-            <div onClick={() => handleTabClick('Setting')}
-              className={`${activeTab === 'Setting' ? 'bg-gradient-to-r from-[#F33F41] to-[#FB6D72]' : ''} p-4 rounded-lg flex flex-row space-x-4 w-full cursor-pointer`}>
-              <Svgs.Setting color={activeTab === 'Setting' ? '#fff' : '#828282'} />
-              <p className={`${activeTab === 'Setting' ? 'text-white text-base font-normal font-public-sans ' : 'text-gray-400 text-base font-normal font-public-sans'}`} >
-                Setting
-              </p>
-            </div>
-          </div>
-
-          <div
-            className='bg-white p-4 rounded-lg flex flex-row space-x-4 text-[#828282] w-full cursor-pointer'>
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M11.7988 2H5C3.34315 2 2 3.34315 2 5V19C2 20.6569 3.34315 22 5 22H11.7988" stroke="#828282" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" />
-              <path d="M17.4931 7.49304L22 11.9862L17.4931 16.493" stroke="#828282" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" />
-              <path d="M22 11.993H8.1485" stroke="#828282" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" />
-            </svg>
-
-            <p>Logout</p>
-          </div>
         </div>
       )}
     </div>

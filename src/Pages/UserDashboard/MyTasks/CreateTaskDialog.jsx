@@ -1,10 +1,10 @@
 import React from "react";
 import { useState, useEffect, useRef } from "react";
-import { Input } from "../../components/Input";
-import Button from "../../components/Button";
-import SuccessfulDialog from "../../components/Elements/SuccessfulDialog";
-import Svgs from '../../assets/svgs/Index.js'
-import SelectDropdown from "../../components/SelectDropdown.jsx";
+import { Input } from "../../../components/Input";
+import Button from "../../../components/Button";
+import SuccessfulDialog from "../../../components/Elements/SuccessfulDialog";
+import Svgs from '../../../assets/svgs/Index.js'
+import SelectDropdown from "../../../components/SelectDropdown.jsx";
 
 
 function CreateTaskDialog({ show, onClose }) {

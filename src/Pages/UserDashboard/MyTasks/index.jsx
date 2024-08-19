@@ -1,13 +1,22 @@
 import React from 'react'
-import Button from '../../components/Button'
-import { Layout } from '../../components/Layout/DashboardLayout'
+import Button from '../../../components/Button'
+import { Layout } from '../../../components/Layout/DashboardLayout'
 import MyTaskCard from './MyTaskCard'
-import Svgs from '../../assets/svgs/Index.js'
+import Svgs from '../../../assets/svgs/Index.js'
+import { useState } from 'react'
+import CreateTaskDialog from './CreateTaskDialog.jsx'
+
+
 function Tasks() {
+
+   
+  
+
+
   return (
     <>
     <Layout active={'My Tasks'}>
-    <div className=''>
+    <div className='my-5'>
         <div className='flex flex-wrap items-center justify-center sm:justify-between'>
             <div className='flex flex-col gap-4'>
                 <div>
@@ -22,13 +31,14 @@ function Tasks() {
                 </div>
             </div>
             <div className='flex flex-col sm:flex-row items-center justify-center md:justify-start gap-5 my-5'>
-
+                <div className='flex items-center gap-4'>
             <span className='cursor-pointer w-[32px] h-[32px] flex items-center justify-center bg-[#f3f3f3] rounded-full'><Svgs.AddPeople/></span>
             <span className='cursor-pointer w-[32px] h-[32px] flex items-center justify-center bg-[#f3f3f3] rounded-full'><Svgs.ShareGray/></span>
-                
-                {/* <button className="flex items-center justify-center w-[149px] h-[40px] gap-3 bg-btn-gradient text-white text-sm font-semibold font-public-sans rounded-lg"><img src={'images/Icon.png'} alt="" />Add new Card</button> */}
-                <Button className={'flex items-center justify-center gap-4'} customPadding={'px-[16px] py-[8px]'} text={<><Svgs.AddIconWhite /> Add new card </>}/>
-              
+                </div>
+                <div>
+                <Button  className={'flex items-center justify-center gap-4'} customPadding={'px-[16px] py-[8px]'} text={<><Svgs.AddIconWhite /> Add new card </>}/>
+                </div>
+               
             </div>
         </div>
     </div>

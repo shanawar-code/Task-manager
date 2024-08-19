@@ -12,7 +12,7 @@ function Cards({ tasks, value, tasksCount , svg}) {
             </h1>
           </div>
           <div className="flex items-center justify-between">
-            <h1 className=" text-2xl font-semibold font-public-sans text-[#161617]">
+            <h1 className=" text-xl md:text-2xl font-semibold font-public-sans text-[#161617]">
               {value}
             </h1>
             <span>{svg}</span>

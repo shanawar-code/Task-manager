@@ -1,5 +1,5 @@
 import React from 'react'
-import Svgs from '../../assets/svgs/Index.js'
+import Svgs from '../../../assets/svgs/Index.js'
 function HeadingCard({title, value}) {
   return (
     <>

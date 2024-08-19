@@ -1,24 +1,25 @@
 import React from 'react'
-import { Layout } from '../../components/Layout/DashboardLayout.jsx'
-import Svgs from '../../assets/svgs/Index.js'
-import RoundedCard from '../../components/Elements/RoundedCard.jsx'
-import Button from '../../components/Button.jsx'
-import Calendar from './Calendar.jsx'
-import ReviweLeaveDialog from './ReviewLeaveDialog.jsx'
+import { Layout } from '../../../components/Layout/DashboardLayout.jsx'
+import Svgs from '../../../assets/svgs/Index.js'
+import RoundedCard from '../../../components/Elements/RoundedCard.jsx'
+import Button from '../../../components/Button.jsx'
 import { useState } from 'react'
+import SuccessfulDialog from '../../../components/Elements/SuccessfulDialog.jsx'
 
 
-function AttendanceAndLeave() {
+
+function MyTeam() {
 
   const cardData=[
     {
-      icon: <Svgs.Count1/>,
+      src: 'images/catherine.png',
       padding_x: 'px-6',
       border_b: 'border-b-[1px]',
       padding_y: 'py-4',
+      stats: 'Team Manager'
     },
     {
-      icon: <Svgs.Count2/>,
+      src: 'images/annaa.png',
       padding_x: 'px-6',
       border_b: 'border-b-[1px]',
       padding_y: 'py-4',
@@ -27,7 +28,13 @@ function AttendanceAndLeave() {
       textColor: 'text-[#00b037]',
     },
     {
-      icon: <Svgs.Count3/>,
+      src: 'images/ortan.png',
+      padding_x: 'px-6',
+      padding_y: 'py-4',
+      border_b: 'border-b-[1px]',
+    },
+    {
+      src: 'images/jessy.png',
       padding_x: 'px-6',
       padding_y: 'pt-4',
     },
@@ -35,6 +42,7 @@ function AttendanceAndLeave() {
 
   const [showPopup, setShowPopup] = useState(false)
   const [popupindex, setPopupindex] = useState(null)
+  
   const handleShowPopup=(index)=>{
     setShowPopup(true)
     setPopupindex(index)
@@ -46,14 +54,27 @@ function AttendanceAndLeave() {
   }
 
 
+  const [showApplyLeave, setShowApplyLeave] = useState(false)
+
+  const handleShowApplyLeave=(index)=>{
+    setShowApplyLeave(true)
+  
+  }
+
+  const handleCloseApplyLeave=(index)=>{
+    setShowApplyLeave(false)
+ 
+  }
+
+
   return (
     <>
-    <Layout active={'Attendance & Leave'}>
+    <Layout active={'My Team'}>
     <div className=''>
         <div className='flex flex-wrap items-center justify-center sm:justify-between'>
             <div className='flex flex-col gap-4'>
                 <div>
-                    <h1 className=' text-2xl font-bold font-public-sans text-gray-1'>Team memeber</h1>
+                    <h1 className=' text-2xl font-bold font-public-sans text-gray-1'>Team Memeber</h1>
                 </div>
                 <div className='flex items-center'>
                     <img src='images/member1.png' alt="" />
@@ -64,25 +85,32 @@ function AttendanceAndLeave() {
                 </div>
             </div>
             <div className='flex flex-wrap items-center justify-center md:justify-start gap-5'>
-              <Button className={' text-sm font-semibold font-public-sans text-white flex items-center gap-3'} customPadding={'px-3 py-2'} text={<><Svgs.AddWhiteIcon/> Apply leave</>} />
+              <Button handleClick={handleShowApplyLeave} className={' text-sm font-semibold font-public-sans text-white flex items-center gap-3'} customPadding={'px-3 py-2'} text={<><Svgs.AddWhiteIcon/> Create team</>} />
+              {/* {showApplyLeave && (<SuccessfulDialog  show={showApplyLeave} onClose={handleCloseApplyLeave}/>)} */}
             </div>
         </div>
     </div>
     <div className='grid grid-cols-12 gap-5 my-8'>
       <div className=' col-span-12 lg:col-span-8'>
       <RoundedCard customPadding={'py-6'} className={'overflow-x-auto min-w-[350px]'}>
-        <div className=' mb-8 px-6'>
-          <h1 className=' text-base font-semibold font-epilogue text-gray-1'>Leave requests</h1>
+        <div className=' mb-8 px-6 flex items-center justify-between'>
+          <div className='flex items-center gap-[11px]'>
+          <h1 className=' text-base font-semibold font-epilogue text-gray-1'>Python developer team</h1>
+          <span><Svgs.WritingPencil/></span>
+          </div>
+          <div>
+          <Button text={'Add new member'} customPadding={'px-[12px] py-[8px]'}/>
+          </div>
         </div>
         {cardData.map((value, index)=>(
         <div key={index} className={` ${value.padding_x} ${value.border_b} ${value.padding_y} flex items-center justify-between `}>
           <div className='1 flex items-center gap-3'>
             <div>
-              {value.icon}
+              <img src={value.src} alt="" />
             </div>
-            <div className='flex flex-col gap-3'>
+            <div className='flex flex-col gap-[6px]'>
               <h1 className=' text-sm font-semibold font-public-sans text-gray-1'>Anna</h1>
-              <h1 className=' text-sm font-normal font-public-sans text-gray-2'>Urgent leave</h1>
+              <h1 className={` text-xs font-normal font-public-sans text-[#00B037]`}>{value.stats}</h1>
             </div>
           </div>
           <div className='2 flex flex-col gap-3'>
@@ -96,10 +124,7 @@ function AttendanceAndLeave() {
             </div>
           </div>
           <div className='4'>
-            <div>
-              <button onClick={()=>{handleShowPopup(index)}} className='flex items-center justify-center text-sm font-semibold font-public-sans text-gray-1 px-[12.5px] py-[7px] rounded-lg border w-[72px]'>Review</button>
-              { popupindex===index && showPopup && (<ReviweLeaveDialog  show={showPopup} onClose={handleClosePopup}/>)}
-            </div>
+          
           </div>
         </div>
         ))}
@@ -154,7 +179,7 @@ function AttendanceAndLeave() {
       <div className=' col-span-12 lg:col-span-4'>
       <RoundedCard customPadding={'p-3'}>
       <div className=' calender'>
-      <Calendar/>
+    
       </div>
       <div className=''>
     <div className=' my-6'>
@@ -216,4 +241,4 @@ function AttendanceAndLeave() {
   )
 }
 
-export default AttendanceAndLeave
+export default MyTeam

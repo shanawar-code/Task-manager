@@ -1,9 +1,9 @@
 import React from "react";
 import { useState, useEffect, useRef } from "react";
-import { Input } from "../../components/Input";
-import Button from "../../components/Button";
+import { Input } from "../../../components/Input";
+import Button from "../../../components/Button";
 import { useNavigate } from "react-router-dom";
-import Svgs from '../../assets/svgs/Index.js'
+import Svgs from '../../../assets/svgs/Index.js'
 import CreateTaskDialog from "./CreateTaskDialog.jsx";
 import EditGroceryDialog from "./EditGroceryDialog.jsx";
 import ShareGroceryDialog from "../Chat/ShareGroceryDialog.jsx";

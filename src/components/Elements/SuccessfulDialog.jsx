@@ -37,7 +37,7 @@ function SuccessfulDialog({ show, onClose ,hidden, heading, onClick}) {
     <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
       <div ref={popupRef}>
         <form onSubmit={handleSubmit}>
-          <div className=" mx-auto p-5 scroll-smooth bg-white shadow-lg rounded-xl border w-[360px]">
+          <div className=" mx-auto p-5 scroll-smooth bg-white shadow-lg rounded-xl border max-w-full sm:w-[360px]">
             <div className="flex flex-col gap-3">
               <div className=" flex items-center justify-center text-center">
                <img src={'images/roundedGreentick.png'} alt="" />

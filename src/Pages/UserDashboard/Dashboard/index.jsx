@@ -1,15 +1,15 @@
 import React from "react";
-import Cards from "../../components/Elements/DashboardCard.jsx";
+import Cards from "../../../components/Elements/DashboardCard.jsx";
 
 import { useState } from "react";
-import VerifiedSuccessful from "./VerifiedSuccessful.jsx";
-import Svgs from "../../assets/svgs/Index.js";
-import Button from "../../components/Button.jsx";
-import UltimateCard from "../../components/Elements/UltimateCard.jsx";
+import VerifiedSuccessful from "./CreateAMeeting.jsx";
+import Svgs from "../../../assets/svgs/Index.js";
+import Button from "../../../components/Button.jsx";
+import UltimateCard from "../../../components/Elements/UltimateCard.jsx";
 import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
-import { Layout } from "../../components/Layout/DashboardLayout.jsx";
-import RoundedCard from "../../components/Elements/RoundedCard.jsx";
+import { Layout } from "../../../components/Layout/DashboardLayout.jsx";
+import RoundedCard from "../../../components/Elements/RoundedCard.jsx";
 
 export function Dashboard() {
   const [showPopup, setShowPopup] = useState(false);
@@ -55,7 +55,7 @@ export function Dashboard() {
     <>
       <Layout active={"Dashboard"}>
         <div className="">
-          <div className=" grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
+          <div className=" grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-5">
             <Cards
               tasks={"My tasks"}
               tasksCount={"4 new tasks"}
@@ -114,7 +114,7 @@ export function Dashboard() {
                     </button>
                   </div>
 
-                  <div className="flex flex-col gap-10 md:flex-row items-center justify-between mx-10 my-10 md:my-20 ">
+                  <div className="flex flex-col gap-10 md:flex-row items-center justify-between mx-10 my-10 md:my-16 ">
                     {/* Expected Score */}
                     <div className="flex flex-col items-center">
                       <div className="w-40 h-40 relative">
@@ -277,6 +277,7 @@ export function Dashboard() {
                       );
                     })}
                     </div>
+                    <div className="flex items-center justify-center"><button className=" text-base font-normal font-public-sans text-gray-4 px-[4.5px] py-[3px] rounded-lg border">View all</button></div>
                 </RoundedCard>
             </div>
           </div>

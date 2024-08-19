@@ -1,10 +1,10 @@
 import React from "react";
 import { useState, useEffect, useRef } from "react";
-import SuccessfulDialog from "../../components/Elements/SuccessfulDialog";
+import SuccessfulDialog from "../../../components/Elements/SuccessfulDialog";
 
 
 
-function ReviweLeaveDialog({ show, onClose, content}) {
+function ReviweLeaveDialog({ show, onClose}) {
   
     const [showPopup, setShowPopup] = useState(false)
 
@@ -17,18 +17,6 @@ function ReviweLeaveDialog({ show, onClose, content}) {
     }
 
 
-    const [showGroceryPopup, setShowGroceryPopup] = useState(false)
-
-    const handleShowGroceryPopup=()=>{
-      setShowGroceryPopup(true)
-    }
-  
-    const handleCloseGroceryPopup=()=>{
-      setShowGroceryPopup(false)
-    }
-
-
-
   const popupRef = useRef();
 
   const handleClickOutside = (event) => {
@@ -36,6 +24,24 @@ function ReviweLeaveDialog({ show, onClose, content}) {
       onClose();
     }
   };
+
+
+  useEffect(() => {
+    if (show || showPopup) {
+      // Disable scrolling on the background when the popup is open
+      document.body.style.overflow = "hidden";
+    } else {
+      // Enable scrolling again when the popup is closed
+      document.body.style.overflow = "auto";
+    }
+
+    return () => {
+      // Clean up by enabling scrolling when the component unmounts
+      document.body.style.overflow = "auto";
+    };
+  }, [show, showPopup]);
+  
+
 
   useEffect(() => {
     if (show) {
@@ -52,8 +58,9 @@ function ReviweLeaveDialog({ show, onClose, content}) {
   if (!show) return null;
 
   return (
-    <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">   
-          <div ref={popupRef} className="bg-white shadow-lg rounded-xl border p-6 max-w-[528px] mx-2 overflow-y-auto max-h-full scrollbar-black">
+    <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
+     <div className="py-3 h-full">
+          <div ref={popupRef} className="bg-white shadow-lg rounded-xl border p-6 w-[528px] mx-2 overflow-y-auto h-full">
           <div className="flex items-center justify-center">
             <h1 className=" text-2xl font-semibold font-public-sans text-gray-1">Review leave</h1>
           </div>
@@ -87,7 +94,9 @@ function ReviweLeaveDialog({ show, onClose, content}) {
             <button onClick={handleShowPopup} className="px-[24px] py-[14.5px] text-base font-bold font-mulish text-gray-2 border rounded-xl hover:bg-gray-4 hover:text-white">Approve</button>
             { showPopup && (<SuccessfulDialog heading={'Leave approved'}  show={showPopup} onClose={handleClosePopup}/>)}
           </div>
-          </div>
+         
+      </div>
+      </div>
       </div>
   );
 }

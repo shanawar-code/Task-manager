@@ -1,16 +1,15 @@
 import "./App.css";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
-import { Dashboard } from "./Pages/Dashboard/index";
-import Employees from "./Pages/Employees/index";
-import Tasks from "./Pages/My Tasks/index";
-import MyTaskCard from "./Pages/My Tasks/MyTaskCard";
+import { Dashboard } from "./Pages/UserDashboard/Dashboard/index";
+import Employees from "./Pages/UserDashboard/Employees/index";
+import Tasks from "./Pages/UserDashboard/MyTasks/index";
+import MyTaskCard from "./Pages/UserDashboard/MyTasks/MyTaskCard";
 import { LoginPage } from "./Pages/Auth/LogIn/index";
 import { SignUpPage } from "./Pages/Auth/SignUp/index";
-import { Layout } from "./components/Layout/DashboardLayout";
-import AttendanceAndLeave from "./Pages/Attendance and Leave";
-import MyTeam from "./Pages/MY Team";
-import MyProfile from "./Pages/My Profile";
-import Chat from "./Pages/Chat";
+import AttendanceAndLeave from "./Pages/UserDashboard/AttendanceAndLeave";
+import MyTeam from "./Pages/UserDashboard/MYTeam";
+import MyProfile from "./Pages/UserDashboard/MyProfile";
+import Chat from "./Pages/UserDashboard/Chat";
 
 function App() {
   const router = createBrowserRouter([
