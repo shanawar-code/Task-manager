@@ -53,7 +53,7 @@ function MyProfile() {
   return (
     <>
     <Layout active={'My profile'}>
-      <div className='grid grid-cols-3 gap-5'>
+      <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5'>
        <RoundedCard>
         <div className='flex items-center gap-5'>
           <div>
@@ -146,8 +146,8 @@ function MyProfile() {
        </RoundedCard>
       </div>
       <div className='grid grid-cols-12 my-6 gap-5'>
-        <div className=' col-span-8'>
-          <RoundedCard>
+        <div className=' col-span-12 md:col-span-8'>
+          <RoundedCard customPadding={'px-[40px]'}>
           <div className='flex items-center justify-between'>
           <h1 className=' text-xl font-semibold font-public-sans text-gray-1'>Skills</h1>
           <Svgs.WritingPencil/>
@@ -180,7 +180,7 @@ function MyProfile() {
             </div>
           </RoundedCard>
         </div>
-        <div className=' col-span-4'>
+        <div className=' col-span-12 md:col-span-4'>
         <RoundedCard>
         <div className='flex items-center justify-between'>
           <h1 className=' text-xl font-semibold font-public-sans text-gray-1'>Salary information</h1>

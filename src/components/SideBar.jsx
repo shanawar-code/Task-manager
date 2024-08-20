@@ -3,12 +3,17 @@ import { AttendanceSvg, Chat, Dashboard, Logout, MyTasks, Setting, Team } from '
 import { useNavigate } from 'react-router-dom'
 import Svgs from '../assets/svgs/Index.js'
 import { useLocation } from "react-router-dom";
+import { useSidebarContext } from '../Context/ContextLayout.jsx';
+
+export const SideBar = ({active}) => {
+
+    const {sidebarOpen} = useSidebarContext(true)
 
 
-export const SideBar = ({active, sideOpen}) => {
+
     const location = useLocation();
 
-    console.log('*********** i am here working', sideOpen)
+    console.log('*********** i am here working', sidebarOpen)
 // console.log(active)
     const navigate = useNavigate() ;
 
@@ -64,10 +69,12 @@ export const SideBar = ({active, sideOpen}) => {
                     <div key={index}
                     onClick={()=>{handleSideBarClick(value.navigate)}}
                         className={`${ value.active === true ? ' bg-btn-gradient ':'bg-white'} p-4 rounded-lg flex flex-row space-x-4 w-full cursor-pointer`}>
-                         {<p>{value.icon}</p>}   {/* < color={value?.active===true? '#fff': '#828282'} /> */}
+                         {<p>{value.icon}</p>}
                         <p className={`${value?.active===true ? 'text-white text-base font-normal font-public-sans ': 'text-gray-4 text-base font-normal font-public-sans' }`} >
-                            {sideOpen ? value.name: ''}
+                            {sidebarOpen ? value.name: ''}
                         </p>
+
+                       
                     </div>  
                         
                 )                  
@@ -77,11 +84,9 @@ export const SideBar = ({active, sideOpen}) => {
 
             <div
             onClick={()=>{navigate('/')}}
-                className={`bg-white  cursor-pointer rounded-lg flex items-center ${sideOpen ? 'justify-start px-4 gap-4' : ' justify-center'} flex-row text-[#828282] w-full`}>
-                    <Svgs.Logout/>
-                <p>
-                {sideOpen ? 'Logout': ''}
-                </p>
+                className={`bg-white  cursor-pointer rounded-lg flex items-center ${sidebarOpen ? 'justify-start px-4 gap-4' : ' justify-center'} flex-row text-[#828282] w-full`}>
+                   <Svgs.Logout />
+                   {sidebarOpen && <p>Logout</p>}
             </div>
 
 

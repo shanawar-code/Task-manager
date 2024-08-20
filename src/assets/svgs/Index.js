@@ -286,15 +286,14 @@ const Tasks=()=>{
     )
 }
 
-const BackArrowDouble=()=>{
+const BackArrowDouble=({className})=>{
     return(
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className={className}>
         <path d="M18.9629 17.9297L12.9996 11.9664L18.9658 6.00015" stroke="#333333" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" />
         <path d="M11.9626 17.9297L5.99932 11.9664L11.9655 6.00015" stroke="#333333" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" />
       </svg>
     )
 }
-
 
 
 const Notification=()=>{
@@ -764,7 +763,77 @@ const PDF=()=>(
 <path fill-rule="evenodd" clip-rule="evenodd" d="M2.8 12H2V13H2.8C3.1 13 3.3 12.8 3.3 12.5C3.3 12.2 3.1 12 2.8 12ZM8 0H0V16H13V5L8 0ZM4.2 12.6C4.2 13.4 3.6 14 2.8 14H2V15H1V11H2.8C3.6 11 4.2 11.6 4.2 12.4V12.6ZM8.3 13.1C8.3 14.1 7.5 15 6.4 15H5V11H6.4C7.4 11 8.3 11.8 8.3 12.9V13.1ZM12 12H10V13H11.5V14H10V15H9V11H12V12ZM12 10H1V1H8V5H12V10ZM6.4 12H6V14H6.4C7 14 7.4 13.6 7.4 13C7.4 12.4 6.9 12 6.4 12Z" fill="#F54D4D"/>
 </svg>
 )
-export default {PDF ,HorizontalLine, TextMessage,Email,TodayLineIcon ,TimerIcon, AddIconWhite, CopyIcon, ZipIcon, VideoIcon , LogoFragment, DocsIcon, CrossIcon, AddWhiteIcon, VerticalGreenLine ,Count3, Count2, Count1, DocumentChatIcon, BlueIcon, SearchChatIcon ,AudioCallIcon ,VideoCallIcon ,GalleryIcon,SendIcon,OneIcon, AddIconRed, AddIconGray, ReplyIcon, Team, Chat, AttendanceSvg, Setting, Dashboard, MyTasks, Logout, MyLeave, Calender, Meeting, Tasks, BackArrowDouble, Notification, AddIcon, SearchBar, CalendarIcon, PasswordHide, PasswordShow, Verticaldots, PlayButton, Message, DocumentIcon, ShareIcon, WritingPencil, Four, ShareGray, AddPeople, Oction_download, DocumentRedIcon, WritingPencilBlue, ShareIconBlue}
+
+
+const ArrowLeft=({className})=>(
+    <svg
+    xmlns="http://www.w3.org/2000/svg"
+    xmlnsXlink="http://www.w3.org/1999/xlink"
+    version="1.1"
+    width="14"
+    height="10"
+    viewBox="0 0 256 256"
+    xmlSpace="preserve"
+    className={className}
+  >
+    <defs></defs>
+    <g
+      style={{
+        stroke: "none",
+        strokeWidth: 0,
+        strokeDasharray: "none",
+        strokeLinecap: "butt",
+        strokeLinejoin: "miter",
+        strokeMiterlimit: 10,
+        fill: "none",
+        fillRule: "nonzero",
+        opacity: 1,
+      }}
+      transform="translate(1.4065934065934016 1.4065934065934016) scale(2.81 2.81)"
+    >
+      <polygon
+        points="50.36,0 54.64,4.28 13.92,45 54.64,85.72 50.36,90 5.36,45"
+        style={{
+          stroke: "none",
+          strokeWidth: 1,
+          strokeDasharray: "none",
+          strokeLinecap: "butt",
+          strokeLinejoin: "miter",
+          strokeMiterlimit: 10,
+          fill: "rgb(0,0,0)",
+          fillRule: "nonzero",
+          opacity: 1,
+        }}
+        transform="matrix(1 0 0 1 0 0)"
+      />
+      <polygon
+        points="80.36,0 84.64,4.28 43.92,45 84.64,85.72 80.36,90 35.36,45"
+        style={{
+          stroke: "none",
+          strokeWidth: 1,
+          strokeDasharray: "none",
+          strokeLinecap: "butt",
+          strokeLinejoin: "miter",
+          strokeMiterlimit: 10,
+          fill: "rgb(0,0,0)",
+          fillRule: "nonzero",
+          opacity: 1,
+        }}
+        transform="matrix(1 0 0 1 0 0)"
+      />
+    </g>
+  </svg>
+)
+
+
+
+
+  
+  
+  
+  
+  
+export default {ArrowLeft ,PDF ,HorizontalLine, TextMessage,Email,TodayLineIcon ,TimerIcon, AddIconWhite, CopyIcon, ZipIcon, VideoIcon , LogoFragment, DocsIcon, CrossIcon, AddWhiteIcon, VerticalGreenLine ,Count3, Count2, Count1, DocumentChatIcon, BlueIcon, SearchChatIcon ,AudioCallIcon ,VideoCallIcon ,GalleryIcon,SendIcon,OneIcon, AddIconRed, AddIconGray, ReplyIcon, Team, Chat, AttendanceSvg, Setting, Dashboard, MyTasks, Logout, MyLeave, Calender, Meeting, Tasks, BackArrowDouble, Notification, AddIcon, SearchBar, CalendarIcon, PasswordHide, PasswordShow, Verticaldots, PlayButton, Message, DocumentIcon, ShareIcon, WritingPencil, Four, ShareGray, AddPeople, Oction_download, DocumentRedIcon, WritingPencilBlue, ShareIconBlue}
 
 
 

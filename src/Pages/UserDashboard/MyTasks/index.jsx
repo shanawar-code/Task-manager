@@ -42,7 +42,7 @@ function Tasks() {
             </div>
         </div>
     </div>
-    <div className='w-[75vw]'>
+    <div className=' w-full md:w-[75vw]'>
     <MyTaskCard/>
     </div>
     </Layout>

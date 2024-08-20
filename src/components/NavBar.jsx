@@ -2,16 +2,16 @@ import React from "react";
 import Svgs from '../assets/svgs/Index.js'
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
+import { useSidebarContext } from "../Context/ContextLayout.jsx";
 
 
+export const NavBar = () => {
 
-export const NavBar = ({setOpens, sideOpen}) => {
+  
 
-  // const [isOpen, setIsOpen] = useState(false);
+  const {sidebarOpen, setSidebarOpen} = useSidebarContext()
 
-  // const toggleSidebar = () => {
-  //   setIsOpen(!isOpen);
-  // };
+  
 
   const navigate = useNavigate()
   return (
@@ -20,9 +20,8 @@ export const NavBar = ({setOpens, sideOpen}) => {
         {/* Logo and Menu Button */}
         <div className="flex flex-row items-center space-x-4 md:gap-24">
             <img onClick={()=>{navigate('/')}} src={'images/logo.png'} alt="" className="w-[36px] h-[24px] lg:w-full lg:h-12 cursor-pointer" />
-          <button onClick={()=>{setOpens(!sideOpen)}} className="hidden xl:block cursor-pointer">
-            {/* <Svgs.BackArrowDouble/> */}
-            {sideOpen ? 'Close' : 'Open'}
+          <button onClick={()=>{setSidebarOpen(!sidebarOpen)}} className="hidden xl:block cursor-pointer">
+             <Svgs.BackArrowDouble  className={`w-5 h-5 transition-transform duration-500 ${sidebarOpen ? '' : 'rotate-180'}`}/>
           </button>
         </div>
         

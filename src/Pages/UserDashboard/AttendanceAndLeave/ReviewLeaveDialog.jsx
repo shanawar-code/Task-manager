@@ -60,7 +60,7 @@ function ReviweLeaveDialog({ show, onClose}) {
   return (
     <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
      <div className="py-3 h-full">
-          <div ref={popupRef} className="bg-white shadow-lg rounded-xl border p-6 w-[528px] mx-2 overflow-y-auto h-full">
+          <div ref={popupRef} className="bg-white shadow-lg rounded-xl border p-6 max-w-[528px] mx-2 overflow-y-auto h-full">
           <div className="flex items-center justify-center">
             <h1 className=" text-2xl font-semibold font-public-sans text-gray-1">Review leave</h1>
           </div>

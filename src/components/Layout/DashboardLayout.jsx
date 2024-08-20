@@ -45,15 +45,16 @@ import { NavBar } from "../NavBar";
 import { DropdownSidebar } from "../DropdownSidebar";
 import { SideBar } from "../SideBar";
 import { useState } from "react";
-
+import { useSidebarContext } from "../../Context/ContextLayout.jsx";
 
 export const Layout = ({ active, children }) => {
 
   
   const { pathname } = useLocation();
 
-  const [sideOpen, setOpens] = useState(true)
-  console.log(sideOpen)
+  const {sidebarOpen} = useSidebarContext(true)
+
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [pathname]);
@@ -66,7 +67,7 @@ export const Layout = ({ active, children }) => {
       
       {/* Top Navbar */}
       <div className="w-full flex flex-col sticky top-0 lg:relative z-20">
-        <NavBar setOpens={setOpens} sideOpen={sideOpen} />
+        <NavBar  />
       </div>
      
 
@@ -82,11 +83,11 @@ export const Layout = ({ active, children }) => {
       <div className="flex flex-grow">
         {/* Sidebar for larger screens */}
 
-        <div className={`hidden xl:block  ${sideOpen ? 'xl:w-1/4 2xl:w-1/5 ' : 'w-20'}`}>
+        <div className={`hidden xl:block   ${sidebarOpen ? 'xl:w-1/4 2xl:w-1/5' : 'w-20'}`}>
 
         {/* xl:w-1/4 2xl:w-1/5 */}
 
-          <SideBar active={active} sideOpen={sideOpen} />
+          <SideBar active={active} />
         </div>
 
         {/* Main Content Area */}
