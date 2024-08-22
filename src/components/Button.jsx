@@ -1,12 +1,12 @@
 import React from 'react'
 
-const Button = ({ text, className, type, handleClick }) => {
+const Button = ({ text, className, type, handleClick, customPadding}) => {
     return (
         <button
             onClick={handleClick}
             type={type ? type : ''}
-            className={`rounded-full w-fit bg-btn-gradient hover:bg-gradient-r hover:scale-105  text-white sm:text-lg text-sm font-semibold transition-all ${className}`}>
-            {text}
+            className={`text-base font-mulish font-bold  bg-btn-gradient hover:scale-105 ease-in-out duration-300 text-white flex items-center justify-center  rounded-lg  ${className} ${customPadding?customPadding:'p-4'}`}>
+            {text}       
         </button>
     )
 }

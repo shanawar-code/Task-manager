@@ -1,3 +1,44 @@
+/* global.css*/
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* width */
+::-webkit-scrollbar {
+	width: 12px;
+	height: 12px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+	background: #f4f4f4;
+	border-radius: 25px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+	background: #e0e0e0;
+	border-radius: 25px;
+	width: 12px;
+	height: 100px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+	background: #d4d1d1;
+}
+
+body::-webkit-scrollbar {
+	display: none;
+  }
+
+ .scrollbar-none::-webkit-scrollbar {
+	display: none; /* Chrome, Safari and Opera */
+  }
+
+  @media (min-width: 640px) {
+	.scrollbar-none::-webkit-scrollbar {
+	  display: block; /* WebKit */
+	}
+  }

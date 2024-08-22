@@ -1,52 +1,128 @@
-import React from 'react'
+import React, { act, useState } from 'react'
+import { Applicantssvg, AttendanceSvg, Chat, Dashboard, Logout, MyTasks, Payrollsvg, Setting, Team } from '../assets/svgs/Index'
+import { useNavigate } from 'react-router-dom'
+import Svgs from '../assets/svgs/Index.js'
+import { useLocation } from "react-router-dom";
+import { Input } from './Input.jsx';
 
-export const SideBar = () => {
-    const data = [{
-        label: "Dashboard",
-        icon: ""
-    }]
 
+export const SideBar = ({active, sideOpen}) => {
+    const location = useLocation();
+
+
+console.log(active)
+    const navigate = useNavigate() ;
+
+    const sideBarData =[
+    //     {
+    //         name: 'Dashboard',
+    //         icon: <Svgs.Dashboard color={active === 'Dashboard' ? '#fff' : '#828282'}/>,
+    //         navigate: '/dashboard',
+    //         active: active === 'Dashboard'? true: false,
+    //     },
+    //     {
+    //         name: 'My Tasks',
+    //         icon: <Svgs.MyTasks color={active === 'My Tasks' ? '#fff' : '#828282'}/>,
+    //         navigate: '/my-tasks',
+    //         active: active=== 'My Tasks'? true: false,
+    //     },
+    //     {
+    //         name: 'My Team',
+    //         icon: <Svgs.Team color={active === 'My Team' ? '#fff' : '#828282'}/>,
+    //         navigate: '/my-team',
+    //         active: active=== 'My Team'? true: false,
+    //     },
+    //     {
+    //         name: 'Chat',
+    //         icon: <Svgs.Chat color={active === 'Chat' ? '#fff' : '#828282'}/>,
+    //         navigate: '/chat',
+    //         active: active=== 'Chat'? true: false,
+    //     },
+    //     {
+    //         name: 'Attendance & Leave',
+    //         icon: <Svgs.AttendanceSvg color={active === 'Attendance & Leave' ? '#fff' : '#828282'}/>,
+    //         navigate: '/attendance-leave',
+    //         active: active=== 'Attendance & Leave'? true: false,
+    //     },
+    //     {
+    //         name: 'My profile',
+    //         icon: <Svgs.Setting color={active === 'My profile' ? '#fff' : '#828282'}/>,
+    //         navigate: '/my-profile',
+    //         active: active=== 'My profile'? true: false,
+    //     },
+    {
+        name: 'Dashboard',
+        icon: <Svgs.Dashboard color={active === 'Dashboard' ? '#fff' : '#828282'}/>,
+        navigate: '/dashboard',
+        active: active === 'Dashboard'? true: false,
+    },
+    {
+        name: 'Employees',
+        icon: <Svgs.Team color={active === 'Employees' ? '#fff' : '#828282'}/>,
+        navigate: '/employees',
+        active: active=== 'Employees'? true: false,
+    },
+    {
+        name: 'Applicants',
+        icon: <Applicantssvg color={active === 'Applicants' ? '#fff' : '#828282'}/>,
+        navigate: '/applicants',
+        active: active=== 'Applicants'? true: false,
+    },
+    {
+        name: 'Attendance & Leave',
+        icon: <Svgs.AttendanceSvg color={active === 'Attendance & Leave' ? '#fff' : '#828282'}/>,
+        navigate: '/attendance-leave',
+        active: active=== 'Attendance & Leave'? true: false,
+    },
+    {
+        name: 'Payroll',
+        icon: <Payrollsvg color={active === 'Payroll' ? '#fff' : '#828282'}/>,
+        navigate: '/payroll',
+        active: active=== 'Payroll'? true: false,
+    },
+    {
+        name: 'Chat',
+        icon: <Svgs.Chat color={active === 'Chat' ? '#fff' : '#828282'}/>,
+        navigate: '/chat',
+        active: active=== 'Chat'? true: false,
+    },
+    {
+        name: 'My profile',
+        icon: <Svgs.Setting color={active === 'My profile' ? '#fff' : '#828282'}/>,
+        navigate: '/myprofile',
+        active: active=== 'My profile'? true: false,
+    },
+    ]
+
+    const handleSideBarClick=(path)=>{
+        navigate(path)
+    }
+   
     return (
-        <div className='flex flex-col relative left-0 px-4 bg-white py-8 border-r-2 w-full  h-[89vh] items-center justify-between'>
-            <div className='w-full flex flex-col space-y-4'>
-                <div
-                    className='bg-gradient-to-r from-[#F33F41] to-[#FB6D72] p-4 rounded-lg flex flex-row space-x-4 text-white w-full'>
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <rect width="8" height="8" rx="2" transform="matrix(-1 0 0 1 22.001 1.99927)" stroke="#FEFEFE" stroke-width="1.3" />
-                        <rect width="8" height="20" rx="2" transform="matrix(-1 0 0 1 10 2.00073)" stroke="#FEFEFE" stroke-width="1.3" />
-                        <rect width="8" height="8" rx="2" transform="matrix(-1 0 0 1 22.0009 13.9993)" stroke="#FEFEFE" stroke-width="1.3" />
-                    </svg>
-                    <p>
-                        Dashboard
-                    </p>
-                </div>
-
-
-                <div
-                    className='bg-white p-4 rounded-lg flex flex-row space-x-4 text-[#828282] w-full'>
-                    <svg width="18" height="22" viewBox="0 0 18 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M5 9L13 9" stroke="#828282" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" />
-                        <path d="M5 15L11 15" stroke="#828282" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" />
-                        <path d="M12.3951 2.45044H14.8793C15.9838 2.45044 16.8793 3.34587 16.8793 4.45044V18.9999C16.8793 20.1045 15.9839 20.9999 14.8793 20.9999H3.12012C2.01555 20.9999 1.12012 20.1045 1.12012 18.9999V4.45044C1.12012 3.34587 2.01555 2.45044 3.12012 2.45044L5.61448 2.45044" stroke="#828282" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" />
-                        <rect x="5.61487" y="1" width="6.76896" height="2.90098" rx="1" stroke="#828282" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" />
-                    </svg>
-
-                    <p>
-                        My Tasks
-                    </p>
-                </div>
-
+        <div className='flex flex-col relative left-0  bg-white py-8 px-3 border-r-2 w-full h-full items-center justify-between'>
+            
+            {sideOpen && (
+            <div className='w-full flex flex-col'>
+                {sideBarData.map((value, index)=>(
+                    <div key={index}
+                    onClick={()=>{handleSideBarClick(value.navigate)}}
+                        className={`${ value.active === true ? ' bg-btn-gradient ':'bg-white'} p-4 rounded-lg flex flex-row space-x-4 w-full cursor-pointer`}>
+                         {<p>{value.icon}</p>}   {/* < color={value?.active===true? '#fff': '#828282'} /> */}
+                        <p className={`${value?.active===true ? 'text-white text-base font-normal font-public-sans ': 'text-gray-4 text-base font-normal font-public-sans' }`} >
+                            {value.name}
+                        </p>
+                    </div>  
+                        
+                )       
+                      
+                )}
             </div>
+            )}
 
             <div
-                className='bg-white p-4 rounded-lg flex flex-row space-x-4 text-[#828282] w-full'>
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M11.7988 2H5C3.34315 2 2 3.34315 2 5V19C2 20.6569 3.34315 22 5 22H11.7988" stroke="#828282" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" />
-                    <path d="M17.4931 7.49304L22 11.9862L17.4931 16.493" stroke="#828282" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" />
-                    <path d="M22 11.993H8.1485" stroke="#828282" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" />
-                </svg>
-
-
+            onClick={()=>{navigate('/')}}
+                className='bg-white p-4 cursor-pointer rounded-lg flex flex-row space-x-4 text-[#828282] w-full'>
+                    <Svgs.Logout/>
                 <p>
                     Logout
                 </p>
@@ -56,3 +132,85 @@ export const SideBar = () => {
         </div>
     )
 }
+
+
+
+
+// import React from 'react';
+// import { useNavigate, useLocation } from 'react-router-dom';
+// import { AttendanceSvg, Chat, Dashboard, Logout, MyTasks, Setting, Team } from '../assets/svgs/Index';
+// import Svgs from '../assets/svgs/Index.js';
+
+// export const SideBar = () => {
+//     const navigate = useNavigate();
+//     const location = useLocation(); // Get the current location
+
+//     const sideBarData = [
+//         {
+//             name: 'Dashboard',
+//             icon: <Svgs.Dashboard color={location.pathname === '/dashboard' ? '#fff' : '#828282'}/>,
+//             navigate: '/dashboard',
+//             active: location.pathname === '/dashboard',
+//         },
+//         {
+//             name: 'My Tasks',
+//             icon: <Svgs.MyTasks color={location.pathname === '/my-tasks' ? '#fff' : '#828282'}/>,
+//             navigate: '/my-tasks',
+//             active: location.pathname === '/my-tasks',
+//         },
+//         {
+//             name: 'My Team',
+//             icon: <Svgs.Team color={location.pathname === '/my-team' ? '#fff' : '#828282'}/>,
+//             navigate: '/my-team',
+//             active: location.pathname === '/my-team',
+//         },
+//         {
+//             name: 'Chat',
+//             icon: <Svgs.Chat color={location.pathname === '/chat' ? '#fff' : '#828282'}/>,
+//             navigate: '/chat',
+//             active: location.pathname === '/chat',
+//         },
+//         {
+//             name: 'Attendance & Leave',
+//             icon: <Svgs.AttendanceSvg color={location.pathname === '/attendance-leave' ? '#fff' : '#828282'}/>,
+//             navigate: '/attendance-leave',
+//             active: location.pathname === '/attendance-leave',
+//         },
+//         {
+//             name: 'My profile',
+//             icon: <Svgs.Setting color={location.pathname === '/my-profile' ? '#fff' : '#828282'}/>,
+//             navigate: '/my-profile',
+//             active: location.pathname === '/my-profile',
+//         },
+//     ];
+
+//     const handleSideBarClick = (navigatePath) => {
+//         navigate(navigatePath);
+//     };
+
+//     return (
+//         <div className='flex flex-col relative left-0 bg-white py-8 border-r-2 w-full h-full items-center justify-between'>
+//             <div className='w-full flex flex-col'>
+//                 {sideBarData.map((value, index) => (
+//                     <div
+//                         key={index}
+//                         onClick={() => handleSideBarClick(value.navigate)}
+//                         className={`${value.active ? 'bg-btn-gradient' : 'bg-white'} p-4 rounded-lg flex flex-row space-x-4 w-full cursor-pointer`}
+//                     >
+//                         {value.icon}
+//                         <p className={`${value.active ? 'text-white text-base font-normal font-public-sans' : 'text-gray-4 text-base font-normal font-public-sans'}`}>
+//                             {value.name}
+//                         </p>
+//                     </div>
+//                 ))}
+//             </div>
+//             <div
+//                 onClick={() => { navigate('/'); }}
+//                 className='bg-white p-4 cursor-pointer rounded-lg flex flex-row space-x-4 text-[#828282] w-full'
+//             >
+//                 <Svgs.Logout />
+//                 <p>Logout</p>
+//             </div>
+//         </div>
+//     );
+// };
