@@ -39,6 +39,10 @@ body::-webkit-scrollbar {
 
   @media (min-width: 640px) {
 	.scrollbar-none::-webkit-scrollbar {
-	  display: block; /* WebKit */
+	  display: block;
 	}
+  }
+
+  .grocery-scrollbar-none::-webkit-scrollbar {
+	display: none; /* Chrome, Safari and Opera */
   }

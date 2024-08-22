@@ -10,6 +10,10 @@ import AttendanceAndLeave from "./Pages/UserDashboard/AttendanceAndLeave";
 import MyTeam from "./Pages/UserDashboard/MYTeam";
 import MyProfile from "./Pages/UserDashboard/MyProfile";
 import Chat from "./Pages/UserDashboard/Chat";
+import MYTeamLast from "./Pages/UserDashboard/MYTeam/MyTeamLast";
+import FindColleagues from "./Pages/UserDashboard/Chat/FindColleagues";
+
+
 
 function App() {
   const router = createBrowserRouter([
@@ -58,6 +62,14 @@ function App() {
       path: "/employees",
       element: <Employees />,
     },
+    {
+      path: '/myteamlast',
+      element: <MYTeamLast/>
+    },
+    {
+      path: '/findcolleagues',
+      element: <FindColleagues/>
+    }
   ]);
 
   return (

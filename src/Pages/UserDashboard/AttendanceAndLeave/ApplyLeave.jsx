@@ -5,6 +5,7 @@ import { Input } from "../../../components/Input";
 import Calendar from "./Calendar";
 import Svgs from '../../../assets/svgs/Index.js'
 import Button from "../../../components/Button.jsx";
+import SelectDropdown from "../../../components/SelectDropdown.jsx";
 
 
 function ApplyLeaveDialog({ show, onClose}) {
@@ -73,15 +74,15 @@ function ApplyLeaveDialog({ show, onClose}) {
   return (
     <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
      <div className="py-3 ">
-          <div ref={popupRef} className="bg-white shadow-lg rounded-xl border p-6 mx-2 overflow-y-auto h-full  md:w-[598px]">
+          <div ref={popupRef} className="bg-white shadow-lg rounded-xl border p-6 mx-2   md:w-[598px]">
           <div className="flex flex-col gap-3">
               <div className="flex items-center justify-center text-center">
                 <h1 className="text-xl md:text-2xl font-semibold font-public-sans text-gray-700">
                 Apply leave
                 </h1>
               </div>
-              <div>
-                <Input label={"Leave type"} className={"text-xs md:text-base"} />
+              <div className=''>
+                <SelectDropdown  label="Leave type" options={[{label: 'Casual leave', value: 'Casual leave'}]} name="role" id="role"  selectClass={' w-full'} className={' w-full'} />    
               </div>
               <div className="">
                 <div className=" relative">

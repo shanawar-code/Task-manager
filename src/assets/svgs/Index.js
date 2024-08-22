@@ -825,18 +825,24 @@ const ArrowLeft=({className})=>(
   </svg>
 )
 
+const Phone=()=>(
+    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M0.74586 2.52816L2.81379 0.462136C2.95966 0.315619 3.13305 0.199367 3.32398 0.120059C3.51492 0.0407514 3.71964 -4.95526e-05 3.92639 4.51641e-08C4.34775 4.51641e-08 4.74386 0.165049 5.04094 0.462136L7.26615 2.68738C7.41267 2.83325 7.52891 3.00664 7.60822 3.19758C7.68753 3.38852 7.72833 3.59325 7.72828 3.8C7.72828 4.22136 7.56323 4.61748 7.26615 4.91456L5.63899 6.54175C6.01986 7.38129 6.54941 8.14503 7.20207 8.79612C7.85308 9.45038 8.61675 9.98186 9.45641 10.365L11.0836 8.73786C11.2294 8.59135 11.4028 8.4751 11.5938 8.39579C11.7847 8.31648 11.9894 8.27568 12.1962 8.27573C12.6175 8.27573 13.0136 8.44078 13.3107 8.73786L15.5379 10.9612C15.6846 11.1073 15.8009 11.281 15.8802 11.4723C15.9595 11.6636 16.0002 11.8687 16 12.0757C16 12.4971 15.835 12.8932 15.5379 13.1903L13.4738 15.2544C13 15.7301 12.3457 16 11.6739 16C11.5321 16 11.3962 15.9883 11.2622 15.965C8.64477 15.534 6.04869 14.1417 3.95358 12.0485C1.8604 9.95728 0.470136 7.36311 0.0332489 4.73786C-0.0987873 3.93592 0.167228 3.11068 0.74586 2.52816Z" fill="#BDBDBD"/>
+</svg>
+)
 
+const Cross=()=>(
+    <svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M3.07107 3.07102C-0.832162 6.97425 -0.832162 13.3099 3.07107 17.2132C6.9743 21.1164 13.31 21.1164 17.2132 17.2132C21.1164 13.3099 21.1164 6.97425 17.2132 3.07102C13.31 -0.832207 6.9743 -0.832208 3.07107 3.07102ZM14.3848 7.31366L11.5563 10.1421L14.3848 12.9705L12.9706 14.3847L10.1421 11.5563L7.31371 14.3847L5.89949 12.9705L8.72792 10.1421L5.89949 7.31366L7.31371 5.89945L10.1421 8.72788L12.9706 5.89945L14.3848 7.31366Z" fill="#828282"/>
+</svg>
+)
 
-
+const AddIconBlue=()=>(
+    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M7 1V13" stroke="#497CFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M13 7L0.999999 7" stroke="#497CFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+)
   
-  
-  
-  
-  
-export default {ArrowLeft ,PDF ,HorizontalLine, TextMessage,Email,TodayLineIcon ,TimerIcon, AddIconWhite, CopyIcon, ZipIcon, VideoIcon , LogoFragment, DocsIcon, CrossIcon, AddWhiteIcon, VerticalGreenLine ,Count3, Count2, Count1, DocumentChatIcon, BlueIcon, SearchChatIcon ,AudioCallIcon ,VideoCallIcon ,GalleryIcon,SendIcon,OneIcon, AddIconRed, AddIconGray, ReplyIcon, Team, Chat, AttendanceSvg, Setting, Dashboard, MyTasks, Logout, MyLeave, Calender, Meeting, Tasks, BackArrowDouble, Notification, AddIcon, SearchBar, CalendarIcon, PasswordHide, PasswordShow, Verticaldots, PlayButton, Message, DocumentIcon, ShareIcon, WritingPencil, Four, ShareGray, AddPeople, Oction_download, DocumentRedIcon, WritingPencilBlue, ShareIconBlue}
-
-
-
-
-
+export default {AddIconBlue, Cross, Phone, ArrowLeft, PDF, HorizontalLine, TextMessage,Email,TodayLineIcon ,TimerIcon, AddIconWhite, CopyIcon, ZipIcon, VideoIcon , LogoFragment, DocsIcon, CrossIcon, AddWhiteIcon, VerticalGreenLine ,Count3, Count2, Count1, DocumentChatIcon, BlueIcon, SearchChatIcon ,AudioCallIcon ,VideoCallIcon ,GalleryIcon,SendIcon,OneIcon, AddIconRed, AddIconGray, ReplyIcon, Team, Chat, AttendanceSvg, Setting, Dashboard, MyTasks, Logout, MyLeave, Calender, Meeting, Tasks, BackArrowDouble, Notification, AddIcon, SearchBar, CalendarIcon, PasswordHide, PasswordShow, Verticaldots, PlayButton, Message, DocumentIcon, ShareIcon, WritingPencil, Four, ShareGray, AddPeople, Oction_download, DocumentRedIcon, WritingPencilBlue, ShareIconBlue}
 

@@ -53,7 +53,7 @@ function MyProfile() {
   return (
     <>
     <Layout active={'My profile'}>
-      <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5'>
+      <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-5'>
        <RoundedCard>
         <div className='flex items-center gap-5'>
           <div>
@@ -147,15 +147,15 @@ function MyProfile() {
       </div>
       <div className='grid grid-cols-12 my-6 gap-5'>
         <div className=' col-span-12 md:col-span-8'>
-          <RoundedCard customPadding={'px-[40px]'}>
+          <RoundedCard >
           <div className='flex items-center justify-between'>
           <h1 className=' text-xl font-semibold font-public-sans text-gray-1'>Skills</h1>
           <Svgs.WritingPencil/>
           </div>
-          <div className=' flex items-center justify-between flex-wrap'>
+          <div className=' flex items-center justify-start flex-wrap '>
             {skills.map((value, index)=>(
-          <div key={index} className=' rounded-full border w-fit my-4'>
-            <h1 className='text-sm font-normal font-public-sans text-gray-1 py-[7px] px-[14px]'>{value.skill}</h1>
+          <div key={index} className=' rounded-full border w-fit my-3 mx-1 md:mx-5'>
+            <h1 className=' text-[10px] sm:text-sm font-normal font-public-sans text-gray-1 py-[7px] px-[14px]'>{value.skill}</h1>
           </div>
             ))}
           </div>
@@ -165,7 +165,7 @@ function MyProfile() {
               <h1 className=' text-xl font-semibold font-public-sans text-gray-1'>Documents</h1>
             </div>
 
-            <div className='my-4 flex flex-wrap items-center justify-between'>
+            <div className='my-4 flex flex-wrap items-center justify-center  md:justify-between gap-2'>
               {Array(6).fill().map(()=>(
               <div className='bg-[#f5f5f5] px-[16px] py-[18px] rounded-xl shadow flex items-center justify-between w-[200px] my-2'>
                 <div className='flex items-center gap-[14px]'>

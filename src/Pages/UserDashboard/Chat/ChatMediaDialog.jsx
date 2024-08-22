@@ -53,7 +53,7 @@ function ChatMediaDialog({ show, onClose }) {
       <div ref={popupRef} className=" p-5 scroll-smooth bg-white shadow-lg border rounded-xl overflow-y-scroll h-full">
        <div className="flex items-center justify-between border-b-2 pb-4">
         <h1 className=" text-xl font-medium font-public-sans text-gray-1">Media</h1>
-        <Svgs.CrossIcon/>
+         <span onClick={onClose} className=" cursor-pointer"><Svgs.CrossIcon/></span> 
        </div>
        {imgData.map((value,index)=>(
          <div key={index} className="grid grid-cols-5 gap-5 my-5">

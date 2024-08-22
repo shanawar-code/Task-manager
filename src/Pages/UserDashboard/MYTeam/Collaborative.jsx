@@ -81,10 +81,10 @@ function Collaborate({ show, onClose}) {
                 </h1>
               </div>
               <div className="mt-6">
-                <SelectDropdown label={'Select employee'} options={[{value: 'Select', label: 'Select'}]}/> 
+                <SelectDropdown label={'Select employee'} options={[{value: 'Select', label: 'Select'}]} selectClass={' w-full'} className={' w-full'}/> 
               </div>
               <div className="my-4">
-                <SelectDropdown label={'Select task'} options={[{value: 'Select', label: 'Select'}]}/> 
+                <SelectDropdown label={'Select task'} options={[{value: 'Select', label: 'Select'}]} selectClass={' w-full'} className={' w-full'}/> 
               </div>
             </div>
           <div className="flex items-center justify-center gap-4 mt-6">

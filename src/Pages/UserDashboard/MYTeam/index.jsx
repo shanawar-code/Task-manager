@@ -10,10 +10,12 @@ import "react-circular-progressbar/dist/styles.css";
 import CreateNewTeamDialog from './CreateNewTeamDialog.jsx'
 import AddNewMemberDialog from './AddNewMemberDialog.jsx'
 import Collaborate from './Collaborative.jsx'
+import { useNavigate } from 'react-router-dom'
 
 
 function MyTeam() {
 
+  const navigate = useNavigate()
   const cardData=[
     {
       src: 'images/catherine.png',
@@ -93,12 +95,12 @@ function MyTeam() {
                 <div>
                     <h1 className=' text-2xl font-bold font-public-sans text-gray-1'>Team Memeber</h1>
                 </div>
-                <div className='flex items-center justify-center md:justify-start'>
+                <div onClick={()=>{navigate('/myteamlast')}} className='flex items-center justify-center md:justify-start cursor-pointer'>
                     <img src='images/member1.png' alt="" />
                     <img src='images/member2.png' width={'32px'} alt="" />
                     <img src='images/member3 (2).png' width={'32px'} alt="" />
                     <img src='images/member4 (2).png' width={'32px'} alt="" />
-                    <span className='w-[32px] h-[32px] flex items-center justify-center bg-[#f3f3f3] rounded-full'><Svgs.Four/></span>
+                    <span  className='  w-[32px] h-[32px] flex items-center justify-center bg-[#f3f3f3] rounded-full'><Svgs.Four/></span>
                 </div>
             </div>
             <div className='flex flex-wrap items-center justify-center md:justify-start gap-5  my-3 md:my-0'>
@@ -223,7 +225,7 @@ function MyTeam() {
                         <div className=" absolute flex flex-col items-center justify-center top-0 inset-0">
                         <p className=" text-[30px] font-bold text-gray-1 font-public-sans">75%</p>
                       <p className="text-xs font-normal font-public-sans text-gray-4 text-center">
-                        Expected score
+                      Task completed
                       </p>
                         </div>
                       </div>

@@ -83,10 +83,7 @@ export const Layout = ({ active, children }) => {
       <div className="flex flex-grow">
         {/* Sidebar for larger screens */}
 
-        <div className={`hidden xl:block   ${sidebarOpen ? 'xl:w-1/4 2xl:w-1/5' : 'w-20'}`}>
-
-        {/* xl:w-1/4 2xl:w-1/5 */}
-
+        <div className={`hidden xl:block   ${sidebarOpen ?  'xl:w-1/4 2xl:w-1/5 ' : 'w-20 '}`}>
           <SideBar active={active} />
         </div>
 

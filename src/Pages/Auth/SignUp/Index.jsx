@@ -53,7 +53,7 @@ export const SignUpPage = () => {
                         </div>
                         <div className=''>
                             
-                           <SelectDropdown  label="Role" options={roleOptions} name="role" id="role"  />
+                           <SelectDropdown  label="Role" options={roleOptions} name="role" id="role"  selectClass={' w-full'} className={' w-full'} />
                             
                         </div>
                         <div className=' '>

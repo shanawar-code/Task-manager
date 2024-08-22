@@ -84,14 +84,16 @@ function CreateNewTeamDialog({ show, onClose}) {
                 <Input label={"Team name"} className={"text-xs md:text-base"} placeholder={'Team name'} />
               </div>
               <div className="">
-                <SelectDropdown label={'Manager'} options={[{value: 'Select', label: 'Select'}]}/> 
+                <SelectDropdown label={'Manager'} options={[{value: 'Select', label: 'Select'}]} selectClass={' w-full'} className={' w-full'}/>
+                            
+                          
               </div>
               <div className="flex items-center gap-4">
                 <div className=" w-2/3">
-              <SelectDropdown options={[{value: 'Select', label: 'Select'}]} className={''} label={'Team member'}/>
+              <SelectDropdown options={[{value: 'Select', label: 'Select'}]} selectClass={' w-full'} className={' w-full'} label={'Team member'}/>
                 </div>
                 <div className="w-1/3">
-              <SelectDropdown options={[{value: 'Select', label: 'Select'}]} className={''} label={'Role'}/>
+              <SelectDropdown options={[{value: 'Select', label: 'Select'}]} selectClass={' w-full'} className={' w-full'} label={'Role'}/>
                 </div>
               </div>
 

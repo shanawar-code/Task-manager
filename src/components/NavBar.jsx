@@ -39,7 +39,7 @@ export const NavBar = () => {
           </div>
           <div className="flex flex-row space-x-4 items-center cursor-pointer">
             <Svgs.Notification />
-            <div>
+            <div onClick={()=>{navigate('/my-profile')}}>
               <img src={'images/profilePic.png'} alt="" className="h-8 w-8 object-contain cursor-pointer" />
             </div>
           </div>

@@ -71,7 +71,7 @@ export const SideBar = ({active}) => {
                         className={`${ value.active === true ? ' bg-btn-gradient ':'bg-white'} p-4 rounded-lg flex flex-row space-x-4 w-full cursor-pointer`}>
                          {<p>{value.icon}</p>}
                         <p className={`${value?.active===true ? 'text-white text-base font-normal font-public-sans ': 'text-gray-4 text-base font-normal font-public-sans' }`} >
-                            {sidebarOpen ? value.name: ''}
+                            {sidebarOpen ? value.name : ''}
                         </p>
 
                        

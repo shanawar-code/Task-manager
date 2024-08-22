@@ -3,9 +3,9 @@ import Svgs from '../../../assets/svgs/Index.js'
 function TaskDataCard({title,value1,value2,descrip,bgcolor, textcolor , handleClick}) {
   return (
    <>
-    <div onClick={handleClick} className='cursor-pointer border rounded-xl bg-white p-5 mb-5 mx-2 w-[288px]' >
+    <div className='cursor-pointer border rounded-xl bg-white p-5 mb-5 mx-2 w-[288px]' >
             <div className='flex items-center justify-between'>
-                <div>
+                <div onClick={handleClick}>
                     <h1 className={` ${bgcolor} ${textcolor} w-fit py-2 px-3  rounded-full`}>{title}</h1>
                 </div>
                 <div className='flex items-center gap-3'>

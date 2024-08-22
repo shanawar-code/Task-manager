@@ -82,10 +82,10 @@ function AddNewMemberDialog({ show, onClose}) {
               </div>
               <div className="flex items-center gap-4 my-6">
                 <div className=" w-2/3">
-              <SelectDropdown options={[{value: 'Select', label: 'Select'}]} className={''} label={'Select employee'}/>
+              <SelectDropdown options={[{value: 'Select', label: 'Select'}]} selectClass={' w-full'} className={' w-full'} label={'Select employee'}/>
                 </div>
                 <div className="w-1/3">
-              <SelectDropdown options={[{value: 'Select', label: 'Select'}]} className={''} label={'Role'}/>
+              <SelectDropdown options={[{value: 'Select', label: 'Select'}]} selectClass={' w-full'} className={' w-full'} label={'Role'}/>
                 </div>
               </div>
 

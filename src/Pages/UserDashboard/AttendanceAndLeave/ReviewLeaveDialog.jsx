@@ -59,8 +59,8 @@ function ReviweLeaveDialog({ show, onClose}) {
 
   return (
     <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
-     <div className="py-3 h-full">
-          <div ref={popupRef} className="bg-white shadow-lg rounded-xl border p-6 max-w-[528px] mx-2 overflow-y-auto h-full">
+     <div className=" py-3 h-full overflow-y-auto overflow-x-hidden">
+          <div ref={popupRef} className="bg-white shadow-lg rounded-xl border p-6 md:w-[528px] ">
           <div className="flex items-center justify-center">
             <h1 className=" text-2xl font-semibold font-public-sans text-gray-1">Review leave</h1>
           </div>
@@ -83,15 +83,15 @@ function ReviweLeaveDialog({ show, onClose}) {
                 <h1 className=" text-base font-bold font-mulish text-gray-1">Reason for leave</h1>
                 </div>
                 <div className=" px-[24px] py-[14px] rounded-xl border my-2">
-                   <h1 className=" text-base font-normal font-mulish text-gray-1">Dear Manager,</h1>
-                   <h1 className=" text-base font-normal font-mulish text-gray-1 my-5">I am writing to request a casual leave for 1 day on 26th Aug 20024 due to marriage of my cousin. I will ensure that all my tasks are up to date before my leave and remain available for any urgent queries.</h1>
-                   <h1 className=" text-base font-normal font-mulish text-gray-1 my-5">Thank you for your understanding.</h1>
-                   <h1 className=" text-base font-normal font-mulish text-gray-1 w-[50%] sm:w-[30%]">Best regards Anna</h1>
+                   <h1 className=" text-xs md:text-base font-normal font-mulish text-gray-1">Dear Manager,</h1>
+                   <h1 className=" text-xs md:text-base font-normal font-mulish text-gray-1 my-5">I am writing to request a casual leave for 1 day on 26th Aug 20024 due to marriage of my cousin. I will ensure that all my tasks are up to date before my leave and remain available for any urgent queries.</h1>
+                   <h1 className=" text-xs md:text-base font-normal font-mulish text-gray-1 my-5">Thank you for your understanding.</h1>
+                   <h1 className=" text-xs md:text-base font-normal font-mulish text-gray-1 w-[50%] sm:w-[30%]">Best regards Anna</h1>
                 </div>
           </div>
           <div className="flex items-center justify-center gap-4 mt-[48px]">
             <button className="px-[24px] py-[14.5px] text-base font-bold font-mulish text-gray-2">Refuse</button>
-            <button onClick={handleShowPopup} className="px-[24px] py-[14.5px] text-base font-bold font-mulish text-gray-2 border rounded-xl hover:bg-gray-4 hover:text-white">Approve</button>
+            <button onClick={handleShowPopup} className="flex items-center justify-center h-[48px] px-[20px] py-[14.5px] text-base font-bold font-mulish text-gray-2 border rounded-xl hover:bg-gray-4 hover:text-white">Approve</button>
             { showPopup && (<SuccessfulDialog heading={'Leave approved'}  show={showPopup} onClose={handleClosePopup}/>)}
           </div>
          
