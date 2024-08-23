@@ -286,15 +286,14 @@ const Tasks=()=>{
     )
 }
 
-const BackArrowDouble=()=>{
+const BackArrowDouble=({className})=>{
     return(
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className={className}>
         <path d="M18.9629 17.9297L12.9996 11.9664L18.9658 6.00015" stroke="#333333" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" />
         <path d="M11.9626 17.9297L5.99932 11.9664L11.9655 6.00015" stroke="#333333" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" />
       </svg>
     )
 }
-
 
 
 const Notification=()=>{
@@ -723,10 +722,127 @@ const AddIconWhite=()=>(
 </svg>
 )
 
-export default {AddIconWhite ,CopyIcon ,ZipIcon ,VideoIcon , LogoFragment, DocsIcon, CrossIcon, AddWhiteIcon, VerticalGreenLine ,Count3, Count2, Count1, DocumentChatIcon, BlueIcon, SearchChatIcon ,AudioCallIcon ,VideoCallIcon ,GalleryIcon,SendIcon,OneIcon, AddIconRed, AddIconGray, ReplyIcon, Team, Chat, AttendanceSvg, Setting, Dashboard, MyTasks, Logout, MyLeave, Calender, Meeting, Tasks, BackArrowDouble, Notification, AddIcon, SearchBar, CalendarIcon, PasswordHide, PasswordShow, Verticaldots, PlayButton, Message, DocumentIcon, ShareIcon, WritingPencil, Four, ShareGray, AddPeople, Oction_download, DocumentRedIcon, WritingPencilBlue, ShareIconBlue}
+const TimerIcon=()=>(
+    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M17.2918 11.0417C17.2918 15.0667 14.0252 18.3333 10.0002 18.3333C5.97516 18.3333 2.7085 15.0667 2.7085 11.0417C2.7085 7.01667 5.97516 3.75 10.0002 3.75C14.0252 3.75 17.2918 7.01667 17.2918 11.0417Z" stroke="#333333" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M10 6.6665V10.8332" stroke="#333333" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M7.5 1.6665H12.5" stroke="#333333" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+)
+
+const TodayLineIcon=()=>(
+    <svg width="504" height="28" viewBox="0 0 504 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+<line opacity="0.5" x1="-4.37114e-08" y1="13.5" x2="214" y2="13.5" stroke="#E0E0E0"/>
+<path d="M232.322 10.068V8.878H239.98V10.068H236.893V19H235.591V10.068H232.322ZM243.57 19.14C242.902 19.14 242.319 18.9977 241.82 18.713C241.32 18.4237 240.933 18.0013 240.658 17.446C240.382 16.8907 240.245 16.2117 240.245 15.409C240.245 14.653 240.373 13.9903 240.63 13.421C240.886 12.8517 241.262 12.4107 241.757 12.098C242.256 11.7807 242.86 11.622 243.57 11.622C244.237 11.622 244.816 11.769 245.306 12.063C245.8 12.3523 246.183 12.7793 246.454 13.344C246.724 13.9087 246.86 14.597 246.86 15.409C246.86 16.1463 246.734 16.795 246.482 17.355C246.234 17.915 245.866 18.3537 245.376 18.671C244.89 18.9837 244.288 19.14 243.57 19.14ZM243.57 18.118C244.004 18.118 244.37 18.0083 244.669 17.789C244.967 17.5697 245.194 17.2547 245.348 16.844C245.502 16.4333 245.579 15.9457 245.579 15.381C245.579 14.863 245.511 14.3987 245.376 13.988C245.24 13.5727 245.023 13.2437 244.725 13.001C244.431 12.7583 244.046 12.637 243.57 12.637C243.131 12.637 242.76 12.7467 242.457 12.966C242.153 13.1807 241.922 13.4933 241.764 13.904C241.61 14.3147 241.533 14.807 241.533 15.381C241.533 15.8897 241.603 16.3517 241.743 16.767C241.883 17.1823 242.102 17.5113 242.401 17.754C242.699 17.9967 243.089 18.118 243.57 18.118ZM251.445 19.14C250.507 19.14 249.763 18.818 249.212 18.174C248.661 17.53 248.386 16.5897 248.386 15.353C248.386 14.6017 248.496 13.946 248.715 13.386C248.939 12.826 249.27 12.392 249.709 12.084C250.148 11.776 250.694 11.622 251.347 11.622C251.692 11.622 251.998 11.6663 252.264 11.755C252.535 11.8437 252.768 11.9557 252.964 12.091C253.16 12.2263 253.319 12.3663 253.44 12.511C253.566 12.6557 253.659 12.7887 253.72 12.91V8.598H255.022V19H254.035L253.895 17.516C253.848 17.656 253.774 17.8193 253.671 18.006C253.568 18.188 253.424 18.3677 253.237 18.545C253.05 18.7177 252.81 18.86 252.516 18.972C252.227 19.084 251.87 19.14 251.445 19.14ZM251.676 18.146C252.409 18.146 252.931 17.9243 253.244 17.481C253.561 17.033 253.72 16.3027 253.72 15.29C253.715 14.7253 253.643 14.2447 253.503 13.848C253.368 13.4513 253.153 13.1503 252.859 12.945C252.57 12.735 252.185 12.63 251.704 12.63C251.107 12.63 250.621 12.8423 250.248 13.267C249.875 13.6917 249.688 14.366 249.688 15.29C249.688 16.1953 249.856 16.8977 250.192 17.397C250.533 17.8963 251.027 18.146 251.676 18.146ZM259.442 19.14C258.976 19.14 258.563 19.0583 258.203 18.895C257.844 18.727 257.562 18.4867 257.356 18.174C257.156 17.8613 257.055 17.4833 257.055 17.04C257.055 16.2373 257.335 15.64 257.895 15.248C258.455 14.856 259.354 14.646 260.59 14.618L261.885 14.583V14.016C261.885 13.5727 261.752 13.2227 261.486 12.966C261.22 12.7047 260.807 12.574 260.247 12.574C259.832 12.5787 259.466 12.6767 259.148 12.868C258.836 13.0593 258.633 13.372 258.539 13.806H257.398C257.426 13.3347 257.559 12.938 257.797 12.616C258.035 12.2893 258.367 12.042 258.791 11.874C259.221 11.706 259.727 11.622 260.31 11.622C260.94 11.622 261.463 11.7107 261.878 11.888C262.298 12.0653 262.611 12.3267 262.816 12.672C263.026 13.0173 263.131 13.442 263.131 13.946V19H262.025L261.934 17.642C261.654 18.2067 261.297 18.5987 260.863 18.818C260.434 19.0327 259.96 19.14 259.442 19.14ZM259.834 18.209C260.077 18.209 260.317 18.1647 260.555 18.076C260.798 17.9873 261.02 17.8683 261.22 17.719C261.421 17.565 261.58 17.3947 261.696 17.208C261.818 17.0167 261.881 16.8207 261.885 16.62V15.381L260.807 15.402C260.257 15.4113 259.795 15.4673 259.421 15.57C259.053 15.6727 258.775 15.8337 258.588 16.053C258.406 16.2723 258.315 16.5593 258.315 16.914C258.315 17.32 258.455 17.6373 258.735 17.866C259.02 18.0947 259.386 18.209 259.834 18.209ZM266.104 21.31C265.68 21.31 265.388 21.2797 265.229 21.219C265.071 21.1583 264.991 21.128 264.991 21.128V20.288L265.726 20.302C265.997 20.3113 266.221 20.2927 266.398 20.246C266.576 20.1993 266.718 20.1363 266.825 20.057C266.933 19.9777 267.014 19.889 267.07 19.791C267.131 19.693 267.18 19.5997 267.217 19.511L267.469 18.825L264.641 11.762H265.95L268.085 17.348L270.206 11.762H271.473L268.421 19.546C268.235 20.0033 268.025 20.3603 267.791 20.617C267.563 20.8737 267.306 21.0533 267.021 21.156C266.741 21.2587 266.436 21.31 266.104 21.31Z" fill="#828282"/>
+<line opacity="0.5" x1="290" y1="13.5" x2="504" y2="13.5" stroke="#E0E0E0"/>
+</svg>
+)
+
+const Email=()=>(
+    <svg width="16" height="12" viewBox="0 0 16 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M8 9C8.5 9 9.03125 8.84375 9.46875 8.5L16 3.4375V10.5C16 11.3438 15.3125 12 14.5 12H1.5C0.65625 12 0 11.3438 0 10.5V3.4375L6.5 8.5C6.9375 8.84375 7.46875 9 8 9ZM0.5 2.5625C0.1875 2.3125 0 1.90625 0 1.5C0 0.6875 0.65625 0 1.5 0H14.5C15.3125 0 16 0.6875 16 1.5C16 1.90625 15.7812 2.3125 15.4688 2.5625L8.84375 7.71875C8.34375 8.09375 7.625 8.09375 7.125 7.71875L0.5 2.5625Z" fill="#BBBFC5"/>
+</svg>
+)
+
+const TextMessage=()=>(
+    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M9.33329 1.16675H4.66663C2.33329 1.16675 1.16663 2.33341 1.16663 4.66675V12.2501C1.16663 12.5709 1.42913 12.8334 1.74996 12.8334H9.33329C11.6666 12.8334 12.8333 11.6667 12.8333 9.33341V4.66675C12.8333 2.33341 11.6666 1.16675 9.33329 1.16675Z" stroke="#BDBDBD" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M4.08337 5.54175H9.91671" stroke="#BDBDBD" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M4.08337 8.4585H8.16671" stroke="#BDBDBD" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+)
+
+const HorizontalLine=()=>(
+    <svg width="280" height="2" viewBox="0 0 280 2" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect x="1.0003" y="0.752986" width="278.113" height="0.494253" fill="#FEFEFE" stroke="#E0E0E0" stroke-width="0.494253"/>
+</svg>
+)
+
+const PDF=()=>(
+    <svg width="13" height="16" viewBox="0 0 13 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M2.8 12H2V13H2.8C3.1 13 3.3 12.8 3.3 12.5C3.3 12.2 3.1 12 2.8 12ZM8 0H0V16H13V5L8 0ZM4.2 12.6C4.2 13.4 3.6 14 2.8 14H2V15H1V11H2.8C3.6 11 4.2 11.6 4.2 12.4V12.6ZM8.3 13.1C8.3 14.1 7.5 15 6.4 15H5V11H6.4C7.4 11 8.3 11.8 8.3 12.9V13.1ZM12 12H10V13H11.5V14H10V15H9V11H12V12ZM12 10H1V1H8V5H12V10ZM6.4 12H6V14H6.4C7 14 7.4 13.6 7.4 13C7.4 12.4 6.9 12 6.4 12Z" fill="#F54D4D"/>
+</svg>
+)
 
 
+const ArrowLeft=({className})=>(
+    <svg
+    xmlns="http://www.w3.org/2000/svg"
+    xmlnsXlink="http://www.w3.org/1999/xlink"
+    version="1.1"
+    width="14"
+    height="10"
+    viewBox="0 0 256 256"
+    xmlSpace="preserve"
+    className={className}
+  >
+    <defs></defs>
+    <g
+      style={{
+        stroke: "none",
+        strokeWidth: 0,
+        strokeDasharray: "none",
+        strokeLinecap: "butt",
+        strokeLinejoin: "miter",
+        strokeMiterlimit: 10,
+        fill: "none",
+        fillRule: "nonzero",
+        opacity: 1,
+      }}
+      transform="translate(1.4065934065934016 1.4065934065934016) scale(2.81 2.81)"
+    >
+      <polygon
+        points="50.36,0 54.64,4.28 13.92,45 54.64,85.72 50.36,90 5.36,45"
+        style={{
+          stroke: "none",
+          strokeWidth: 1,
+          strokeDasharray: "none",
+          strokeLinecap: "butt",
+          strokeLinejoin: "miter",
+          strokeMiterlimit: 10,
+          fill: "rgb(0,0,0)",
+          fillRule: "nonzero",
+          opacity: 1,
+        }}
+        transform="matrix(1 0 0 1 0 0)"
+      />
+      <polygon
+        points="80.36,0 84.64,4.28 43.92,45 84.64,85.72 80.36,90 35.36,45"
+        style={{
+          stroke: "none",
+          strokeWidth: 1,
+          strokeDasharray: "none",
+          strokeLinecap: "butt",
+          strokeLinejoin: "miter",
+          strokeMiterlimit: 10,
+          fill: "rgb(0,0,0)",
+          fillRule: "nonzero",
+          opacity: 1,
+        }}
+        transform="matrix(1 0 0 1 0 0)"
+      />
+    </g>
+  </svg>
+)
 
+const Phone=()=>(
+    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M0.74586 2.52816L2.81379 0.462136C2.95966 0.315619 3.13305 0.199367 3.32398 0.120059C3.51492 0.0407514 3.71964 -4.95526e-05 3.92639 4.51641e-08C4.34775 4.51641e-08 4.74386 0.165049 5.04094 0.462136L7.26615 2.68738C7.41267 2.83325 7.52891 3.00664 7.60822 3.19758C7.68753 3.38852 7.72833 3.59325 7.72828 3.8C7.72828 4.22136 7.56323 4.61748 7.26615 4.91456L5.63899 6.54175C6.01986 7.38129 6.54941 8.14503 7.20207 8.79612C7.85308 9.45038 8.61675 9.98186 9.45641 10.365L11.0836 8.73786C11.2294 8.59135 11.4028 8.4751 11.5938 8.39579C11.7847 8.31648 11.9894 8.27568 12.1962 8.27573C12.6175 8.27573 13.0136 8.44078 13.3107 8.73786L15.5379 10.9612C15.6846 11.1073 15.8009 11.281 15.8802 11.4723C15.9595 11.6636 16.0002 11.8687 16 12.0757C16 12.4971 15.835 12.8932 15.5379 13.1903L13.4738 15.2544C13 15.7301 12.3457 16 11.6739 16C11.5321 16 11.3962 15.9883 11.2622 15.965C8.64477 15.534 6.04869 14.1417 3.95358 12.0485C1.8604 9.95728 0.470136 7.36311 0.0332489 4.73786C-0.0987873 3.93592 0.167228 3.11068 0.74586 2.52816Z" fill="#BDBDBD"/>
+</svg>
+)
 
+const Cross=()=>(
+    <svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M3.07107 3.07102C-0.832162 6.97425 -0.832162 13.3099 3.07107 17.2132C6.9743 21.1164 13.31 21.1164 17.2132 17.2132C21.1164 13.3099 21.1164 6.97425 17.2132 3.07102C13.31 -0.832207 6.9743 -0.832208 3.07107 3.07102ZM14.3848 7.31366L11.5563 10.1421L14.3848 12.9705L12.9706 14.3847L10.1421 11.5563L7.31371 14.3847L5.89949 12.9705L8.72792 10.1421L5.89949 7.31366L7.31371 5.89945L10.1421 8.72788L12.9706 5.89945L14.3848 7.31366Z" fill="#828282"/>
+</svg>
+)
 
+const AddIconBlue=()=>(
+    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M7 1V13" stroke="#497CFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M13 7L0.999999 7" stroke="#497CFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+)
+  
+export default {AddIconBlue, Cross, Phone, ArrowLeft, PDF, HorizontalLine, TextMessage,Email,TodayLineIcon ,TimerIcon, AddIconWhite, CopyIcon, ZipIcon, VideoIcon , LogoFragment, DocsIcon, CrossIcon, AddWhiteIcon, VerticalGreenLine ,Count3, Count2, Count1, DocumentChatIcon, BlueIcon, SearchChatIcon ,AudioCallIcon ,VideoCallIcon ,GalleryIcon,SendIcon,OneIcon, AddIconRed, AddIconGray, ReplyIcon, Team, Chat, AttendanceSvg, Setting, Dashboard, MyTasks, Logout, MyLeave, Calender, Meeting, Tasks, BackArrowDouble, Notification, AddIcon, SearchBar, CalendarIcon, PasswordHide, PasswordShow, Verticaldots, PlayButton, Message, DocumentIcon, ShareIcon, WritingPencil, Four, ShareGray, AddPeople, Oction_download, DocumentRedIcon, WritingPencilBlue, ShareIconBlue}
 

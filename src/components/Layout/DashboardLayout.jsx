@@ -44,9 +44,16 @@ import { useEffect } from "react";
 import { NavBar } from "../NavBar";
 import { DropdownSidebar } from "../DropdownSidebar";
 import { SideBar } from "../SideBar";
+import { useState } from "react";
+import { useSidebarContext } from "../../Context/ContextLayout.jsx";
 
 export const Layout = ({ active, children }) => {
+
+  
   const { pathname } = useLocation();
+
+  const {sidebarOpen} = useSidebarContext(true)
+
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -59,15 +66,15 @@ export const Layout = ({ active, children }) => {
 
       
       {/* Top Navbar */}
-      <div className="w-full flex flex-col">
-        <NavBar />
+      <div className="w-full flex flex-col sticky top-0 lg:relative z-20">
+        <NavBar  />
       </div>
      
 
 
 
-      <div className="xl:hidden w-full">
-        <DropdownSidebar />
+      <div className="xl:hidden w-full bg-white">
+        <DropdownSidebar active={active} />
       </div>
 
 
@@ -75,12 +82,13 @@ export const Layout = ({ active, children }) => {
       {/* Sidebar and Content */}
       <div className="flex flex-grow">
         {/* Sidebar for larger screens */}
-        <div className="hidden xl:block xl:w-1/4 2xl:w-1/5">
+
+        <div className={`hidden xl:block   ${sidebarOpen ?  'xl:w-1/4 2xl:w-1/5 ' : 'w-20 '}`}>
           <SideBar active={active} />
         </div>
 
         {/* Main Content Area */}
-        <main className="w-full xl:w-full 2xl:w-4/5 p-[20px] md:p-[32px] bg-[#fbfbfb]">
+        <main className=" w-full px-[10px] md:p-[32px] bg-white lg:bg-[#fbfbfb]">
           {children}
         </main>
       </div>

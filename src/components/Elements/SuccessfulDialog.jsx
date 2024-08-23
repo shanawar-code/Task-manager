@@ -2,14 +2,9 @@ import React from "react";
 import { useState, useEffect, useRef } from "react";
 import { Input } from "../Input";
 import Button from "../Button";
-import { useNavigate } from "react-router-dom";
 
 function SuccessfulDialog({ show, onClose ,hidden, heading, onClick}) {
-    const navigate = useNavigate()
-  const handleSubmit = (e) => {
-    e.preventDefault();
-
-  };
+   
 
   const popupRef = useRef();
 
@@ -35,9 +30,8 @@ function SuccessfulDialog({ show, onClose ,hidden, heading, onClick}) {
 
   return (
     <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
-      <div ref={popupRef}>
-        <form onSubmit={handleSubmit}>
-          <div className=" mx-auto p-5 scroll-smooth bg-white shadow-lg rounded-xl border w-[360px]">
+      <div className="">
+          <div ref={popupRef} className=" mx-2 p-5 scroll-smooth bg-white shadow-lg rounded-xl border w-[300px] sm:w-[360px]">
             <div className="flex flex-col gap-3">
               <div className=" flex items-center justify-center text-center">
                <img src={'images/roundedGreentick.png'} alt="" />
@@ -50,8 +44,7 @@ function SuccessfulDialog({ show, onClose ,hidden, heading, onClick}) {
               </div>
             </div>
           </div>
-        </form>
-      </div>
+          </div>
     </div>
   );
 }

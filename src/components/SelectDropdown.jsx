@@ -25,7 +25,7 @@
 
 import React from "react";
 
-function SelectDropdown({label, options, name, id , onChange, className, onClick}) {
+function SelectDropdown({label, options, name, id , onChange, className, onClick, selectClass, customWidth}) {
   return (
     <div className="flex flex-col gap-y-1 bg-white">
       <label
@@ -34,9 +34,9 @@ function SelectDropdown({label, options, name, id , onChange, className, onClick
       >
         {label}
       </label>
-      <div className={`border px-3 focus-within:ring-2 ring-custom-blue rounded-lg bg-white ${className}`}>
+      <div className={`border px-3 focus-within:ring-1 ring-black rounded-lg bg-white ${className} ${customWidth? customWidth: ' w-fit'}`}>
         <select
-          className="outline-none py-2 w-full min-w-[200px] caret-custom-blue group bg-white"
+          className={`outline-none py-2 caret-custom-blue group bg-white ${selectClass}`} 
           name={name}
           id={id}
           onChange={onChange}
