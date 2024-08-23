@@ -16,6 +16,7 @@ import AttendanceAndLeave from "./Pages/HRDashboard/AttandenceAndLeave";
 
 import MyProfile from "./Pages/HRDashboard/Myprofile/index";
 import Payroll from "./Pages/HRDashboard/Payroll";
+import Documents from "./Pages/HRDashboard/Documents";
 
 
 function App() {
@@ -92,6 +93,11 @@ function App() {
  {
   path: "/payroll",
   element: <Payroll/>
+ },
+
+ {
+   path: "/documents",
+   element: <Documents/>
  }
 
   ]);

@@ -4,6 +4,7 @@ import { Arrows, Attdenence, Chair, Employeessvg, Employs, Plus, Threedots ,arro
 import ShareGroceryDialog from './ShareGroceryDialog';
 import Svgs from '../../../assets/svgs/Index.js'
 import Button from '../../../components/Button.jsx';
+import RoundedCard from '../../../components/Elements/RoundedCard.jsx';
 
 
 function Applicants() {
@@ -158,12 +159,14 @@ const applicants = [
         <div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 sm:px-4  lg:px-0 mt-6">
                 {applicantsData.map((items,index) => (
-                    <div key={index} className="bg-white p-4 rounded-lg shadow-md ">
+                  <RoundedCard>
+                    <div key={index} className=" ">
                         <div>  <h3 className="text-[12px] font-semibold font-public-sans text-[#828282]">{items.Employees}</h3></div>
                         <div className='flex justify-between items-center text-[20px]'><p className={`${items.totalempolyescolor}  font-semibold font-public-sans`}>{items.totalEmployees}</p>
                         <span>{items.svg}</span> </div>
                         <div className='flex items-center'><span className={`${items.textcolor}`}>{items.newEmployeesnumber}</span><p className={`${items.empolyestextcolor}`}> {items.newEmployees}</p></div>
                     </div>
+                    </RoundedCard>
                 ))}
 
             </div>

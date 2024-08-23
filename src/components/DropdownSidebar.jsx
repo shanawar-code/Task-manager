@@ -49,6 +49,13 @@ const navigate = useNavigate()
         navigate: '/chat',
         active: active=== 'Chat'? true: false,
     },
+
+    {
+      name: 'Documents',
+      icon: <Svgs.Setting color={active === 'Documents' ? '#fff' : '#828282'}/>,
+      navigate: '/documents',
+      active: active=== 'Documents'? true: false,
+  },
     
     {
         name: 'My profile',

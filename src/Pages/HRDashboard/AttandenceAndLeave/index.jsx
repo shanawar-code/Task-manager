@@ -243,7 +243,7 @@ function AttendanceAndLeave() {
             />
           </svg>
           <div className="absolute inset-0 flex items-center justify-center flex-col ">
-            <span className="text-2xl font-bold text-[#333333] font-open-sans">{attendanceData.attendancePercentage}%</span><span className='text-gray-4 font-public-sans text-[12px] '>attendance</span>
+            <span className="text-2xl font-bold text-[#333333] font-public-sans">{attendanceData.attendancePercentage}%</span><span className='text-gray-4 font-public-sans text-[12px] '>attendance</span>
           </div>
         </div>
         <div className='w-full'>  

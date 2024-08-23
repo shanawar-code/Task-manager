@@ -6,6 +6,7 @@ import Button1 from '../../../components/Button1';
 import { Attdenence, Calenderhr, Chair, Employs, Threedots } from '../../../assets/svgs/Index';
 import { Layout } from '../../../components/Layout/DashboardLayout';
 import { Employeessvg } from '../../../assets/svgs/Index';
+import RoundedCard from '../../../components/Elements/RoundedCard';
 
 
 function Dashboard_hr() {
@@ -113,18 +114,22 @@ function Dashboard_hr() {
     <Layout active={'Dashboard'}> 
           <div className="  bg-gray-100">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 sm:px-4  lg:px-0">
+            
                 {overviewData.map((items,index) => (
-                    <div key={index} className="bg-white p-4 rounded-lg shadow-md ">
+                  <RoundedCard>
+                    <div key={index} className=" ">
                         <div> <h3 className="text-[12px] font-semibold font-public-sans text-[#828282]">{items.Employees}</h3></div>
                         <div className='flex justify-between items-center text-[20px]'><p className={`${items.totalempolyescolor}  font-semibold font-public-sans`}>{items.totalEmployees}</p>
                         <span>{items.svg}</span> </div>
                         <div className='flex items-center'><span className={`${items.textcolor}`}>{items.newEmployeesnumber}</span><p className={`${items.empolyestextcolor}`}> {items.newEmployees}</p></div>
                     </div>
+                    </RoundedCard>
                 ))}
-
+              
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4 mt-4 sm:px-4  lg:px-0">
-                <div className="bg-white p-4 rounded-lg shadow-md">
+            <RoundedCard>
+                <div className="">
                     <h3 className="text-lg text-gray-1 text-[16px] font-public-sans font-semibold">Attendance</h3>
                     {/* svg for circle bar */}
                 
@@ -145,7 +150,7 @@ function Dashboard_hr() {
             />
           </svg>
           <div className="absolute inset-0 flex items-center justify-center flex-col ">
-            <span className="text-2xl font-bold text-[#333333] font-open-sans">{attendanceData.attendancePercentage}%</span><span className='text-gray-4 font-public-sans text-[12px] '>attendance</span>
+            <span className="text-2xl font-bold text-[#333333] font-public-sans">{attendanceData.attendancePercentage}%</span><span className='text-gray-4 font-public-sans text-[12px] '>attendance</span>
           </div>
         </div>
         <div className='w-full'>  
@@ -186,8 +191,10 @@ function Dashboard_hr() {
                     <button className="mt-4 text-gray-2 border border-gray-2  font-semibold font-public-sans text-[14px] py-[7px] px-[12px] rounded-lg ">View all</button>
                     </div>
                 </div>
+                </RoundedCard>
                 <div className="  ">
-                <div className=" rounded-xl p-5 border bg-white">
+                <RoundedCard>
+                <div className="">
                 <div className="">
                   <div className="flex justify-between items-center mb-4">
                     <h2 className="text-sm md:text-base font-semibold font-public-sans text-gray-1">
@@ -234,7 +241,7 @@ function Dashboard_hr() {
                         />
                       </div>
                       <div className='absolute inset-0 flex items-center justify-center flex-col '>
-                      <span className='text-2xl font-bold text-[#333333] font-open-sans'>100%</span>
+                      <span className='text-2xl font-bold text-[#333333] font-public-sans'>100%</span>
                       <p className="text-gray-4 font-public-sans text-[12px] ">
                         Expected score
                       </p>
@@ -255,7 +262,7 @@ function Dashboard_hr() {
                         />
                       </div>
                       <div className='absolute inset-0 flex items-center justify-center flex-col '>
-                      <span className='text-2xl font-bold text-[#333333] font-open-sans'>82%</span>
+                      <span className='text-2xl font-bold text-[#333333] font-public-sans'>82%</span>
                       <p className="text-gray-4 font-public-sans text-[12px] ">
                       Achieved score
                       </p>
@@ -281,9 +288,10 @@ function Dashboard_hr() {
                   </div>
                 </div>
               </div>
-                   
+              </RoundedCard>
+              <RoundedCard className={'my-6'}>
            
-            <div className="bg-white p-4 rounded-lg shadow-md mt-[24px]">
+            <div className="">
                 <div className="flex justify-between items-center">
                     <h3 className="md:text-[16px] text-[14px] text-gray-1 font-semibold font-public-sans">Meetings</h3>
                     <Button1
@@ -331,7 +339,9 @@ function Dashboard_hr() {
                     })}
                     </div>
             </div>
+            </RoundedCard>
             </div>
+         
             </div>
         </div>
     </Layout>

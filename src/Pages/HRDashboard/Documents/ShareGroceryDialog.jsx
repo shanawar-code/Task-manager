@@ -1,8 +1,7 @@
 import React from "react";
 import {useState, useEffect, useRef } from "react";
 import Addnewemployee from "../Employees/Addnewemployee";
-import Addapplicant from "./Addsalary";
-import Addsalary from "./Addsalary";
+import Documentview from "./Documentview";
 
 function ShareGroceryDialog({ show, onClose }) {
   const popupRef = useRef();
@@ -30,9 +29,8 @@ function ShareGroceryDialog({ show, onClose }) {
 
   return (
     <div className="fixed inset-0 flex items-center justify-center bg-white bg-opacity-70 z-50 ">
-      <div ref={popupRef} className=" mx-auto  scroll-smooth bg-white shadow-lg border rounded-xl w-[800px] overflow-y-auto h-[85%]  ">
-      <Addsalary/>
-      
+      <div ref={popupRef} className=" mx-auto p-5 scroll-smooth bg-white shadow-lg border rounded-xl w-[534px] overflow-y-auto h-[75%]  ">
+      <Documentview/>
     </div> 
       
       </div>

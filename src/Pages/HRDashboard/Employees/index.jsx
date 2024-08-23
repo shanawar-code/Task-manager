@@ -5,6 +5,7 @@ import Addnewemployee from '../Employees/Addnewemployee';
 import ShareGroceryDialog from './ShareGroceryDialog';
 import Button from '../../../components/Button';
 import Svgs from '../../../assets/svgs/Index.js'
+import RoundedCard from '../../../components/Elements/RoundedCard.jsx';
 
 function Employees_hr() {
   const initialEmployees = [
@@ -84,7 +85,7 @@ function Employees_hr() {
   return (
     <Layout active={'Employees'}>
       <div className="min-h-screen  ">
-        <div className="flex gap-[10px] sm:gap-[0px]  px-8 flex-wrap  sm:flex-row justify-between items-start sm:items-center mb-4  sm:space-y-0">
+        <div className="flex gap-[10px] sm:gap-[0px]   flex-wrap  sm:flex-row justify-between items-start sm:items-center mb-4  sm:space-y-0">
           <h2 className="lg:text-2xl sm:text-lg text-base font-bold font-public-sans text-gray-1 ">Employees</h2>
           <div className="flex    flex-col sm:flex-row items-start sm:items-center space-y-4 sm:space-y-0 sm:space-x-4">
             <div className='border border-gray-1 rounded-lg px-4 py-3 md:text-sm text-xs font-public-sans font-semibold text-gray-1'>
@@ -106,9 +107,11 @@ function Employees_hr() {
             
           </div>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3  py-5 px-6 gap-y-4 gap-x-4">
+        
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3  py-5  gap-y-4 gap-x-4">
           {employees.map((employee, index) => (
-            <div key={index} className="bg-white py-5 px-6 rounded-2xl shadow-md">
+            <RoundedCard>
+            <div key={index} className="">
               <div className="flex items-center gap-x-4 gap-y-5 mb-4">
                 <img
                   src={employee.img}
@@ -149,6 +152,7 @@ function Employees_hr() {
               </button>
               </div>
             </div>
+            </RoundedCard>
           ))}
         </div>
     

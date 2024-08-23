@@ -87,6 +87,12 @@ console.log(active)
         active: active=== 'Chat'? true: false,
     },
     {
+        name: 'Documents',
+        icon: <Svgs.Document color={active === 'Documents' ? '#fff' : '#828282'}/>,
+        navigate: '/documents',
+        active: active=== 'Documents'? true: false,
+    },
+    {
         name: 'My profile',
         icon: <Svgs.Setting color={active === 'My profile' ? '#fff' : '#828282'}/>,
         navigate: '/myprofile',
