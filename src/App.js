@@ -12,6 +12,7 @@ import MyProfile from "./Pages/UserDashboard/MyProfile";
 import Chat from "./Pages/UserDashboard/Chat";
 import MYTeamLast from "./Pages/UserDashboard/MYTeam/MyTeamLast";
 import FindColleagues from "./Pages/UserDashboard/Chat/FindColleagues";
+import HR_Dashboard from "./Pages/HRDashboard/Dashboard";
 
 
 
@@ -69,6 +70,15 @@ function App() {
     {
       path: '/findcolleagues',
       element: <FindColleagues/>
+    },
+
+
+    // ---------------------------
+
+
+    {
+      path: '/hr-dashboard',
+      element:<HR_Dashboard/>
     }
   ]);
 

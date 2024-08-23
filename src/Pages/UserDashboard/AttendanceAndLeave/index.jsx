@@ -7,6 +7,7 @@ import Calendar from './Calendar.jsx'
 import ReviweLeaveDialog from './ReviewLeaveDialog.jsx'
 import { useState } from 'react'
 import ApplyLeaveDialog from './ApplyLeave.jsx'
+import CalendarDialog from '../Dashboard/CalendarDialog.jsx'
 
 
 function AttendanceAndLeave() {
@@ -94,8 +95,8 @@ function AttendanceAndLeave() {
         {cardData.map((value, index)=>(
         <div key={index} className={` ${value.padding_x} ${value.border_b} ${value.padding_y} flex items-center justify-between `}>
           <div className='1 flex items-center gap-3'>
-            <div>
-              {value.icon}
+            <div className=' border rounded-full w-6 h-6 flex items-center justify-center text-xs font-semibold font-public-sans text-gray-4 '>
+              {index+1}
             </div>
             <div className='flex flex-col gap-3'>
               <h1 className=' text-sm font-semibold font-public-sans text-gray-1'>Anna</h1>
@@ -135,9 +136,9 @@ function AttendanceAndLeave() {
 
           </div>
           </div>
-          <div>
+          {/* <div>
             <Button text={'Apply for leave'} customPadding={'px-[16px] py-[8px]'}/>
-          </div>
+          </div> */}
         </div>
         {cardData.map((value, index)=>(
         <div key={index} className={` ${value.padding_x} ${value.border_b} ${value.padding_y} flex items-center justify-between`}>
@@ -175,6 +176,7 @@ function AttendanceAndLeave() {
       <RoundedCard customPadding={'p-3'}>
       <div className=' calender'>
       <Calendar/>
+      {/* <CalendarDialog/> */}
       </div>
       <div className=''>
     <div className=' my-6'>

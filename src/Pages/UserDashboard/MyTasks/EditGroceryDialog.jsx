@@ -48,7 +48,7 @@ function EditGroceryDialog({ show, onClose, hidden }) {
 
   return (
     <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
-      <div ref={popupRef} className=" bg-white w-full md:w-[80vw]  rounded-xl p-5 overflow-auto h-full mx-3">
+      <div ref={popupRef} className=" bg-white w-full md:w-[80vw]  rounded-xl p-5 overflow-auto h-[95vh] mx-3">
         <div className="flex items-center justify-center">
           <div className="">
             <h1 className=" text-lg md:text-2xl font-semibold font-public-sans text-gray-1">

@@ -98,70 +98,22 @@ function Calendar({ show, onClose }) {
     setCurrentMonth(subMonths(currentMonth, 1));
   };
 
-  const [showPopup, setShowPopup] = useState(false);
+  
 
-  const handleShowPopup = () => {
-    setShowPopup(true);
-  };
 
-  const handleClosePopup = () => {
-    setShowPopup(false);
-  };
+ 
 
-  const popupRef = useRef();
-
-  const handleClickOutside = (event) => {
-    if (popupRef.current && !popupRef.current.contains(event.target)) {
-      onClose();
-    }
-  };
-
-  useEffect(() => {
-    if (show || showPopup) {
-      // Disable scrolling on the background when the popup is open
-      document.body.style.overflow = "hidden";
-    } else {
-      // Enable scrolling again when the popup is closed
-      document.body.style.overflow = "auto";
-    }
-
-    return () => {
-      // Clean up by enabling scrolling when the component unmounts
-      document.body.style.overflow = "auto";
-    };
-  }, [show, showPopup]);
-
-  useEffect(() => {
-    if (show) {
-      document.addEventListener("mousedown", handleClickOutside);
-    } else {
-      document.removeEventListener("mousedown", handleClickOutside);
-    }
-
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
-  }, [show]);
-
-  if (!show) return null;
-
+ 
   return (
     <>
-      <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
-        <div className="py-3 ">
-          <div
-            ref={popupRef}
-            className="bg-white shadow-lg rounded-xl border p-6 mx-2 overflow-y-auto w-[350px]"
-          >
-            <div className=" border-b border-dashed pb-6">
+     <div>
+
+     
               {renderHeader()}
               {renderDays()}
               {renderCells()}
-            </div>
-          </div>
-        </div>
-      </div>
-    </>
+              </div>
+      </>
   );
 }
 

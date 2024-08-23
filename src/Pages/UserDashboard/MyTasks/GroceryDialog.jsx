@@ -73,7 +73,7 @@ function GroceryDialog({ show, onClose, hidden, popupCardIndex , index }) {
 
   return (
     <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
-      <div className=" overflow-y-auto h-full">
+      <div className=" overflow-y-auto h-[95vh]">
       <div ref={popupRef} className="bg-white w-[95vw] md:max-w-[80vw] rounded-xl p-3 md:p-5 ">
         <div className="flex flex-wrap items-center justify-center sm:justify-between gap-3">
           <div></div>

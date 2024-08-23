@@ -115,7 +115,7 @@ function MyTeam() {
       <RoundedCard customPadding={'py-6'} className={'min-w-[500px]'}>
         <div className=' mb-8 px-6 flex items-center justify-between'>
           <div className='flex items-center gap-[11px]'>
-          <h1 className=' text-base font-semibold font-epilogue text-gray-1'>Python developer team</h1>
+          <h1 className=' text-base font-semibold font-public-sans text-gray-1'>Python developer team</h1>
           <span><Svgs.WritingPencil/></span>
           </div>
           <div>
@@ -158,7 +158,7 @@ function MyTeam() {
       <RoundedCard customPadding={'py-6'} className={' my-6 min-w-[500px]'}>
         <div className=' mb-8 px-6 flex items-center justify-between'>
           <div className='flex items-center gap-[11px]'>
-          <h1 className=' text-base font-semibold font-epilogue text-gray-1'>Other teams</h1>
+          <h1 className=' text-base font-semibold font-public-sans text-gray-1'>Other teams</h1>
           {/* <span><Svgs.WritingPencil/></span> */}
           </div>
           <div>
