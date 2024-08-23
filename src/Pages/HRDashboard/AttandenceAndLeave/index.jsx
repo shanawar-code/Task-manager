@@ -248,13 +248,13 @@ function AttendanceAndLeave() {
         </div>
         <div className='w-full'>  
           
-        <div className='flex justify-between items-center  border-[#E0E0E0] border-b '><h6 className='font-public-sans text-[12px] text-[#4F4F4F] '>Present</h6> <span><h6 className='font-public-sans text-[14px] text-[#333333]'>24</h6></span>
+        <div className='flex justify-between items-center  border-[#E0E0E0] border-b '><h6 className='font-public-sans text-[12px] text-[#4F4F4F] py-[8px] '>Present</h6> <span><h6 className='font-public-sans text-[14px] text-[#333333]'>24</h6></span>
         
         </div>
-        <div className='flex justify-between items-center border-[#E0E0E0] border-b'><h6 className='font-public-sans text-[12px] text-[#4F4F4F] '>On leave</h6> <span><h6 className=' font-public-sans text-[14px] text-[#333333]'>0</h6></span>
+        <div className='flex justify-between items-center border-[#E0E0E0] border-b'><h6 className='font-public-sans text-[12px] text-[#4F4F4F] py-[8px]'>On leave</h6> <span><h6 className=' font-public-sans text-[14px] text-[#333333]'>0</h6></span>
         
         </div>
-        <div className='flex justify-between items-center  '><h6 className='font-public-sans text-[12px] text-[#4F4F4F] '>Absent</h6> <span><h6 className='font-public-sans text-[14px] text-[#333333]'>1</h6></span>
+        <div className='flex justify-between items-center  '><h6 className='font-public-sans text-[12px] text-[#4F4F4F] py-[8px] '>Absent</h6> <span><h6 className='font-public-sans text-[14px] text-[#333333]'>1</h6></span>
         
         </div>
         

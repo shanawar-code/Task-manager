@@ -56,7 +56,7 @@ const applicantsData = [
     {
         Employees: 'Total aplicants',
         totalEmployees: '63',
-        newEmployeesnumber: '2:',
+        newEmployeesnumber: '2',
         newEmployees: 'applicants rejected',
         textcolor: 'text-[#F54D4D]',
         empolyestextcolor: 'text-gray-4',
@@ -164,7 +164,7 @@ const applicants = [
                         <div>  <h3 className="text-[12px] font-semibold font-public-sans text-[#828282]">{items.Employees}</h3></div>
                         <div className='flex justify-between items-center text-[20px]'><p className={`${items.totalempolyescolor}  font-semibold font-public-sans`}>{items.totalEmployees}</p>
                         <span>{items.svg}</span> </div>
-                        <div className='flex items-center'><span className={`${items.textcolor}`}>{items.newEmployeesnumber}</span><p className={`${items.empolyestextcolor}`}> {items.newEmployees}</p></div>
+                        <div className='flex items-center gap-[4px]'><span className={`${items.textcolor}`}>{items.newEmployeesnumber}</span><p className={`${items.empolyestextcolor}`}> {items.newEmployees}</p></div>
                     </div>
                     </RoundedCard>
                 ))}
