@@ -4,7 +4,7 @@ import { Layout } from '../../../components/Layout/DashboardLayout'
 import MyTaskCard from './MyTaskCard'
 import Svgs from '../../../assets/svgs/Index.js'
 import { useState } from 'react'
-import CreateTaskDialog from './CreateTaskDialog.jsx'
+import CreateTaskDialog from './Element/CreateTaskDialog'
 import { useSidebarContext } from '../../../Context/ContextLayout.jsx'
 import { useNavigate } from 'react-router-dom'
 
@@ -44,7 +44,7 @@ function Tasks() {
             </div>
         </div>
     </div>
-    <div className={`${sidebarOpen ? ' w-full sm:md:w-[75vw]' : ' w-full sm:w-[89vw]'} `}>
+    <div className={`${sidebarOpen ? ' w-full sm:md:w-[75vw] ease-in-out duration-300' : ' w-full sm:w-[89vw] ease-in-out duration-300'} `}>
     <MyTaskCard/>
     </div>
     </Layout>

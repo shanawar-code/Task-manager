@@ -77,7 +77,7 @@ export const SignUpPage = () => {
                           placeholder={'Enter your name here'} 
                           className={'w-full sm:w-[350px]'}/>
                          {touched.name && errors.name && (
-                                <small>{errors.name}</small>
+                                <small className=' text-custom-red'>{errors.name}</small>
                          )}
                         </div>
                         <div className=' '>
@@ -93,7 +93,7 @@ export const SignUpPage = () => {
                         placeholder={'Enter your email'} 
                         className={' w-full sm:w-[350px]'}/>
                         {touched.email && errors.email && (
-                                <small>{errors.email}</small>
+                                <small className=' text-custom-red'>{errors.email}</small>
                          )}
                         </div>
                         <div className=''>
@@ -114,7 +114,7 @@ export const SignUpPage = () => {
                             placeholder={'input your password in here'} 
                             className={' w-full sm:w-[350px]'}/>
                            {touched.password && errors.password && (
-                                <small>{errors.password}</small>
+                                <small className=' text-custom-red'>{errors.password}</small>
                          )}
                         </div>
 
@@ -131,7 +131,7 @@ export const SignUpPage = () => {
                             placeholder={'input your password in here'} 
                             className={' w-full sm:w-[350px]'}/>
                             {touched.confirm_password && errors.confirm_password && (
-                                <small>{errors.confirm_password}</small>
+                                <small className=' text-custom-red'>{errors.confirm_password}</small>
                          )}
                         </div>
                         </div>

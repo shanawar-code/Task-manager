@@ -1,10 +1,10 @@
 import React from 'react'
 import HeadingCard from './HeadingCard'
 import TaskDataCard from './TaskDataCard'
-import GroceryDialog from './GroceryDialog';
+import GroceryDialog from './Element/GroceryDialog';
 import { useState } from 'react';
 import Svgs from '../../../assets/svgs/Index.js'
-import CreateTaskDialog from './CreateTaskDialog.jsx';
+import CreateTaskDialog from './Element/CreateTaskDialog';
 import MoreOptions from "../../../components/Elements/MoreOptions.jsx";
 
 

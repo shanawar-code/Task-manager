@@ -1,6 +1,6 @@
 import React from "react";
 import { useState, useEffect, useRef } from "react";
-import SuccessfulDialog from "../../../components/Elements/SuccessfulDialog";
+import SuccessfulDialog from "../../../../components/Elements/SuccessfulDialog";
 
 
 

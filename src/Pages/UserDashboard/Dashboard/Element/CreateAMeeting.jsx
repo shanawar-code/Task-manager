@@ -1,10 +1,10 @@
 import React from "react";
 import { useState, useEffect, useRef } from "react";
-import { Input } from "../../../components/Input.jsx";
-import Button from "../../../components/Button.jsx";
-import SuccessfulDialog from "../../../components/Elements/SuccessfulDialog.jsx";
+import { Input } from "../../../../components/Input.jsx";
+import Button from "../../../../components/Button.jsx";
+import SuccessfulDialog from "../../../../components/Elements/SuccessfulDialog.jsx";
 import CalendarDialog from "./CalendarDialog.jsx";
-import Svgs from '../../../assets/svgs/Index.js'
+import Svgs from '../../../../assets/svgs/Index.js'
 
 
 function VerifiedSuccessful({ show, onClose }) {

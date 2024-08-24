@@ -1,11 +1,11 @@
 import React from "react";
 import { useState, useEffect, useRef } from "react";
-import { Input } from "../../../components/Input";
-import Button from "../../../components/Button";
+import { Input } from "../../../../components/Input";
+import Button from "../../../../components/Button";
 import { useNavigate } from "react-router-dom";
-import Svgs from '../../../assets/svgs/Index.js'
-import SelectDropdown from "../../../components/SelectDropdown.jsx";
-import SuccessfulDialog from "../../../components/Elements/SuccessfulDialog.jsx";
+import Svgs from '../../../../assets/svgs/Index.js'
+import SelectDropdown from "../../../../components/SelectDropdown.jsx";
+import SuccessfulDialog from "../../../../components/Elements/SuccessfulDialog.jsx";
 
 
 function EditGroceryDialog({ show, onClose, hidden }) {
@@ -94,20 +94,26 @@ function EditGroceryDialog({ show, onClose, hidden }) {
           </div>
           <div className="my-4">
             <div className="flex items-center flex-wrap justify-center md:justify-between gap-4 my-[16px] ">
-              <button className=" border rounded-xl px-[14px] py-[10px] bg-[#f3f3f3]  flex items-center justify-between w-full sm:w-[273px]">
+              <button className=" relative border rounded-xl px-[14px] py-[10px] bg-[#f3f3f3]  flex items-center justify-between w-full sm:w-[273px]">
                 <span className=" text-sm font-semibold text-gray-2 font-public-sans">
                   Detailed document
                 </span>
                 <span className=" rounded-full bg-white">
                   <Svgs.Oction_download/>
+                </span>
+                <span className=" absolute -top-2 -right-2">
+                  <Svgs.Cross/>
                 </span>
               </button>
-              <button className=" border rounded-xl px-[14px] py-[10px] bg-[#f3f3f3]  flex items-center justify-between w-full sm:w-[273px]">
+              <button className=" relative border rounded-xl px-[14px] py-[10px] bg-[#f3f3f3]  flex items-center justify-between w-full sm:w-[273px]">
                 <span className=" text-sm font-semibold text-gray-2 font-public-sans">
                   Detailed document
                 </span>
                 <span className=" rounded-full bg-white">
                   <Svgs.Oction_download/>
+                </span>
+                <span className=" absolute -top-2 -right-2">
+                  <Svgs.Cross/>
                 </span>
               </button>
               <button  className=" border border-[#f7585c] rounded-xl px-[12px] py-[11.5px] flex items-center gap-4 ">

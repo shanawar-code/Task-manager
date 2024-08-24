@@ -1,7 +1,7 @@
 import React from "react";
 import Svgs from '../../../assets/svgs/Index.js'
 import { Layout } from "../../../components/Layout/DashboardLayout.jsx";
-import ProfileDialog from "./ProfileDialog.jsx";
+import ProfileDialog from "./Element/ProfileDialog.jsx";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 

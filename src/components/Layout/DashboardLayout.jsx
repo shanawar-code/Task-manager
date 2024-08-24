@@ -45,7 +45,7 @@ import { NavBar } from "../NavBar";
 import { DropdownSidebar } from "../DropdownSidebar";
 import { SideBar } from "../SideBar";
 import { useState } from "react";
-import { useSidebarContext } from "Context/ContextLayout";
+import { useSidebarContext } from "../../Context/ContextLayout";
 // import { useSidebarContext } from "../../Context/ContextLayout.jsx";
 
 export const Layout = ({ active, children }) => {
@@ -84,7 +84,7 @@ export const Layout = ({ active, children }) => {
       <div className="flex flex-grow">
         {/* Sidebar for larger screens */}
 
-        <div className={`hidden xl:block    ${sidebarOpen ? 'xl:w-1/4 2xl:w-1/5 ' : 'w-20 '}`}>
+        <div className={`hidden xl:block   ${sidebarOpen ? 'xl:w-1/4 2xl:w-1/5 ease-in-out duration-300 ' : 'w-20 ease-in-out duration-300'}`}>
           <SideBar active={active} />
         </div>
 

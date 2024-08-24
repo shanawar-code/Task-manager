@@ -3,14 +3,14 @@ import { Layout } from '../../../components/Layout/DashboardLayout.jsx'
 import Svgs from '../../../assets/svgs/Index.js'
 import RoundedCard from '../../../components/Elements/RoundedCard.jsx'
 import Button from '../../../components/Button.jsx'
-import Calendar from './Calendar.jsx'
-import ReviweLeaveDialog from './ReviewLeaveDialog.jsx'
+import Calendar from './Element/Calendar.jsx'
+import ReviweLeaveDialog from './Element/ReviewLeaveDialog.jsx'
 import { useState } from 'react'
-import ApplyLeaveDialog from './ApplyLeave.jsx'
-import CalendarDialog from '../Dashboard/CalendarDialog.jsx'
+import ApplyLeaveDialog from './Element/ApplyLeave.jsx'
+import CalendarDialog from '../Dashboard/Element/CalendarDialog.jsx'
 
 
-function AttendanceAndLeave() {
+function AttendanceAndLeaveUser() {
 
   const cardData=[
     {
@@ -238,4 +238,4 @@ function AttendanceAndLeave() {
   )
 }
 
-export default AttendanceAndLeave
+export default AttendanceAndLeaveUser

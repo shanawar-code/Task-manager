@@ -2,11 +2,11 @@ import React, { useState } from 'react';
 
 import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
-import Button1 from '../../../components/Button1';
 import { Attdenence, Calenderhr, Chair, Employs, Threedots } from '../../../assets/svgs/Index';
 import { Layout } from '../../../components/Layout/DashboardLayout';
 import { Employeessvg } from '../../../assets/svgs/Index';
 import RoundedCard from '../../../components/Elements/RoundedCard';
+import Button from '../../../components/Button';
 
 
 function Dashboard_hr() {
@@ -294,11 +294,8 @@ function Dashboard_hr() {
                 <div className="">
                   <div className="flex justify-between items-center">
                     <h3 className="md:text-[16px] text-[14px] text-gray-1 font-semibold font-public-sans">Meetings</h3>
-                    <Button1
-
-                      text={'Create new meeting'}
-
-                    />
+                   
+                    <Button text={'Create new button'}/>
 
 
                   </div>

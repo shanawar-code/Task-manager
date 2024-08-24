@@ -1,7 +1,7 @@
 import React from "react";
 import Svgs from '../../../assets/svgs/Index.js'
 import { Layout } from "../../../components/Layout/DashboardLayout.jsx";
-import ProfileDialog from "./ProfileDialog.jsx";
+import ProfileDialog from "./Element/ProfileDialog.jsx";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
@@ -35,7 +35,7 @@ function Chat() {
                     <h1 className="text-xs md:text-sm font-normal font-public-sans text-[#999999]">Online</h1>
                   </div>
                 </div>
-                <div onClick={()=>(navigate('/findcolleagues'))} className=" cursor-pointer">
+                <div onClick={()=>(navigate('/user/findcolleagues'))} className=" cursor-pointer">
                   <Svgs.SearchChatIcon/>
                 </div>
               </div>

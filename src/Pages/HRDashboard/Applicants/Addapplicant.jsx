@@ -1,6 +1,6 @@
 import { useRef } from 'react';
 import React, { useState } from 'react'
-import { Calenderhr, Crossiconssvg, Fileattachsvg } from 'assets/svgs/Index';
+import { Calenderhr, Crossiconssvg, Fileattachsvg } from '../../../assets/svgs/Index';
 import SuccessfulDialog from '../../../components/Elements/SuccessfulDialog';
 import { Input } from '../../../components/Input';
 

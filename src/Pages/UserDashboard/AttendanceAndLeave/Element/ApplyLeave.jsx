@@ -1,11 +1,11 @@
 import React from "react";
 import { useState, useEffect, useRef } from "react";
-import SuccessfulDialog from "../../../components/Elements/SuccessfulDialog";
-import { Input } from "../../../components/Input";
+import SuccessfulDialog from "../../../../components/Elements/SuccessfulDialog";
+import { Input } from "../../../../components/Input";
 import Calendar from "./Calendar";
-import Svgs from '../../../assets/svgs/Index.js'
-import Button from "../../../components/Button.jsx";
-import SelectDropdown from "../../../components/SelectDropdown.jsx";
+import Svgs from '../../../../assets/svgs/Index.js'
+import Button from "../../../../components/Button.jsx";
+import SelectDropdown from "../../../../components/SelectDropdown.jsx";
 
 
 function ApplyLeaveDialog({ show, onClose}) {

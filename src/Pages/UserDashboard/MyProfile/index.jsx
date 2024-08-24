@@ -2,7 +2,7 @@ import React from 'react'
 import { Layout } from '../../../components/Layout/DashboardLayout'
 import RoundedCard from '../../../components/Elements/RoundedCard'
 import Svgs from '../../../assets/svgs/Index.js'
-function MyProfile() {
+function MyProfileUser() {
 
   const skills=[
     {
@@ -228,4 +228,4 @@ function MyProfile() {
   )
 }
 
-export default MyProfile
+export default MyProfileUser

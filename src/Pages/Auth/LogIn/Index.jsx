@@ -4,7 +4,7 @@ import { Input } from '../../../components/Input';
 import Button from '../../../components/Button';
 import { Formik, useFormik } from 'formik';
 import { signInSchema } from '../../../schemas';
-import { useUserContext } from 'Context/UserProvider';
+import { useUserContext } from '../../../Context/UserProvider';
 
 const initialValues = {
     email: '',
@@ -73,7 +73,7 @@ export const LoginPage = () => {
                                 placeholder={'Input your Email here'}
                                 className={'w-full sm:w-[350px]'} />
                             {touched.email && errors.email && (
-                                <small>{errors.email}</small>
+                                <small className=' text-custom-red'>{errors.email}</small>
                             )}
                         </div>
                         <div>
@@ -92,7 +92,7 @@ export const LoginPage = () => {
                             <div className='flex items-center justify-between'>
                                 <div>
                                     {touched.password && errors.password && (
-                                        <small>{errors.password}</small>
+                                        <small className=' text-custom-red'>{errors.password}</small>
                                     )}
                                 </div>
                                 <div className='text-right font-mulish text-gray-2 font-bold text-sm lg:text-base cursor-pointer pt-3'>

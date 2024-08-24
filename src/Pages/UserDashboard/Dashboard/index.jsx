@@ -1,7 +1,7 @@
 import React from "react";
 import Cards from "../../../components/Elements/DashboardCard.jsx";
 import { useState } from "react";
-import VerifiedSuccessful from "./CreateAMeeting.jsx";
+import VerifiedSuccessful from "./Element/CreateAMeeting.jsx";
 import Svgs from "../../../assets/svgs/Index.js";
 import Button from "../../../components/Button.jsx";
 import UltimateCard from "../../../components/Elements/UltimateCard.jsx";
@@ -9,8 +9,8 @@ import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
 import { Layout } from "../../../components/Layout/DashboardLayout.jsx";
 import RoundedCard from "../../../components/Elements/RoundedCard.jsx";
-import CreateTaskDialog from '../MyTasks/CreateTaskDialog.jsx'
-import Collaborate from "../MYTeam/Collaborative.jsx";
+import CreateTaskDialog from '../MyTasks/Element/CreateTaskDialog.jsx'
+import Collaborate from "../MYTeam/Element/Collaborative.jsx";
 import MoreOptions from "../../../components/Elements/MoreOptions.jsx";
 
 
@@ -301,12 +301,12 @@ export function Dashboard() {
                     />
                      {showTaskPopup && (<CreateTaskDialog show={showTaskPopup} onClose={handleCloseTaskPopup}/>)}
                   </div>
-                  <div className=" overflow-x-auto">
+                  <div className=" overflow-x-auto mt-3">
                   {taskCard
-                    .map((value, index) => {
+                    .map((value, index, arr) => {
                       return (
                         <>
-                          <div key={index} className=" min-w-[450px] flex items-center overflow-x-auto gap-3 justify-between border-b-2 mb-3 pb-3 mt-7 ">
+                          <div key={index} className={` min-w-[450px] flex items-center overflow-x-auto gap-3 justify-between ${index === arr.length -1 ? ' border-b-0' : 'border-b-2'} py-3 `}>
                             <div className="flex items-center gap-3">
                               <img src="/images/Img.png" alt="" />
                               <h1 className=" text-sm font-epilogue font-semibold text-gray-1">

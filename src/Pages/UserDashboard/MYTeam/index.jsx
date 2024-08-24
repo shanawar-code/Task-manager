@@ -7,9 +7,9 @@ import { useState } from 'react'
 import SuccessfulDialog from '../../../components/Elements/SuccessfulDialog.jsx'
 import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
-import CreateNewTeamDialog from './CreateNewTeamDialog.jsx'
-import AddNewMemberDialog from './AddNewMemberDialog.jsx'
-import Collaborate from './Collaborative.jsx'
+import CreateNewTeamDialog from './Element/CreateNewTeamDialog.jsx'
+import AddNewMemberDialog from './Element/AddNewMemberDialog.jsx'
+import Collaborate from './Element/Collaborative.jsx'
 import { useNavigate } from 'react-router-dom'
 
 
@@ -95,7 +95,7 @@ function MyTeam() {
                 <div>
                     <h1 className=' text-2xl font-bold font-public-sans text-gray-1'>Team Memeber</h1>
                 </div>
-                <div onClick={()=>{navigate('/myteamlast')}} className='flex items-center justify-center md:justify-start cursor-pointer'>
+                <div onClick={()=>{navigate('/user/myteamlast')}} className='flex items-center justify-center md:justify-start cursor-pointer'>
                     <img src='images/member1.png' alt="" />
                     <img src='images/member2.png' width={'32px'} alt="" />
                     <img src='images/member3 (2).png' width={'32px'} alt="" />

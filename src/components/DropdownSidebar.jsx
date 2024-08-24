@@ -12,56 +12,42 @@ const navigate = useNavigate()
   const [activeTab, setActiveTab] = useState(active);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
-  const sideBarData =[
+  const userSideBarData = [
     {
         name: 'Dashboard',
-        icon: <Svgs.Dashboard color={active === 'Dashboard' ? '#fff' : '#828282'}/>,
-        navigate: '/dashboard',
-        active: active === 'Dashboard'? true: false,
+        icon: <Svgs.Dashboard color={active === 'Dashboard' ? '#fff' : '#828282'} />,
+        navigate: '/user/dashboard',
+        active: active === 'Dashboard' ? true : false,
     },
     {
-        name: 'Employees',
-        icon: <Employeessvg color={active === 'Employees' ? '#fff' : '#828282'}/>,
-        navigate: '/employees',
-        active: active=== 'Employees'? true: false,
+        name: 'My Tasks',
+        icon: <Svgs.MyTasks color={active === 'My Tasks' ? '#fff' : '#828282'} />,
+        navigate: '/user/tasks',
+        active: active === 'My Tasks' ? true : false,
     },
     {
-        name: 'Applicants',
-        icon: <Applicantssvg color={active === 'Applicants' ? '#fff' : '#828282'}/>,
-        navigate: '/applicants',
-        active: active=== 'Applicants'? true: false,
+        name: 'My Team',
+        icon: <Svgs.Team color={active === 'My Team' ? '#fff' : '#828282'} />,
+        navigate: '/user/my-team',
+        active: active === 'My Team' ? true : false,
     },
-    {
-      name: 'Attendance & Leave',
-      icon: <Svgs.AttendanceSvg color={active === 'Attendance & Leave' ? '#fff' : '#828282'}/>,
-      navigate: '/attendance-leave',
-      active: active=== 'Attendance & Leave'? true: false,
-  },
-  {
-    name: 'Payroll',
-    icon: <Payrollsvg color={active === 'Payroll' ? '#fff' : '#828282'}/>,
-    navigate: '/payroll',
-    active: active=== 'Payroll'? true: false,
-   },
     {
         name: 'Chat',
-        icon: <Svgs.Chat color={active === 'Chat' ? '#fff' : '#828282'}/>,
-        navigate: '/chat',
-        active: active=== 'Chat'? true: false,
+        icon: <Svgs.Chat color={active === 'Chat' ? '#fff' : '#828282'} />,
+        navigate: '/user/chat',
+        active: active === 'Chat' ? true : false,
     },
-
     {
-      name: 'Documents',
-      icon: <Svgs.Setting color={active === 'Documents' ? '#fff' : '#828282'}/>,
-      navigate: '/documents',
-      active: active=== 'Documents'? true: false,
-  },
-    
+        name: 'Attendance & Leave',
+        icon: <Svgs.AttendanceSvg color={active === 'Attendance & Leave' ? '#fff' : '#828282'} />,
+        navigate: '/user/attendance-leave',
+        active: active === 'Attendance & Leave' ? true : false,
+    },
     {
         name: 'My profile',
-        icon: <Svgs.Setting color={active === 'My profile' ? '#fff' : '#828282'}/>,
-        navigate: '/myprofile',
-        active: active=== 'My profile'? true: false,
+        icon: <Svgs.Setting color={active === 'My profile' ? '#fff' : '#828282'} />,
+        navigate: '/user/my-profile',
+        active: active === 'My profile' ? true : false,
     },
 ]
 
@@ -104,7 +90,7 @@ const handleSideBarClick=(path)=>{
       {isDropdownOpen && (
         <div className='flex flex-col left-0  bg-white py-3  w-full h-auto items-center justify-between z-10'>
           <div className='w-full flex flex-col'>
-                {sideBarData.map((value, index)=>(
+                {userSideBarData.map((value, index)=>(
                     <div key={index}
                     onClick={()=>{handleSideBarClick(value.navigate)}}
                         className={`${ value.active === true ? ' bg-btn-gradient ':'bg-white'} p-4 rounded-lg flex flex-row space-x-4 w-full cursor-pointer`}>
