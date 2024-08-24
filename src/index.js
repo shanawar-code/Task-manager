@@ -3,13 +3,16 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-import { ContextLayout } from "./Context/ContextLayout";
+import { UserProvider } from "Context/UserProvider";
+import { ContextLayout } from "Context/ContextLayout";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <ContextLayout>
-      <App />
+      <UserProvider>
+        <App />
+      </UserProvider>
     </ContextLayout>
   </React.StrictMode>
 );

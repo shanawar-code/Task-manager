@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Svgs from '../assets/svgs/Index.js'
+import Svgs, { Applicantssvg, Employeessvg, Payrollsvg } from '../assets/svgs/Index.js'
 import { useNavigate } from 'react-router-dom';
 
 
@@ -20,33 +20,47 @@ const navigate = useNavigate()
         active: active === 'Dashboard'? true: false,
     },
     {
-        name: 'My Tasks',
-        icon: <Svgs.MyTasks color={active === 'My Tasks' ? '#fff' : '#828282'}/>,
-        navigate: '/my-tasks',
-        active: active=== 'My Tasks'? true: false,
+        name: 'Employees',
+        icon: <Employeessvg color={active === 'Employees' ? '#fff' : '#828282'}/>,
+        navigate: '/employees',
+        active: active=== 'Employees'? true: false,
     },
     {
-        name: 'My Team',
-        icon: <Svgs.Team color={active === 'My Team' ? '#fff' : '#828282'}/>,
-        navigate: '/my-team',
-        active: active=== 'My Team'? true: false,
+        name: 'Applicants',
+        icon: <Applicantssvg color={active === 'Applicants' ? '#fff' : '#828282'}/>,
+        navigate: '/applicants',
+        active: active=== 'Applicants'? true: false,
     },
+    {
+      name: 'Attendance & Leave',
+      icon: <Svgs.AttendanceSvg color={active === 'Attendance & Leave' ? '#fff' : '#828282'}/>,
+      navigate: '/attendance-leave',
+      active: active=== 'Attendance & Leave'? true: false,
+  },
+  {
+    name: 'Payroll',
+    icon: <Payrollsvg color={active === 'Payroll' ? '#fff' : '#828282'}/>,
+    navigate: '/payroll',
+    active: active=== 'Payroll'? true: false,
+   },
     {
         name: 'Chat',
         icon: <Svgs.Chat color={active === 'Chat' ? '#fff' : '#828282'}/>,
         navigate: '/chat',
         active: active=== 'Chat'? true: false,
     },
+
     {
-        name: 'Attendance & Leave',
-        icon: <Svgs.AttendanceSvg color={active === 'Attendance & Leave' ? '#fff' : '#828282'}/>,
-        navigate: '/attendance-leave',
-        active: active=== 'Attendance & Leave'? true: false,
-    },
+      name: 'Documents',
+      icon: <Svgs.Setting color={active === 'Documents' ? '#fff' : '#828282'}/>,
+      navigate: '/documents',
+      active: active=== 'Documents'? true: false,
+  },
+    
     {
         name: 'My profile',
         icon: <Svgs.Setting color={active === 'My profile' ? '#fff' : '#828282'}/>,
-        navigate: '/my-profile',
+        navigate: '/myprofile',
         active: active=== 'My profile'? true: false,
     },
 ]
