@@ -1,9 +1,9 @@
 import React from "react";
 import { useState, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
-import Svgs from "../../../../assets/svgs/index.js";
+import Svgs from "../../../assets/svgs/index.js";
 import DeleteDialog from "./DeleteDialog.jsx";
-import SuccessfulDialog from "../../../../components/Elements/SuccessfulDialog.jsx";
+import SuccessfulDialog from "../../../components/Elements/SuccessfulDialog.jsx";
 import ChatMediaDialog from "./ChatMediaDialog.jsx";
 
 
@@ -68,7 +68,7 @@ function ProfileDialog({ show, onClose }) {
           </div>
           <div className="flex items-center justify-center">
             <img
-              src="images/ChatProfilepic.png"
+              src="/images/ChatProfilepic.png"
               width={"110"}
               alt=""
               className=" -mt-3"
@@ -102,8 +102,8 @@ function ProfileDialog({ show, onClose }) {
             {showMedia && (<ChatMediaDialog show={showMedia} onClose={handleCloseMedia} />)}
           </div>
           <div className="flex items-center gap-[6px] my-[14px]">
-            <img src="images/mobileimg.png" alt="" />
-            <img src="images/heartimg (1).png" alt="" />
+            <img src="/images/mobileimg.png" alt="" />
+            <img src="/images/heartimg (1).png" alt="" />
             <h1 className="flex items-center justify-center bg-[#f3f3f3] rounded-2xl w-[82px] h-[82px]">
               +10
             </h1>

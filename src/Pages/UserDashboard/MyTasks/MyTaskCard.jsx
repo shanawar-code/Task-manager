@@ -3,7 +3,7 @@ import HeadingCard from "./HeadingCard";
 import TaskDataCard from "./TaskDataCard";
 import GroceryDialog from "./Element/GroceryDialog";
 import { useState } from "react";
-import Svgs from "../../../assets/svgs/Index.js";
+import Svgs from "../../../assets/svgs/index.js";
 import CreateTaskDialog from "./Element/CreateTaskDialog";
 import MoreOptions from "../../../components/Elements/MoreOptions.jsx";
 

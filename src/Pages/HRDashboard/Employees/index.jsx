@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
-import { Email, Phone } from '../../../assets/svgs/Index';
+import { Email, Phone } from '../../../assets/svgs';
 import { Layout } from '../../../components/Layout/DashboardLayout'
 import Addnewemployee from './Addnewemployee';
 import ShareGroceryDialog from './ShareGroceryDialog';
 import Button from '../../../components/Button';
-import Svgs from '../../../assets/svgs/Index.js'
+import Svgs from '../../../assets/svgs/index.js'
 import RoundedCard from '../../../components/Elements/RoundedCard.jsx';
 
 function Employees_hr() {
@@ -16,7 +16,7 @@ function Employees_hr() {
       taskScore: '98%',
       email: 'o.williams@email.com',
       phone: '+1 650 434 5655',
-      img: 'images/anna1.png'
+      img: '/images/anna1.png'
     },
     {
       name: 'Catherine',
@@ -25,7 +25,7 @@ function Employees_hr() {
       taskScore: '98%',
       email: 'o.williams@email.com',
       phone: '+1 650 434 5655',
-      img: 'images/catherine1.png'
+      img: '/images/catherine1.png'
     },
     {
       name: 'Orton',
@@ -34,7 +34,7 @@ function Employees_hr() {
       taskScore: '98%',
       email: 'o.williams@email.com',
       phone: '+1 650 434 5655',
-      img: 'images/orton1.png'
+      img: '/images/orton1.png'
     },
     {
       name: 'Moana',
@@ -43,7 +43,7 @@ function Employees_hr() {
       taskScore: '98%',
       email: 'o.williams@email.com',
       phone: '+1 650 434 5655',
-      img: 'images/moana.png'
+      img: '/images/moana.png'
     },
     {
       name: 'Jessy',
@@ -52,7 +52,7 @@ function Employees_hr() {
       taskScore: '98%',
       email: 'o.williams@email.com',
       phone: '+1 650 434 5655',
-      img: 'images/jessy 1.png'
+      img: '/images/jessy 1.png'
     },
     {
       name: 'Anna',
@@ -61,7 +61,7 @@ function Employees_hr() {
       taskScore: '98%',
       email: 'o.williams@email.com',
       phone: '+1 650 434 5655',
-      img: 'images/anna1.png'
+      img: '/images/anna1.png'
     },
   ];
   const [showPopup, setShowPopup] = useState(false);

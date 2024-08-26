@@ -1,11 +1,9 @@
 import "./App.css";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
-import Dashboard_hr from "./Pages/HRDashboard/Dashboard/index";
 import MyTaskCard from "./Pages/UserDashboard/MyTasks/MyTaskCard";
 import { LoginPage } from "./Pages/Auth/LogIn/index";
 import { SignUpPage } from "./Pages/Auth/SignUp/index";
 import MyTeam from "./Pages/UserDashboard/MYTeam";
-import Chat from "./Pages/UserDashboard/Chat";
 import MYTeamLast from "./Pages/UserDashboard/MYTeam/MyTeamLast";
 import FindColleagues from "./Pages/UserDashboard/Chat/FindColleagues";
 import RequireAuth from "./components/RequireAuth";
@@ -13,6 +11,17 @@ import { Dashboard } from "./Pages/UserDashboard/Dashboard";
 import Tasks from "./Pages/UserDashboard/MyTasks";
 import AttendanceAndLeaveUser from "./Pages/UserDashboard/AttendanceAndLeave";
 import MyProfileUser from "./Pages/UserDashboard/MyProfile";
+
+import Dashboard_hr from "./Pages/HRDashboard/Dashboard/index";
+import Chat_hr from "Pages/HRDashboard/Chat";
+import Employees_hr from "./Pages/HRDashboard/Employees";
+import Applicants from "./Pages/HRDashboard/Applicants";
+import Payroll from "./Pages/HRDashboard/Payroll";
+import MyProfile from "Pages/HRDashboard/Myprofile";
+import Chat from "Pages/UserDashboard/Chat";
+import Documents from "Pages/HRDashboard/Documents";
+
+
 
 function App() {
   const router = createBrowserRouter([
@@ -70,12 +79,105 @@ function App() {
       path: "/hr",
       element: <RequireAuth allowedRoles={"HR"} />,
       children: [
-        {
-          path: "dashboard",
-          element: <Dashboard_hr />
-        }
-      ],
+        { path: "dashboard", element: <Dashboard_hr /> },
+        { path: "attandence", element: <AttendanceAndLeaveUser /> },
+        { path: "chat", element: <Chat_hr /> },
+        { path: "payroll", element: <Payroll /> },
+        { path: "documents", element: <Documents /> },
+        { path: "applicants", element: <Applicants /> },
+        { path: "employees", element: <Employees_hr /> },
+        { path: "myprofile", element: <MyProfile /> },
+
+      ]
     },
+    // { path: "*", element: <Navigate to="/" replace /> }
+    // {
+    //   path: "/tasks",
+    //   element: <Tasks />,
+    // },
+    // {
+    //   path: "mytaskcard",
+    //   element: <MyTaskCard />,
+    // },
+    // {
+    //   path: "/dashboard",
+    //   element: <Dashboard />,
+    // },
+    // {
+    //   path: "/my-tasks",
+    //   element: <Tasks/>,
+    // },
+    // {
+    //   path: "/my-team",
+    //   element: <MyTeam />,
+    // },
+    // {
+    //   path: "/chat",
+    //   element: <Chat />,
+    // },
+    // {
+    //   path: "/attendance-leave",
+    //   element: <AttendanceAndLeave/>,
+    // },
+    // {
+    //   path: "/my-profile",
+    //   element: <MyProfile />,
+    // },
+
+    // {
+    //   path: "/employees",
+    //   element: <Employees />,
+    // },
+    // {
+    //   path: "/employees",
+    //   element: <Employees_hr />
+    // },
+    // {
+    //   path: "/dashboard",
+    //   element: <Dashboard_hr />,
+    // },
+    // {
+    //   path: "/applicants",
+    //   element: <Applicants />
+    // },
+    // {
+    //   path: "/attendance-leave",
+    //   element: <AttendanceAndLeave />
+    // },
+    // {
+    //   path: "/Chat",
+    //   element: <Chat />
+    // },
+    // {
+    //   path: "/myprofile",
+    //   element: <MyProfile />
+    // },
+    // {
+    //   path: "/payroll",
+    //   element: <Payroll />
+    // },
+    // {
+    //   path: "/documents",
+    //   element: <Documents />
+    // },
+
+    // {
+    //   path: '/myteamlast',
+    //   element: <MYTeamLast />
+    // },
+    // {
+    //   path: '/findcolleagues',
+    //   element: <FindColleagues />
+    // },
+
+
+    // ---------------------------
+
+
+    // {
+    //   path: '/hr-dashboard',
+    //   element: <HR_Dashboard />
+    // }
   ]);
 
   return (

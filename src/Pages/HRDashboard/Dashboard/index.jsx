@@ -2,20 +2,20 @@ import React, { useState } from 'react';
 
 import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
-import { Attdenence, Calenderhr, Chair, Employs, Threedots } from '../../../assets/svgs/Index';
+import { Attdenence, Calenderhr, Chair, Employs, Threedots } from '../../../assets/svgs';
 import { Layout } from '../../../components/Layout/DashboardLayout';
-import { Employeessvg } from '../../../assets/svgs/Index';
+import { Employeessvg } from '../../../assets/svgs';
 import RoundedCard from '../../../components/Elements/RoundedCard';
 import Button from '../../../components/Button';
 
 
 function Dashboard_hr() {
   const [attendance, setAttendance] = useState([
-    { name: 'Anna', role: 'Python developer', status: 'Present', time: '10:00AM' },
-    { name: 'Catherine', role: 'Web designer', status: 'Present', time: '10:00AM' },
-    { name: 'Orton', role: 'UI UX designer', status: 'Present', time: '10:00AM' },
-    { name: 'Jessy', role: 'Web developer', status: 'Present', time: '10:00AM' },
-    { name: 'Orton', role: 'UI UX designer', status: 'Present', time: '10:00AM' },
+    { name: 'Anna', role: 'Python developer', status: 'Present', time: '10:00AM', img: '/images/(anna).png' },
+    { name: 'Catherine', role: 'Web designer', status: 'Present', time: '10:00AM', img: '/images/(catherine5).png' },
+    { name: 'Orton', role: 'UI UX designer', status: 'Present', time: '10:00AM', img: '/images/(ortan6).png' },
+    { name: 'Jessy', role: 'Web developer', status: 'Present', time: '10:00AM', img: '/images/(jessy7).png' },
+    { name: 'Orton', role: 'UI UX designer', status: 'Present', time: '10:00AM', img: '/images/(ortan6).png' },
 
   ]);
 
@@ -43,10 +43,12 @@ function Dashboard_hr() {
     {
       meeting: 'Daily meeting',
       time: '2:30 PM',
+      border_b: 'border-b-2'
     },
     {
       meeting: 'Daily meeting',
       time: '2:30 PM',
+      border_b: 'border-b-2'
     },
     {
       meeting: 'Daily meeting',
@@ -121,7 +123,7 @@ function Dashboard_hr() {
                   <div> <h3 className="text-[12px] font-semibold font-public-sans text-[#828282]">{items.Employees}</h3></div>
                   <div className='flex justify-between items-center text-[20px]'><p className={`${items.totalempolyescolor}  font-semibold font-public-sans`}>{items.totalEmployees}</p>
                     <span>{items.svg}</span> </div>
-                  <div className='flex items-center'><span className={`${items.textcolor}`}>{items.newEmployeesnumber}</span><p className={`${items.empolyestextcolor}`}> {items.newEmployees}</p></div>
+                  <div className='flex items-center gap-[4px]'><span className={`${items.textcolor}`}>{items.newEmployeesnumber}</span><p className={`${items.empolyestextcolor}`}> {items.newEmployees}</p></div>
                 </div>
               </RoundedCard>
             ))}
@@ -153,15 +155,15 @@ function Dashboard_hr() {
                       <span className="text-2xl font-bold text-[#333333] font-public-sans">{attendanceData.attendancePercentage}%</span><span className='text-gray-4 font-public-sans text-[12px] '>attendance</span>
                     </div>
                   </div>
-                  <div className='w-full'>
+                  <div className='w-full  '>
 
-                    <div className='flex justify-between items-center  border-[#E0E0E0] border-b '><h6 className='font-public-sans text-[12px] text-[#4F4F4F] '>Present</h6> <span><h6 className='font-public-sans text-[14px] text-[#333333]'>24</h6></span>
-
-                    </div>
-                    <div className='flex justify-between items-center border-[#E0E0E0] border-b'><h6 className='font-public-sans text-[12px] text-[#4F4F4F] '>On leave</h6> <span><h6 className=' font-public-sans text-[14px] text-[#333333]'>0</h6></span>
+                    <div className='flex justify-between items-center  border-[#E0E0E0] border-b py-[8px]'><h6 className='font-public-sans text-[12px] text-[#4F4F4F] '>Present</h6> <span><h6 className='font-public-sans text-[14px] text-[#333333]'>24</h6></span>
 
                     </div>
-                    <div className='flex justify-between items-center  '><h6 className='font-public-sans text-[12px] text-[#4F4F4F] '>Absent</h6> <span><h6 className='font-public-sans text-[14px] text-[#333333]'>1</h6></span>
+                    <div className='flex justify-between items-center border-[#E0E0E0] border-b py-[8px]'><h6 className='font-public-sans text-[12px] text-[#4F4F4F] '>On leave</h6> <span><h6 className=' font-public-sans text-[14px] text-[#333333]'>0</h6></span>
+
+                    </div>
+                    <div className='flex justify-between items-center  py-[8px]'><h6 className='font-public-sans text-[12px] text-[#4F4F4F] '>Absent</h6> <span><h6 className='font-public-sans text-[14px] text-[#333333]'>1</h6></span>
 
                     </div>
 
@@ -175,7 +177,7 @@ function Dashboard_hr() {
                   {attendance.map((person, index) => (
                     <div key={index} className="flex justify-between   w-full  mt-4  border-gray-5 border-b py-[23px]   overflow-auto items-center min-w-[450px] ">
                       <div className="flex items-center w-full gap-[14px]">
-                        <img src={`https://i.pravatar.cc/150?img=${index}`} alt="avatar" className="w-8 h-8 rounded-full mr-2" />
+                        <img src={person.img} alt="avatar" className="w-8 h-8 rounded-full mr-2" />
                         <div>
                           <p className="text-gray-1 text-[14px] font-medium font-public-sans">{person.name}</p>
 
@@ -294,8 +296,8 @@ function Dashboard_hr() {
                 <div className="">
                   <div className="flex justify-between items-center">
                     <h3 className="md:text-[16px] text-[14px] text-gray-1 font-semibold font-public-sans">Meetings</h3>
-                   
-                    <Button text={'Create new button'}/>
+
+                    <Button text={'Create new meeting'} />
 
 
                   </div>
@@ -309,9 +311,9 @@ function Dashboard_hr() {
                       .map((value, index) => {
                         return (
                           <>
-                            <div key={index} className="min-w-[450px] flex items-center gap-3  justify-between border-b-2 my-3 pb-3 mt-7">
+                            <div key={index} className={`${value.border_b}  min-w-[450px] flex items-center gap-3  justify-between   pb-3 mt-7   `}>
                               <div className="flex items-center gap-3">
-                                <img src="images/image 39 (1).png" alt="" />
+                                <img src="/images/image 39 (1).png" alt="" />
                                 <h1 className=" md:text-[14px] text-[12px] md:text-sm font-epilogue font-semibold text-gray-1">
                                   {value.meeting}
                                 </h1>
@@ -324,9 +326,9 @@ function Dashboard_hr() {
 
                               <div className="flex items-center gap-3">
                                 <div className='flex items-center'>
-                                  <img className='-mr-2' src="images/meeting1.png" alt="" />
-                                  <img className='-mr-2' src="images/meeting2.png" alt="" />
-                                  <img src="images/meeting3.png" alt="" />
+                                  <img className='-mr-2' src="/images/meeting1.png" alt="" />
+                                  <img className='-mr-2' src="/images/meeting2.png" alt="" />
+                                  <img src="/images/meeting3.png" alt="" />
                                 </div>
                                 <div>  <Threedots /> </div>
                               </div>

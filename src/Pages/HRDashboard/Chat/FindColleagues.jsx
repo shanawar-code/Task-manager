@@ -1,7 +1,7 @@
 import React from "react";
 import Svgs from '../../../assets/svgs/index.js'
 import { Layout } from "../../../components/Layout/DashboardLayout.jsx";
-import ProfileDialog from "./Element/ProfileDialog.jsx";
+import ProfileDialog from "./ProfileDialog.jsx";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
@@ -31,7 +31,7 @@ function FindColleagues() {
             <div className="leftuper p-3 flex justify-between col-span-12 md:col-span-4 items-center md:border-r border-b">
               <div className="flex items-center gap-3">
                 <div onClick={() => (navigate('/chat'))}>
-                  <img className=" cursor-pointer" src='images/womenOnline (4).png' alt="" />
+                  <img className=" cursor-pointer" src='/images/womenOnline (4).png' alt="" />
                 </div>
                 <div>
                   <h1 className="text-sm md:text-base font-medium font-public-sans text-gray-1">Robert Fox</h1>
@@ -63,7 +63,7 @@ function FindColleagues() {
                 <div className={`leftdown p-3 flex justify-between items-center w-full border-b `}>
                   <div className="flex items-center gap-[10px] w-full">
                     <div className="">
-                      <img src='images/harrywatson.png' alt="" />
+                      <img src='/images/harrywatson.png' alt="" />
                     </div>
                     <div className=" w-full">
                       <div className="flex items-center justify-between">

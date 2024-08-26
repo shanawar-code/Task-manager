@@ -3,23 +3,23 @@ import { useState, useEffect, useRef } from "react";
 import { Input } from "../../../../components/Input";
 import Button from "../../../../components/Button";
 import { useNavigate } from "react-router-dom";
-import Svgs from '../../../../assets/svgs/Index.js'
+import Svgs from '../../../../assets/svgs/index.js'
 import SelectDropdown from "../../../../components/SelectDropdown.jsx";
 import SuccessfulDialog from "../../../../components/Elements/SuccessfulDialog.jsx";
 
 
 function EditGroceryDialog({ show, onClose, hidden }) {
- 
+
   const [showSuccessfulPopup, setShowSuccessfulPopup] = useState(false);
 
   const handleShowSuccessfulPopup = () => {
     setShowSuccessfulPopup(true);
-   
+
   };
 
   const handleCloseSuccessfulPopup = () => {
     setShowSuccessfulPopup(false);
-   
+
   };
 
 
@@ -52,14 +52,14 @@ function EditGroceryDialog({ show, onClose, hidden }) {
         <div className="flex items-center justify-center">
           <div className="">
             <h1 className=" text-lg md:text-2xl font-semibold font-public-sans text-gray-1">
-             Edit Grocery dashboard
+              Edit Grocery dashboard
             </h1>
           </div>
         </div>
-      
+
         <div className=" my-5 mt-[48px]">
-        <div className=" my-5">
-          <Input label={"Task name"} className={""} placeholder={'Task name'} />
+          <div className=" my-5">
+            <Input label={"Task name"} className={""} placeholder={'Task name'} />
           </div>
           <div>
             <h1 className=" text-base font-bold font-mulish text-gray-1">
@@ -99,10 +99,10 @@ function EditGroceryDialog({ show, onClose, hidden }) {
                   Detailed document
                 </span>
                 <span className=" rounded-full bg-white">
-                  <Svgs.Oction_download/>
+                  <Svgs.Oction_download />
                 </span>
                 <span className=" absolute -top-2 -right-2">
-                  <Svgs.Cross/>
+                  <Svgs.Cross />
                 </span>
               </button>
               <button className=" relative border rounded-xl px-[14px] py-[10px] bg-[#f3f3f3]  flex items-center justify-between w-full sm:w-[273px]">
@@ -110,21 +110,21 @@ function EditGroceryDialog({ show, onClose, hidden }) {
                   Detailed document
                 </span>
                 <span className=" rounded-full bg-white">
-                  <Svgs.Oction_download/>
+                  <Svgs.Oction_download />
                 </span>
                 <span className=" absolute -top-2 -right-2">
-                  <Svgs.Cross/>
+                  <Svgs.Cross />
                 </span>
               </button>
-              <button  className=" border border-[#f7585c] rounded-xl px-[12px] py-[11.5px] flex items-center gap-4 ">
-                <span><Svgs.DocumentRedIcon/></span>
+              <button className=" border border-[#f7585c] rounded-xl px-[12px] py-[11.5px] flex items-center gap-4 ">
+                <span><Svgs.DocumentRedIcon /></span>
                 <h1 className="text-[#f7585c] text-base font-medium font-public-sans">Add attachments</h1>
               </button>
-             
+
             </div>
           </div>
         </div>
-       
+
         <div className="flex items-center justify-between my-6">
           <div className="flex flex-col gap-2">
             <h1 className=" text-sm font-normal font-public-sans text-gray-2">
@@ -136,19 +136,19 @@ function EditGroceryDialog({ show, onClose, hidden }) {
             <h1 className=" text-sm font-normal font-public-sans text-gray-2">
               Priority
             </h1>
-           <SelectDropdown  options={[{value: 'Easy', label: 'Easy'},{value: 'Medium', label: 'Medium'},{value: 'High', label: 'High'},]}/>
+            <SelectDropdown options={[{ value: 'Easy', label: 'Easy' }, { value: 'Medium', label: 'Medium' }, { value: 'High', label: 'High' },]} />
           </div>
         </div>
-       <div className="flex items-center justify-center mt-[48px]">
-        <Button  handleClick={handleShowSuccessfulPopup} text={'Update'} className={'w-[162px] h-[48px]'} customPadding={'px-[24px] py-[14px]'}/>
-        {showSuccessfulPopup && (
-                <SuccessfulDialog
-                heading={'Update Successful'}
-                  show={showSuccessfulPopup}
-                  onClose={handleCloseSuccessfulPopup}
-                />
-              )}
-       </div>
+        <div className="flex items-center justify-center mt-[48px]">
+          <Button handleClick={handleShowSuccessfulPopup} text={'Update'} className={'w-[162px] h-[48px]'} customPadding={'px-[24px] py-[14px]'} />
+          {showSuccessfulPopup && (
+            <SuccessfulDialog
+              heading={'Update Successful'}
+              show={showSuccessfulPopup}
+              onClose={handleCloseSuccessfulPopup}
+            />
+          )}
+        </div>
       </div>
     </div>
   );

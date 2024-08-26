@@ -891,14 +891,14 @@ export const Calenderhr = () => {
     </svg>)
 }
 
-export const Employeessvg = () => {
-    return (<svg width="21" height="17" viewBox="0 0 21 17" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M16.1685 6.5385C17.2043 5.20307 16.9614 3.28081 15.626 2.24502C14.2906 1.20922 12.3683 1.45212 11.3325 2.78755C10.2967 4.12299 10.5396 6.04524 11.875 7.08104C13.2105 8.11684 15.1327 7.87393 16.1685 6.5385Z" stroke="#828282" stroke-width="1.3" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
-        <path d="M7.83984 15.8602C7.83984 12.6002 10.4898 9.9502 13.7498 9.9502C17.0098 9.9502 19.6598 12.6002 19.6598 15.8602" stroke="#828282" stroke-width="1.3" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
-        <path d="M7.61389 6.59905C8.17222 5.55734 7.78035 4.26025 6.73863 3.70192C5.69692 3.1436 4.39983 3.53547 3.8415 4.57718C3.28318 5.6189 3.67505 6.91599 4.71676 7.47431C5.75848 8.03264 7.05557 7.64077 7.61389 6.59905Z" stroke="#828282" stroke-width="1.3" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
-        <path d="M1.6001 13.4098C1.6001 11.1298 3.4501 9.27979 5.7301 9.27979C7.4201 9.27979 8.8701 10.2898 9.5101 11.7498" stroke="#828282" stroke-width="1.3" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
-    </svg>
-    )
+export const Employeessvg =({color})=>{
+    return(<svg width="21" height="17" viewBox="0 0 21 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M16.1685 6.5385C17.2043 5.20307 16.9614 3.28081 15.626 2.24502C14.2906 1.20922 12.3683 1.45212 11.3325 2.78755C10.2967 4.12299 10.5396 6.04524 11.875 7.08104C13.2105 8.11684 15.1327 7.87393 16.1685 6.5385Z" stroke={color ||"#828282"} stroke-width="1.3" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M7.83984 15.8602C7.83984 12.6002 10.4898 9.9502 13.7498 9.9502C17.0098 9.9502 19.6598 12.6002 19.6598 15.8602" stroke={color ||"#828282"} stroke-width="1.3" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M7.61389 6.59905C8.17222 5.55734 7.78035 4.26025 6.73863 3.70192C5.69692 3.1436 4.39983 3.53547 3.8415 4.57718C3.28318 5.6189 3.67505 6.91599 4.71676 7.47431C5.75848 8.03264 7.05557 7.64077 7.61389 6.59905Z" stroke={color ||"#828282"} stroke-width="1.3" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M1.6001 13.4098C1.6001 11.1298 3.4501 9.27979 5.7301 9.27979C7.4201 9.27979 8.8701 10.2898 9.5101 11.7498" stroke={color ||"#828282"} stroke-width="1.3" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        )
 }
 
 export const Applicantssvg = ({ color }) => {

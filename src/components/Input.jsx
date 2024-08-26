@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import Svgs from '../assets/svgs/Index.js'
+import Svgs from '../assets/svgs/index.js'
 
 export const Input = ({ label, placeholder, value, type, onChange, className, error, onKeyPress, id }) => {
 

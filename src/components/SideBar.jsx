@@ -1,7 +1,7 @@
 import React, { act, useState } from 'react'
-import { Applicantssvg, AttendanceSvg, Chat, Dashboard, Logout, MyTasks, Payrollsvg, Setting, Team } from '../assets/svgs/Index'
+import { Applicantssvg, AttendanceSvg, Chat, Dashboard, Logout, MyTasks, Payrollsvg, Setting, Team } from '../assets/svgs'
 import { useNavigate } from 'react-router-dom'
-import Svgs from '../assets/svgs/Index.js'
+import Svgs from '../assets/svgs/index.js'
 import { useLocation } from "react-router-dom";
 import { useSidebarContext } from '../Context/ContextLayout.jsx';
 import { Input } from './Input.jsx';
@@ -57,6 +57,44 @@ export const SideBar = ({ active }) => {
             active: active === 'My profile' ? true : false,
         },
     ]
+    // const hrSideBarData = [
+    //     {
+    //         name: 'Dashboard',
+    //         icon: <Svgs.Dashboard color={active === 'Dashboard' ? '#fff' : '#828282'} />,
+    //         navigate: '/hr/dashboard',
+    //         active: active === 'Dashboard' ? true : false,
+    //     },
+    //     {
+    //         name: 'Employees',
+    //         icon: <Svgs.Team color={active === 'Employees' ? '#fff' : '#828282'} />,
+    //         navigate: '/employees',
+    //         active: active === 'Employees' ? true : false,
+    //     },
+    //     {
+    //         name: 'Applicants',
+    //         icon: <Applicantssvg color={active === 'Applicants' ? '#fff' : '#828282'} />,
+    //         navigate: '/applicants',
+    //         active: active === 'Applicants' ? true : false,
+    //     },
+    //     {
+    //         name: 'Payroll',
+    //         icon: <Payrollsvg color={active === 'Payroll' ? '#fff' : '#828282'} />,
+    //         navigate: '/payroll',
+    //         active: active === 'Payroll' ? true : false,
+    //     },
+    //     {
+    //         name: 'Documents',
+    //         icon: <Svgs.Document color={active === 'Documents' ? '#fff' : '#828282'} />,
+    //         navigate: '/documents',
+    //         active: active === 'Documents' ? true : false,
+    //     },
+    //     {
+    //         name: 'My profile',
+    //         icon: <Svgs.Setting color={active === 'My profile' ? '#fff' : '#828282'} />,
+    //         navigate: '/myprofile',
+    //         active: active === 'My profile' ? true : false,
+    //     },
+    // ]
     const hrSideBarData = [
         {
             name: 'Dashboard',
@@ -67,27 +105,46 @@ export const SideBar = ({ active }) => {
         {
             name: 'Employees',
             icon: <Svgs.Team color={active === 'Employees' ? '#fff' : '#828282'} />,
-            navigate: '/employees',
+            navigate: '/hr/employees',
             active: active === 'Employees' ? true : false,
         },
         {
             name: 'Applicants',
-            icon: <Applicantssvg color={active === 'Applicants' ? '#fff' : '#828282'} />,
-            navigate: '/applicants',
+            icon: <Svgs.Applicantssvg color={active === 'Applicants' ? '#fff' : '#828282'} />,
+            navigate: '/hr/applicants',
             active: active === 'Applicants' ? true : false,
         },
         {
+            name: 'Attendance & Leave',
+            icon: <Svgs.AttendanceSvg color={active === 'Attendance & Leave' ? '#fff' : '#828282'} />,
+            navigate: '/hr/attandence',
+            active: active === 'Attendance & Leave' ? true : false,
+        },
+        {
             name: 'Payroll',
-            icon: <Payrollsvg color={active === 'Payroll' ? '#fff' : '#828282'} />,
-            navigate: '/payroll',
+            icon: <Svgs.Payrollsvg color={active === 'Payroll' ? '#fff' : '#828282'} />,
+            navigate: '/hr/payroll',
             active: active === 'Payroll' ? true : false,
+        },
+        {
+            name: 'Chat',
+            icon: <Svgs.Chat color={active === 'Chat' ? '#fff' : '#828282'} />,
+            navigate: '/hr/chat',
+            active: active === 'Chat' ? true : false,
         },
         {
             name: 'Documents',
             icon: <Svgs.Document color={active === 'Documents' ? '#fff' : '#828282'} />,
-            navigate: '/documents',
+            navigate: '/hr/documents',
             active: active === 'Documents' ? true : false,
         },
+        {
+            name: 'My profile',
+            icon: <Svgs.Setting color={active === 'My profile' ? '#fff' : '#828282'} />,
+            navigate: '/hr/myprofile',
+            active: active === 'My profile' ? true : false,
+        }
+
     ]
 
     const handleSideBarClick = (path) => {
@@ -102,7 +159,7 @@ export const SideBar = ({ active }) => {
         if (sidebarOpen) {
             timer = setTimeout(() => {
                 setShowName(true);
-            }, 200); 
+            }, 200);
         } else {
             setShowName(false); // Reset state when sidebar is closed
         }
@@ -125,7 +182,7 @@ export const SideBar = ({ active }) => {
                                 </p>
                                 <p
                                     className={`${value?.active === true ? 'text-white text-base font-normal font-public-sans ' : 'text-gray-4 text-base font-normal font-public-sans'}`} >
-                                     {sidebarOpen && showName ? value.name : ''}
+                                    {sidebarOpen && showName ? value.name : ''}
                                 </p>
 
 

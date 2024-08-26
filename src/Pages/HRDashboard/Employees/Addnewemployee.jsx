@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Calenderhr, Crossiconssvg, Fileattachsvg } from '../../../assets/svgs/Index';
+import { Calenderhr, Crossiconssvg, Fileattachsvg } from '../../../assets/svgs';
 import SuccessfulDialog from '../../../components/Elements/SuccessfulDialog';
 
 function Addnewemployee() {

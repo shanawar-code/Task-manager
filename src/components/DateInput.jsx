@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import moment from 'moment';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
-import Svgs from '../assets/svgs/Index.js'
+import Svgs from '../assets/svgs/index.js'
 
 const DateInput = ({ name, onChange, value, add }) => {
 
@@ -35,7 +35,7 @@ const DateInput = ({ name, onChange, value, add }) => {
     }, [value])
 
     return (
-      
+
         <>
             <div className='relative h-fit'>
                 <div onClick={() => setToggleDateRange(!toggleDateRange)} className={`cursor - pointer flex items-center justify-between bg-[#F5F6F8] border-[#DEDEDE] border !px-2 lg:!px-4 !py-[3px] sm:!py-3 ${add ? "!py-3" : null} rounded-lg gap-3`}>

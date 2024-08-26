@@ -4,7 +4,7 @@ import { Input } from "../../../../components/Input.jsx";
 import Button from "../../../../components/Button.jsx";
 import SuccessfulDialog from "../../../../components/Elements/SuccessfulDialog.jsx";
 import CalendarDialog from "./CalendarDialog.jsx";
-import Svgs from '../../../../assets/svgs/Index.js'
+import Svgs from '../../../../assets/svgs/index.js'
 
 
 function VerifiedSuccessful({ show, onClose }) {
@@ -70,15 +70,15 @@ function VerifiedSuccessful({ show, onClose }) {
               </div>
               <div className="grid grid-cols-2 gap-3">
                 <div className=" relative">
-                <Input label={"Date"} className={"text-base"} placeholder={'00/00/0000'}/>
-                <span  className="absolute right-4 top-[38px] cursor-pointer" onClick={handleShowDialog}><Svgs.CalendarIcon/></span>
+                  <Input label={"Date"} className={"text-base"} placeholder={'00/00/0000'} />
+                  <span className="absolute right-4 top-[38px] cursor-pointer" onClick={handleShowDialog}><Svgs.CalendarIcon /></span>
                   {showDialog && (
                     <CalendarDialog show={showDialog} onClose={handleCloseDialog} />
                   )}
                 </div>
                 <div className=" relative">
-                <Input label={"Select time"} className={"text-base"} placeholder={'00:00'}/>
-                <span  className="absolute right-4 top-[38px] cursor-pointer" onClick={handleShowDialog}><Svgs.TimerIcon/></span>
+                  <Input label={"Select time"} className={"text-base"} placeholder={'00:00'} />
+                  <span className="absolute right-4 top-[38px] cursor-pointer" onClick={handleShowDialog}><Svgs.TimerIcon /></span>
                 </div>
               </div>
               <div>
@@ -88,14 +88,14 @@ function VerifiedSuccessful({ show, onClose }) {
                 >
                   Meeting notes
                 </label>
-                <textarea 
+                <textarea
                   className=" focus:ring-1 ring-black resize-none rounded-xl border w-full h-[130px] p-4 my-2 outline-none"
                   placeholder="Description"
                 ></textarea>
               </div>
               <div className="flex items-center justify-center">
                 <button className="flex items-center justify-center w-[258px] h-[44px] gap-[13px] border border-[#FB6D72] rounded-xl text-[#F33F41] text-sm font-semibold font-public-sans">
-                  <Svgs.AddIconRed/>
+                  <Svgs.AddIconRed />
                   Add employees
                 </button>
               </div>

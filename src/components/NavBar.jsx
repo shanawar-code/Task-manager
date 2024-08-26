@@ -1,5 +1,5 @@
 import React from "react";
-import Svgs from '../assets/svgs/Index.js'
+import Svgs from '../assets/svgs/index.js'
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { useSidebarContext } from "../Context/ContextLayout.jsx";
@@ -27,7 +27,7 @@ export const NavBar = () => {
 
         {/* Search and Profile */}
         <div className="flex items-center  space-x-4 md:space-x-8 w-2/5 justify-end">
-        <Svgs.SearchBar/>
+          <Svgs.SearchBar />
           <div className="hidden md:flex justify-center lg:gap-4 sm:bg-gray-100 rounded-lg items-center py-2 px-4 w-[268px]">
             <span>
               <Svgs.SearchBar />

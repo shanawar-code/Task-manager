@@ -2,7 +2,7 @@ import React from "react";
 import Cards from "../../../components/Elements/DashboardCard.jsx";
 import { useState } from "react";
 import VerifiedSuccessful from "./Element/CreateAMeeting.jsx";
-import Svgs from "../../../assets/svgs/Index.js";
+import Svgs from "../../../assets/svgs/index.js";
 import Button from "../../../components/Button.jsx";
 import UltimateCard from "../../../components/Elements/UltimateCard.jsx";
 import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
@@ -36,33 +36,33 @@ export function Dashboard() {
     setShowTaskPopup(false);
   };
 
-  const meetingCard=[
+  const meetingCard = [
     {
-        meeting: 'Daily meeting',
-        time: '2:30 PM',
+      meeting: 'Daily meeting',
+      time: '2:30 PM',
     },
     {
-        meeting: 'Daily meeting',
-        time: '2:30 PM',
+      meeting: 'Daily meeting',
+      time: '2:30 PM',
     },
     {
-        meeting: 'Daily meeting',
-        time: '2:30 PM',
+      meeting: 'Daily meeting',
+      time: '2:30 PM',
     },
   ]
 
-  const taskCard=[
+  const taskCard = [
     {
-        meeting: 'Website deisgn',
-        time: '2:30 PM',
+      meeting: 'Website deisgn',
+      time: '2:30 PM',
     },
     {
-        meeting: 'Website deisgn',
-        time: '2:30 PM',
+      meeting: 'Website deisgn',
+      time: '2:30 PM',
     },
     {
-        meeting: 'Website deisgn',
-        time: '2:30 PM',
+      meeting: 'Website deisgn',
+      time: '2:30 PM',
     },
   ]
 
@@ -71,30 +71,30 @@ export function Dashboard() {
 
   const [showCollaborative, setShowCollaborative] = useState(false)
 
-  const handleShowCollaborative=()=>{
+  const handleShowCollaborative = () => {
     setShowCollaborative(true)
-  
+
   }
 
-  const handleCloseCollaborative=()=>{
+  const handleCloseCollaborative = () => {
     setShowCollaborative(false)
- 
+
   }
   const [showMoreOptions, setShowMoreOptions] = useState(false)
   const [showEdit, setShowEdit] = useState(null)
-  const handleShowMoreOptions=(index)=>{
+  const handleShowMoreOptions = (index) => {
     setShowMoreOptions(true)
-    setShowEdit(index) 
+    setShowEdit(index)
   }
 
-  const handleCloseMoreOptions=()=>{
+  const handleCloseMoreOptions = () => {
     setShowMoreOptions(false)
     setShowEdit(null)
   }
 
 
-  
-  
+
+
   return (
     <>
       <Layout active={"Dashboard"}>
@@ -132,10 +132,10 @@ export function Dashboard() {
                 role={"Python developer"}
                 numberoftasks={"14 Tasks"}
                 attendance={"98%"}
-                
+
                 buttonBtn={
                   <Button
-                  handleClick={handleShowCollaborative}
+                    handleClick={handleShowCollaborative}
                     text={"Collaborate"}
                     customPadding={"px-[16px] py-[8px]"}
                     className={"text-sm font-semibold font-public-sans "}
@@ -143,7 +143,7 @@ export function Dashboard() {
                 }
                 heading={"My Team"}
               />
-                {showCollaborative && (<Collaborate  show={showCollaborative} onClose={handleCloseCollaborative}/>)}
+              {showCollaborative && (<Collaborate show={showCollaborative} onClose={handleCloseCollaborative} />)}
             </div>
             <div className="col-span-12 lg:col-span-6 ">
               <div className=" rounded-xl p-5 border bg-white">
@@ -166,7 +166,7 @@ export function Dashboard() {
                       <div className="w-40 h-40 relative">
                         <CircularProgressbar
                           value={100}
-                        //   text="100%"
+                          //   text="100%"
                           strokeWidth='12'
                           styles={buildStyles({
                             pathColor: "#3b82f6",
@@ -174,10 +174,10 @@ export function Dashboard() {
                           })}
                         />
                         <div className=" absolute flex flex-col items-center justify-center top-0 inset-0">
-                        <p className=" text-[30px] font-bold text-gray-1 font-public-sans">100%</p>
-                      <p className="text-xs font-normal font-public-sans text-gray-4 text-center">
-                        Expected score
-                      </p>
+                          <p className=" text-[30px] font-bold text-gray-1 font-public-sans">100%</p>
+                          <p className="text-xs font-normal font-public-sans text-gray-4 text-center">
+                            Expected score
+                          </p>
                         </div>
                       </div>
                     </div>
@@ -187,7 +187,7 @@ export function Dashboard() {
                       <div className="w-40 h-40 relative">
                         <CircularProgressbar
                           value={82}
-                        //   text="82%"
+                          //   text="82%"
                           strokeWidth='12'
                           styles={buildStyles({
                             pathColor: "#f59e0b",
@@ -195,11 +195,11 @@ export function Dashboard() {
                             trailColor: "#f3f4f6",
                           })}
                         />
-                     <div className=" absolute flex flex-col items-center justify-center top-0 inset-0">
-                        <p className=" text-[30px] font-bold text-gray-1 font-public-sans text-center">82%</p>
-                      <p className="text-xs font-normal font-public-sans text-gray-4 text-center">
-                      Achieved score
-                      </p>
+                        <div className=" absolute flex flex-col items-center justify-center top-0 inset-0">
+                          <p className=" text-[30px] font-bold text-gray-1 font-public-sans text-center">82%</p>
+                          <p className="text-xs font-normal font-public-sans text-gray-4 text-center">
+                            Achieved score
+                          </p>
                         </div>
                       </div>
                     </div>
@@ -207,7 +207,7 @@ export function Dashboard() {
 
                   <div className="flex justify-between items-center mx-3 lg:mx-10 my-2">
                     <div className="flex items-center space-x-2">
-                      <Svgs.PlayButton/>
+                      <Svgs.PlayButton />
                       <div>
                         <p className="text-xs font-bold font-public-sans text-gray-1">
                           Completed Task
@@ -227,29 +227,29 @@ export function Dashboard() {
           </div>
           <div className=" grid grid-cols-12 my-5 gap-5">
             <div className=" col-span-12 lg:col-span-6 ">
-             <RoundedCard>
-             <div className="flex items-center justify-between">
-                    <h1 className=" text-base font-semibold font-epilogue text-gray-1">
-                      Meeting
-                    </h1>
-                    <Button
-                      handleClick={handleShowPopup}
-                      text={'Create new meeting'}
-                      className={
-                        " w-[160px] font-public-sans text-sm font-semibold rounded-lg"
-                      }
-                      customPadding={"px-[16px], py-[8px]"}
+              <RoundedCard>
+                <div className="flex items-center justify-between">
+                  <h1 className=" text-base font-semibold font-epilogue text-gray-1">
+                    Meeting
+                  </h1>
+                  <Button
+                    handleClick={handleShowPopup}
+                    text={'Create new meeting'}
+                    className={
+                      " w-[160px] font-public-sans text-sm font-semibold rounded-lg"
+                    }
+                    customPadding={"px-[16px], py-[8px]"}
+                  />
+                  {showPopup && (
+                    <VerifiedSuccessful
+                      show={showPopup}
+                      onClose={handleClosePopup}
                     />
-                    {showPopup && (
-                <VerifiedSuccessful
-                  show={showPopup}
-                  onClose={handleClosePopup}
-                />
-              )}
-                  </div>
-                  <div className=" overflow-x-auto">
+                  )}
+                </div>
+                <div className=" overflow-x-auto">
                   {meetingCard
-                    .map((value,index) => {
+                    .map((value, index) => {
                       return (
                         <>
                           <div className=" min-w-[450px] flex items-center gap-3 overflow-x-auto justify-between border-b-2 my-3 pb-3 mt-7">
@@ -265,55 +265,55 @@ export function Dashboard() {
                               </h1>
                             </div>
                             <div>
-                                
+
                             </div>
                             <div className="flex items-center gap-5">
-                            <div className="flex items-center ">
-                              <img src={"/images/groupimg1.png"} width={'32px'} className=" -mr-2" alt="" />
-                              <img src={"/images/groupimg2.png"} width={'32px'} className="-mr-2" alt="" />
-                              <img src={"/images/groupimg3.png"} width={'32px'} alt="" />
-                            </div>
-                            <div onClick={()=>{handleShowMoreOptions(index)}} className=" cursor-pointer p-1">
-                               <span className=""><Svgs.Verticaldots/></span>
-                               {showEdit === index && showMoreOptions && (<MoreOptions show={showMoreOptions} onClose={handleCloseMoreOptions}/>)} 
-                            </div>
+                              <div className="flex items-center ">
+                                <img src={"/images/groupimg1.png"} width={'32px'} className=" -mr-2" alt="" />
+                                <img src={"/images/groupimg2.png"} width={'32px'} className="-mr-2" alt="" />
+                                <img src={"/images/groupimg3.png"} width={'32px'} alt="" />
+                              </div>
+                              <div onClick={() => { handleShowMoreOptions(index) }} className=" cursor-pointer p-1">
+                                <span className=""><Svgs.Verticaldots /></span>
+                                {showEdit === index && showMoreOptions && (<MoreOptions show={showMoreOptions} onClose={handleCloseMoreOptions} />)}
+                              </div>
                             </div>
                           </div>
                         </>
                       );
                     })}
-                    </div>
-             </RoundedCard>
+                </div>
+              </RoundedCard>
             </div>
             <div className=" col-span-12 lg:col-span-6 ">
-                <RoundedCard>
+              <RoundedCard>
                 <div className="flex items-center justify-between">
-                    <h1 className=" text-base font-semibold font-epilogue text-gray-1">
-                      Tasks
-                    </h1>
-                    <Button
-                      handleClick={handleShowTaskPopup}
-                      text={'Create new task'}
-                      className={
-                        " w-[160px] font-public-sans text-sm font-semibold rounded-lg"
-                      }
-                      customPadding={"px-[16px], py-[8px]"}
-                    />
-                     {showTaskPopup && (<CreateTaskDialog show={showTaskPopup} onClose={handleCloseTaskPopup}/>)}
-                  </div>
-                  <div className=" overflow-x-auto mt-3">
+                  <h1 className=" text-base font-semibold font-epilogue text-gray-1">
+                    Tasks
+                  </h1>
+                  <Button
+                    handleClick={handleShowTaskPopup}
+                    text={'Create new task'}
+                    className={
+                      " w-[160px] font-public-sans text-sm font-semibold rounded-lg"
+                    }
+                    customPadding={"px-[16px], py-[8px]"}
+                  />
+                  {showTaskPopup && (<CreateTaskDialog show={showTaskPopup} onClose={handleCloseTaskPopup} />)}
+                </div>
+                <div className=" overflow-x-auto mt-3">
                   {taskCard
                     .map((value, index, arr) => {
                       return (
                         <>
-                          <div key={index} className={` min-w-[450px] flex items-center overflow-x-auto gap-3 justify-between ${index === arr.length -1 ? ' border-b-0' : 'border-b-2'} py-3 `}>
+                          <div key={index} className={` min-w-[450px] flex items-center overflow-x-auto gap-3 justify-between ${index === arr.length - 1 ? ' border-b-0' : 'border-b-2'} py-3 `}>
                             <div className="flex items-center gap-3">
                               <img src="/images/Img.png" alt="" />
                               <h1 className=" text-sm font-epilogue font-semibold text-gray-1">
                                 {value.meeting}
                               </h1>
                             </div>
-                            
+
 
                             <div className="flex items-center ">
                               <img src={"/images/groupimg1.png"} width={'32px'} className=" -mr-2" alt="" />
@@ -324,9 +324,9 @@ export function Dashboard() {
                         </>
                       );
                     })}
-                    </div>
-                    <div className="flex items-center justify-center my-2"><button className=" text-base font-normal font-public-sans text-gray-4 px-[4.5px] py-[3px] rounded-lg border">View all</button></div>
-                </RoundedCard>
+                </div>
+                <div className="flex items-center justify-center my-2"><button className=" text-base font-normal font-public-sans text-gray-4 px-[4.5px] py-[3px] rounded-lg border">View all</button></div>
+              </RoundedCard>
             </div>
           </div>
         </div>
