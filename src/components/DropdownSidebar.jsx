@@ -51,6 +51,59 @@ export const DropdownSidebar = ({ active }) => {
     },
   ]
 
+
+  const HRSideBarData = [
+    {
+      name: 'Dashboard',
+      icon: <Svgs.Dashboard color={active === 'Dashboard' ? '#fff' : '#828282'} />,
+      navigate: '/hr/dashboard',
+      active: active === 'Dashboard' ? true : false,
+    },
+   
+    {
+      name: 'Employees',
+      icon: <Svgs.Team color={active === 'Employees' ? '#fff' : '#828282'} />,
+      navigate: '/hr/employees',
+      active: active === 'Employees' ? true : false,
+  },
+    {
+      name: 'Applicants',
+      icon: <Svgs.Applicantssvg color={active === 'Applicants' ? '#fff' : '#828282'} />,
+      navigate: '/hr/applicants',
+      active: active === 'Applicants' ? true : false,
+  },
+    {
+      name: 'Attendance & Leave',
+      icon: <Svgs.AttendanceSvg color={active === 'Attendance & Leave' ? '#fff' : '#828282'} />,
+      navigate: '/hr/attandence',
+      active: active === 'Attendance & Leave' ? true : false,
+  },
+    {
+      name: 'Payroll',
+      icon: <Svgs.Payrollsvg color={active === 'Payroll' ? '#fff' : '#828282'} />,
+      navigate: '/hr/payroll',
+      active: active === 'Payroll' ? true : false,
+  },
+    {
+      name: 'Chat',
+      icon: <Svgs.Chat color={active === 'Chat' ? '#fff' : '#828282'} />,
+      navigate: '/hr/chat',
+      active: active === 'Chat' ? true : false,
+  },
+    {
+      name: 'Documents',
+      icon: <Svgs.Document color={active === 'Documents' ? '#fff' : '#828282'} />,
+      navigate: '/hr/documents',
+      active: active === 'Documents' ? true : false,
+  },
+  {
+    name: 'My profile',
+    icon: <Svgs.Setting color={active === 'My profile' ? '#fff' : '#828282'} />,
+    navigate: '/hr/myprofile',
+    active: active === 'My profile' ? true : false,
+},
+  ]
+
   const handleSideBarClick = (path) => {
     navigate(path)
   }
@@ -90,7 +143,7 @@ export const DropdownSidebar = ({ active }) => {
       {isDropdownOpen && (
         <div className='flex flex-col left-0  bg-white py-3  w-full h-auto items-center justify-between z-10'>
           <div className='w-full flex flex-col'>
-            {userSideBarData.map((value, index) => (
+            {HRSideBarData.map((value, index) => (
               <div key={index}
                 onClick={() => { handleSideBarClick(value.navigate) }}
                 className={`${value.active === true ? ' bg-btn-gradient ' : 'bg-white'} p-4 rounded-lg flex flex-row space-x-4 w-full cursor-pointer`}>

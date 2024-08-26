@@ -1,11 +1,10 @@
 import React from "react";
 import { useState, useEffect, useRef } from "react";
-import Addnewemployee from "../Employees/Addnewemployee";
+import Addnewemployee from "../../Employees/Elements/Addnewemployee";
 import Addapplicant from "./Addsalary";
 import Addsalary from "./Addsalary";
-import Editpayroll from "./Editpayroll";
 
-function EditGroceryDialog({ show, onClose }) {
+function ShareGroceryDialog({ show, onClose }) {
   const popupRef = useRef();
 
 
@@ -31,8 +30,8 @@ function EditGroceryDialog({ show, onClose }) {
 
   return (
     <div className="fixed inset-0 flex items-center justify-center bg-white bg-opacity-70 z-50 ">
-      <div ref={popupRef} className=" mx-auto  scroll-smooth bg-white shadow-lg border rounded-xl w-[800px] overflow-y-auto h-[75%]  ">
-        <Editpayroll />
+      <div ref={popupRef} className=" mx-auto  scroll-smooth bg-white shadow-lg border rounded-xl w-[800px] overflow-y-auto h-[85%]  ">
+        <Addsalary />
 
       </div>
 
@@ -41,4 +40,4 @@ function EditGroceryDialog({ show, onClose }) {
   );
 }
 
-export default EditGroceryDialog;
+export default ShareGroceryDialog;

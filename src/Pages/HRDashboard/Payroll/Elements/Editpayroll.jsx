@@ -1,6 +1,6 @@
 import React,{useState ,useEffect, useRef} from 'react'
-import SuccessfulDialog from '../../../components/Elements/SuccessfulDialog';
-import { Input } from '../../../components/Input';
+import SuccessfulDialog from '../../../../components/Elements/SuccessfulDialog';
+import { Input } from '../../../../components/Input';
 
 
 

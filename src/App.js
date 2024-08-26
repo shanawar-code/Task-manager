@@ -1,8 +1,8 @@
 import "./App.css";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import MyTaskCard from "./Pages/UserDashboard/MyTasks/MyTaskCard";
-import { LoginPage } from "./Pages/Auth/LogIn/index";
-import { SignUpPage } from "./Pages/Auth/SignUp/index";
+import { LoginPage } from "./Pages/Auth/LogIn/Index";
+import { SignUpPage } from "./Pages/Auth/SignUp/Index";
 import MyTeam from "./Pages/UserDashboard/MYTeam";
 import MYTeamLast from "./Pages/UserDashboard/MYTeam/MyTeamLast";
 import FindColleagues from "./Pages/UserDashboard/Chat/FindColleagues";
@@ -13,13 +13,14 @@ import AttendanceAndLeaveUser from "./Pages/UserDashboard/AttendanceAndLeave";
 import MyProfileUser from "./Pages/UserDashboard/MyProfile";
 
 import Dashboard_hr from "./Pages/HRDashboard/Dashboard/index";
-import Chat_hr from "Pages/HRDashboard/Chat";
 import Employees_hr from "./Pages/HRDashboard/Employees";
 import Applicants from "./Pages/HRDashboard/Applicants";
 import Payroll from "./Pages/HRDashboard/Payroll";
-import MyProfile from "Pages/HRDashboard/Myprofile";
-import Chat from "Pages/UserDashboard/Chat";
-import Documents from "Pages/HRDashboard/Documents";
+import Chat_hr from "./Pages/HRDashboard/Chat";
+import Chat from "./Pages/UserDashboard/Chat";
+import MyProfileHR from "./Pages/HRDashboard/Myprofile";
+import DocumentsHR from "./Pages/HRDashboard/Documents";
+import AttendanceAndLeaveHR from "./Pages/HRDashboard/AttandenceAndLeave";
 
 
 
@@ -42,7 +43,7 @@ function App() {
         },
         {
           path: "chat",
-          element: <Chat />,
+          element: <Chat/>
         },
         {
           path: "my-team",
@@ -79,14 +80,38 @@ function App() {
       path: "/hr",
       element: <RequireAuth allowedRoles={"HR"} />,
       children: [
-        { path: "dashboard", element: <Dashboard_hr /> },
-        { path: "attandence", element: <AttendanceAndLeaveUser /> },
-        { path: "chat", element: <Chat_hr /> },
-        { path: "payroll", element: <Payroll /> },
-        { path: "documents", element: <Documents /> },
-        { path: "applicants", element: <Applicants /> },
-        { path: "employees", element: <Employees_hr /> },
-        { path: "myprofile", element: <MyProfile /> },
+        {
+           path: "dashboard", 
+           element: <Dashboard_hr />
+           },
+        { 
+          path: "attandence",
+          element: <AttendanceAndLeaveHR/>  
+        },
+        { 
+          path: "chat", 
+          element:<Chat_hr/>
+        },
+        { 
+          path: "payroll",
+          element: <Payroll /> 
+        },
+        {
+           path: "documents",
+           element: <DocumentsHR/>
+           },
+        { 
+          path: "applicants",
+          element: <Applicants /> 
+        },
+        {
+           path: "employees",
+           element: <Employees_hr /> 
+          },
+        {
+           path: "myprofile", 
+           element: <MyProfileHR/>
+          },
 
       ]
     },

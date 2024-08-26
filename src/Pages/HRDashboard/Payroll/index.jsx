@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
 import { Layout } from '../../../components/Layout/DashboardLayout';
 import Button from '../../../components/Button';
-import ShareGroceryDialog from './ShareGroceryDialog';
+import ShareGroceryDialog from './Elements/ShareGroceryDialog.jsx';
 import Svgs, { Arrows, Threedots } from '../../../assets/svgs/index.js'
-import Moreoptions from './Moreoptions.jsx';
+import Moreoptions from './Elements/Moreoptions.jsx';
 
 function Payroll() {
   const [showPopup, setShowPopup] = useState(false);
@@ -158,7 +158,7 @@ function Payroll() {
   return (
     <Layout active={'Payroll'}>
       <div className='min-h-screen'>
-        <div className="flex flex-wrap  gap-[10px] sm:gap-[0px] px-8     sm:flex-row justify-between  sm:items-center   sm:space-y-0">
+        <div className="flex flex-wrap  gap-[10px] sm:gap-[0px]     sm:flex-row justify-between  sm:items-center   sm:space-y-0">
           <h2 className="lg:text-2xl sm:text-lg text-base font-bold font-public-sans text-gray-1 ">Payroll</h2>
           <div className="flex sm:space-x-4  flex-col sm:flex-row  items-center space-y-4 sm:space-y-0 ">
             <div className='border border-gray-1 rounded-lg  py-[8px] px-[12px] md:text-sm text-xs font-public-sans font-semibold text-gray-1'>
@@ -187,7 +187,7 @@ function Payroll() {
           <div className="container min-w-full ">
             <div className="overflow-auto  min-w-full">
               <div className="flex gap-4 flex-col min-w-[700px]">
-                <div className='py-[24px] min-w-[900px]'>
+                <div className='mt-[24px] min-w-[900px]'>
                   <div className="flex font-bold bg-[#f3f3f3] border  rounded-lg justify-between w-[100%] py-5">
                     <div className='flex items-center gap-[9px] text-sm text-gray-1 font-public-sans px-[46px]'> <h1 className=" ">Name</h1><span><Arrows /></span></div>
                     <h1 className=" p-2 text-gray-1 font-medium text-sm font-public-sans">Position </h1>
@@ -197,6 +197,7 @@ function Payroll() {
                     <h1 className="text-gray-1 font-public-sans text-sm  p-2 px-[20px]">Action</h1>
                   </div>
                 </div>
+                <div className='mt-[20px]'>
                 {Payroll.map((payroll, index) => (
                   <div
                     key={index}
@@ -241,6 +242,7 @@ function Payroll() {
                     </div>
                   </div>
                 ))}
+                </div>
               </div>
             </div>
           </div>

@@ -7,6 +7,7 @@ import { Layout } from '../../../components/Layout/DashboardLayout';
 import { Employeessvg } from '../../../assets/svgs';
 import RoundedCard from '../../../components/Elements/RoundedCard';
 import Button from '../../../components/Button';
+import DashboardCard from '../../../components/Elements/DashboardCard';
 
 
 function Dashboard_hr() {
@@ -64,70 +65,42 @@ function Dashboard_hr() {
   const [selectedRole, setSelectedRole] = React.useState('Python developer');
   const roles = ['Python developer', 'Web designer', 'UI UX designer', 'Web developer'];
 
-  const overviewData = [
-    {
-      Employees: 'Total employees',
-      totalEmployees: 25,
-      newEmployeesnumber: 4,
-      newEmployees: 'new employees',
-      textcolor: 'text-[#00B037]',
-      empolyestextcolor: 'text-[#828282]',
-      totalempolyescolor: 'text-[#161617]',
-      svg: <Employs />
+  
 
-    },
-
-    {
-      Employees: 'Total employees',
-      totalEmployees: 2,
-      newEmployeesnumber: 2,
-      newEmployees: 'website designers',
-      textcolor: 'text-[#F4A012]',
-      empolyestextcolor: 'text-[#F4A012]',
-      totalempolyescolor: 'text-[#161617]',
-      svg: <Chair />
-    },
-
-    {
-      Employees: 'Employee Attendance',
-      totalEmployees: '98%',
-      newEmployeesnumber: 24,
-      newEmployees: ' present today',
-      textcolor: 'text-[#00B037]',
-      empolyestextcolor: 'text-[#828282]',
-      totalempolyescolor: 'text-[#161617]',
-      svg: <Attdenence />
-
-    },
-    {
-      Employees: 'My attendance',
-      totalEmployees: '100%',
-      newEmployeesnumber: 'log in:',
-      newEmployees: ' 10:02 AM today',
-      textcolor: 'text-[#828282]',
-      empolyestextcolor: 'text-[#4F4F4F]',
-      totalempolyescolor: 'text-[#00B037]',
-      svg: <Attdenence />
-
-    },
-  ]
   return (
     <>
       <Layout active={'Dashboard'}>
-        <div className="  bg-gray-100">
+        <div className="">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 sm:px-4  lg:px-0">
-
-            {overviewData.map((items, index) => (
-              <RoundedCard>
-                <div key={index} className=" ">
-                  <div> <h3 className="text-[12px] font-semibold font-public-sans text-[#828282]">{items.Employees}</h3></div>
-                  <div className='flex justify-between items-center text-[20px]'><p className={`${items.totalempolyescolor}  font-semibold font-public-sans`}>{items.totalEmployees}</p>
-                    <span>{items.svg}</span> </div>
-                  <div className='flex items-center gap-[4px]'><span className={`${items.textcolor}`}>{items.newEmployeesnumber}</span><p className={`${items.empolyestextcolor}`}> {items.newEmployees}</p></div>
-                </div>
-              </RoundedCard>
-            ))}
-
+          <DashboardCard 
+            tasks={'Total Employee'} 
+            value={'25'}  
+            tasksCount={'4'} taskcountclass={`text-[#00B037] `}
+             svg={<Employs />}
+             employees={'new employees'} employeesclass={`text-gray-4`}
+             />
+            <DashboardCard 
+            tasks={'Total Employee'}
+             value={'2'} 
+              tasksCount={'2'} taskcountclass={`text-[#F4A012]`}
+               svg={<Chair/>}
+               employees={'website designers'} employeesclass={`text-[#F4A012]`}
+               />
+            <DashboardCard
+             tasks={'Employees Attendence'} 
+             value={'98%'}  
+             tasksCount={'24'} taskcountclass={`text-[#00B037]`}
+             svg={<Attdenence />}
+             employees={'present today'} employeesclass={`text-gray-4`}
+            
+             />
+            <DashboardCard 
+            tasks={'My Attendence'} 
+            value={'100%'}   valueclass={`text-[#00B037]`}
+            tasksCount={'log in:'} taskcountclass={`text-gray-4`}
+            svg={<Attdenence />}
+            employees={'10:02 AM today'} employeesclass={`text-gray-2`}
+            />
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4 mt-4 sm:px-4  lg:px-0">
             <RoundedCard>
@@ -297,7 +270,7 @@ function Dashboard_hr() {
                   <div className="flex justify-between items-center">
                     <h3 className="md:text-[16px] text-[14px] text-gray-1 font-semibold font-public-sans">Meetings</h3>
 
-                    <Button text={'Create new meeting'} />
+                    <Button text={'Create new meeting'} customPadding={`py-[8px] px-[16px] text-sm`}/>
 
 
                   </div>

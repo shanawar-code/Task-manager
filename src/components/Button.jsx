@@ -12,7 +12,7 @@ const Button = ({
      
       onClick={handleClick}
       type={type ? type : ""}
-      className={`text-base font-mulish font-bold  bg-btn-gradient hover:scale-105 ease-in-out duration-300 text-white flex items-center justify-center  rounded-[8px]  ${className} ${
+      className={`text-sm font-mulish font-bold  bg-btn-gradient hover:scale-105 ease-in-out duration-300 text-white flex items-center justify-center  rounded-[8px]  ${className} ${
         customPadding ? customPadding : "p-4"
       }`}
     >

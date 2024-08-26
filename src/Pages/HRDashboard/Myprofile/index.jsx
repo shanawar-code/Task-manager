@@ -4,7 +4,7 @@ import RoundedCard from '../../../components/Elements/RoundedCard'
 import Svgs from '../../../assets/svgs'
 
 
-function MyProfile() {
+function MyProfileHR() {
   const Skills = [
     {
       skill: 'Project Management',
@@ -227,4 +227,4 @@ function MyProfile() {
   )
 }
 
-export default MyProfile
+export default MyProfileHR;

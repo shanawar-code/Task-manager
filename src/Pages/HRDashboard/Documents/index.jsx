@@ -3,9 +3,9 @@ import { Layout } from '../../../components/Layout/DashboardLayout';
 import Button from '../../../components/Button';
 import Svgs from '../../../assets/svgs/index.js'
 import RoundedCard from '../../../components/Elements/RoundedCard.jsx';
-import ShareGroceryDialog from './ShareGroceryDialog.jsx';
+import ShareGroceryDialog from './Elements/ShareGroceryDialog.jsx';
 
-function Documents() {
+function DocumentsHR() {
   const [activeButton, setActiveButton] = useState('Dashboard');
   const handleButtonClick = (button) => {
     setActiveButton(button);
@@ -117,7 +117,7 @@ function Documents() {
 
                 </div>
                 <div className='flex gap-[4px]'>
-                  <button className='flex justify-center items-center border gap-[4px] hover:scale-105 ease-in-out duration-300 py-[5px] px-[12px] cursor-pointer text-xs sm:text-sm border-gray-2 text-gray-2 rounded-lg'><span><Svgs.Smbifilepdf /></span>Download</button>
+                  <button className='flex justify-center items-center border gap-[4px] hover:scale-105 ease-in-out duration-300 p-[8px] cursor-pointer text-xs sm:text-sm border-gray-2 text-gray-2 rounded-lg'><span><Svgs.Smbifilepdf /></span>Download</button>
                 </div>
               </div>
 
@@ -131,4 +131,4 @@ function Documents() {
   )
 }
 
-export default Documents;
+export default DocumentsHR;

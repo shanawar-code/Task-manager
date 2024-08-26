@@ -1,6 +1,6 @@
 import React from "react";
 import { useState, useEffect, useRef } from "react";
-import Addnewemployee from "../Employees/Addnewemployee";
+import Addnewemployee from "../../Employees/Elements/Addnewemployee";
 import Addapplicant from "./Addsalary";
 import Addsalary from "./Addsalary";
 import DeleteDialog from "./DeleteDialog";

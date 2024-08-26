@@ -1,5 +1,5 @@
 import React, { act, useState } from 'react'
-import { Applicantssvg, AttendanceSvg, Chat, Dashboard, Logout, MyTasks, Payrollsvg, Setting, Team } from '../assets/svgs'
+import { Applicantssvg, AttendanceSvg, Chat, Dashboard, Logout, MyTasks, Payrollsvg, Setting, Team } from '../assets/svgs/index.js'
 import { useNavigate } from 'react-router-dom'
 import Svgs from '../assets/svgs/index.js'
 import { useLocation } from "react-router-dom";

@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
-import { Email, Phone } from '../../../assets/svgs';
+import { Email, Phone } from '../../../assets/svgs/index.js';
 import { Layout } from '../../../components/Layout/DashboardLayout'
-import Addnewemployee from './Addnewemployee';
-import ShareGroceryDialog from './ShareGroceryDialog';
+import Addnewemployee from './Elements/Addnewemployee.jsx';
+import ShareGroceryDialog from './Elements/ShareGroceryDialog.jsx';
 import Button from '../../../components/Button';
 import Svgs from '../../../assets/svgs/index.js'
 import RoundedCard from '../../../components/Elements/RoundedCard.jsx';
@@ -88,7 +88,7 @@ function Employees_hr() {
         <div className="flex gap-[10px] sm:gap-[0px]   flex-wrap  sm:flex-row justify-between items-start sm:items-center mb-4  sm:space-y-0">
           <h2 className="lg:text-2xl sm:text-lg text-base font-bold font-public-sans text-gray-1 ">Employees</h2>
           <div className="flex    flex-col sm:flex-row items-start sm:items-center space-y-4 sm:space-y-0 sm:space-x-4">
-            <div className='border border-gray-1 rounded-lg px-4 py-3 md:text-sm text-xs font-public-sans font-semibold text-gray-1'>
+            <div className='border border-gray-1 rounded-lg px-[12px] py-[8px] md:text-sm text-xs font-public-sans font-semibold text-gray-1'>
               <select className="bg-[#fbfbfb]  sm:w-auto">
                 <option>Web development</option>
                 <option>UI/UX design</option>
@@ -100,7 +100,7 @@ function Employees_hr() {
             <div className=''>
 
 
-              <Button handleClick={handleShowPopup} className={'flex items-center gap-2  py-3 px-4 '} text={<> <Svgs.Plus /> Add new employee</>} />
+              <Button handleClick={handleShowPopup} className={'flex items-center gap-2  py-[8px] px-[16px] '} text={<> <Svgs.Plus /> Add new employee</>} />
               {showPopup && (<ShareGroceryDialog show={showPopup} onClose={handleClosePopup} />)}
 
             </div>

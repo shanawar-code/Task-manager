@@ -1,12 +1,12 @@
 import React from "react";
 import Svgs from '../../../assets/svgs/index.js'
 import { Layout } from "../../../components/Layout/DashboardLayout.jsx";
-import ProfileDialog from "./ProfileDialog.jsx";
+import ProfileDialog from "./Elements/ProfileDialog.jsx";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 
-function Chat() {
+function Chat_hr() {
 
   const [showPopup, setShowPopup] = useState(false);
 
@@ -181,4 +181,4 @@ function Chat() {
   );
 }
 
-export default Chat;
+export default Chat_hr;

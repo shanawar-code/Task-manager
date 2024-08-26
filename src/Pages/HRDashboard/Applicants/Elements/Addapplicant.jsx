@@ -1,6 +1,5 @@
 import { useRef } from 'react';
 import React, { useState } from 'react'
-import { Calenderhr, Crossiconssvg, Fileattachsvg } from 'assets/svgs/index';
 import SuccessfulDialog from '../../../../components/Elements/SuccessfulDialog';
 import { Input } from '../../../../components/Input';
 
@@ -236,7 +235,7 @@ function Addapplicant() {
                       onClick={() => handleRemoveSkill(s)}
                       className="text-gray-1 font-public-sans text-base hover:text-gray-700 "
                     >
-                      <span className='absolute -top-1 -right-1'><Crossiconssvg /></span>
+                      <span className='absolute -top-1 -right-1'></span>
                     </button>
                   </div>
                 ))}

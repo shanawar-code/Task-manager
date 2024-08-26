@@ -1,7 +1,7 @@
 import React from "react";
 
 
-function Cards({ tasks, value, tasksCount , svg}) {
+function Cards({ tasks, value, tasksCount , svg, employees ,taskcountclass,employeesclass,valueclass,}) {
   return (
     <>
       <div className=" ">
@@ -12,15 +12,14 @@ function Cards({ tasks, value, tasksCount , svg}) {
             </h1>
           </div>
           <div className="flex items-center justify-between">
-            <h1 className=" text-xl md:text-2xl font-semibold font-public-sans text-[#161617]">
+            <h1 className={`${valueclass}text-xl md:text-2xl font-semibold font-public-sans`} >
               {value}
             </h1>
             <span>{svg}</span>
           </div>
-          <div>
-            <h1 className=" text-xs text-gray-4 font-poppins font-normal">
-              {tasksCount}
-            </h1>
+          <div className="flex items-center gap-[4px]">
+            <h1 className={`${taskcountclass} text-xs  font-public-sans font-normal`}>{tasksCount}</h1>   
+            <h1 className={`${employeesclass} text-xs  font-public-sans font-normal`}>{employees}</h1>
           </div>
         </div>
       </div>

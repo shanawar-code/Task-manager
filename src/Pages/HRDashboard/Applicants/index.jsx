@@ -1,10 +1,9 @@
 import React, { useState } from 'react'
 import { Layout } from '../../../components/Layout/DashboardLayout'
-import { Arrows, Attdenence, Chair, Employeessvg, Employs, Plus, Threedots, arrows } from '../../../assets/svgs'
 import ShareGroceryDialog from './Elements/ShareGroceryDialog';
 import Svgs from '../../../assets/svgs/index.js'
 import Button from '../../../components/Button.jsx';
-import RoundedCard from '../../../components/Elements/RoundedCard.jsx';
+import DashboardCard from '../../../components/Elements/DashboardCard';
 
 
 function Applicants() {
@@ -18,53 +17,8 @@ function Applicants() {
     setShowPopup(false);
   }
 
-  const applicantsData = [
-    {
-      Employees: 'Open positions',
-      totalEmployees: 5,
-      newEmployeesnumber: 4,
-      newEmployees: 'new applicants',
-      textcolor: 'text-[#00B037]',
-      empolyestextcolor: 'text-[#828282]',
-      totalempolyescolor: 'text-[#161617]',
-      svg: <Employs />
 
-    },
-
-    {
-      Employees: 'Interviewing',
-      totalEmployees: 4,
-      newEmployeesnumber: 1,
-      newEmployees: ' Interview today',
-      textcolor: 'text-[#F4A012]',
-      empolyestextcolor: 'text-[#F4A012]',
-      totalempolyescolor: 'text-[#161617]',
-      svg: <Chair />
-    },
-
-    {
-      Employees: 'This week hired',
-      totalEmployees: '2',
-      newEmployeesnumber: '100%',
-      newEmployees: ' target achieved',
-      textcolor: 'text-[#00B037]',
-      empolyestextcolor: 'text-gray-4',
-      totalempolyescolor: 'text-[#161617]',
-      svg: <Attdenence />
-
-    },
-    {
-      Employees: 'Total aplicants',
-      totalEmployees: '63',
-      newEmployeesnumber: '2',
-      newEmployees: 'applicants rejected',
-      textcolor: 'text-[#F54D4D]',
-      empolyestextcolor: 'text-gray-4',
-      totalempolyescolor: 'text-gray-1',
-      svg: <Attdenence />
-
-    },
-  ]
+  
   const applicants = [
     {
       name: 'Catherine',
@@ -134,7 +88,7 @@ function Applicants() {
         <div className="flex flex-wrap  gap-[10px] sm:gap-[0px] px-8     sm:flex-row justify-between  sm:items-center   sm:space-y-0">
           <h2 className="lg:text-2xl sm:text-lg text-base font-bold font-public-sans text-gray-1 ">Applicants</h2>
           <div className="flex sm:space-x-4  flex-col sm:flex-row  items-center space-y-4 sm:space-y-0 ">
-            <div className='border border-gray-1 rounded-lg p-3 md:text-sm text-xs font-public-sans font-semibold text-gray-1'>
+            <div className='border border-gray-1 rounded-lg py-[8px] px-[12px]  md:text-sm text-xs font-public-sans font-semibold text-gray-1'>
               <select className="bg-[#fbfbfb]  sm:w-auto">
                 <option>Designation</option>
                 <option>Web developer</option>
@@ -148,7 +102,7 @@ function Applicants() {
             <div className=''>
 
 
-              <Button handleClick={handleShowPopup} className={'flex items-center gap-2   py-3 px-[16px] '} text={<> <Svgs.Plus /> Add new applicant</>} />
+              <Button handleClick={handleShowPopup} className={'flex items-center gap-2   py-[8px] px-[16px] '} text={<> <Svgs.Plus /> Add new applicant</>} />
               {showPopup && (<ShareGroceryDialog show={showPopup} onClose={handleClosePopup} />)}
 
             </div>
@@ -158,16 +112,35 @@ function Applicants() {
 
         <div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 sm:px-4  lg:px-0 mt-6">
-            {applicantsData.map((items, index) => (
-              <RoundedCard>
-                <div key={index} className=" ">
-                  <div>  <h3 className="text-[12px] font-semibold font-public-sans text-[#828282]">{items.Employees}</h3></div>
-                  <div className='flex justify-between items-center text-[20px]'><p className={`${items.totalempolyescolor}  font-semibold font-public-sans`}>{items.totalEmployees}</p>
-                    <span>{items.svg}</span> </div>
-                  <div className='flex items-center gap-[4px]'><span className={`${items.textcolor}`}>{items.newEmployeesnumber}</span><p className={`${items.empolyestextcolor}`}> {items.newEmployees}</p></div>
-                </div>
-              </RoundedCard>
-            ))}
+          <DashboardCard 
+            tasks={'Open positions'} 
+            value={'5'}  
+            tasksCount={'4'} taskcountclass={`text-[#00B037] `}
+             svg={<Svgs.Employs />}
+             employees={'new aplicants'} employeesclass={`text-gray-4`}
+             />
+            <DashboardCard 
+            tasks={'Interviewing'}
+             value={'4'} 
+              tasksCount={'1'} taskcountclass={`text-[#F4A012]`}
+               svg={<Svgs.Chair/>}
+               employees={'Interview today'} employeesclass={`text-[#F4A012]`}
+               />
+            <DashboardCard
+             tasks={'This week hired'} 
+             value={'2'}  
+             tasksCount={'100%'} taskcountclass={`text-[#00B037]`}
+             svg={<Svgs.Attdenence />}
+             employees={'target achieved'} employeesclass={`text-gray-4`}
+            
+             />
+            <DashboardCard 
+            tasks={'Total aplicants'} 
+            value={'63'}   
+            tasksCount={'2'} taskcountclass={`text-[#F54D4D]`}
+            svg={<Svgs.Attdenence />}
+            employees={'applicants rejected'} employeesclass={`text-gray-4`}
+            />
 
           </div>
         </div>
@@ -176,9 +149,9 @@ function Applicants() {
           <div className="container min-w-full ">
             <div className="overflow-auto  min-w-full">
               <div className="flex gap-4 flex-col min-w-[700px]">
-                <div className='py-[24px]'>
-                  <div className="flex font-bold bg-[#f3f3f3] border  rounded-lg justify-between w-[100%] py-5">
-                    <div className='flex items-center gap-[9px] text-sm text-gray-1 font-public-sans'> <h1 className="w-[16.2%]  px-[46px]">Name</h1><span><Arrows /></span></div>
+                <div className='mt-[24px]'>
+                  <div className="flex font-bold bg-[#f3f3f3] border  rounded-lg justify-between w-[100%] py-[19px]">
+                    <div className='flex items-center gap-[9px] text-sm text-gray-1 font-public-sans'> <h1 className="w-[16.2%]  px-[46px]">Name</h1><span><Svgs.Arrows /></span></div>
                     <h1 className=" p-2 text-gray-1 font-medium text-sm font-public-sans">Position applied</h1>
                     <h1 className="text-gray-1 font-public-sans text-sm p-2">Contact no</h1>
                     <h1 className="text-gray-1 font-public-sans text-sm p-2">Application date</h1>
@@ -186,6 +159,7 @@ function Applicants() {
                     <h1 className="text-gray-1 font-public-sans text-sm px-[20px] p-2">Action</h1>
                   </div>
                 </div>
+                <div className='mt-[20px]'>
                 {applicants.map((applicant, index) => (
                   <div
                     key={index}
@@ -216,10 +190,11 @@ function Applicants() {
                     </div>
                     <div className="px-[20px] p-2 text-right">
                       <button className="text-gray-500 hover:text-gray-700">
-                        <Threedots />
+                        <Svgs.Threedots />
                       </button>          </div>
                   </div>
                 ))}
+                </div>
               </div>
             </div>
           </div>
