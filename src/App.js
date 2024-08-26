@@ -2,7 +2,7 @@ import "./App.css";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import Dashboard_hr from "./Pages/HRDashboard/Dashboard/index";
 import MyTaskCard from "./Pages/UserDashboard/MyTasks/MyTaskCard";
-import { LoginPage } from "./Pages/Auth/LogIn/Index";
+import { LoginPage } from "./Pages/Auth/LogIn/index";
 import { SignUpPage } from "./Pages/Auth/SignUp/index";
 import MyTeam from "./Pages/UserDashboard/MYTeam";
 import Chat from "./Pages/UserDashboard/Chat";
@@ -13,7 +13,6 @@ import { Dashboard } from "./Pages/UserDashboard/Dashboard";
 import Tasks from "./Pages/UserDashboard/MyTasks";
 import AttendanceAndLeaveUser from "./Pages/UserDashboard/AttendanceAndLeave";
 import MyProfileUser from "./Pages/UserDashboard/MyProfile";
-import { Navigate } from "react-router-dom";
 
 function App() {
   const router = createBrowserRouter([
@@ -71,9 +70,9 @@ function App() {
       path: "/hr",
       element: <RequireAuth allowedRoles={"HR"} />,
       children: [
-        { 
-          path: "dashboard", 
-          element: <Dashboard_hr /> 
+        {
+          path: "dashboard",
+          element: <Dashboard_hr />
         }
       ],
     },
