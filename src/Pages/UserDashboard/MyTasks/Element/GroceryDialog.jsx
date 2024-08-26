@@ -15,6 +15,14 @@ function GroceryDialog({ show, onClose, hidden, popupCardIndex , index }) {
     e.preventDefault();
   };
 
+  const [teamMembers, setTeamMembers] = useState([{id:1} , {id:2}])
+
+
+  const removeMember = (id) => {
+    setTeamMembers(teamMembers.filter(member => member.id !== id));
+  };
+
+
   const [showPopup, setShowPopup] = useState(false);
 
   const handleShowPopup = () => {
@@ -102,10 +110,10 @@ function GroceryDialog({ show, onClose, hidden, popupCardIndex , index }) {
               Members
             </h1>
             </div>
-            <div className="flex items-center gap-3">
-            <img src="images/ortan (1).png" alt="" />
-            <img src="images/ortan (2).png" alt="" />
-            <img src="images/ortan (3).png" alt="" />
+            <div onClick={()=>{navigate('/user/myteamlast')}} className="flex items-center gap-3">
+            <img src="/images/ortan (1).png" alt="" />
+            <img src="/images/ortan (2).png" alt="" />
+            <img src="/images/ortan (3).png" alt="" />
             <span className=" bg-[#e0e0e0] h-7 w-7 rounded-full flex items-center justify-center"><Svgs.AddIconGray/></span>
             </div>
           </div>
@@ -181,7 +189,7 @@ function GroceryDialog({ show, onClose, hidden, popupCardIndex , index }) {
                 <span className=" rounded-full bg-white">
                   <Svgs.Oction_download/>
                 </span>
-                <span className=" absolute -top-2 -right-2">
+                <span  onClick={() => removeMember(1)} className=" absolute -top-2 -right-2">
                   <Svgs.Cross/>
                 </span>
               </button>
@@ -192,7 +200,7 @@ function GroceryDialog({ show, onClose, hidden, popupCardIndex , index }) {
                 <span className=" rounded-full bg-white">
                   <Svgs.Oction_download/>
                 </span>
-                <span className=" absolute -top-2 -right-2">
+                <span onClick={() => removeMember(2)} className=" absolute -top-2 -right-2">
                   <Svgs.Cross/>
                 </span>
               </button>
@@ -217,13 +225,13 @@ function GroceryDialog({ show, onClose, hidden, popupCardIndex , index }) {
           </div>
         </div>
         </div>
-        {Array(4).fill().map(()=>(
+        {Array(4).fill().map((_, index)=>(
 
-        <div className="px-[12px] py-[20px] border-b-2">
+        <div key={index} className="px-[12px] py-[20px] border-b-2">
           <div className="flex justify-between">
           <div className="leftpart flex items-center gap-4">
             <div>
-              <img src="images/beautifulGirlpic.png" alt="" className=" w-[28px]"/>
+              <img src="/images/beautifulGirlpic.png" alt="" className=" w-[28px]"/>
             </div>
             <div>
               <h1 className=" text-xs md:text-sm font-semibold font-public-sans text-gray-1">Anna</h1>

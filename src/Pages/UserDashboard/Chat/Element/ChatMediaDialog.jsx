@@ -10,19 +10,19 @@ function ChatMediaDialog({ show, onClose }) {
 
   const imgData=[
     {
-        src: 'images/mobileimg.png',
+        src: '/images/mobileimg.png',
     },
     {
-        src: 'images/mobileimg.png',
+        src: '/images/mobileimg.png',
     },
     {
-        src: 'images/heartimg (1).png',
+        src: '/images/heartimg (1).png',
     },
     {
-        src: 'images/heartimg (1).png',
+        src: '/images/heartimg (1).png',
     },
     {
-        src: 'images/heartimg (1).png'
+        src: '/images/heartimg (1).png'
     },
   
   ]

@@ -80,7 +80,7 @@ function CreateNewTeamDialog({ show, onClose}) {
                 Create new team
                 </h1>
               </div>
-              <div className="my-6">
+              <div className="mt-6">
                 <Input label={"Team name"} className={"text-xs md:text-base"} placeholder={'Team name'} />
               </div>
               <div className="">
@@ -98,7 +98,7 @@ function CreateNewTeamDialog({ show, onClose}) {
               </div>
 
               <div className="flex items-center justify-center my-6">
-                <button className="flex items-center justify-center w-full md:w-[200px] h-[44px] gap-3 border border-[#FB6D72] rounded-xl text-[#F33F41] text-sm font-semibold font-public-sans hover:scale-105 transition-all duration-700">
+                <button className="flex items-center justify-center w-full md:w-[200px] h-[44px] gap-3 border border-[#FB6D72] rounded-[8px] text-[#F33F41] text-sm font-semibold font-public-sans hover:scale-105 transition-all duration-700">
                     <Svgs.AddIconRed/>
                   Add more employees
                 </button>

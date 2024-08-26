@@ -14,7 +14,7 @@ function MYTeamLast() {
       taskScore: "98%",
       email: "o.williams@email.com",
       phone: "+1 650 434 5655",
-      img: "images/natasha (1).png",
+      img: "/images/natasha (1).png",
     },
     {
       id: 2,
@@ -24,7 +24,7 @@ function MYTeamLast() {
       taskScore: "98%",
       email: "o.williams@email.com",
       phone: "+1 650 434 5655",
-      img: "images/natasha (2).png",
+      img: "/images/natasha (2).png",
     },
     {
       id: 3,
@@ -34,7 +34,7 @@ function MYTeamLast() {
       taskScore: "98%",
       email: "o.williams@email.com",
       phone: "+1 650 434 5655",
-      img: "images/natasha (3).png",
+      img: "/images/natasha (3).png",
     },
     {
       id: 4,
@@ -44,7 +44,7 @@ function MYTeamLast() {
       taskScore: "98%",
       email: "o.williams@email.com",
       phone: "+1 650 434 5655",
-      img: "images/natasha (4).png",
+      img: "/images/natasha (4).png",
     },
     {
       id: 5,
@@ -54,7 +54,7 @@ function MYTeamLast() {
       taskScore: "98%",
       email: "o.williams@email.com",
       phone: "+1 650 434 5655",
-      img: "images/natasha (5).png",
+      img: "/images/natasha (5).png",
     },
     {
       id: 6,
@@ -64,7 +64,7 @@ function MYTeamLast() {
       taskScore: "98%",
       email: "o.williams@email.com",
       phone: "+1 650 434 5655",
-      img: "images/natasha (6).png",
+      img: "/images/natasha (6).png",
     },
   ])
 

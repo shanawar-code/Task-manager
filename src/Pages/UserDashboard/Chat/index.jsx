@@ -28,7 +28,7 @@ function Chat() {
               <div className="leftuper p-3 flex justify-between col-span-12 md:col-span-4 items-center md:border-r border-b">
                 <div className="flex items-center gap-3">
                   <div>
-                    <img className=" cursor-pointer" src='images/womenOnline (4).png' alt="" />
+                    <img className=" cursor-pointer" src='/images/womenOnline (4).png' alt="" />
                   </div>
                   <div>
                     <h1 className="text-sm md:text-base font-medium font-public-sans text-gray-1">Robert Fox</h1>
@@ -42,7 +42,7 @@ function Chat() {
               <div className="rightuper p-3 flex justify-between col-span-12 md:col-span-8 items-center border-b">
                 <div className="flex items-center gap-3">
                   <div>
-                  <img className=" cursor-pointer" onClick={handleShowPopup} src='images/womenOnline (3).png' alt="" />
+                  <img className=" cursor-pointer" onClick={handleShowPopup} src='/images/womenOnline (3).png' alt="" />
 
                   {showPopup && (
                 <ProfileDialog
@@ -75,7 +75,7 @@ function Chat() {
                 <div className="leftdown p-3 flex justify-between items-center w-full bg-[#f2f2f2] border-b">
                   <div className="flex items-center gap-[10px] w-full">
                     <div className="">
-                    <img src='images/womenOnline (1).png' alt="" />
+                    <img src='/images/womenOnline (1).png' alt="" />
                     </div>
                     <div className=" w-full">
                       <div>
@@ -97,7 +97,7 @@ function Chat() {
                 <div className="leftdown p-3 flex justify-between items-center border-b">
                   <div className="flex items-center gap-3 w-full">
                     <div>
-                    <img src='images/womenOnline (2).png' alt="" />
+                    <img src='/images/womenOnline (2).png' alt="" />
                     </div>
                     <div className=" w-full">
                       <div className="flex items-center justify-between">
@@ -134,7 +134,7 @@ function Chat() {
                   </div>
                   <div className="chat1left inline-block py-10">
                     <div className="flex items-center gap-3">
-                    <img src='images/womenOnline (5).png' alt="" />
+                    <img src='/images/womenOnline (5).png' alt="" />
                       <h1 className="bg-[#f8f8f8] text-sm md:text-base font-normal font-public-sans text-gray-1 h-[44px] p-4 rounded-r-xl rounded-tl-xl flex items-center">Oh great! I would like to know more</h1>
                     </div>
                     <div className="text-end">
@@ -153,7 +153,7 @@ function Chat() {
                   </div>
                   <div className="chat1left inline-block pb-10">
                     <div className="flex items-center gap-3">
-                    <img src='images/womenOnline (6).png' alt="" />
+                    <img src='/images/womenOnline (6).png' alt="" />
                       <h1 className="bg-[#f8f8f8] text-sm md:text-base font-normal font-public-sans text-gray-1 h-[44px] p-4 rounded-r-xl rounded-tl-xl flex items-center">Thank you!</h1>
                     </div>
                     <div className="text-end">

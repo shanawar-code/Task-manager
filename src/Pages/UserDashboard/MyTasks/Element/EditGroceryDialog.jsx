@@ -9,7 +9,7 @@ import SuccessfulDialog from "../../../../components/Elements/SuccessfulDialog.j
 
 
 function EditGroceryDialog({ show, onClose, hidden }) {
- 
+ const navigate = useNavigate()
   const [showSuccessfulPopup, setShowSuccessfulPopup] = useState(false);
 
   const handleShowSuccessfulPopup = () => {
@@ -102,7 +102,7 @@ function EditGroceryDialog({ show, onClose, hidden }) {
                   <Svgs.Oction_download/>
                 </span>
                 <span className=" absolute -top-2 -right-2">
-                  <Svgs.Cross/>
+                  <Svgs.CrossIconRed/>
                 </span>
               </button>
               <button className=" relative border rounded-xl px-[14px] py-[10px] bg-[#f3f3f3]  flex items-center justify-between w-full sm:w-[273px]">
@@ -113,7 +113,7 @@ function EditGroceryDialog({ show, onClose, hidden }) {
                   <Svgs.Oction_download/>
                 </span>
                 <span className=" absolute -top-2 -right-2">
-                  <Svgs.Cross/>
+                  <Svgs.CrossIconRed/>
                 </span>
               </button>
               <button  className=" border border-[#f7585c] rounded-xl px-[12px] py-[11.5px] flex items-center gap-4 ">
@@ -130,7 +130,7 @@ function EditGroceryDialog({ show, onClose, hidden }) {
             <h1 className=" text-sm font-normal font-public-sans text-gray-2">
               Members
             </h1>
-            <img src="images/Member4.png" alt="" className="w-[42px]" />
+            <img onClick={()=>{navigate('/user/myteamlast')}} src="/images/Member4.png" alt="" className="w-[42px]" />
           </div>
           <div className="flex flex-col gap-2">
             <h1 className=" text-sm font-normal font-public-sans text-gray-2">

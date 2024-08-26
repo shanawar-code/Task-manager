@@ -18,31 +18,34 @@ function MyTeam() {
   const navigate = useNavigate()
   const cardData=[
     {
-      src: 'images/catherine.png',
+      src: '/images/catherine.png',
       padding_x: 'px-6',
       border_b: 'border-b-[1px]',
       padding_y: 'py-4',
       stats: 'Team Manager'
     },
     {
-      src: 'images/annaa.png',
+      src: '/images/annaa.png',
       padding_x: 'px-6',
       border_b: 'border-b-[1px]',
       padding_y: 'py-4',
       status: 'Approved',
       bgColor: 'bg-[#e5f6ea]',
       textColor: 'text-[#00b037]',
+      margin_r: "ml-12"
     },
     {
-      src: 'images/ortan.png',
+      src: '/images/ortan.png',
       padding_x: 'px-6',
       padding_y: 'py-4',
       border_b: 'border-b-[1px]',
+       margin_r: "ml-12"
     },
     {
-      src: 'images/jessy.png',
+      src: '/images/jessy.png',
       padding_x: 'px-6',
       padding_y: 'pt-4',
+       margin_r: "ml-12"
     },
   ]
 
@@ -93,13 +96,13 @@ function MyTeam() {
         <div className='flex flex-wrap items-center justify-center sm:justify-between'>
             <div className='flex flex-col gap-4'>
                 <div>
-                    <h1 className=' text-2xl font-bold font-public-sans text-gray-1'>Team Memeber</h1>
+                    <h1 className=' text-2xl font-bold font-public-sans text-gray-1'>Team Memebers</h1>
                 </div>
                 <div onClick={()=>{navigate('/user/myteamlast')}} className='flex items-center justify-center md:justify-start cursor-pointer'>
-                    <img src='images/member1.png' alt="" />
-                    <img src='images/member2.png' width={'32px'} alt="" />
-                    <img src='images/member3 (2).png' width={'32px'} alt="" />
-                    <img src='images/member4 (2).png' width={'32px'} alt="" />
+                    <img src='/images/member1.png' alt="" />
+                    <img src='/images/member2.png' width={'32px'} alt="" />
+                    <img src='/images/member3 (2).png' width={'32px'} alt="" />
+                    <img src='/images/member4 (2).png' width={'32px'} alt="" />
                     <span  className='  w-[32px] h-[32px] flex items-center justify-center bg-[#f3f3f3] rounded-full'><Svgs.Four/></span>
                 </div>
             </div>
@@ -129,12 +132,12 @@ function MyTeam() {
             <div>
               <img src={value.src} alt="" />
             </div>
-            <div className='flex flex-col gap-[6px]'>
+            <div className='flex flex-col gap-[6px] '>
               <h1 className=' text-sm font-medium font-public-sans text-gray-1'>Anna</h1>
               <h1 className={` text-xs font-normal font-public-sans text-[#00B037]`}>{value.stats}</h1>
             </div>
           </div>
-          <div className='2 flex '>
+          <div className={` ${value.margin_r}`}>
           <h1 className=' text-sm font-medium font-public-sans text-gray-1'><span className='text-sm font-medium font-public-sans text-gray-1'>14</span> Tasks</h1>
           {/* <h1 className=' text-sm font-normal font-public-sans text-gray-2'>22-8-2024</h1> */}
           </div>

@@ -72,7 +72,7 @@ const handleSideBarClick=(path)=>{
       {/* Toggle Button for Dropdown */}
       <button 
         onClick={toggleDropdown} 
-        className='bg-white p-4 my-2 rounded-lg flex items-center justify-between w-full border-2 border-[#fc6e73]'
+        className='bg-white p-4 mb-4 mt-1 rounded-lg flex items-center justify-between w-full border-2 border-[#fc6e73]'
       >
         <span className=' text-base font-normal font-public-sans bg-btn-gradient text-transparent bg-clip-text'>{activeTab}</span>
         <svg
