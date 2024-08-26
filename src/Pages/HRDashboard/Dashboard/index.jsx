@@ -11,11 +11,11 @@ import RoundedCard from '../../../components/Elements/RoundedCard';
 
 function Dashboard_hr() {
     const [attendance, setAttendance] = useState([
-        { name: 'Anna', role: 'Python developer', status: 'Present', time: '10:00AM', img: 'images/(anna).png' },
-        { name: 'Catherine', role: 'Web designer', status: 'Present', time: '10:00AM', img: 'images/(catherine5).png' },
-        { name: 'Orton', role: 'UI UX designer', status: 'Present', time: '10:00AM', img: 'images/(ortan6).png' },
-        { name: 'Jessy', role: 'Web developer', status: 'Present', time: '10:00AM', img: 'images/(jessy7).png' },
-        { name: 'Orton', role: 'UI UX designer', status: 'Present', time: '10:00AM', img: 'images/(ortan6).png' },
+        { name: 'Anna', role: 'Python developer', status: 'Present', time: '10:00AM', img: '/images/(anna).png' },
+        { name: 'Catherine', role: 'Web designer', status: 'Present', time: '10:00AM', img: '/images/(catherine5).png' },
+        { name: 'Orton', role: 'UI UX designer', status: 'Present', time: '10:00AM', img: '/images/(ortan6).png' },
+        { name: 'Jessy', role: 'Web developer', status: 'Present', time: '10:00AM', img: '/images/(jessy7).png' },
+        { name: 'Orton', role: 'UI UX designer', status: 'Present', time: '10:00AM', img: '/images/(ortan6).png' },
         
     ]);
 
@@ -316,7 +316,7 @@ function Dashboard_hr() {
                         <>
                           <div key={index} className={`${value.border_b}  min-w-[450px] flex items-center gap-3  justify-between   pb-3 mt-7   `}>
                             <div className="flex items-center gap-3">
-                              <img src="images/image 39 (1).png" alt="" />
+                              <img src="/images/image 39 (1).png" alt="" />
                               <h1 className=" md:text-[14px] text-[12px] md:text-sm font-epilogue font-semibold text-gray-1">
                                 {value.meeting}
                               </h1>
@@ -329,9 +329,9 @@ function Dashboard_hr() {
 
                             <div className="flex items-center gap-3">
                              <div className='flex items-center'>
-                              <img className='-mr-2' src="images/meeting1.png" alt="" />
-                              <img className='-mr-2' src="images/meeting2.png" alt="" />
-                              <img src="images/meeting3.png" alt="" />
+                              <img className='-mr-2' src="/images/meeting1.png" alt="" />
+                              <img className='-mr-2' src="/images/meeting2.png" alt="" />
+                              <img src="/images/meeting3.png" alt="" />
                               </div>
                             <div>  <Threedots/> </div>
                             </div>

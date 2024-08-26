@@ -62,9 +62,7 @@ function CreateTaskDialog({ show, onClose }) {
 
   return (
     <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
-      <div ref={popupRef} className="">
-        <form onSubmit={handleSubmit}>
-          <div className="mx-auto p-5 scroll-smooth bg-white shadow-lg rounded-xl border w-[848px]">
+          <div ref={popupRef} className="p-5 bg-white shadow-lg rounded-xl border sm:w-[500px] md:w-[600px] lg:w-[848px] overflow-y-auto h-[90vh] md:h-fit">
             <div className="flex flex-col gap-3">
               <div className="flex items-center justify-center text-center">
                 <h1 className="text-2xl font-semibold font-public-sans text-gray-700">
@@ -82,19 +80,23 @@ function CreateTaskDialog({ show, onClose }) {
                   Description
                 </label>
                 <textarea
-                  className="rounded-xl border w-full h-[130px] p-4 my-2 outline-none"
+                  className=" resize-none rounded-xl border w-full h-[130px] p-4 my-2 outline-none"
                   placeholder="Description"
                 ></textarea>
               </div>
               <div>
                 <button className=" text-sm font-semibold font-public-sans text-gray-2 flex items-center justify-center gap-[11px] px-[16px] py-[12px] border border-[#4f4f4f] rounded-xl w-full border-dashed"><Svgs.AddIconGray/>Add attachment</button>
               </div>
-              <div className="flex items-center justify-between">
+              <div className="flex flex-col md:flex-row items-center justify-between gap-2">
+                <div className=" w-full">
                 <button className="flex items-center justify-center w-full md:w-[258px] h-[44px] gap-3 border border-[#FB6D72] rounded-xl text-[#F33F41] text-sm font-semibold font-public-sans">
                     <Svgs.AddIconRed/>
                   Add employees
                 </button>
-                <SelectDropdown options={optionsRole} />
+                </div>
+                <div className="w-full md:w-[160px]">
+                <SelectDropdown options={optionsRole} selectClass={' w-full'} customWidth={' w-full'}/>
+                </div>
               </div>
               <div className="flex items-center justify-center mt-5">
                 <Button
@@ -113,8 +115,6 @@ function CreateTaskDialog({ show, onClose }) {
               </div>
             </div>
           </div>
-        </form>
-      </div>
     </div>
   );
 }

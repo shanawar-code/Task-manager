@@ -5,29 +5,31 @@ import MyTaskCard from './MyTaskCard'
 import Svgs from '../../../assets/svgs/Index.js'
 import { useState } from 'react'
 import CreateTaskDialog from './CreateTaskDialog.jsx'
-
+import { useSidebarContext } from '../../../Context/ContextLayout.jsx'
+import { useNavigate } from 'react-router-dom'
 
 function Tasks() {
+    
+    const {sidebarOpen} = useSidebarContext()
 
-   
-  
+    
 
 
   return (
     <>
     <Layout active={'My Tasks'}>
-    <div className='my-5'>
+    <div className=' my-5 md:my-0'>
         <div className='flex flex-wrap items-center justify-center sm:justify-between'>
             <div className='flex flex-col gap-4'>
                 <div>
                     <h1 className=' text-2xl font-bold font-public-sans text-gray-1'>Team memeber</h1>
                 </div>
-                <div className='flex items-center'>
+                <div className='flex items-center justify-center md:justify-start'>
                     <img className=' cursor-pointer' src='images/member1.png' alt="" />
                     <img className=' cursor-pointer' src='images/member2.png' width={'32px'} alt="" />
                     <img className=' cursor-pointer' src='images/member3 (2).png' width={'32px'} alt="" />
                     <img className=' cursor-pointer' src='images/member4 (2).png' width={'32px'} alt="" />
-                    <span className='w-[32px] h-[32px] cursor-pointer flex items-center justify-center bg-[#f3f3f3] rounded-full'><Svgs.Four/></span>
+                    <span  className='w-[32px] h-[32px] cursor-pointer flex items-center justify-center bg-[#f3f3f3] rounded-full'><Svgs.Four/></span>
                 </div>
             </div>
             <div className='flex flex-col sm:flex-row items-center justify-center md:justify-start gap-5 my-5'>
@@ -42,7 +44,7 @@ function Tasks() {
             </div>
         </div>
     </div>
-    <div className=''>
+    <div className={`${sidebarOpen ? ' w-full sm:md:w-[75vw]' : ' w-full sm:w-[89vw]'} `}>
     <MyTaskCard/>
     </div>
     </Layout>

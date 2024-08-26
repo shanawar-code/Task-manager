@@ -1,11 +1,11 @@
 import React from "react";
-import {useState, useEffect, useRef } from "react";
-import Addnewemployee from "../Employees/Addnewemployee";
+import { useState, useEffect, useRef } from "react";
+import Addnewemployee from "./Addnewemployee";
 
 function ShareGroceryDialog({ show, onClose }) {
   const popupRef = useRef();
 
- 
+
   const handleClickOutside = (event) => {
     if (popupRef.current && !popupRef.current.contains(event.target)) {
       onClose();
@@ -29,10 +29,10 @@ function ShareGroceryDialog({ show, onClose }) {
   return (
     <div className="fixed inset-0 flex items-center justify-center bg-white bg-opacity-70 z-50 ">
       <div ref={popupRef} className=" mx-auto p-5 scroll-smooth bg-white shadow-lg border rounded-xl w-[700px] overflow-y-auto h-[85%]  ">
-      <Addnewemployee/>
-    </div> 
-      
+        <Addnewemployee />
       </div>
+
+    </div>
 
   );
 }

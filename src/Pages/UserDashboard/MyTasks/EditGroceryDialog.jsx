@@ -48,10 +48,10 @@ function EditGroceryDialog({ show, onClose, hidden }) {
 
   return (
     <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
-      <div ref={popupRef} className="bg-white w-[80vw]  rounded-xl p-5 overflow-auto h-full">
+      <div ref={popupRef} className=" bg-white w-full md:w-[80vw]  rounded-xl p-5 overflow-auto h-[95vh] mx-3">
         <div className="flex items-center justify-center">
           <div className="">
-            <h1 className=" text-2xl font-semibold font-public-sans text-gray-1">
+            <h1 className=" text-lg md:text-2xl font-semibold font-public-sans text-gray-1">
              Edit Grocery dashboard
             </h1>
           </div>
@@ -67,18 +67,18 @@ function EditGroceryDialog({ show, onClose, hidden }) {
             </h1>
           </div>
           <div className=" border rounded-xl p-5">
-            <p className=" text-base font-normal font-public-sans text-gray-4">
+            <p className=" text-xs md:text-base font-normal font-public-sans text-gray-4">
               The dashboard of the MR Corporation Grocery Mobile App is crafted
               to deliver a seamless and intuitive user experience, ensuring
               users can effortlessly manage their grocery needs. The design
               philosophy centers around clarity, accessibility, and efficiency.{" "}
             </p>
             <ul className=" list-disc px-4 my-4">
-              <li className=" text-base font-normal font-public-sans text-gray-4">
+              <li className=" text-xs md:text-base font-normal font-public-sans text-gray-4">
                 Clean Layout: A minimalist design with a focus on essential
                 elements, avoiding clutter.
               </li>
-              <li className=" text-base font-normal font-public-sans text-gray-4">
+              <li className=" text-xs md:text-base font-normal font-public-sans text-gray-4">
                 Intuitive Navigation: Easy-to-understand icons and menus for
                 quick access to various sections like shopping lists, order
                 history, and account settings.
@@ -93,8 +93,8 @@ function EditGroceryDialog({ show, onClose, hidden }) {
             </h1>
           </div>
           <div className="my-4">
-            <div className="flex items-center justify-between gap-4 my-[16px] ">
-              <button className=" border rounded-xl px-[14px] py-[10px] bg-[#f3f3f3]  flex items-center justify-between w-full lg:w-[273px]">
+            <div className="flex items-center flex-wrap justify-center md:justify-between gap-4 my-[16px] ">
+              <button className=" border rounded-xl px-[14px] py-[10px] bg-[#f3f3f3]  flex items-center justify-between w-full sm:w-[273px]">
                 <span className=" text-sm font-semibold text-gray-2 font-public-sans">
                   Detailed document
                 </span>
@@ -102,7 +102,7 @@ function EditGroceryDialog({ show, onClose, hidden }) {
                   <Svgs.Oction_download/>
                 </span>
               </button>
-              <button className=" border rounded-xl px-[14px] py-[10px] bg-[#f3f3f3]  flex items-center justify-between w-full lg:w-[273px]">
+              <button className=" border rounded-xl px-[14px] py-[10px] bg-[#f3f3f3]  flex items-center justify-between w-full sm:w-[273px]">
                 <span className=" text-sm font-semibold text-gray-2 font-public-sans">
                   Detailed document
                 </span>
@@ -124,13 +124,13 @@ function EditGroceryDialog({ show, onClose, hidden }) {
             <h1 className=" text-sm font-normal font-public-sans text-gray-2">
               Members
             </h1>
-            <img src="images/Member4.png" alt="" />
+            <img src="images/Member4.png" alt="" className="w-[42px]" />
           </div>
           <div className="flex flex-col gap-2">
             <h1 className=" text-sm font-normal font-public-sans text-gray-2">
               Priority
             </h1>
-           <SelectDropdown options={[{value: 'Easy', label: 'Easy'},{value: 'Medium', label: 'Medium'},{value: 'High', label: 'High'},]}/>
+           <SelectDropdown  options={[{value: 'Easy', label: 'Easy'},{value: 'Medium', label: 'Medium'},{value: 'High', label: 'High'},]}/>
           </div>
         </div>
        <div className="flex items-center justify-center mt-[48px]">

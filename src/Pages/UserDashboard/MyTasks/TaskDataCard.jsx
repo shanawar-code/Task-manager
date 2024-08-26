@@ -1,24 +1,40 @@
 import React from 'react'
 import Svgs from '../../../assets/svgs/Index.js'
-function TaskDataCard({title,value1,value2,descrip,bgcolor, textcolor , handleClick}) {
+import MoreOptions from "../../../components/Elements/MoreOptions.jsx";
+import { useState } from 'react';
+
+
+function TaskDataCard({title,value1,value2,description,bgcolor, textcolor , handleClick, handleEditoption}) {
+
+    const [showMoreOptions, setShowMoreOptions] = useState(false)
+    const [showEdit, setShowEdit] = useState(null)
+    const handleShowMoreOptions=(index)=>{
+      setShowMoreOptions(true)
+      setShowEdit(index) 
+    }
+  
+    const handleCloseMoreOptions=()=>{
+      setShowMoreOptions(false)
+      setShowEdit(null)
+    }
   return (
    <>
-    <div onClick={handleClick} className='cursor-pointer border rounded-xl bg-white p-5 mb-5 mx-2 w-[288px]' >
+    <div className=' border rounded-xl bg-white p-5 mb-5 mx-2 w-[288px]' >
             <div className='flex items-center justify-between'>
-                <div>
+                <div onClick={handleClick} className=' cursor-pointer'>
                     <h1 className={` ${bgcolor} ${textcolor} w-fit py-2 px-3  rounded-full`}>{title}</h1>
                 </div>
                 <div className='flex items-center gap-3'>
                 <div className='bg-[#f3f3f3] rounded-full w-7 h-7 flex items-center justify-center'>
                 <Svgs.ShareIcon/>
                 </div>
-                <div>
+                <div onClick={handleEditoption} className=' cursor-pointer'>
                 <Svgs.Verticaldots/>
                 </div>
                 </div>
             </div>
             <div className='my-5'>
-                <h1 className=' text-base font-semibold font-public-sans text-gray-1'>{descrip}</h1>
+                <h1 className=' text-base font-semibold font-public-sans text-gray-1'>{description}</h1>
             </div>
             <div className='flex items-center justify-between'>
                 <div className='flex items-center gap-5'>

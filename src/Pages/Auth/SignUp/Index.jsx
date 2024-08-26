@@ -6,15 +6,34 @@ import Checkbox from '@mui/material/Checkbox';
 import { Input } from '../../../components/Input';
 import Button from '../../../components/Button';
 import SelectDropdown from '../../../components/SelectDropdown';
+import { Formik, useFormik } from 'formik';
+import { signUpSchema } from '../../../schemas';
+
 
 const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
 
 
+const initialValues = {
+    name: '',
+    email: '',
+    password : '',
+    confirm_password: '',
+}
+
 export const SignUpPage = () => {
     const navigate = useNavigate();
-    const handleSubmit=(e)=>{
-        e.preventDefault()
-    }
+
+
+
+    const {values, errors, handleBlur, handleChange, handleSubmit , touched} =  useFormik({
+        initialValues: initialValues,
+        validationSchema: signUpSchema,
+        onSubmit: (values)=>{
+            navigate('/')
+        }
+    })
+
+
 
     const [show, setshow]=useState(true)
     const [show1, setshow1]=useState(true)
@@ -46,22 +65,74 @@ export const SignUpPage = () => {
                     <form onSubmit={handleSubmit} action="" className=''>
                         <div className='flex flex-col gap-[20px]'>
                         <div className=' '>
-                          <Input  label={'Name'} placeholder={'Enter your name here'} className={'w-full sm:w-[350px]'}/>
+                          <Input
+                            error={errors.name && touched.name }
+                            value={values.name}
+                            onChange={handleChange}
+                            handleBlur={handleBlur}
+                            name="name" 
+                            id={'name'}
+                           type={'text'} 
+                          label={'Name'} 
+                          placeholder={'Enter your name here'} 
+                          className={'w-full sm:w-[350px]'}/>
+                         {touched.name && errors.name && (
+                                <small>{errors.name}</small>
+                         )}
                         </div>
                         <div className=' '>
-                        <Input label={'Email'} placeholder={'Enter your email'} className={' w-full sm:w-[350px]'}/>
+                        <Input
+                         error={errors.email && touched.email}
+                         value={values.email}
+                         onChange={handleChange}
+                         handleBlur={handleBlur}
+                         name="email"
+                         id={'email'} 
+                         type={'email'}  
+                        label={'Email'} 
+                        placeholder={'Enter your email'} 
+                        className={' w-full sm:w-[350px]'}/>
+                        {touched.email && errors.email && (
+                                <small>{errors.email}</small>
+                         )}
                         </div>
                         <div className=''>
                             
-                           <SelectDropdown  label="Role" options={roleOptions} name="role" id="role"  />
+                           <SelectDropdown  label="Role" options={roleOptions} name="role" id="role"  selectClass={' w-full'} className={' w-full'} />
                             
                         </div>
                         <div className=' '>
-                            <Input type={'password'} label={'Password'} placeholder={'input your password in here'} className={' w-full sm:w-[350px]'}/>
+                            <Input 
+                             error={errors.password && touched.password}
+                             value={values.password}
+                             onChange={handleChange}
+                             handleBlur={handleBlur}
+                             name="password" 
+                             id={'password'}
+                            type={'password'}  
+                            label={'Password'} 
+                            placeholder={'input your password in here'} 
+                            className={' w-full sm:w-[350px]'}/>
+                           {touched.password && errors.password && (
+                                <small>{errors.password}</small>
+                         )}
                         </div>
 
                         <div className=''>
-                            <Input type={'password'} label={'Confirm Password'} placeholder={'input your password in here'} className={' w-full sm:w-[350px]'}/>
+                            <Input
+                             error={errors.confirm_password && touched.confirm_password}
+                             value={values.confirm_password}
+                             onChange={handleChange}
+                             handleBlur={handleBlur}
+                             name="confirm_password" 
+                             id={'confirm_password'} 
+                            type={'password'} 
+                            label={'Confirm Password'} 
+                            placeholder={'input your password in here'} 
+                            className={' w-full sm:w-[350px]'}/>
+                            {touched.confirm_password && errors.confirm_password && (
+                                <small>{errors.confirm_password}</small>
+                         )}
                         </div>
                         </div>
                         <div className='flex items-center -ml-2 mt-1'>
@@ -70,7 +141,7 @@ export const SignUpPage = () => {
                         </div>
 
                         <div className='mt-[40px]'>
-                        <Button handleClick={()=>{navigate('/')}} text={'Sign Up'} onClick={()=>{navigate('/dashboard')}} className={'w-full'} customPadding={'px-[24px] py-[14px]'} />
+                        <Button type={'submit'}  text={'Sign Up'} className={'w-full'} customPadding={'px-[24px] py-[14px]'} />
                         </div>
                        
                     </form>

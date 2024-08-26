@@ -1,7 +1,7 @@
 import React,{useState} from 'react'
 import { Layout } from '../../../components/Layout/DashboardLayout'
 import { Arrows, Attdenence, Chair, Employeessvg, Employs, Plus, Threedots ,arrows} from '../../../assets/svgs/Index'
-import ShareGroceryDialog from './ShareGroceryDialog';
+import ShareGroceryDialog from './Elements/ShareGroceryDialog';
 import Svgs from '../../../assets/svgs/Index.js'
 import Button from '../../../components/Button.jsx';
 import RoundedCard from '../../../components/Elements/RoundedCard.jsx';
@@ -193,7 +193,7 @@ const applicants = [
         >
           <div className="py-[10px] mx-[16px]  flex  flex-wrap items-center w-[16.2%] ">
             <img
-              src="images/catherine.png"
+              src="/images/catherine.png"
               alt="profile"
               className="w-[42px] h-[42px] rounded-full mr-3"
             />

@@ -204,7 +204,7 @@ const Payroll = [
         >
           <div className="py-[10px] mx-[16px]  flex  flex-wrap items-center w-full  ">
             <img
-              src="images/catherine.png"
+              src="/images/catherine.png"
               alt="profile"
               className="w-[42px] h-[42px] rounded-full mr-3"
             />

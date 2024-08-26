@@ -42,7 +42,7 @@ function AttendanceAndLeave() {
 
       const topcard=[
         {
-            images: 'images/anna1.png',
+            images: '/images/anna1.png',
             team_memebers: 'Anna',
             postion_applied: 'Python developer',
              Attandence: 'Present',
@@ -50,7 +50,7 @@ function AttendanceAndLeave() {
              padding_y: 'py-4',
         },
         {
-            images: 'images/catherine.png',
+            images: '/images/catherine.png',
             team_memebers: 'Catherine',
             postion_applied: 'Web developer',
             Attandence: 'Present',
@@ -59,7 +59,7 @@ function AttendanceAndLeave() {
              padding_y: 'py-4',
         },
         {
-            images: 'images/anna1.png',
+            images: '/images/anna1.png',
             team_memebers: 'Anna',
             postion_applied: 'Python developer',
              Attandence: 'Present',
@@ -67,7 +67,7 @@ function AttendanceAndLeave() {
               padding_y: 'py-4',
         },
         {
-            images: 'images/catherine.png',
+            images: '/images/catherine.png',
             team_memebers: 'Catherine',
             postion_applied: 'Web developer',
             Attandence: 'Present',
@@ -77,7 +77,7 @@ function AttendanceAndLeave() {
   
         },
         {
-            images: 'images/anna1.png',
+            images: '/images/anna1.png',
             team_memebers: 'Anna',
             postion_applied: 'Python developer',
              Attandence: 'Present',
@@ -205,10 +205,10 @@ function AttendanceAndLeave() {
                     <h1 className=' text-2xl font-bold font-public-sans text-gray-1'>Team memeber</h1>
                 </div>
                 <div className='flex items-center'>
-                    <img src='images/member1.png' alt="" />
-                    <img src='images/member2.png' width={'32px'} alt="" />
-                    <img src='images/member3 (2).png' width={'32px'} alt="" />
-                    <img src='images/member4 (2).png' width={'32px'} alt="" />
+                    <img src='/images/member1.png' alt="" />
+                    <img src='/images/member2.png' width={'32px'} alt="" />
+                    <img src='/images/member3 (2).png' width={'32px'} alt="" />
+                    <img src='/images/member4 (2).png' width={'32px'} alt="" />
                     <span className='w-[32px] h-[32px] flex items-center justify-center bg-[#f3f3f3] rounded-full'><Plusfour/></span>
                 </div>
             </div>

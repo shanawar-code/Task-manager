@@ -1,5 +1,5 @@
 import React from "react";
-import {useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 import Addnewemployee from "../Employees/Addnewemployee";
 import Addapplicant from "./Addsalary";
 import Addsalary from "./Addsalary";
@@ -8,7 +8,7 @@ import Editpayroll from "./Editpayroll";
 function EditGroceryDialog({ show, onClose }) {
   const popupRef = useRef();
 
- 
+
   const handleClickOutside = (event) => {
     if (popupRef.current && !popupRef.current.contains(event.target)) {
       onClose();
@@ -32,11 +32,11 @@ function EditGroceryDialog({ show, onClose }) {
   return (
     <div className="fixed inset-0 flex items-center justify-center bg-white bg-opacity-70 z-50 ">
       <div ref={popupRef} className=" mx-auto  scroll-smooth bg-white shadow-lg border rounded-xl w-[800px] overflow-y-auto h-[75%]  ">
-      <Editpayroll/>
-      
-    </div> 
-      
+        <Editpayroll />
+
       </div>
+
+    </div>
 
   );
 }

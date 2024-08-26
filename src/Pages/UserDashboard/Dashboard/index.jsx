@@ -1,6 +1,5 @@
 import React from "react";
 import Cards from "../../../components/Elements/DashboardCard.jsx";
-
 import { useState } from "react";
 import VerifiedSuccessful from "./CreateAMeeting.jsx";
 import Svgs from "../../../assets/svgs/Index.js";
@@ -10,6 +9,10 @@ import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
 import { Layout } from "../../../components/Layout/DashboardLayout.jsx";
 import RoundedCard from "../../../components/Elements/RoundedCard.jsx";
+import CreateTaskDialog from '../MyTasks/CreateTaskDialog.jsx'
+import Collaborate from "../MYTeam/Collaborative.jsx";
+import MoreOptions from "../../../components/Elements/MoreOptions.jsx";
+
 
 export function Dashboard() {
   const [showPopup, setShowPopup] = useState(false);
@@ -20,6 +23,17 @@ export function Dashboard() {
 
   const handleClosePopup = () => {
     setShowPopup(false);
+  };
+
+
+  const [showTaskPopup, setShowTaskPopup] = useState(false);
+
+  const handleShowTaskPopup = () => {
+    setShowTaskPopup(true);
+  };
+
+  const handleCloseTaskPopup = () => {
+    setShowTaskPopup(false);
   };
 
   const meetingCard=[
@@ -51,6 +65,36 @@ export function Dashboard() {
         time: '2:30 PM',
     },
   ]
+
+
+
+
+  const [showCollaborative, setShowCollaborative] = useState(false)
+
+  const handleShowCollaborative=()=>{
+    setShowCollaborative(true)
+  
+  }
+
+  const handleCloseCollaborative=()=>{
+    setShowCollaborative(false)
+ 
+  }
+  const [showMoreOptions, setShowMoreOptions] = useState(false)
+  const [showEdit, setShowEdit] = useState(null)
+  const handleShowMoreOptions=(index)=>{
+    setShowMoreOptions(true)
+    setShowEdit(index) 
+  }
+
+  const handleCloseMoreOptions=()=>{
+    setShowMoreOptions(false)
+    setShowEdit(null)
+  }
+
+
+  
+  
   return (
     <>
       <Layout active={"Dashboard"}>
@@ -91,6 +135,7 @@ export function Dashboard() {
                 
                 buttonBtn={
                   <Button
+                  handleClick={handleShowCollaborative}
                     text={"Collaborate"}
                     customPadding={"px-[16px] py-[8px]"}
                     className={"text-sm font-semibold font-public-sans "}
@@ -98,6 +143,7 @@ export function Dashboard() {
                 }
                 heading={"My Team"}
               />
+                {showCollaborative && (<Collaborate  show={showCollaborative} onClose={handleCloseCollaborative}/>)}
             </div>
             <div className="col-span-12 lg:col-span-6 ">
               <div className=" rounded-xl p-5 border bg-white">
@@ -227,8 +273,9 @@ export function Dashboard() {
                               <img src={"images/groupimg2.png"} width={'32px'} className="-mr-2" alt="" />
                               <img src={"images/groupimg3.png"} width={'32px'} alt="" />
                             </div>
-                            <div className=" cursor-pointer">
-                                <Svgs.Verticaldots/>
+                            <div onClick={()=>{handleShowMoreOptions(index)}} className=" cursor-pointer p-1">
+                               <span className=""><Svgs.Verticaldots/></span>
+                               {showEdit === index && showMoreOptions && (<MoreOptions show={showMoreOptions} onClose={handleCloseMoreOptions}/>)} 
                             </div>
                             </div>
                           </div>
@@ -245,13 +292,14 @@ export function Dashboard() {
                       Tasks
                     </h1>
                     <Button
-                      handleClick={handleShowPopup}
+                      handleClick={handleShowTaskPopup}
                       text={'Create new task'}
                       className={
                         " w-[160px] font-public-sans text-sm font-semibold rounded-lg"
                       }
                       customPadding={"px-[16px], py-[8px]"}
                     />
+                     {showTaskPopup && (<CreateTaskDialog show={showTaskPopup} onClose={handleCloseTaskPopup}/>)}
                   </div>
                   <div className=" overflow-x-auto">
                   {taskCard
@@ -277,7 +325,7 @@ export function Dashboard() {
                       );
                     })}
                     </div>
-                    <div className="flex items-center justify-center"><button className=" text-base font-normal font-public-sans text-gray-4 px-[4.5px] py-[3px] rounded-lg border">View all</button></div>
+                    <div className="flex items-center justify-center my-2"><button className=" text-base font-normal font-public-sans text-gray-4 px-[4.5px] py-[3px] rounded-lg border">View all</button></div>
                 </RoundedCard>
             </div>
           </div>

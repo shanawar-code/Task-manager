@@ -56,7 +56,7 @@ function MyProfile() {
        <RoundedCard>
         <div className='flex items-center gap-5'>
           <div>
-            <img src="images/olivia.png" alt="" />
+            <img src="/images/olivia.png" alt="" />
           </div>
           <div className='flex flex-col gap-[10px]'>
             <h1 className=' text-xl font-semibold font-public-sans text-gray-1'>Olivia Williams</h1>
