@@ -19,9 +19,9 @@ function TaskDataCard({ title, value1, value2, description, bgcolor, textcolor, 
   }
   return (
     <>
-      <div className=' border rounded-xl bg-white p-5 mb-5 mx-2 w-[288px]' >
+      <div onClick={handleClick} className=' border rounded-xl bg-white p-5 mb-5 mx-2 w-[288px] cursor-pointer' >
         <div className='flex items-center justify-between'>
-          <div onClick={handleClick} className=' cursor-pointer'>
+          <div className=' cursor-pointer'>
             <h1 className={` ${bgcolor} ${textcolor} w-fit py-2 px-3  rounded-full text-xs font-semibold font-public-sans`}>{title}</h1>
           </div>
           <div className='flex items-center gap-3'>

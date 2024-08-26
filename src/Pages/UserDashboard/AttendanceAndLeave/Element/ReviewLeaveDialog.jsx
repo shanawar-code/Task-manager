@@ -73,7 +73,7 @@ function ReviweLeaveDialog({ show, onClose}) {
                  <h1 className=" text-base font-bold font-mulish text-gray-1">Sent by</h1>
                  </div>
                  <div className="flex items-center gap-4 my-[14.5px]">
-                 <img src="images/anna.png" alt="" />
+                 <img src="/images/anna.png" alt="" />
                  <span className=" text-base font-semibold font-public-sans text-gray-1">Anna</span>
                  </div>
              </div>

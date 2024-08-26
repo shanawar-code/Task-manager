@@ -152,19 +152,19 @@ export const SideBar = ({ active }) => {
         console.log(path)
     }
 
-    const [showName, setShowName] = useState(false);
+    const [showName, setShowName] = useState(true);
 
-    useEffect(() => {
-        let timer;
-        if (sidebarOpen) {
-            timer = setTimeout(() => {
-                setShowName(true);
-            }, 200);
-        } else {
-            setShowName(false); // Reset state when sidebar is closed
-        }
-        return () => clearTimeout(timer); // Clean up timer on component unmount or when sidebarOpen changes
-    }, [sidebarOpen]);
+    // useEffect(() => {
+    //     let timer;
+    //     if (sidebarOpen) {
+    //         timer = setTimeout(() => {
+    //             setShowName(true);
+    //         }, 200);
+    //     } else {
+    //         setShowName(false); // Reset state when sidebar is closed
+    //     }
+    //     return () => clearTimeout(timer); // Clean up timer on component unmount or when sidebarOpen changes
+    // }, [sidebarOpen]);
 
     return (
         <div className='flex flex-col relative left-0  bg-white py-8 px-3 border-r-2 w-full h-full items-center justify-between'>

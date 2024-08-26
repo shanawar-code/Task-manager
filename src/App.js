@@ -1,10 +1,10 @@
 import "./App.css";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import MyTaskCard from "./Pages/UserDashboard/MyTasks/MyTaskCard";
-import { LoginPage } from "./Pages/Auth/LogIn/Index";
-import { SignUpPage } from "./Pages/Auth/SignUp/Index";
+import { LoginPage } from "./Pages/Auth/LogIn/index";
+import { SignUpPage } from "./Pages/Auth/SignUp/index";
 import MyTeam from "./Pages/UserDashboard/MYTeam";
-import MYTeamLast from "./Pages/UserDashboard/MYTeam/MyTeamLast";
+import MYTeamLast from "./Pages/UserDashboard/MYTeam/TeamMembers";
 import FindColleagues from "./Pages/UserDashboard/Chat/FindColleagues";
 import RequireAuth from "./components/RequireAuth";
 import { Dashboard } from "./Pages/UserDashboard/Dashboard";
@@ -43,7 +43,7 @@ function App() {
         },
         {
           path: "chat",
-          element: <Chat/>
+          element: <Chat />
         },
         {
           path: "my-team",
@@ -81,37 +81,37 @@ function App() {
       element: <RequireAuth allowedRoles={"HR"} />,
       children: [
         {
-           path: "dashboard", 
-           element: <Dashboard_hr />
-           },
-        { 
+          path: "dashboard",
+          element: <Dashboard_hr />
+        },
+        {
           path: "attandence",
-          element: <AttendanceAndLeaveHR/>  
+          element: <AttendanceAndLeaveHR />
         },
-        { 
-          path: "chat", 
-          element:<Chat_hr/>
+        {
+          path: "chat",
+          element: <Chat_hr />
         },
-        { 
+        {
           path: "payroll",
-          element: <Payroll /> 
+          element: <Payroll />
         },
         {
-           path: "documents",
-           element: <DocumentsHR/>
-           },
-        { 
+          path: "documents",
+          element: <DocumentsHR />
+        },
+        {
           path: "applicants",
-          element: <Applicants /> 
+          element: <Applicants />
         },
         {
-           path: "employees",
-           element: <Employees_hr /> 
-          },
+          path: "employees",
+          element: <Employees_hr />
+        },
         {
-           path: "myprofile", 
-           element: <MyProfileHR/>
-          },
+          path: "myprofile",
+          element: <MyProfileHR />
+        },
 
       ]
     },

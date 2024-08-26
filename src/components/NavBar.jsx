@@ -27,7 +27,7 @@ export const NavBar = () => {
 
         {/* Search and Profile */}
         <div className="flex items-center  space-x-4 md:space-x-8 w-2/5 justify-end">
-          <Svgs.SearchBar />
+          <span className=" block md:hidden"><Svgs.SearchBar /></span>
           <div className="hidden md:flex justify-center lg:gap-4 sm:bg-gray-100 rounded-lg items-center py-2 px-4 w-[268px]">
             <span>
               <Svgs.SearchBar />
@@ -38,10 +38,10 @@ export const NavBar = () => {
               placeholder="Search"
             />
           </div>
-          <div className="flex flex-row space-x-4 items-center cursor-pointer">
-            <Svgs.Notification />
-            <div onClick={() => { navigate('/my-profile') }}>
-              <img src={'/images/profilePic.png'} alt="" className="h-8 w-8 object-contain cursor-pointer" />
+          <div className="flex flex-row space-x-3 lg:space-x-4 items-center cursor-pointer">
+            <span className="flex items-center justify-center h-6 w-6 md:h-8 md:w-8"><Svgs.Notification /></span>
+            <div onClick={() => { navigate('/user/my-profile') }} className=" hidden md:block">
+              <img src={'/images/profilePic.png'} alt="" className=" w-6 h-6 md:h-8 md:w-8 object-contain cursor-pointer" />
             </div>
           </div>
         </div>

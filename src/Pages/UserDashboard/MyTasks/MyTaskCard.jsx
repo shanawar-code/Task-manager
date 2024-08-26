@@ -70,6 +70,7 @@ function MyTaskCard() {
                         bgcolor={"bg-[#efeeff]"}
                         textcolor={"text-[#5046e4]"}
                         description={"Grocery Mobile App"}
+                        handleEditoption={()=>{handleShowMoreOptions(index)}}
                       />
                       <TaskDataCard
                         handleClick={() => {
@@ -112,6 +113,7 @@ function MyTaskCard() {
                           onClose={handleClosePopup}
                         />
                       )}
+                      {showEdit === index && showMoreOptions && (<MoreOptions show={showMoreOptions} onClose={handleCloseMoreOptions}/>)}
                     </div>
                     <div className=" flex items-center justify-center mb-[40px]">
                       <button

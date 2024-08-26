@@ -69,9 +69,9 @@ function AttendanceAndLeaveUser() {
           <div className='flex flex-wrap items-center justify-center sm:justify-between gap-3'>
             <div className='flex flex-col gap-4'>
               <div>
-                <h1 className=' text-2xl font-bold font-public-sans text-gray-1'>Team memeber</h1>
+                <h1 className=' text-2xl font-bold font-public-sans text-gray-1'>Team Memebers</h1>
               </div>
-              <div className='flex items-center justify-center md:justify-start'>
+              <div className='flex items-center cursor-pointer justify-center md:justify-start'>
                 <img src='/images/member1.png' alt="" />
                 <img src='/images/member2.png' width={'32px'} alt="" />
                 <img src='/images/member3 (2).png' width={'32px'} alt="" />
@@ -115,7 +115,7 @@ function AttendanceAndLeaveUser() {
                     </div>
                     <div className='4'>
                       <div>
-                        <button onClick={() => { handleShowPopup(index) }} className='flex items-center justify-center text-sm font-semibold font-public-sans text-gray-1 px-[12.5px] py-[7px] rounded-lg border w-[72px]'>Review</button>
+                        <button onClick={() => { handleShowPopup(index) }} className='flex items-center justify-center text-sm font-semibold font-public-sans text-gray-1 px-[12.5px] py-[7px] rounded-lg border border-gray-1 w-[72px] h-[30px]'>Review</button>
                         {popupindex === index && showPopup && (<ReviweLeaveDialog show={showPopup} onClose={handleClosePopup} />)}
                       </div>
                     </div>
@@ -136,19 +136,17 @@ function AttendanceAndLeaveUser() {
 
                     </div>
                   </div>
-                  {/* <div>
-            <Button text={'Apply for leave'} customPadding={'px-[16px] py-[8px]'}/>
-          </div> */}
+
                 </div>
                 {cardData.map((value, index) => (
-                  <div key={index} className={` ${value.padding_x} ${value.border_b} ${value.padding_y} flex items-center justify-between`}>
+                  <div key={index} className={` ${value.padding_x} ${value.border_b} ${value.padding_y} flex items-start justify-between`}>
                     <div className='1 flex items-center gap-3'>
-                      <div>
-                        {value.icon}
+                      <div className='w-6 h-6 border border-gray-5 rounded-full flex items-center justify-center'>
+                        <span className=' text-xs font-semibold font-public-sans text-gray-4'>{index + 1}</span>
                       </div>
                       <div className='flex flex-col gap-3'>
-                        <h1 className=' text-sm font-semibold font-public-sans text-gray-1'>Anna</h1>
-                        <h1 className=' text-sm font-normal font-public-sans text-gray-2'>Urgent leave</h1>
+                        <h1 className=' text-sm font-semibold font-public-sans text-gray-1'>Urgent Leave</h1>
+                        <h1 className=' text-sm font-normal font-public-sans text-gray-2'>To - senior Manager - Jass</h1>
                       </div>
                     </div>
                     <div className='2 flex flex-col gap-3'>
@@ -163,7 +161,6 @@ function AttendanceAndLeaveUser() {
                     </div>
                     <div className='4'>
                       <div>
-                        {/* <button className='flex items-center justify-center text-sm font-semibold font-public-sans text-gray-1 px-[12.5px] py-[7px] rounded-lg border w-[72px]'>Review</button> */}
                         <h1 className=' text-xs font-normal font-public-sans text-gray-4'>5 hours ago</h1>
                       </div>
                     </div>

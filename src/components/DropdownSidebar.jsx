@@ -59,49 +59,49 @@ export const DropdownSidebar = ({ active }) => {
       navigate: '/hr/dashboard',
       active: active === 'Dashboard' ? true : false,
     },
-   
+
     {
       name: 'Employees',
       icon: <Svgs.Team color={active === 'Employees' ? '#fff' : '#828282'} />,
       navigate: '/hr/employees',
       active: active === 'Employees' ? true : false,
-  },
+    },
     {
       name: 'Applicants',
       icon: <Svgs.Applicantssvg color={active === 'Applicants' ? '#fff' : '#828282'} />,
       navigate: '/hr/applicants',
       active: active === 'Applicants' ? true : false,
-  },
+    },
     {
       name: 'Attendance & Leave',
       icon: <Svgs.AttendanceSvg color={active === 'Attendance & Leave' ? '#fff' : '#828282'} />,
       navigate: '/hr/attandence',
       active: active === 'Attendance & Leave' ? true : false,
-  },
+    },
     {
       name: 'Payroll',
       icon: <Svgs.Payrollsvg color={active === 'Payroll' ? '#fff' : '#828282'} />,
       navigate: '/hr/payroll',
       active: active === 'Payroll' ? true : false,
-  },
+    },
     {
       name: 'Chat',
       icon: <Svgs.Chat color={active === 'Chat' ? '#fff' : '#828282'} />,
       navigate: '/hr/chat',
       active: active === 'Chat' ? true : false,
-  },
+    },
     {
       name: 'Documents',
       icon: <Svgs.Document color={active === 'Documents' ? '#fff' : '#828282'} />,
       navigate: '/hr/documents',
       active: active === 'Documents' ? true : false,
-  },
-  {
-    name: 'My profile',
-    icon: <Svgs.Setting color={active === 'My profile' ? '#fff' : '#828282'} />,
-    navigate: '/hr/myprofile',
-    active: active === 'My profile' ? true : false,
-},
+    },
+    {
+      name: 'My profile',
+      icon: <Svgs.Setting color={active === 'My profile' ? '#fff' : '#828282'} />,
+      navigate: '/hr/myprofile',
+      active: active === 'My profile' ? true : false,
+    },
   ]
 
   const handleSideBarClick = (path) => {
@@ -125,7 +125,7 @@ export const DropdownSidebar = ({ active }) => {
       {/* Toggle Button for Dropdown */}
       <button
         onClick={toggleDropdown}
-        className='bg-white p-4 my-2 rounded-lg flex items-center justify-between w-full border-2 border-[#fc6e73]'
+        className='bg-white p-4 mb-4 mt-1 rounded-lg flex items-center justify-between w-full border-2 border-[#fc6e73]'
       >
         <span className=' text-base font-normal font-public-sans bg-btn-gradient text-transparent bg-clip-text'>{activeTab}</span>
         <svg

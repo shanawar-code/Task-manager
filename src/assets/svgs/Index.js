@@ -1184,8 +1184,15 @@ const TickIcon=()=>(
 </svg>
 )
 
+
+const CrossIconRed=()=>(
+    <svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M3.07107 3.07102C-0.832162 6.97425 -0.832162 13.3099 3.07107 17.2132C6.9743 21.1164 13.31 21.1164 17.2132 17.2132C21.1164 13.3099 21.1164 6.97425 17.2132 3.07102C13.31 -0.832207 6.9743 -0.832208 3.07107 3.07102ZM14.3848 7.31366L11.5563 10.1421L14.3848 12.9705L12.9706 14.3847L10.1421 11.5563L7.31371 14.3847L5.89949 12.9705L8.72792 10.1421L5.89949 7.31366L7.31371 5.89945L10.1421 8.72788L12.9706 5.89945L14.3848 7.31366Z" fill="#F54D4D"/>
+</svg>
+)
+
 export default {
-  TickIcon,  AddIconBlue, Cross, Phone, ArrowLeft, PDF, HorizontalLine, TextMessage, Email,
+ CrossIconRed, TickIcon,  AddIconBlue, Cross, Phone, ArrowLeft, PDF, HorizontalLine, TextMessage, Email,
 
     // Shanawar
     Smbifilepdf, Bifilepdf, Document, Textmessage, Editicon, Pdficon, Blueline, Greenline, Countone, Counttwo, Countthree, Plusfour, Arrows, Employs, Chair, Attdenence, Threedots, Plus, Email, Phone, Calenderhr, Employeessvg, Applicantssvg, Payrollsvg, Fileattachsvg, Crossiconssvg,
