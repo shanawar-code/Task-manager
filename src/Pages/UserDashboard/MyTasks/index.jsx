@@ -8,10 +8,11 @@ import CreateTaskDialog from './Element/CreateTaskDialog'
 import { useSidebarContext } from '../../../Context/ContextLayout.jsx'
 import { useNavigate } from 'react-router-dom'
 
+
 function Tasks() {
     
     const {sidebarOpen} = useSidebarContext()
-
+    const navigate = useNavigate()
     
 
 
@@ -22,13 +23,13 @@ function Tasks() {
         <div className='flex flex-wrap items-center justify-center sm:justify-between'>
             <div className='flex flex-col gap-4'>
                 <div>
-                    <h1 className=' text-2xl font-bold font-public-sans text-gray-1'>Team memeber</h1>
+                    <h1 className=' text-2xl font-bold font-public-sans text-gray-1'>Team Memeber</h1>
                 </div>
-                <div className='flex items-center justify-center md:justify-start'>
-                    <img className=' cursor-pointer' src='images/member1.png' alt="" />
-                    <img className=' cursor-pointer' src='images/member2.png' width={'32px'} alt="" />
-                    <img className=' cursor-pointer' src='images/member3 (2).png' width={'32px'} alt="" />
-                    <img className=' cursor-pointer' src='images/member4 (2).png' width={'32px'} alt="" />
+                <div onClick={()=>{navigate('/user/myteamlast')}} className='flex items-center justify-center md:justify-start'>
+                    <img className=' cursor-pointer' src='/images/member1.png' alt="" />
+                    <img className=' cursor-pointer' src='/images/member2.png' width={'32px'} alt="" />
+                    <img className=' cursor-pointer' src='/images/member3 (2).png' width={'32px'} alt="" />
+                    <img className=' cursor-pointer' src='/images/member4 (2).png' width={'32px'} alt="" />
                     <span  className='w-[32px] h-[32px] cursor-pointer flex items-center justify-center bg-[#f3f3f3] rounded-full'><Svgs.Four/></span>
                 </div>
             </div>

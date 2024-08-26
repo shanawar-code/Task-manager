@@ -22,7 +22,7 @@ function TaskDataCard({title,value1,value2,description,bgcolor, textcolor , hand
     <div className=' border rounded-xl bg-white p-5 mb-5 mx-2 w-[288px]' >
             <div className='flex items-center justify-between'>
                 <div onClick={handleClick} className=' cursor-pointer'>
-                    <h1 className={` ${bgcolor} ${textcolor} w-fit py-2 px-3  rounded-full`}>{title}</h1>
+                    <h1 className={` ${bgcolor} ${textcolor} w-fit py-2 px-3  rounded-full text-xs font-semibold font-public-sans`}>{title}</h1>
                 </div>
                 <div className='flex items-center gap-3'>
                 <div className='bg-[#f3f3f3] rounded-full w-7 h-7 flex items-center justify-center'>
@@ -47,9 +47,11 @@ function TaskDataCard({title,value1,value2,description,bgcolor, textcolor , hand
                         <h1 className=' text-xs font-normal font-public-sans text-gray-4'>{value2}</h1>
                     </div>
                 </div>
-                <div>
-                    <img src='images/Member3.png' alt="" />
-                </div>
+                <div className="flex items-center ">
+                              <img src={"/images/groupimg1.png"} width={'32px'} className=" -mr-2" alt="" />
+                              <img src={"/images/groupimg2.png"} width={'32px'} className="-mr-2" alt="" />
+                              <img src={"/images/groupimg3.png"} width={'32px'} alt="" />
+                            </div>
             </div>
     </div>
     

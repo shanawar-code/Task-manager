@@ -2,7 +2,7 @@ import React from "react";
 import { useState, useEffect, useRef } from "react";
 import { Input } from "../Input";
 import Button from "../Button";
-
+import Svgs from '../../assets/svgs/Index.js'
 function SuccessfulDialog({ show, onClose ,hidden, heading, onClick}) {
    
 
@@ -33,8 +33,9 @@ function SuccessfulDialog({ show, onClose ,hidden, heading, onClick}) {
       <div className="">
           <div ref={popupRef} className=" mx-2 p-5 scroll-smooth bg-white shadow-lg rounded-xl border w-[300px] sm:w-[360px]">
             <div className="flex flex-col gap-3">
-              <div className=" flex items-center justify-center text-center">
-               <img src={'images/roundedGreentick.png'} alt="" />
+              <div className=" flex items-center justify-center text-center " >
+               {/* <img src={'/images/roundedGreentick.png'} alt="" /> */}
+               <span className="flex items-center justify-center text-center h-9 w-9 bg-[#60c26f] rounded-full"><Svgs.TickIcon/></span> 
               </div>
               <div className=" w-[60%] flex items-center justify-center text-center mx-auto">
                 <h1 className=" text-base font-normal font-public-sans text-gray-1">{heading}</h1>

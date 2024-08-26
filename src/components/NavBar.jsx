@@ -19,7 +19,7 @@ export const NavBar = () => {
       <div className="flex flex-row items-center justify-between">
         {/* Logo and Menu Button */}
         <div className="flex flex-row items-center space-x-4 md:gap-24">
-          <img onClick={() => { navigate('/') }} src={'images/logo.png'} alt="" className="w-[36px] h-[24px] lg:w-full lg:h-12 cursor-pointer" />
+          <img onClick={() => { navigate('/') }} src={'/images/Logo.png'} alt="" className="w-[36px] h-[24px] lg:w-full lg:h-12 cursor-pointer" />
           <button onClick={() => { setSidebarOpen(!sidebarOpen) }} className="hidden xl:block cursor-pointer">
             <Svgs.BackArrowDouble className={`w-5 h-5 transition-transform duration-500 ${sidebarOpen ? '' : 'rotate-180'}`} />
           </button>
@@ -27,7 +27,8 @@ export const NavBar = () => {
 
         {/* Search and Profile */}
         <div className="flex items-center  space-x-4 md:space-x-8 w-2/5 justify-end">
-          <div className="flex justify-center lg:gap-4 sm:bg-gray-100 rounded-lg items-center py-2 px-4 w-[268px]">
+        <Svgs.SearchBar/>
+          <div className="hidden md:flex justify-center lg:gap-4 sm:bg-gray-100 rounded-lg items-center py-2 px-4 w-[268px]">
             <span>
               <Svgs.SearchBar />
             </span>
@@ -40,7 +41,7 @@ export const NavBar = () => {
           <div className="flex flex-row space-x-4 items-center cursor-pointer">
             <Svgs.Notification />
             <div onClick={() => { navigate('/my-profile') }}>
-              <img src={'images/profilePic.png'} alt="" className="h-8 w-8 object-contain cursor-pointer" />
+              <img src={'/images/profilePic.png'} alt="" className="h-8 w-8 object-contain cursor-pointer" />
             </div>
           </div>
         </div>

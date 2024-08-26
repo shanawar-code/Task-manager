@@ -1178,9 +1178,14 @@ const AddIconBlue = () => (
 
 // export default { AddIconBlue, Cross, Phone, ArrowLeft, PDF, HorizontalLine, TextMessage, Email, TodayLineIcon, TimerIcon, AddIconWhite, CopyIcon, ZipIcon, VideoIcon, LogoFragment, DocsIcon, CrossIcon, AddWhiteIcon, VerticalGreenLine, Count3, Count2, Count1, DocumentChatIcon, BlueIcon, SearchChatIcon, AudioCallIcon, VideoCallIcon, GalleryIcon, SendIcon, OneIcon, AddIconRed, AddIconGray, ReplyIcon, Team, Chat, AttendanceSvg, Setting, Dashboard, MyTasks, Logout, MyLeave, Calender, Meeting, Tasks, BackArrowDouble, Notification, AddIcon, SearchBar, CalendarIcon, PasswordHide, PasswordShow, Verticaldots, PlayButton, Message, DocumentIcon, ShareIcon, WritingPencil, Four, ShareGray, AddPeople, Oction_download, DocumentRedIcon, WritingPencilBlue, ShareIconBlue }
 
+const TickIcon=()=>(
+    <svg width="18" height="14" viewBox="0 0 18 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M5.7203 11.0455L1.4531 6.69202L0 8.16406L5.7203 14L18 1.47204L16.5571 0L5.7203 11.0455Z" fill="#FEFEFE"/>
+</svg>
+)
 
 export default {
-    AddIconBlue, Cross, Phone, ArrowLeft, PDF, HorizontalLine, TextMessage, Email,
+  TickIcon,  AddIconBlue, Cross, Phone, ArrowLeft, PDF, HorizontalLine, TextMessage, Email,
 
     // Shanawar
     Smbifilepdf, Bifilepdf, Document, Textmessage, Editicon, Pdficon, Blueline, Greenline, Countone, Counttwo, Countthree, Plusfour, Arrows, Employs, Chair, Attdenence, Threedots, Plus, Email, Phone, Calenderhr, Employeessvg, Applicantssvg, Payrollsvg, Fileattachsvg, Crossiconssvg,

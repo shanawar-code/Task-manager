@@ -74,7 +74,7 @@ const handleSideBarClick=(path)=>{
         onClick={toggleDropdown} 
         className='bg-white p-4 my-2 rounded-lg flex items-center justify-between w-full border-2 border-[#fc6e73]'
       >
-        <span className='text-gray-700 bg-btn-gradient text-transparent bg-clip-text'>{activeTab}</span>
+        <span className=' text-base font-normal font-public-sans bg-btn-gradient text-transparent bg-clip-text'>{activeTab}</span>
         <svg
           className={`w-5 h-5 transition-transform duration-300 ${isDropdownOpen ? 'rotate-180' : ''}`}
           fill="none"

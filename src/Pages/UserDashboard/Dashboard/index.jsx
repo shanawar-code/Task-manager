@@ -269,9 +269,9 @@ export function Dashboard() {
                             </div>
                             <div className="flex items-center gap-5">
                             <div className="flex items-center ">
-                              <img src={"images/groupimg1.png"} width={'32px'} className=" -mr-2" alt="" />
-                              <img src={"images/groupimg2.png"} width={'32px'} className="-mr-2" alt="" />
-                              <img src={"images/groupimg3.png"} width={'32px'} alt="" />
+                              <img src={"/images/groupimg1.png"} width={'32px'} className=" -mr-2" alt="" />
+                              <img src={"/images/groupimg2.png"} width={'32px'} className="-mr-2" alt="" />
+                              <img src={"/images/groupimg3.png"} width={'32px'} alt="" />
                             </div>
                             <div onClick={()=>{handleShowMoreOptions(index)}} className=" cursor-pointer p-1">
                                <span className=""><Svgs.Verticaldots/></span>
@@ -316,9 +316,9 @@ export function Dashboard() {
                             
 
                             <div className="flex items-center ">
-                              <img src={"images/groupimg1.png"} width={'32px'} className=" -mr-2" alt="" />
-                              <img src={"images/groupimg2.png"} width={'32px'} className="-mr-2" alt="" />
-                              <img src={"images/groupimg3.png"} width={'32px'} alt="" />
+                              <img src={"/images/groupimg1.png"} width={'32px'} className=" -mr-2" alt="" />
+                              <img src={"/images/groupimg2.png"} width={'32px'} className="-mr-2" alt="" />
+                              <img src={"/images/groupimg3.png"} width={'32px'} alt="" />
                             </div>
                           </div>
                         </>

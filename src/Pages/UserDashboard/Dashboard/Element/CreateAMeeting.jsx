@@ -89,13 +89,13 @@ function VerifiedSuccessful({ show, onClose }) {
                   Meeting notes
                 </label>
                 <textarea 
-                  className=" resize-none rounded-xl border w-full h-[130px] p-4 my-2 outline-none"
+                  className=" focus:ring-1 ring-black resize-none rounded-xl border w-full h-[130px] p-4 my-2 outline-none"
                   placeholder="Description"
                 ></textarea>
               </div>
               <div className="flex items-center justify-center">
-                <button className="flex items-center justify-center w-[258px] h-[44px] gap-3 border border-[#FB6D72] rounded-xl text-[#F33F41] text-sm font-semibold font-public-sans">
-                  <img src={"images/addIcon.png"} alt="Add employees" />
+                <button className="flex items-center justify-center w-[258px] h-[44px] gap-[13px] border border-[#FB6D72] rounded-xl text-[#F33F41] text-sm font-semibold font-public-sans">
+                  <Svgs.AddIconRed/>
                   Add employees
                 </button>
               </div>
