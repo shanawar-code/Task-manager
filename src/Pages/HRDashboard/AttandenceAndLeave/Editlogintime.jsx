@@ -61,7 +61,7 @@ function Editlogintime({ show, onClose }) {
   return (
     <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50 ">
       <div className="py-3  ">
-        <div ref={popupRef} className="bg-white shadow-lg rounded-xl border p-6  mx-2 overflow-y-auto h-full lg:w-[598px] md:w-[470px] sm:w-[400px] w-full">
+        <div ref={popupRef} className="bg-white shadow-lg rounded-xl border p-6  mx-2 overflow-y-auto h-full w-[90vw] md:w-[40vw] ">
           <div className="flex items-center justify-center">
             <h1 className=" text-2xl font-semibold font-public-sans text-gray-1">Edit login time</h1>
           </div>

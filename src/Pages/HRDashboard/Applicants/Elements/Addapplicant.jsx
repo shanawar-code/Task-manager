@@ -244,7 +244,7 @@ function Addapplicant() {
           </div>
         )}
 
-        <div className="flex justify-center mt-[32px] gap-[10px] ">
+        <div className="flex justify-center mt-[32px] gap-[10px] px-6 sm:px-0">
           <button onClick={prevsStep} disabled={activeStep === 0} className={`${activeStep === 0 ? 'hidden' : ''} w-[162px] py-[14px] px-[24px] font-mulish 
       border rounded-lg border-[#f65154] font-bold lg:text-base text-sm text-transparent bg-clip-text bg-btn-gradient`}>Back</button>
 

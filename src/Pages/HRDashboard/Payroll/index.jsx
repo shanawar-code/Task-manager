@@ -186,11 +186,11 @@ function Payroll() {
         <div>
           <div className="container min-w-full ">
             <div className="overflow-auto  min-w-full">
-              <div className="flex gap-4 flex-col min-w-[700px]">
+              <div className="flex gap-4 flex-col min-w-[950px]">
                 <div className='mt-[24px] min-w-[900px]'>
                   <div className="flex font-bold bg-[#f3f3f3] border  rounded-lg justify-between w-[100%] py-5">
                     <div className='flex items-center gap-[9px] text-sm text-gray-1 font-public-sans px-[46px]'> <h1 className=" ">Name</h1><span><Arrows /></span></div>
-                    <h1 className=" p-2 text-gray-1 font-medium text-sm font-public-sans">Position </h1>
+                    <h1 className=" p-2 text-gray-1 font-medium text-sm font-public-sans ">Position </h1>
                     <div className='flex items-center gap-[9px] text-sm text-gray-1 font-public-sans'> <h1 className="  ">Rate</h1><span><Arrows /></span></div>
                     <h1 className="text-gray-1 font-public-sans text-sm p-2">Period</h1>
                     <h1 className="text-gray-1 font-public-sans text-sm p-2">Period</h1>

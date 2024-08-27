@@ -102,7 +102,7 @@ function Addsalary() {
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-[24px] px-6">
               <div>
-                <label className="block lg:text-base text-sm font-bold text-gray-1 font-mulish lg:mt-0 mt-1">Pay type</label>
+                <label className="block lg:text-base text-sm font-bold text-gray-1 font-mulish">Pay type</label>
                 <div className='focus-within:ring-2 ring-black px-[24px] py-[12.5px] border border-gray-5 rounded-lg shadow-sm mt-[6px]    justify-between'>
                   <select name="Select employee" value={formData.identityProof} onChange={handleChange} className="lg:text-base text-sm font-public-sans  placeholder-gray-1 block w-full  sm:text-sm outline-none">
                     <option value="">Fix</option>

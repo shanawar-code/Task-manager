@@ -12,7 +12,7 @@ function Cards({ tasks, value, tasksCount , svg, employees ,taskcountclass,emplo
             </h1>
           </div>
           <div className="flex items-center justify-between">
-            <h1 className={`${valueclass}text-xl md:text-2xl font-semibold font-public-sans`} >
+            <h1 className={`${valueclass} text-xl md:text-2xl font-semibold font-public-sans`} >
               {value}
             </h1>
             <span>{svg}</span>

@@ -6,6 +6,7 @@ import ShareGroceryDialog from './Elements/ShareGroceryDialog.jsx';
 import Button from '../../../components/Button';
 import Svgs from '../../../assets/svgs/index.js'
 import RoundedCard from '../../../components/Elements/RoundedCard.jsx';
+import { useNavigate } from 'react-router-dom';
 
 function Employees_hr() {
   const initialEmployees = [
@@ -74,6 +75,8 @@ function Employees_hr() {
     setShowPopup(false);
   }
 
+ 
+
   const [employees, setEmployees] = useState(initialEmployees);
   const [selectedEmployee, setSelectedEmployee] = useState(null);
 
@@ -81,6 +84,8 @@ function Employees_hr() {
   const viewDetails = (employee) => {
     setSelectedEmployee(employee);
   };
+
+  const nevigate = useNavigate()
 
   return (
     <Layout active={'Employees'}>
@@ -146,10 +151,12 @@ function Employees_hr() {
                   </p>
                 </div>
                 <div className='flex justify-center items-center'>
-                  <button onClick={() => setSelectedEmployee(null)} className="hover:text-white hover:border-none hover:bg-[#555353] 
-               py-[7px] px-[12.5px] bg-white border border-gray-2 rounded-lg shadow-sm text-sm font-semibold text-gray-2 font-public-sans">
+                  <button  onClick={() => { nevigate('/hr/employeesdetails') }} className="hover:text-white hover:border-none hover:bg-[#555353] 
+               py-[7px] px-[12.5px]  hover:scale-105 ease-in-out duration-300 bg-white border border-gray-2 rounded-lg shadow-sm text-sm font-semibold text-gray-2 font-public-sans">
                     View details
                   </button>
+               
+              
                 </div>
               </div>
             </RoundedCard>

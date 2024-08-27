@@ -124,10 +124,10 @@ function Addnewemployee() {
         {activeStep === 2 && (<h2 className="lg:text-[24px] text-[18px]  font-semibold mb-6 text-center text-gray-1 font-public-sans">Upload documents</h2>)}
         {activeStep === 3 && (<h2 className="lg:text-[24px] text-[18px]  font-semibold mb-6 text-center text-gray-1 font-public-sans">Bank details</h2>)}
         {activeStep === 4 && (<h2 className="lg:text-[24px] text-[18px]  font-semibold mb-6 text-center text-gray-1 font-public-sans">Add skills</h2>)}
-        <div className="flex justify-between relative py-[32px] gap-[10px]  overflow-y-auto">
+        <div className="flex justify-between relative py-[32px] gap-[10px]  overflow-x-auto ">
           {steps.map((step, index) => (
             <div key={index} className="flex-1 items-center  relative justify-center  ">
-              <div className="flex flex-col items-center justify-center ">
+              <div className="flex flex-col items-center justify-center overflow-x-auto min-w-[80px]">
                 <div
                   className={`cursor-pointer rounded-full w-[40px] h-[40px] g flex items-center justify-center mx-auto lg:text-[20px] text-[16px] font-public-sans
                   font-medium px-[13.5px] py-[8px] 
@@ -248,7 +248,7 @@ function Addnewemployee() {
 
               <div className="w-full">
                 <label className="block lg:text-base text-sm font-bold text-gray-1 font-mulish">Identity proof</label>
-                <div className=' px-[16px] py-[12.5px] border border-gray-500 rounded-lg shadow-sm mt-[8px]  focus:outline-none focus:ring-red-500 focus:border-red-500  justify-between'>
+                <div className=' px-[16px] py-[12.5px] border border-gray-5 rounded-lg shadow-sm mt-[8px]  focus:outline-none focus:ring-red-500 focus:border-red-500  justify-between'>
                   <select name="identityProof" value={formData.identityProof} onChange={handleChange} className="lg:text-base text-sm font-mulish  block w-full  sm:text-sm">
                     <option value="">Select</option>
                     <option value="Passport">Passport</option>
@@ -330,7 +330,7 @@ function Addnewemployee() {
                 <input
                   type="text"
                   placeholder="Type bank name"
-                  className="text-gray-4 lg:text-base font-mulish  mt-[8px] block w-full px-[16px] py-[12.5px] border border-gray-500 rounded-lg shadow-sm focus:outline-none focus:ring-red-500 focus:border-red-500 text-sm"
+                  className="text-gray-4 lg:text-base font-mulish  mt-[8px] block w-full px-[16px] py-[12.5px] border border-gray-5 rounded-lg shadow-sm focus:outline-none focus:ring-red-500 focus:border-red-500 text-sm"
                 />
               </div>
 

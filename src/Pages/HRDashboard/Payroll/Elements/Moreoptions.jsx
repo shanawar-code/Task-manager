@@ -54,8 +54,8 @@ function Moreoptions({ show, onClose }) {
   if (!show) return null;
 
   return (
-    <div className=" inset-0 flex items-center justify-center bg-white  z-50 ">
-      <div ref={popupRef} className="fixed   scroll-smooth  bg-white shadow-lg border rounded-xl overflow-y-auto  ">
+    <div className=" inset-0 flex items-center justify-center bg-white relative z-50 ">
+      <div ref={popupRef} className="absolute   right-2  mt-16    scroll-smooth  bg-white shadow-lg border rounded-xl overflow-y-auto  ">
         <div className="w-[130px] flex items-start   flex-col h-[80px] ">
           <div><button onClick={handleShowPopups} className="cursor-pointer text-sm font-open-sans text-gray-1 py-2 px-3">Edit</button>
             {showPopups && (<EditGroceryDialog show={showPopups} onClose={handleClosePopups} />)}
