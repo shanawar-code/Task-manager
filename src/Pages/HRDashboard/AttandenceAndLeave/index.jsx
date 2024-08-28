@@ -216,8 +216,9 @@ function AttendanceAndLeaveHR() {
         </div>
       </div>
       <div className='grid grid-cols-12 gap-5 my-8'>
-        <div className=' col-span-12 lg:col-span-8 overflow-x-auto'>
-          <RoundedCard customPadding={''} className={' px-[24px] min-w-[500px]'}>
+        <div className=' col-span-12 lg:col-span-8 '>
+          <RoundedCard customPadding={''} className={' px-[24px] overflow-x-auto'}>
+            <div className='min-w-[500px] '>
             {/* e here leave attdenc */}
             <div className='px-[24px] '>
               <h3 className=" text-gray-1 text-base font-public-sans font-semibold">Employees Attendance</h3>
@@ -291,6 +292,7 @@ function AttendanceAndLeaveHR() {
             ))}
             <div className='flex justify-center items-center mt-6'><button className='border border-gray-2 rounded-lg font-public-sans py-[7px] px-[12px]
         text-gray-2 text-sm font-semibold cursor-pointer' >View all</button></div>
+        </div>
           </RoundedCard>
           <div className='overflow-x-auto'>
       <RoundedCard className={' my-6'} customPadding={'py-6 min-w-[600px]'}>
