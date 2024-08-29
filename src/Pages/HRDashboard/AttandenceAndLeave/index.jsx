@@ -12,17 +12,17 @@ import Svgs from '../../../assets/svgs/index.js'
 
 
 function AttendanceAndLeaveHR() {
-  
 
-  const cardData=[
+
+  const cardData = [
     {
-      icon: <Svgs.Count1/>,
+      icon: <Svgs.Count1 />,
       padding_x: 'px-6',
       border_b: 'border-b-[1px]',
       padding_y: 'py-4',
     },
     {
-      icon: <Svgs.Count2/>,
+      icon: <Svgs.Count2 />,
       padding_x: 'px-6',
       border_b: 'border-b-[1px]',
       padding_y: 'py-4',
@@ -31,7 +31,7 @@ function AttendanceAndLeaveHR() {
       textColor: 'text-[#00b037]',
     },
     {
-      icon: <Svgs.Count3/>,
+      icon: <Svgs.Count3 />,
       padding_x: 'px-6',
       padding_y: 'pt-4',
     },
@@ -199,7 +199,7 @@ function AttendanceAndLeaveHR() {
         <div className='flex flex-wrap items-center justify-center sm:justify-between gap-3'>
           <div className='flex flex-col gap-4'>
             <div>
-              <h1 className=' text-2xl font-bold font-public-sans text-gray-1'>Team memeber</h1>
+              <h1 className=' text-2xl font-bold font-public-sans text-gray-1'>Team member</h1>
             </div>
             <div className='flex items-center'>
               <img src='/images/member1.png' alt="" />
@@ -219,126 +219,126 @@ function AttendanceAndLeaveHR() {
         <div className=' col-span-12 lg:col-span-8 '>
           <RoundedCard customPadding={''} className={' px-[24px] overflow-x-auto'}>
             <div className='min-w-[500px] '>
-            {/* e here leave attdenc */}
-            <div className='px-[24px] '>
-              <h3 className=" text-gray-1 text-base font-public-sans font-semibold">Employees Attendance</h3>
-            </div>
-            <div className='py-6'>
-              <div className="flex  sm:gap-[23px] gap-[10px] items-center p-4 bg-[#f6f6f6] rounded-lg    ">
-                <div className="relative ">
-                  <svg width="120" height="120" className="transform -rotate-90">
-
-                    <circle
-                      cx="60"
-                      cy="60"
-                      r={circleRadius}
-                      stroke="#00B037"
-                      strokeWidth="14"
-                      fill="none"
-                      strokeDasharray={circleCircumference}
-                      strokeDashoffset={circleCircumference - progress}
-                      className="text-[#00B037]"
-                    />
-                  </svg>
-                  <div className="absolute inset-0 flex items-center justify-center flex-col ">
-                    <span className="text-2xl font-bold text-[#333333] font-public-sans">{attendanceData.attendancePercentage}%</span><span className='text-gray-4 font-public-sans text-[12px] '>attendance</span>
-                  </div>
-                </div>
-                <div className='w-full'>
-
-                  <div className='flex justify-between items-center  border-[#E0E0E0] border-b '><h6 className='font-public-sans text-[12px] text-[#4F4F4F] py-[8px] '>Present</h6> <span><h6 className='font-public-sans text-[14px] text-[#333333]'>24</h6></span>
-
-                  </div>
-                  <div className='flex justify-between items-center border-[#E0E0E0] border-b'><h6 className='font-public-sans text-[12px] text-[#4F4F4F] py-[8px]'>On leave</h6> <span><h6 className=' font-public-sans text-[14px] text-[#333333]'>0</h6></span>
-
-                  </div>
-                  <div className='flex justify-between items-center  '><h6 className='font-public-sans text-[12px] text-[#4F4F4F] py-[8px] '>Absent</h6> <span><h6 className='font-public-sans text-[14px] text-[#333333]'>1</h6></span>
-
-                  </div>
-
-                </div>
-
+              {/* e here leave attdenc */}
+              <div className='px-[24px] '>
+                <h3 className=" text-gray-1 text-base font-public-sans font-semibold">Employees Attendance</h3>
               </div>
-            </div>
+              <div className='py-6'>
+                <div className="flex  sm:gap-[23px] gap-[10px] items-center p-4 bg-[#f6f6f6] rounded-lg    ">
+                  <div className="relative ">
+                    <svg width="120" height="120" className="transform -rotate-90">
 
-            {topcard.map((value, index) => (
-              <div key={index} className={`  ${value.border_b} ${value.padding_y} flex items-center justify-between  border-b overflow-auto min-w-[450px]`}>
-                <div className='1 flex items-center gap-3'>
-                  <div>
-                    <img className='w-[42px] h-[42px]' src={value.images} alt="" />
+                      <circle
+                        cx="60"
+                        cy="60"
+                        r={circleRadius}
+                        stroke="#00B037"
+                        strokeWidth="14"
+                        fill="none"
+                        strokeDasharray={circleCircumference}
+                        strokeDashoffset={circleCircumference - progress}
+                        className="text-[#00B037]"
+                      />
+                    </svg>
+                    <div className="absolute inset-0 flex items-center justify-center flex-col ">
+                      <span className="text-2xl font-bold text-[#333333] font-public-sans">{attendanceData.attendancePercentage}%</span><span className='text-gray-4 font-public-sans text-[12px] '>attendance</span>
+                    </div>
                   </div>
-                  <div className='flex flex-col gap-[4px]'>
-                    <h1 className=' text-sm font-semibold font-public-sans text-gray-1'>{value.team_memebers}</h1>
-                    <div className='flex'><h1 className=' text-sm font-normal font-public-sans text-gray-2'>{value.postion_applied}</h1>
-                      <span className='text-white'>{value.space}</span>
+                  <div className='w-full'>
+
+                    <div className='flex justify-between items-center  border-[#E0E0E0] border-b '><h6 className='font-public-sans text-[12px] text-[#4F4F4F] py-[8px] '>Present</h6> <span><h6 className='font-public-sans text-[14px] text-[#333333]'>24</h6></span>
+
+                    </div>
+                    <div className='flex justify-between items-center border-[#E0E0E0] border-b'><h6 className='font-public-sans text-[12px] text-[#4F4F4F] py-[8px]'>On leave</h6> <span><h6 className=' font-public-sans text-[14px] text-[#333333]'>0</h6></span>
+
+                    </div>
+                    <div className='flex justify-between items-center  '><h6 className='font-public-sans text-[12px] text-[#4F4F4F] py-[8px] '>Absent</h6> <span><h6 className='font-public-sans text-[14px] text-[#333333]'>1</h6></span>
+
+                    </div>
+
+                  </div>
+
+                </div>
+              </div>
+
+              {topcard.map((value, index) => (
+                <div key={index} className={`  ${value.border_b} ${value.padding_y} flex items-center justify-between  border-b overflow-auto min-w-[450px]`}>
+                  <div className='1 flex items-center gap-3'>
+                    <div>
+                      <img className='w-[42px] h-[42px]' src={value.images} alt="" />
+                    </div>
+                    <div className='flex flex-col gap-[4px]'>
+                      <h1 className=' text-sm font-semibold font-public-sans text-gray-1'>{value.team_memebers}</h1>
+                      <div className='flex'><h1 className=' text-sm font-normal font-public-sans text-gray-2'>{value.postion_applied}</h1>
+                        <span className='text-white'>{value.space}</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div className=''>
+                    <h1 className={`text-sm font-semibold font-public-sans text-gray-1 `}>{value.Attandence}</h1>
+
+                  </div>
+                  <div className='3 flex flex-col gap-1'>
+                    <h1 className=' text-sm font-semibold font-public-sans text-[#04AA77]'>{value.time}</h1>
+
+                  </div>
+                  <div className='4'>
+                    <div>
+                      <button onClick={() => { handleShowPopup(index) }} className='flex items-center justify-center text-sm font-semibold font-public-sans text-gray-1 px-[12.5px] py-[7px] rounded-lg border border-gray-1 w-[72px]'>Edit</button>
+                      {popupindex === index && showPopup && (<Editlogintime show={showPopup} onClose={handleClosePopup} />)}
                     </div>
                   </div>
                 </div>
-                <div className=''>
-                  <h1 className={`text-sm font-semibold font-public-sans text-gray-1 `}>{value.Attandence}</h1>
-
-                </div>
-                <div className='3 flex flex-col gap-1'>
-                  <h1 className=' text-sm font-semibold font-public-sans text-[#04AA77]'>{value.time}</h1>
-
-                </div>
-                <div className='4'>
-                  <div>
-                    <button onClick={() => { handleShowPopup(index) }} className='flex items-center justify-center text-sm font-semibold font-public-sans text-gray-1 px-[12.5px] py-[7px] rounded-lg border border-gray-1 w-[72px]'>Edit</button>
-                    {popupindex === index && showPopup && (<Editlogintime show={showPopup} onClose={handleClosePopup} />)}
-                  </div>
-                </div>
-              </div>
-            ))}
-            <div className='flex justify-center items-center mt-6'><button className='border border-gray-2 rounded-lg font-public-sans py-[7px] px-[12px]
+              ))}
+              <div className='flex justify-center items-center mt-6'><button className='border border-gray-2 rounded-lg font-public-sans py-[7px] px-[12px]
         text-gray-2 text-sm font-semibold cursor-pointer' >View all</button></div>
-        </div>
+            </div>
           </RoundedCard>
           <div className='overflow-x-auto'>
-      <RoundedCard className={' my-6'} customPadding={'py-6 min-w-[600px]'}>
-        <div className=' mb-8 px-6 flex items-center justify-between'>
-          <div className='flex items-center gap-8'>
-          <div>
-          <h1 className=' text-base font-semibold font-epilogue text-gray-1'>My Leave</h1>
-          </div>
-          <div className='flex items-center gap-6 bg-[#f5f5f5] rounded-full py-[2px] px-[16px]'>
-            <h1 className='text-sm font-normal font-public-sans text-gray-1 flex items-center gap-2'><span className=' text-base font-semibold font-public-sans text-gray-1'>5</span>Casual leave</h1>
-            <h1 className='text-sm font-normal font-public-sans text-gray-1 flex items-center gap-2'><span className=' text-base font-semibold font-public-sans text-gray-1'>8</span>Medical leave</h1>
+            <RoundedCard className={' my-6'} customPadding={'py-6 min-w-[600px]'}>
+              <div className=' mb-8 px-6 flex items-center justify-between'>
+                <div className='flex items-center gap-8'>
+                  <div>
+                    <h1 className=' text-base font-semibold font-epilogue text-gray-1'>My Leave</h1>
+                  </div>
+                  <div className='flex items-center gap-6 bg-[#f5f5f5] rounded-full py-[2px] px-[16px]'>
+                    <h1 className='text-sm font-normal font-public-sans text-gray-1 flex items-center gap-2'><span className=' text-base font-semibold font-public-sans text-gray-1'>5</span>Casual leave</h1>
+                    <h1 className='text-sm font-normal font-public-sans text-gray-1 flex items-center gap-2'><span className=' text-base font-semibold font-public-sans text-gray-1'>8</span>Medical leave</h1>
 
+                  </div>
+                </div>
+
+              </div>
+              {cardData.map((value, index) => (
+                <div key={index} className={` ${value.padding_x} ${value.border_b} ${value.padding_y} flex items-start justify-between`}>
+                  <div className='1 flex items-center gap-3'>
+                    <div className='w-6 h-6 border border-gray-5 rounded-full flex items-center justify-center'>
+                      <span className=' text-xs font-semibold font-public-sans text-gray-4'>{index + 1}</span>
+                    </div>
+                    <div className='flex flex-col gap-3'>
+                      <h1 className=' text-sm font-semibold font-public-sans text-gray-1'>Urgent Leave</h1>
+                      <h1 className=' text-sm font-normal font-public-sans text-gray-2'>To - senior Manager - Jass</h1>
+                    </div>
+                  </div>
+                  <div className='2 flex flex-col gap-3'>
+                    <h1 className=' text-sm font-semibold font-public-sans text-gray-1'>Date</h1>
+                    <h1 className=' text-sm font-normal font-public-sans text-gray-2'>22-8-2024</h1>
+                  </div>
+                  <div className='3 flex flex-col gap-1'>
+                    <h1 className=' text-sm font-semibold font-public-sans text-gray-1'>Leave Status</h1>
+                    <div className='flex items-center justify-center'>
+                      <h1 className={` px-[12px] py-[5px] rounded-full ${value.bgColor ? value.bgColor : 'bg-[#fff7ea]'}  ${value.textColor ? value.textColor : 'text-[#F4A012]'} text-xs font-semibold font-public-sans`}> {`${value.status ? value.status : 'Pending'}`}</h1>
+                    </div>
+                  </div>
+                  <div className='4'>
+                    <div>
+                      <h1 className=' text-xs font-normal font-public-sans text-gray-4'>5 hours ago</h1>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </RoundedCard>
           </div>
-          </div>
-         
-        </div>
-        {cardData.map((value, index)=>(
-        <div key={index} className={` ${value.padding_x} ${value.border_b} ${value.padding_y} flex items-start justify-between`}>
-          <div className='1 flex items-center gap-3'>
-            <div className='w-6 h-6 border border-gray-5 rounded-full flex items-center justify-center'>
-              <span className=' text-xs font-semibold font-public-sans text-gray-4'>{index + 1}</span> 
-            </div>
-            <div className='flex flex-col gap-3'>
-              <h1 className=' text-sm font-semibold font-public-sans text-gray-1'>Urgent Leave</h1>
-              <h1 className=' text-sm font-normal font-public-sans text-gray-2'>To - senior Manager - Jass</h1>
-            </div>
-          </div>
-          <div className='2 flex flex-col gap-3'>
-          <h1 className=' text-sm font-semibold font-public-sans text-gray-1'>Date</h1>
-          <h1 className=' text-sm font-normal font-public-sans text-gray-2'>22-8-2024</h1>
-          </div>
-          <div className='3 flex flex-col gap-1'>
-          <h1 className=' text-sm font-semibold font-public-sans text-gray-1'>Leave Status</h1>
-            <div className='flex items-center justify-center'>
-              <h1 className={` px-[12px] py-[5px] rounded-full ${value.bgColor? value.bgColor: 'bg-[#fff7ea]'}  ${value.textColor? value.textColor: 'text-[#F4A012]'} text-xs font-semibold font-public-sans`}> {`${value.status ? value.status : 'Pending'  }`}</h1>
-            </div>
-          </div>
-          <div className='4'>
-            <div>
-              <h1 className=' text-xs font-normal font-public-sans text-gray-4'>5 hours ago</h1>
-            </div>
-          </div>
-        </div>
-        ))}
-      </RoundedCard>
-        </div>
         </div>
         <div className=' col-span-12 lg:col-span-4'>
           <RoundedCard customPadding={'p-3'}>
