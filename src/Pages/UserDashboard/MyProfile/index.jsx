@@ -2,6 +2,10 @@ import React from 'react'
 import { Layout } from '../../../components/Layout/DashboardLayout'
 import RoundedCard from '../../../components/Elements/RoundedCard'
 import Svgs from '../../../assets/svgs/index.js'
+import { useState } from 'react';
+
+
+
 function MyProfileUser() {
 
   const skills = [
@@ -50,6 +54,18 @@ function MyProfileUser() {
   ]
 
 
+
+  const [showFormPopup, setShowFormPopup] = useState(false);
+
+  const handleCloseFormPopup = () => {
+    setShowFormPopup(false);
+  };
+
+  const handleShowFormPopup = () => {
+    setShowFormPopup(true)
+  }
+
+
   return (
     <>
       <Layout active={'My profile'}>
@@ -57,7 +73,7 @@ function MyProfileUser() {
           <RoundedCard>
             <div className='flex items-center gap-5'>
               <div>
-                <img src="images/olivia.png" alt="" />
+                <img src="/images/olivia.png" alt="" />
               </div>
               <div className='flex flex-col gap-[10px]'>
                 <h1 className=' text-xl font-semibold font-public-sans text-gray-1'>Olivia Williams</h1>
@@ -152,9 +168,9 @@ function MyProfileUser() {
                 <h1 className=' text-xl font-semibold font-public-sans text-gray-1'>Skills</h1>
                 <Svgs.WritingPencil />
               </div>
-              <div className=' flex items-center justify-start flex-wrap '>
+              <div className=' flex items-center justify-start flex-wrap gap-x-4'>
                 {skills.map((value, index) => (
-                  <div key={index} className=' rounded-full border w-fit my-3 mx-1 md:mx-5'>
+                  <div key={index} className=' rounded-full border w-fit my-3 '>
                     <h1 className=' text-[10px] sm:text-sm font-normal font-public-sans text-gray-1 py-[7px] px-[14px]'>{value.skill}</h1>
                   </div>
                 ))}
@@ -166,8 +182,8 @@ function MyProfileUser() {
               </div>
 
               <div className='my-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3'>
-                {Array(6).fill().map(() => (
-                  <div className='bg-[#f5f5f5] px-[16px] py-[18px] rounded-xl shadow flex items-center justify-between min-w-[220px]'>
+                {Array(6).fill().map((_,index) => (
+                  <div key={index} className='bg-[#f5f5f5] px-[16px] py-[18px] rounded-xl shadow flex items-center justify-between min-w-[200px]'>
                     <div className='flex items-center gap-[14px]'>
                       <span><Svgs.PDF /></span>
                       <h1 className=' text-sm font-medium font-public-sans text-[#17243E]'>Offer letter</h1>

@@ -9,6 +9,17 @@ import SuccessfulDialog from "../../../../components/Elements/SuccessfulDialog.j
 
 
 function EditGroceryDialog({ show, onClose, hidden }) {
+
+  const [isVisible, setIsVisible] = useState(true)
+  const [isVisible1, setIsVisible1] = useState(true)
+
+  const handleRemove=()=>{
+    setIsVisible(false)
+  }
+  const handleRemove1=()=>{
+    setIsVisible1(false)
+  }
+
   const navigate = useNavigate()
   const [showSuccessfulPopup, setShowSuccessfulPopup] = useState(false);
 
@@ -19,7 +30,18 @@ function EditGroceryDialog({ show, onClose, hidden }) {
 
   const handleCloseSuccessfulPopup = () => {
     setShowSuccessfulPopup(false);
+    onClose()
+  };
 
+
+  const [showPopup, setShowPopup] = useState(false);
+
+  const handleShowPopup = () => {
+    setShowPopup(true);
+  };
+
+  const handleClosePopup = () => {
+    setShowPopup(false);
   };
 
 
@@ -31,6 +53,28 @@ function EditGroceryDialog({ show, onClose, hidden }) {
       onClose();
     }
   };
+
+
+
+  useEffect(() => {
+    if (show || showPopup) {
+      // Disable scrolling on the background when the popup is open
+      document.body.style.overflow = "hidden";
+    } else {
+      // Enable scrolling again when the popup is closed
+      document.body.style.overflow = "auto";
+    }
+
+    return () => {
+      // Clean up by enabling scrolling when the component unmounts
+      document.body.style.overflow = "auto";
+    };
+  }, [show, showPopup]);
+
+
+
+
+
 
   useEffect(() => {
     if (show) {
@@ -47,8 +91,9 @@ function EditGroceryDialog({ show, onClose, hidden }) {
   if (!show) return null;
 
   return (
-    <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
-      <div ref={popupRef} className=" bg-white w-full md:w-[80vw]  rounded-xl p-5 overflow-auto h-[95vh] mx-3">
+    <>
+    {!showSuccessfulPopup?( <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
+      <div ref={popupRef} className="grocery-scrollbar-none  bg-white w-full md:w-[61vw]  rounded-xl p-5 overflow-auto h-[80vh] mx-3">
         <div className="flex items-center justify-center">
           <div className="">
             <h1 className=" text-lg md:text-2xl font-semibold font-public-sans text-gray-1">
@@ -94,6 +139,7 @@ function EditGroceryDialog({ show, onClose, hidden }) {
           </div>
           <div className="my-4">
             <div className="flex items-center flex-wrap justify-center md:justify-between gap-4 my-[16px] ">
+              {isVisible && (
               <button className=" relative border rounded-xl px-[14px] py-[10px] bg-[#f3f3f3]  flex items-center justify-between w-full sm:w-[273px]">
                 <span className=" text-sm font-semibold text-gray-2 font-public-sans">
                   Detailed document
@@ -101,10 +147,12 @@ function EditGroceryDialog({ show, onClose, hidden }) {
                 <span className=" rounded-full bg-white">
                   <Svgs.Oction_download />
                 </span>
-                <span className=" absolute -top-2 -right-2">
+                <span onClick={handleRemove} className=" absolute -top-2 -right-2">
                   <Svgs.CrossIconRed />
                 </span>
               </button>
+              )}
+              {isVisible1 && (
               <button className=" relative border rounded-xl px-[14px] py-[10px] bg-[#f3f3f3]  flex items-center justify-between w-full sm:w-[273px]">
                 <span className=" text-sm font-semibold text-gray-2 font-public-sans">
                   Detailed document
@@ -112,10 +160,11 @@ function EditGroceryDialog({ show, onClose, hidden }) {
                 <span className=" rounded-full bg-white">
                   <Svgs.Oction_download />
                 </span>
-                <span className=" absolute -top-2 -right-2">
+                <span onClick={handleRemove1} className=" absolute -top-2 -right-2">
                   <Svgs.CrossIconRed />
                 </span>
               </button>
+              )}
               <button className=" border border-[#f7585c] rounded-xl px-[12px] py-[11.5px] flex items-center gap-4 ">
                 <span><Svgs.DocumentRedIcon /></span>
                 <h1 className="text-[#f7585c] text-base font-medium font-public-sans">Add attachments</h1>
@@ -130,7 +179,7 @@ function EditGroceryDialog({ show, onClose, hidden }) {
             <h1 className=" text-sm font-normal font-public-sans text-gray-2">
               Members
             </h1>
-            <img onClick={() => { navigate('/user/myteamlast') }} src="/images/Member4.png" alt="" className="w-[42px]" />
+            <img onClick={() => { navigate('/user/myteamlast') }} src="/images/Member4.png" alt="" className="w-[42px] md:w-fit" />
           </div>
           <div className="flex flex-col gap-2">
             <h1 className=" text-sm font-normal font-public-sans text-gray-2">
@@ -141,16 +190,15 @@ function EditGroceryDialog({ show, onClose, hidden }) {
         </div>
         <div className="flex items-center justify-center mt-[48px]">
           <Button handleClick={handleShowSuccessfulPopup} text={'Update'} className={'w-[162px] h-[48px]'} customPadding={'px-[24px] py-[14px]'} />
-          {showSuccessfulPopup && (
-            <SuccessfulDialog
+        </div>
+      </div>
+    </div>):( <SuccessfulDialog
               heading={'Update Successful'}
               show={showSuccessfulPopup}
               onClose={handleCloseSuccessfulPopup}
-            />
-          )}
-        </div>
-      </div>
-    </div>
+            />)}
+   
+    </>
   );
 }
 

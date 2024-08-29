@@ -20,6 +20,7 @@ function VerifiedSuccessful({ show, onClose }) {
 
   const handleClosePopup = () => {
     setShowPopup(false);
+    onClose();
   };
 
   const [showDialog, setShowDialog] = useState(false);
@@ -41,6 +42,21 @@ function VerifiedSuccessful({ show, onClose }) {
   };
 
   useEffect(() => {
+    if (show || showPopup) {
+      // Disable scrolling on the background when the popup is open
+      document.body.style.overflow = "hidden";
+    } else {
+      // Enable scrolling again when the popup is closed
+      document.body.style.overflow = "auto";
+    }
+
+    return () => {
+      // Clean up by enabling scrolling when the component unmounts
+      document.body.style.overflow = "auto";
+    };
+  }, [show, showPopup]);
+
+  useEffect(() => {
     if (show) {
       document.addEventListener("mousedown", handleClickOutside);
     } else {
@@ -55,10 +71,12 @@ function VerifiedSuccessful({ show, onClose }) {
   if (!show) return null;
 
   return (
-    <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
-      <div ref={popupRef} className="  flex items-center justify-center">
+    <>
+    {!showPopup?(
+      <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
+      <div ref={popupRef} className="  flex items-center justify-center ">
         <form onSubmit={handleSubmit}>
-          <div className=" p-5 bg-white shadow-lg rounded-xl border lg:w-[848px] mx-4">
+          <div className=" p-5 bg-white shadow-lg rounded-xl border w-[90vw] md:w-[848px] mx-4">
             <div className="flex flex-col gap-3">
               <div className="flex items-center justify-center text-center">
                 <h1 className="text-xl md:text-2xl font-semibold font-public-sans text-gray-700">
@@ -70,7 +88,7 @@ function VerifiedSuccessful({ show, onClose }) {
               </div>
               <div className="grid grid-cols-2 gap-3">
                 <div className=" relative">
-                  <Input label={"Date"} className={"text-base"} placeholder={'00/00/0000'} />
+                  <Input label={"Date"} className={"text-base"} placeholder={'00/00/00'} />
                   <span className="absolute right-4 top-[38px] cursor-pointer" onClick={handleShowDialog}><Svgs.CalendarIcon /></span>
                   {showDialog && (
                     <CalendarDialog show={showDialog} onClose={handleCloseDialog} />
@@ -106,15 +124,14 @@ function VerifiedSuccessful({ show, onClose }) {
                   customPadding={"px-[24px] py-[14px]"}
                   className={"h-[48px] w-[162px]"}
                 />
-                {showPopup && (
-                  <SuccessfulDialog heading={'Meeting created successfully.'} show={showPopup} onClose={handleClosePopup} />
-                )}
               </div>
             </div>
           </div>
         </form>
       </div>
     </div>
+    ):(<SuccessfulDialog heading={'Meeting created successfully.'} show={showPopup} onClose={handleClosePopup} />    ) }
+    </>
   );
 }
 

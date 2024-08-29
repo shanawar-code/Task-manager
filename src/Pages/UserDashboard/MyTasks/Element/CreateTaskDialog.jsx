@@ -20,17 +20,10 @@ function CreateTaskDialog({ show, onClose }) {
 
   const handleClosePopup = () => {
     setShowPopup(false);
+    onClose()
   };
 
-  const [showDialog, setShowDialog] = useState(false);
-
-  const handleShowDialog = () => {
-    setShowDialog(true);
-  };
-
-  const handleCloseDialog = () => {
-    setShowDialog(false);
-  };
+ 
 
   const optionsRole = [
     { value: "Priority", label: "Priority" },
@@ -45,6 +38,26 @@ function CreateTaskDialog({ show, onClose }) {
       onClose();
     }
   };
+
+
+
+  useEffect(() => {
+    if (show || showPopup) {
+      // Disable scrolling on the background when the popup is open
+      document.body.style.overflow = "hidden";
+    } else {
+      // Enable scrolling again when the popup is closed
+      document.body.style.overflow = "auto";
+    }
+
+    return () => {
+      // Clean up by enabling scrolling when the component unmounts
+      document.body.style.overflow = "auto";
+    };
+  }, [show, showPopup]);
+
+
+
 
   useEffect(() => {
     if (show) {
@@ -61,8 +74,9 @@ function CreateTaskDialog({ show, onClose }) {
   if (!show) return null;
 
   return (
-    <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
-      <div ref={popupRef} className="p-5 bg-white shadow-lg rounded-xl border sm:w-[500px] md:w-[600px] lg:w-[848px] overflow-y-auto h-[90vh] md:h-fit">
+    <>
+    {!showPopup ? ( <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
+      <div ref={popupRef} className="p-5 bg-white shadow-lg rounded-xl border w-[95vw] sm:w-[500px] md:w-[600px] lg:w-[848px] overflow-y-auto h-[90vh] md:h-fit">
         <div className="flex flex-col gap-3">
           <div className="flex items-center justify-center text-center">
             <h1 className="text-2xl font-semibold font-public-sans text-gray-700">
@@ -80,7 +94,7 @@ function CreateTaskDialog({ show, onClose }) {
               Description
             </label>
             <textarea
-              className=" resize-none rounded-xl border w-full h-[130px] p-4 my-2 outline-none"
+              className="focus:ring-1 ring-black resize-none rounded-xl border w-full h-[130px] p-4 my-2 outline-none"
               placeholder="Description"
             ></textarea>
           </div>
@@ -105,17 +119,16 @@ function CreateTaskDialog({ show, onClose }) {
               customPadding={"px-[24px] py-[14px]"}
               className={"h-[48px] w-full md:w-[162px]"}
             />
-            {showPopup && (
-              <SuccessfulDialog
-                heading={'Task Created Successfully'}
-                show={showPopup}
-                onClose={handleClosePopup}
-              />
-            )}
+           
           </div>
         </div>
       </div>
-    </div>
+    </div>):( <SuccessfulDialog
+                heading={'Task Created Successfully'}
+                show={showPopup}
+                onClose={handleClosePopup}
+              />)}
+   </>
   );
 }
 

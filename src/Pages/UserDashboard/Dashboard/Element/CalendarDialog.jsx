@@ -102,6 +102,9 @@ function CalendarDialog({ show, onClose, hidden}) {
         onClose();
       }
     };
+
+
+    
   
     useEffect(() => {
       if (show) {
@@ -116,6 +119,9 @@ function CalendarDialog({ show, onClose, hidden}) {
     }, [show]);
   
     if (!show) return null;
+
+
+    
 
   return (
     <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">

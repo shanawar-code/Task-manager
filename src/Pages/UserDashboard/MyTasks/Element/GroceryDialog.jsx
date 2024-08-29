@@ -15,6 +15,19 @@ function GroceryDialog({ show, onClose, hidden, popupCardIndex, index }) {
     e.preventDefault();
   };
 
+  const [isVisible, setIsVisible] = useState(true)
+
+  const handleRemove=()=>{
+    setIsVisible(false)
+  }
+
+
+  const [isVisible1, setIsVisible1] = useState(true)
+
+  const handleRemove1=()=>{
+    setIsVisible1(false)
+  }
+
   const [teamMembers, setTeamMembers] = useState([{ id: 1 }, { id: 2 }])
 
 
@@ -44,6 +57,19 @@ function GroceryDialog({ show, onClose, hidden, popupCardIndex, index }) {
   const handleCloseEditPopup = () => {
     setShowEditPopup(false);
   };
+
+
+  const [showEditPopup2, setShowEditPopup2] = useState(false);
+
+  const handleShowEditPopup2 = () => {
+    setShowEditPopup2(true);
+  };
+
+  const handleCloseEditPopup2 = () => {
+    setShowEditPopup2(false);
+  };
+
+
   const [showGrocerySharePopup, setShowGrocerySharePopup] = useState(false);
 
   const handleShowGrocerySharePopup = () => {
@@ -52,6 +78,17 @@ function GroceryDialog({ show, onClose, hidden, popupCardIndex, index }) {
 
   const handleCloseGrocerySharePopup = () => {
     setShowGrocerySharePopup(false);
+  };
+
+
+  const [showGrocerySharePopup2, setShowGrocerySharePopup2] = useState(false);
+
+  const handleShowGrocerySharePopup2 = () => {
+    setShowGrocerySharePopup2(true);
+  };
+
+  const handleCloseGrocerySharePopup2 = () => {
+    setShowGrocerySharePopup2(false);
   };
 
 
@@ -64,6 +101,24 @@ function GroceryDialog({ show, onClose, hidden, popupCardIndex, index }) {
       onClose();
     }
   };
+
+
+  useEffect(() => {
+    if (show || showPopup) {
+      // Disable scrolling on the background when the popup is open
+      document.body.style.overflow = "hidden";
+    } else {
+      // Enable scrolling again when the popup is closed
+      document.body.style.overflow = "auto";
+    }
+
+    return () => {
+      // Clean up by enabling scrolling when the component unmounts
+      document.body.style.overflow = "auto";
+    };
+  }, [show, showPopup]);
+
+
 
   useEffect(() => {
     if (show) {
@@ -81,8 +136,8 @@ function GroceryDialog({ show, onClose, hidden, popupCardIndex, index }) {
 
   return (
     <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
-      <div className=" overflow-y-auto h-[95vh]">
-        <div ref={popupRef} className="bg-white w-[95vw] md:max-w-[80vw] rounded-xl p-3 md:p-5 ">
+      <div className="grocery-scrollbar-none overflow-y-auto h-[80vh]">
+        <div ref={popupRef} className="bg-white w-[95vw] md:max-w-[61vw] rounded-xl p-3 md:p-5 ">
           <div className="flex flex-wrap items-center justify-center sm:justify-between gap-3">
             <div></div>
             <div className="md:ml-20">
@@ -90,7 +145,7 @@ function GroceryDialog({ show, onClose, hidden, popupCardIndex, index }) {
                 Grocery dashboard
               </h1>
             </div>
-            <div className="flex flex-wrap items-center justify-end gap-3">
+            <div className=" hidden md:flex flex-wrap items-center justify-end gap-3">
               <button onClick={handleShowEditPopup} className=" text-base font-normal font-public-sans text-gray-2 flex items-center gap-2 border py-1 px-3 rounded-lg">
                 <Svgs.WritingPencilBlue />
                 Edit
@@ -116,13 +171,28 @@ function GroceryDialog({ show, onClose, hidden, popupCardIndex, index }) {
                 <img src="/images/ortan (3).png" alt="" />
                 <span className=" bg-[#e0e0e0] h-7 w-7 rounded-full flex items-center justify-center"><Svgs.AddIconGray /></span>
               </div>
+              <div className="md:hidden flex flex-wrap items-center justify-end gap-3 my-4">
+              <button onClick={handleShowEditPopup2} className=" text-base font-normal font-public-sans text-gray-2 flex items-center gap-2 border py-1 px-3 rounded-lg">
+                <Svgs.WritingPencilBlue />
+                Edit
+              </button>
+              {showEditPopup2 && (<EditGroceryDialog show={showEditPopup2} onClose={handleCloseEditPopup2} />)}
+
+
+              <button onClick={handleShowGrocerySharePopup2} className=" text-base font-normal font-public-sans text-gray-2 flex items-center gap-2 border py-1 px-3 rounded-lg">
+                <Svgs.ShareIconBlue />
+                Share
+              </button>
+              {popupCardIndex === index && showGrocerySharePopup2 && (<ShareGroceryDialog show={showGrocerySharePopup2} onClose={handleCloseGrocerySharePopup2} />)}
+            </div>
             </div>
             <div className="flex flex-col gap-2">
               <h1 className=" text-[10px] md:text-sm font-normal font-public-sans text-gray-2">
                 Priority
               </h1>
+             <span className="bg-[#fff7ea] rounded-full px-[14px]">
               <select
-                className="bg-[#fff7ea] text-[#f4a012] text-[10px] md:text-xs font-semibold font-public-sans py-2 px-3 rounded-full"
+                className=" bg-transparent text-[#f4a012] text-[10px] md:text-xs font-semibold font-public-sans  py-[10px] outline-none"
                 value="Medium"
                 name=""
                 id=""
@@ -146,6 +216,7 @@ function GroceryDialog({ show, onClose, hidden, popupCardIndex, index }) {
                   High
                 </option>
               </select>
+             </span>
             </div>
           </div>
           <div className=" my-5">
@@ -182,6 +253,7 @@ function GroceryDialog({ show, onClose, hidden, popupCardIndex, index }) {
             </div>
             <div className="my-4 border-b border-dashed mb-[16px]">
               <div className="flex items-center flex-wrap justify-between gap-4 my-[16px] ">
+                {isVisible && (
                 <button className=" border rounded-xl px-[14px] py-[10px] bg-[#f3f3f3]  flex items-center justify-between w-full lg:w-[273px] relative">
                   <span className=" text-sm font-semibold text-gray-2 font-public-sans">
                     Detailed document
@@ -189,10 +261,12 @@ function GroceryDialog({ show, onClose, hidden, popupCardIndex, index }) {
                   <span className=" rounded-full bg-white">
                     <Svgs.Oction_download />
                   </span>
-                  <span onClick={() => removeMember(1)} className=" absolute -top-2 -right-2">
+                  <span onClick={handleRemove} className=" absolute -top-2 -right-2">
                     <Svgs.Cross />
                   </span>
                 </button>
+                )}
+                {isVisible1 && (
                 <button className=" border rounded-xl px-[14px] py-[10px] bg-[#f3f3f3]  flex items-center justify-between w-full lg:w-[273px] relative">
                   <span className=" text-sm font-semibold text-gray-2 font-public-sans">
                     Detailed document
@@ -200,10 +274,11 @@ function GroceryDialog({ show, onClose, hidden, popupCardIndex, index }) {
                   <span className=" rounded-full bg-white">
                     <Svgs.Oction_download />
                   </span>
-                  <span onClick={() => removeMember(2)} className=" absolute -top-2 -right-2">
+                  <span onClick={handleRemove1} className=" absolute -top-2 -right-2">
                     <Svgs.Cross />
                   </span>
                 </button>
+                )}
                 <button onClick={handleShowPopup} className=" border border-[#f7585c] rounded-xl px-[12px] py-[11.5px] flex items-center gap-4 ">
                   <span><Svgs.DocumentRedIcon /></span>
                   <h1 className="text-[#f7585c] text-base font-medium font-public-sans">Add attachments</h1>

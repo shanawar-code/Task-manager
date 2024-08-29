@@ -47,7 +47,7 @@ function DeleteDialog({ show, onClose, content}) {
     <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
       <div ref={popupRef}>
         
-          <div className=" mx-auto scroll-smooth bg-white shadow-lg rounded-xl border w-[360px]">
+          <div className=" mx-auto scroll-smooth bg-white shadow-lg rounded-xl border w-[90vw] sm:w-[360px]">
             <div className="flex flex-col gap-3 my-[36px]">
               <div className=" w-[60%] flex items-center justify-center text-center mx-auto">
                 <h1 className=" text-base font-normal font-public-sans text-gray-1">{content}</h1>

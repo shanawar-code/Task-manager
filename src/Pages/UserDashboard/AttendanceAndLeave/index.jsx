@@ -8,9 +8,13 @@ import ReviweLeaveDialog from './Element/ReviewLeaveDialog.jsx'
 import { useState } from 'react'
 import ApplyLeaveDialog from './Element/ApplyLeave.jsx'
 import CalendarDialog from '../Dashboard/Element/CalendarDialog.jsx'
+import { useNavigate } from 'react-router-dom'
 
 
 function AttendanceAndLeaveUser() {
+
+  const navigate = useNavigate()
+
 
   const cardData = [
     {
@@ -66,12 +70,12 @@ function AttendanceAndLeaveUser() {
     <>
       <Layout active={'Attendance & Leave'}>
         <div className='my-4 md:my-0'>
-          <div className='flex flex-wrap items-center justify-center sm:justify-between gap-3'>
+          <div className='flex flex-col sm:flex-row items-center justify-center sm:justify-between gap-3'>
             <div className='flex flex-col gap-4'>
               <div>
                 <h1 className=' text-2xl font-bold font-public-sans text-gray-1'>Team Memebers</h1>
               </div>
-              <div className='flex items-center cursor-pointer justify-center md:justify-start'>
+              <div onClick={() => { navigate('/user/myteamlast') }} className='flex items-center cursor-pointer justify-center md:justify-start'>
                 <img src='/images/member1.png' alt="" />
                 <img src='/images/member2.png' width={'32px'} alt="" />
                 <img src='/images/member3 (2).png' width={'32px'} alt="" />

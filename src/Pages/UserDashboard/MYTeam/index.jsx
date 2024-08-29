@@ -93,7 +93,7 @@ function MyTeam() {
     <>
       <Layout active={'My Team'}>
         <div className='my-4 md:my-0'>
-          <div className='flex flex-wrap items-center justify-center sm:justify-between'>
+          <div className='flex flex-col sm:flex-row items-center justify-center sm:justify-between'>
             <div className='flex flex-col gap-4'>
               <div>
                 <h1 className=' text-2xl font-bold font-public-sans text-gray-1'>Team Memebers</h1>
@@ -106,7 +106,7 @@ function MyTeam() {
                 <span className='  w-[32px] h-[32px] flex items-center justify-center bg-[#f3f3f3] rounded-full'><Svgs.Four /></span>
               </div>
             </div>
-            <div className='flex flex-wrap items-center justify-center md:justify-start gap-5  my-3 md:my-0'>
+            <div className='flex flex-wrap items-center justify-center md:justify-start gap-5 my-6'>
               <Button handleClick={handleShowApplyLeave} className={' text-sm font-semibold font-public-sans text-white flex items-center gap-3'} customPadding={'px-3 py-2'} text={<><Svgs.AddWhiteIcon /> Create team</>} />
               {showApplyLeave && (<CreateNewTeamDialog show={showApplyLeave} onClose={handleCloseApplyLeave} />)}
             </div>
