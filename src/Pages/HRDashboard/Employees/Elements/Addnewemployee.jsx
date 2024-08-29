@@ -118,7 +118,7 @@ function Addnewemployee({onClose}) {
   return (
     <>
     {!showPopup?(<div className='flex justify-center overflow-y-auto'>
-      <div className="bg-white p-[24px] rounded-[16px] max-w-2xl w-full ">
+      <div className="bg-white p-[24px] rounded-[16px] w-full ">
         {activeStep === 0 && (<h2 className="lg:text-[24px] text-[18px]  font-semibold mb-6 text-center text-gray-1 font-public-sans">Basic info</h2>)}
         {activeStep === 1 && (<h2 className="lg:text-[24px] text-[18px]  font-semibold mb-6 text-center text-gray-1 font-public-sans">Personal info</h2>)}
         {activeStep === 2 && (<h2 className="lg:text-[24px] text-[18px]  font-semibold mb-6 text-center text-gray-1 font-public-sans">Upload documents</h2>)}

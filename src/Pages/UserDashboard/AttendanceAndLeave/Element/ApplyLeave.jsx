@@ -2,10 +2,10 @@ import React from "react";
 import { useState, useEffect, useRef } from "react";
 import SuccessfulDialog from "../../../../components/Elements/SuccessfulDialog";
 import { Input } from "../../../../components/Input";
-import Calendar from "./Calendar";
 import Svgs from '../../../../assets/svgs/index.js'
 import Button from "../../../../components/Button.jsx";
 import SelectDropdown from "../../../../components/SelectDropdown.jsx";
+import CalendarDialog from "../../Dashboard/Element/CalendarDialog.jsx";
 
 
 function ApplyLeaveDialog({ show, onClose }) {
@@ -91,7 +91,7 @@ function ApplyLeaveDialog({ show, onClose }) {
                 <Input label={"Date"} className={"text-base"} placeholder={'00/00/0000'} />
                 <span className="absolute right-4 top-[44px] cursor-pointer" onClick={handleShowDialog}><Svgs.CalendarIcon /></span>
                 {showDialog && (
-                  <Calendar show={showDialog} onClose={handleCloseDialog} />
+                  <CalendarDialog show={showDialog} onClose={handleCloseDialog} />
                 )}
               </div>
 

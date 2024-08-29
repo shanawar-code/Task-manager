@@ -96,7 +96,7 @@ function MyTeam() {
           <div className='flex flex-col sm:flex-row items-center justify-center sm:justify-between'>
             <div className='flex flex-col gap-4'>
               <div>
-                <h1 className=' text-2xl font-bold font-public-sans text-gray-1'>Team Memebers</h1>
+                <h1 className=' text-2xl font-bold font-public-sans text-gray-1'>Team Members</h1>
               </div>
               <div onClick={() => { navigate('/user/my-teammembers') }} className='flex items-center justify-center md:justify-start cursor-pointer'>
                 <img src='/images/member1.png' alt="" />
