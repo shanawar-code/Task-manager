@@ -76,14 +76,14 @@ function Employeesdetail() {
   return (
    <>
    <Layout  active={'Employees'}>
-   <div className="flex flex-wrap  gap-[10px] sm:gap-[0px]      sm:flex-row justify-between  sm:items-center   sm:space-y-0">
+   <div className="flex   gap-[10px] sm:gap-[0px]      sm:flex-row justify-between  sm:items-center   sm:space-y-0">
         <div className='flex items-center gap-[8px]'>  
          <span onClick={()=>{ nevigate('/hr/employees')}} className='cursor-pointer'><Svgs.LeftArrowShape/></span>
           <h2 className="lg:text-2xl sm:text-lg text-base font-bold font-public-sans text-gray-1 ">Olivia Williams</h2>
         </div>
           <div className="flex sm:space-x-4  flex-col sm:flex-row  items-center space-y-4 sm:space-y-0 ">
             <div className='border border-gray-1 rounded-lg px-[12px] py-[8px] md:text-sm text-xs font-public-sans font-semibold text-gray-1'>
-              <select className="bg-[#fbfbfb]  sm:w-auto">
+              <select className="bg-[#fbfbfb]  sm:w-auto outline-none">
                 <option>Active</option>
                 <option>Disconect</option>
                 
@@ -203,7 +203,7 @@ function Employeesdetail() {
             </div>
             <div className=' flex items-center justify-start flex-wrap '>
               {Skills.map((value, index) => (
-                <div key={index} className=' rounded-full border w-fit my-3 mx-1 md:mx-5'>
+                <div key={index} className=' rounded-full border w-fit my-3 mr-2'>
                   <h1 className=' text-[10px] sm:text-sm font-normal font-public-sans text-gray-1 py-[7px] px-[14px]'>{value.skill}</h1>
                 </div>
               ))}
@@ -215,9 +215,9 @@ function Employeesdetail() {
               <h1 className=' text-xl font-semibold font-public-sans text-gray-1'>Documents</h1>
             </div>
 
-            <div className='my-4 flex flex-wrap items-center justify-center  md:justify-start gap-2'>
+            <div className='my-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3'>
               {documents.map((value,index) => (
-                <div key={index} className=' px-[16px] py-[18px] border border-gray-5 rounded-xl shadow flex items-center justify-between w-[220px] my-2'>
+                <div key={index} className=' px-[16px] py-[18px] bg-[#f5f5f5] border border-gray-5 rounded-xl shadow flex items-center justify-between min-w-[200px] h-[52px] my-2'>
                   <div className='flex items-center gap-[14px]'>
                     <span>{value.svg}</span>
                     <h1 className=' text-sm font-medium font-public-sans text-[#17243E]'>{value.documentsname}</h1>

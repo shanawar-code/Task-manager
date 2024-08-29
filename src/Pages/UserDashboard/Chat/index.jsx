@@ -35,7 +35,7 @@ function Chat() {
                   <h1 className="text-xs md:text-sm font-normal font-public-sans text-[#999999]">Online</h1>
                 </div>
               </div>
-              <div onClick={() => (navigate('/user/findcolleagues'))} className=" cursor-pointer">
+              <div onClick={() => (navigate('/user/chatfindcolleagues'))} className=" cursor-pointer">
                 <Svgs.SearchChatIcon />
               </div>
             </div>

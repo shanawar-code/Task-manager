@@ -5,7 +5,7 @@ import { Input } from '../../../../components/Input';
 
 
 
-function Addapplicant() {
+function Addapplicant({onClose}) {
 
   const fileInputRef = useRef(null);
 
@@ -88,12 +88,12 @@ function Addapplicant() {
 
   const handleClosePopup = () => {
     setShowsPopup(false);
+    onClose()
   }
   return (
-
-
-    <div className='flex justify-center overflow-y-auto'>
-      <div className="bg-white mt-[24px] rounded-[16px]  w-full  ">
+    <>
+    {!showPopup ?( <div className='flex justify-center overflow-y-auto'>
+      <div className="bg-white pt-4 rounded-[16px]  w-full  ">
         {activeStep === 0 && (<h2 className="lg:text-[24px] text-[18px]  font-semibold mb-6 text-center text-gray-1 font-public-sans">Add new applicant</h2>)}
         {activeStep === 1 && (<h2 className="lg:text-[24px] text-[18px]  font-semibold mb-6 text-center text-gray-1 font-public-sans">Professional details</h2>)}
         {activeStep === 2 && (<h2 className="lg:text-[24px] text-[18px]  font-semibold mb-6 text-center text-gray-1 font-public-sans">Add skills</h2>)}
@@ -244,7 +244,7 @@ function Addapplicant() {
           </div>
         )}
 
-        <div className="flex justify-center mt-[32px] gap-[10px] px-6 sm:px-0">
+        <div className="flex justify-center my-[32px] gap-[10px] px-6 sm:px-0">
           <button onClick={prevsStep} disabled={activeStep === 0} className={`${activeStep === 0 ? 'hidden' : ''} w-[162px] py-[14px] px-[24px] font-mulish 
       border rounded-lg border-[#f65154] font-bold lg:text-base text-sm text-transparent bg-clip-text bg-btn-gradient`}>Back</button>
 
@@ -253,24 +253,22 @@ function Addapplicant() {
           {activeStep !== 2 ? (
             <button onClick={handleNextClick} disabled={activeStep === steps.length - 1} className="lg:text-base w-[162px] text-sm font-mulish font-bold 
          py-[14px] px-[24px] bg-btn-gradient text-white rounded-lg
-         shadow-sm hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500">{activeStep === 2 ? 'Submit' : 'Next'}
+         shadow-sm hover:bg-red-600 focus:outline-none ">{activeStep === 2 ? 'Submit' : 'Next'}
             </button>
           ) : (
             <>
               <button onClick={handleShowPopup} className="lg:text-base w-[162px] text-sm font-mulish font-bold 
         py-[14px] px-[24px] bg-btn-gradient text-white rounded-lg
-        shadow-sm hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500">{activeStep === 2 ? 'Submittt' : 'Next'}
+        shadow-sm hover:bg-red-600 focus:outline-none">{activeStep === 2 ? 'Submittt' : 'Next'}
               </button>
-              {showPopup && (<SuccessfulDialog heading={'Applicant added successfully'} show={showPopup} onClose={handleClosePopup} />)}
+             
             </>
           )}
 
         </div>
       </div>
-    </div>
-
-
-
+    </div>):(<SuccessfulDialog heading={'Applicant added successfully'} show={showPopup} onClose={handleClosePopup} />)}
+    </>
   )
 }
 

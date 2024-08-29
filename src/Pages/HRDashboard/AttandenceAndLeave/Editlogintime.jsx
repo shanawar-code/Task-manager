@@ -15,6 +15,7 @@ function Editlogintime({ show, onClose }) {
 
   const handleClosePopup = () => {
     setShowPopup(false)
+    onClose()
   }
 
 
@@ -59,9 +60,10 @@ function Editlogintime({ show, onClose }) {
   if (!show) return null;
 
   return (
-    <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50 ">
+    <>
+    {!showPopup ? ( <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50 ">
       <div className="py-3  ">
-        <div ref={popupRef} className="bg-white shadow-lg rounded-xl border p-6  mx-2 overflow-y-auto h-full w-[90vw] md:w-[40vw] ">
+        <div ref={popupRef} className="bg-white shadow-lg rounded-xl border p-6  mx-2 overflow-y-auto h-[80vh] w-[90vw] md:w-[40vw] grocery-scrollbar-none">
           <div className="flex items-center justify-center">
             <h1 className=" text-2xl font-semibold font-public-sans text-gray-1">Edit login time</h1>
           </div>
@@ -71,7 +73,7 @@ function Editlogintime({ show, onClose }) {
           <div className="flex-col flex items-center justify-center  my-[14.5px]">
 
             <div>
-              <img src="images/anna1.png" alt="" />
+              <img src="/images/anna1.png" alt="" />
             </div>
             <div className=" text-base font-semibold font-public-sans text-gray-1 mt-4">
               <p>Anna</p>
@@ -92,19 +94,20 @@ function Editlogintime({ show, onClose }) {
             </div>
             <div className="mt-6">
               <label className=" block text-base font-bold font-mulish text-gray-1">Notes</label>
-              <textarea placeholder="Description" name="" id="" className="w-full resize-none h-[135px] p-4 mt-2"></textarea>
+              <textarea placeholder="Description" name="" id="" className="w-full resize-none h-[135px] p-4 mt-2 border rounded-xl"></textarea>
             </div>
 
           </div>
           <div className="flex items-center justify-center gap-4 mt-[48px]">
 
-            <button onClick={handleShowPopup} className="w-[162px] px-[24px] py-[14px] text-base font-bold font-mulish bg-btn-gradient hover:scale-105 ease-in-out duration-300 text-white border rounded-lg ">Update</button>
-            {showPopup && (<SuccessfulDialog heading={' login time update'} show={showPopup} onClose={handleClosePopup} />)}
+            <button onClick={handleShowPopup} className="w-[162px] h-[48px] flex items-center justify-center px-[24px] py-[14px] text-base font-bold font-mulish bg-btn-gradient hover:scale-105 ease-in-out duration-300 text-white border rounded-lg ">Update</button>
           </div>
 
         </div>
       </div>
-    </div>
+    </div>):(<SuccessfulDialog heading={' login time update'} show={showPopup} onClose={handleClosePopup} />)}
+   
+    </>
   );
 }
 

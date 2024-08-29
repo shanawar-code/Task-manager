@@ -30,6 +30,7 @@ function Payroll() {
   const handleClosePopups = (index) => {
     setShowPopups(false)
     setPopupsindex(index)
+    
   }
 
 
@@ -203,7 +204,7 @@ function Payroll() {
                     key={index}
                     className={`flex  justify-between w-[100%] items-center ${index === payroll.length - 1 ? '' : ''} border-b  hover:bg-gray-100`}
                   >
-                    <div className="py-[10px] mx-[16px]  flex  flex-wrap items-center w-full  ">
+                    <div className="py-[10px] mx-[16px]  flex   items-center w-full  ">
                       <img
                         src="/images/catherine.png"
                         alt="profile"

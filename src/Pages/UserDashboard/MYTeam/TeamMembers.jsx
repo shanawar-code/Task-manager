@@ -2,8 +2,9 @@ import React, { useState } from "react";
 import Svgs from "../../../assets/svgs/index.js";
 import Button from "../../../components/Button.jsx";
 import { Layout } from "../../../components/Layout/DashboardLayout.jsx";
+import AddNewMemberDialog from "./Element/AddNewMemberDialog.jsx";
 
-function MYTeamLast() {
+function TeamMembers() {
 
   const [teamMembers, setTeamMembers] = useState([
     {
@@ -74,6 +75,18 @@ function MYTeamLast() {
   };
 
 
+  const [showPopup, setShowPopup] = useState(false)
+
+
+  const handleShowPopup = () => {
+    setShowPopup(true)
+
+  }
+
+  const handleClosePopup = () => {
+    setShowPopup(false)
+    
+  }
 
   return (
     <>
@@ -85,7 +98,8 @@ function MYTeamLast() {
             </h2>
             <div className="flex    flex-col sm:flex-row items-start sm:items-center space-y-4 sm:space-y-0 sm:space-x-4">
               <div className="">
-                <Button className={'flex items-center justify-center gap-2 rounded-[8px]'} text={<> <Svgs.AddIconWhite />  Add team member</>} customPadding={'py-[10px] px-4'} />
+                <Button handleClick={handleShowPopup} className={'flex items-center justify-center gap-2 rounded-[8px]'} text={<> <Svgs.AddIconWhite />  Add team member</>} customPadding={'py-[10px] px-4'} />
+                {showPopup && (<AddNewMemberDialog show={showPopup} onClose={handleClosePopup} />)}
               </div>
             </div>
           </div>
@@ -163,4 +177,4 @@ function MYTeamLast() {
   );
 }
 
-export default MYTeamLast;
+export default TeamMembers;

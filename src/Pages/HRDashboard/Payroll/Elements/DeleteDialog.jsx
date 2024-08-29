@@ -17,18 +17,11 @@ function DeleteDialog({ show, onClose, content }) {
 
   const handleClosePopup = () => {
     setShowPopup(false)
+    onClose()
   }
 
 
-  const [showGroceryPopup, setShowGroceryPopup] = useState(false)
-
-  const handleShowGroceryPopup = () => {
-    setShowGroceryPopup(true)
-  }
-
-  const handleCloseGroceryPopup = () => {
-    setShowGroceryPopup(false)
-  }
+  
 
 
 
@@ -55,7 +48,8 @@ function DeleteDialog({ show, onClose, content }) {
   if (!show) return null;
 
   return (
-    <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
+    <>
+    {!showPopup?( <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
       <div ref={popupRef}>
 
         <div className=" mx-auto scroll-smooth bg-white shadow-lg rounded-xl border w-[360px]">
@@ -71,13 +65,6 @@ function DeleteDialog({ show, onClose, content }) {
                 text={'No'}
                 customPadding={'px-[24px] py-[14px]'}
                 className={'h-[48px] w-[104px]'} />
-
-              {showPopup && (
-                <SuccessfulDialog
-                  heading={'Employee deleted'}
-                  show={showPopup}
-                  onClose={handleClosePopup} />)}
-
               <button
                 onClick={handleShowPopup}
                 className=" text-base font-bold font-mulish text-gray-1 px-[24px] py-[14px]">
@@ -88,7 +75,12 @@ function DeleteDialog({ show, onClose, content }) {
         </div>
 
       </div>
-    </div>
+    </div>):( <SuccessfulDialog
+                  heading={'Employee deleted'}
+                  show={showPopup}
+                  onClose={handleClosePopup} />)}
+   
+    </>
   );
 }
 

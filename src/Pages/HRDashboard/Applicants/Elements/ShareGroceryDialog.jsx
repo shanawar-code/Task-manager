@@ -28,9 +28,9 @@ function ShareGroceryDialog({ show, onClose }) {
   if (!show) return null;
 
   return (
-    <div className="fixed inset-0 flex items-center justify-center bg-white bg-opacity-70 z-50 ">
-      <div ref={popupRef} className=" mx-auto  scroll-smooth bg-white shadow-lg border rounded-xl w-[90vw] md:w-[700px] overflow-y-auto h-[85%]  ">
-        <Addapplicant />
+    <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50 ">
+      <div ref={popupRef} className=" mx-auto  scroll-smooth  w-[90vw] md:w-[700px] overflow-y-auto h-[85%] grocery-scrollbar-none ">
+        <Addapplicant onClose={onClose} />
       </div>
 
     </div>

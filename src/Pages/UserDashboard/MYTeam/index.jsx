@@ -59,7 +59,7 @@ function MyTeam() {
 
   const handleClosePopup = () => {
     setShowPopup(false)
-
+    
   }
 
 
@@ -98,7 +98,7 @@ function MyTeam() {
               <div>
                 <h1 className=' text-2xl font-bold font-public-sans text-gray-1'>Team Memebers</h1>
               </div>
-              <div onClick={() => { navigate('/user/myteamlast') }} className='flex items-center justify-center md:justify-start cursor-pointer'>
+              <div onClick={() => { navigate('/user/my-teammembers') }} className='flex items-center justify-center md:justify-start cursor-pointer'>
                 <img src='/images/member1.png' alt="" />
                 <img src='/images/member2.png' width={'32px'} alt="" />
                 <img src='/images/member3 (2).png' width={'32px'} alt="" />

@@ -153,7 +153,7 @@ function MyProfileHR() {
             </div>
             <div className=' flex items-center justify-start flex-wrap '>
               {Skills.map((value, index) => (
-                <div key={index} className=' rounded-full border w-fit my-3 mx-1 md:mx-5'>
+                <div key={index} className=' rounded-full border w-fit my-3 mr-3'>
                   <h1 className=' text-[10px] sm:text-sm font-normal font-public-sans text-gray-1 py-[7px] px-[14px]'>{value.skill}</h1>
                 </div>
               ))}
@@ -165,9 +165,9 @@ function MyProfileHR() {
               <h1 className=' text-xl font-semibold font-public-sans text-gray-1'>Documents</h1>
             </div>
 
-            <div className='my-4 flex flex-wrap items-center justify-center  md:justify-start gap-2'>
+            <div className='my-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3'>
               {Array(6).fill().map(() => (
-                <div className='bg-[#f5f5f5] px-[16px] py-[18px] rounded-xl shadow flex items-center justify-between w-[200px] my-2'>
+                <div className='bg-[#f5f5f5] px-[16px] py-[18px] rounded-xl shadow flex items-center justify-between min-w-[200px] my-2'>
                   <div className='flex items-center gap-[14px]'>
                     <span><Svgs.Pdficon /></span>
                     <h1 className=' text-sm font-medium font-public-sans text-[#17243E]'>Offer letter</h1>

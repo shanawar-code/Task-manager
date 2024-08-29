@@ -4,7 +4,6 @@ import MyTaskCard from "./Pages/UserDashboard/MyTasks/MyTaskCard";
 import { LoginPage } from "./Pages/Auth/LogIn";
 import { SignUpPage } from "./Pages/Auth/SignUp/index";
 import MyTeam from "./Pages/UserDashboard/MYTeam";
-import MYTeamLast from "./Pages/UserDashboard/MYTeam/TeamMembers";
 import RequireAuth from "./components/RequireAuth";
 import { Dashboard } from "./Pages/UserDashboard/Dashboard";
 import Tasks from "./Pages/UserDashboard/MyTasks";
@@ -21,8 +20,8 @@ import MyProfileHR from "./Pages/HRDashboard/Myprofile";
 import DocumentsHR from "./Pages/HRDashboard/Documents";
 import AttendanceAndLeaveHR from "./Pages/HRDashboard/AttandenceAndLeave";
 import FindColleagues from "./Pages/UserDashboard/Chat/FindColleagues";
-import MoreOptionsContainer from "./Pages/UserDashboard/Dashboard/MoreOptionsContainer";
 import Employeesdetail from "./Pages/HRDashboard/Employees/Employeesdetail";
+import TeamMembers from "./Pages/UserDashboard/MYTeam/TeamMembers";
 
 
 
@@ -60,25 +59,18 @@ function App() {
           element: <MyTaskCard />,
         },
         {
-          path: "my-team-list",
-          element: <MYTeamLast />,
-        },
-        {
           path: "attendance-leave",
           element: <AttendanceAndLeaveUser />,
         },
         {
-          path: 'findcolleagues',
+          path: 'chatfindcolleagues',
           element: <FindColleagues />
         },
         {
-          path: "myteamlast",
-          element: <MYTeamLast />,
-        },
-        {
-          path: 'more-options-container',
-          element: <MoreOptionsContainer />
+          path: 'my-teammembers',
+          element: <TeamMembers/>
         }
+       
       ],
     },
 
@@ -127,93 +119,7 @@ function App() {
       ]
     },
     // { path: "*", element: <Navigate to="/" replace /> }
-    // {
-    //   path: "/tasks",
-    //   element: <Tasks />,
-    // },
-    // {
-    //   path: "mytaskcard",
-    //   element: <MyTaskCard />,
-    // },
-    // {
-    //   path: "/dashboard",
-    //   element: <Dashboard />,
-    // },
-    // {
-    //   path: "/my-tasks",
-    //   element: <Tasks/>,
-    // },
-    // {
-    //   path: "/my-team",
-    //   element: <MyTeam />,
-    // },
-    // {
-    //   path: "/chat",
-    //   element: <Chat />,
-    // },
-    // {
-    //   path: "/attendance-leave",
-    //   element: <AttendanceAndLeave/>,
-    // },
-    // {
-    //   path: "/my-profile",
-    //   element: <MyProfile />,
-    // },
 
-    // {
-    //   path: "/employees",
-    //   element: <Employees />,
-    // },
-    // {
-    //   path: "/employees",
-    //   element: <Employees_hr />
-    // },
-    // {
-    //   path: "/dashboard",
-    //   element: <Dashboard_hr />,
-    // },
-    // {
-    //   path: "/applicants",
-    //   element: <Applicants />
-    // },
-    // {
-    //   path: "/attendance-leave",
-    //   element: <AttendanceAndLeave />
-    // },
-    // {
-    //   path: "/Chat",
-    //   element: <Chat />
-    // },
-    // {
-    //   path: "/myprofile",
-    //   element: <MyProfile />
-    // },
-    // {
-    //   path: "/payroll",
-    //   element: <Payroll />
-    // },
-    // {
-    //   path: "/documents",
-    //   element: <Documents />
-    // },
-
-    // {
-    //   path: '/myteamlast',
-    //   element: <MYTeamLast />
-    // },
-    // {
-    //   path: '/findcolleagues',
-    //   element: <FindColleagues />
-    // },
-
-
-    // ---------------------------
-
-
-    // {
-    //   path: '/hr-dashboard',
-    //   element: <HR_Dashboard />
-    // }
   ]);
 
   return (

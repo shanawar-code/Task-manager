@@ -225,48 +225,45 @@ export const DropdownSidebar = ({ active }) => {
     },
   ];
 
-
-
-
   const HRSideBarData = [
     {
       name: 'Dashboard',
-      icon: (active) => <Svgs.Dashboard color={active ? '#fc6e73' : '#828282'} />,
+      icon: (active) => <Svgs.Dashboard color={active ? '#fff' : '#828282'} />,
       navigate: '/hr/dashboard',
     },
     {
       name: 'Employees',
-      icon: (active) => <Svgs.Team color={active ? '#fc6e73' : '#828282'} />,
+      icon: (active) => <Svgs.Team color={active ? '#fff' : '#828282'} />,
       navigate: '/hr/employees',
     },
     {
       name: 'Applicants',
-      icon: (active) => <Svgs.Applicantssvg color={active ? '#fc6e73' : '#828282'} />,
+      icon: (active) => <Svgs.Applicantssvg color={active ? '#fff' : '#828282'} />,
       navigate: '/hr/applicants',
     },
     {
       name: 'Attendance & Leave',
-      icon: (active) => <Svgs.AttendanceSvg color={active ? '#fc6e73' : '#828282'} />,
+      icon: (active) => <Svgs.AttendanceSvg color={active ? '#fff' : '#828282'} />,
       navigate: '/hr/attandence',
     },
     {
       name: 'Payroll',
-      icon: (active) => <Svgs.Payrollsvg color={active ? '#fc6e73' : '#828282'} />,
+      icon: (active) => <Svgs.Payrollsvg color={active ? '#fff' : '#828282'} />,
       navigate: '/hr/payroll',
     },
     {
       name: 'Chat',
-      icon: (active) => <Svgs.Chat color={active ? '#fc6e73' : '#828282'} />,
+      icon: (active) => <Svgs.Chat color={active ? '#fff' : '#828282'} />,
       navigate: '/hr/chat',
     },
     {
       name: 'Documents',
-      icon: (active) => <Svgs.Document color={active ? '#fc6e73' : '#828282'} />,
+      icon: (active) => <Svgs.Document color={active ? '#fff' : '#828282'} />,
       navigate: '/hr/documents',
     },
     {
       name: 'My profile',
-      icon: (active) => <Svgs.Setting color={active ? '#fc6e73' : '#828282'} />,
+      icon: (active) => <Svgs.Setting color={active ? '#fff' : '#828282'} />,
       navigate: '/hr/myprofile',
     },
   ];
@@ -377,7 +374,7 @@ export const DropdownSidebar = ({ active }) => {
         {/* Render the icon for the active route */}
         <div className='flex items-center gap-4'>
         <span>
-        {userSideBarDataForIcon.find(item => location.pathname.startsWith(item.navigate))?.icon(true) || <Svgs.Menu />}
+        {sideBarDataForIcon.find(item => location.pathname.startsWith(item.navigate))?.icon(true) || <Svgs.Menu />}
         </span>
         <span className="text-base font-normal font-public-sans bg-btn-gradient text-transparent bg-clip-text">
           {sideBarData.find(item => location.pathname.startsWith(item.navigate))?.name || active}

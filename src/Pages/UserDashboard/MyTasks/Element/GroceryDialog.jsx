@@ -103,6 +103,14 @@ function GroceryDialog({ show, onClose, hidden, popupCardIndex, index }) {
   };
 
 
+
+  const [selectedValue, setSelectedValue] = useState("Easy"); // Default value
+
+  const handleChange = (e) => {
+    setSelectedValue(e.target.value); // Update the state with the selected option
+  };
+
+
   useEffect(() => {
     if (show || showPopup) {
       // Disable scrolling on the background when the popup is open
@@ -138,14 +146,17 @@ function GroceryDialog({ show, onClose, hidden, popupCardIndex, index }) {
     <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
       <div className="grocery-scrollbar-none overflow-y-auto h-[80vh]">
         <div ref={popupRef} className="bg-white w-[95vw] md:max-w-[61vw] rounded-xl p-3 md:p-5 ">
-          <div className="flex flex-wrap items-center justify-center sm:justify-between gap-3">
-            <div></div>
-            <div className="md:ml-20">
-              <h1 className=" text-xl :text-2xl font-semibold font-public-sans text-gray-1">
+          <div className="flex items-center">
+          <div className="hidden md:block w-[40%]">
+          </div>
+          <div className="flex items-center flex-wrap  justify-center md:justify-between gap-3 w-full md:w-[70%]">
+           
+            <div className="">
+              <h1 className=" text-lg :text-2xl font-semibold font-public-sans text-gray-1">
                 Grocery dashboard
               </h1>
             </div>
-            <div className=" hidden md:flex flex-wrap items-center justify-end gap-3">
+            <div className=" hidden lg:flex flex-wrap items-center justify-end gap-3">
               <button onClick={handleShowEditPopup} className=" text-base font-normal font-public-sans text-gray-2 flex items-center gap-2 border py-1 px-3 rounded-lg">
                 <Svgs.WritingPencilBlue />
                 Edit
@@ -157,6 +168,7 @@ function GroceryDialog({ show, onClose, hidden, popupCardIndex, index }) {
               </button>
               {popupCardIndex === index && showGrocerySharePopup && (<ShareGroceryDialog show={showGrocerySharePopup} onClose={handleCloseGrocerySharePopup} />)}
             </div>
+          </div>
           </div>
           <div className="flex md:items-center justify-between mt-10">
             <div className="flex flex-col gap-2">
@@ -171,7 +183,7 @@ function GroceryDialog({ show, onClose, hidden, popupCardIndex, index }) {
                 <img src="/images/ortan (3).png" alt="" />
                 <span className=" bg-[#e0e0e0] h-7 w-7 rounded-full flex items-center justify-center"><Svgs.AddIconGray /></span>
               </div>
-              <div className="md:hidden flex flex-wrap items-center justify-end gap-3 my-4">
+              <div className="lg:hidden flex flex-wrap items-center justify-end gap-3 my-4">
               <button onClick={handleShowEditPopup2} className=" text-base font-normal font-public-sans text-gray-2 flex items-center gap-2 border py-1 px-3 rounded-lg">
                 <Svgs.WritingPencilBlue />
                 Edit
@@ -190,10 +202,10 @@ function GroceryDialog({ show, onClose, hidden, popupCardIndex, index }) {
               <h1 className=" text-[10px] md:text-sm font-normal font-public-sans text-gray-2">
                 Priority
               </h1>
-             <span className="bg-[#fff7ea] rounded-full px-[14px]">
+             {/* <span className="bg-[#fff7ea] rounded-full px-[14px]">
               <select
                 className=" bg-transparent text-[#f4a012] text-[10px] md:text-xs font-semibold font-public-sans  py-[10px] outline-none"
-                value="Medium"
+                value=""
                 name=""
                 id=""
               >
@@ -216,7 +228,35 @@ function GroceryDialog({ show, onClose, hidden, popupCardIndex, index }) {
                   High
                 </option>
               </select>
-             </span>
+             </span> */}
+              <span className="bg-[#fff7ea] rounded-full px-[14px]">
+      <select
+        className="bg-transparent text-[#f4a012] text-[10px] md:text-xs font-semibold font-public-sans py-[10px] outline-none"
+        value={selectedValue} // Bind the state to the select element
+        onChange={handleChange} // Update the state on change
+        name="difficulty"
+        id="difficulty-select"
+      >
+        <option
+          value="Easy"
+          className="text-[#f4a012] text-xs font-semibold font-public-sans"
+        >
+          Easy
+        </option>
+        <option
+          value="Medium"
+          className="text-[#f4a012] text-xs font-semibold font-public-sans"
+        >
+          Medium
+        </option>
+        <option
+          value="High"
+          className="text-[#f4a012] text-xs font-semibold font-public-sans"
+        >
+          High
+        </option>
+      </select>
+    </span>
             </div>
           </div>
           <div className=" my-5">
@@ -225,7 +265,7 @@ function GroceryDialog({ show, onClose, hidden, popupCardIndex, index }) {
                 Description
               </h1>
             </div>
-            <div className=" border rounded-xl p-5">
+            <div className=" border rounded-xl p-5 mt-2">
               <p className=" text-xs md:text-base font-normal font-public-sans text-gray-4">
                 The dashboard of the MR Corporation Grocery Mobile App is crafted
                 to deliver a seamless and intuitive user experience, ensuring

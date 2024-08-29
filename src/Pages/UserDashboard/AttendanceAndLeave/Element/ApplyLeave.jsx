@@ -89,7 +89,7 @@ function ApplyLeaveDialog({ show, onClose }) {
             <div className="">
               <div className=" relative">
                 <Input label={"Date"} className={"text-base"} placeholder={'00/00/0000'} />
-                <span className="absolute right-4 top-[38px] cursor-pointer" onClick={handleShowDialog}><Svgs.CalendarIcon /></span>
+                <span className="absolute right-4 top-[44px] cursor-pointer" onClick={handleShowDialog}><Svgs.CalendarIcon /></span>
                 {showDialog && (
                   <Calendar show={showDialog} onClose={handleCloseDialog} />
                 )}

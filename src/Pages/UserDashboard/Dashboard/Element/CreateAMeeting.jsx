@@ -74,9 +74,10 @@ function VerifiedSuccessful({ show, onClose }) {
     <>
     {!showPopup?(
       <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
-      <div ref={popupRef} className="  flex items-center justify-center ">
+      <div ref={popupRef} className="  flex items-center justify-center relative">
+        <span onClick={onClose} className=" absolute -top-12 md:hidden"> <Svgs.CrossIconPopup/></span>
         <form onSubmit={handleSubmit}>
-          <div className=" p-5 bg-white shadow-lg rounded-xl border w-[90vw] md:w-[848px] mx-4">
+          <div className=" p-5 bg-white shadow-lg rounded-xl border w-[90vw] md:w-[62vw] mx-4">
             <div className="flex flex-col gap-3">
               <div className="flex items-center justify-center text-center">
                 <h1 className="text-xl md:text-2xl font-semibold font-public-sans text-gray-700">
@@ -89,14 +90,14 @@ function VerifiedSuccessful({ show, onClose }) {
               <div className="grid grid-cols-2 gap-3">
                 <div className=" relative">
                   <Input label={"Date"} className={"text-base"} placeholder={'00/00/00'} />
-                  <span className="absolute right-4 top-[38px] cursor-pointer" onClick={handleShowDialog}><Svgs.CalendarIcon /></span>
+                  <span className="absolute right-4 top-[44px] cursor-pointer" onClick={handleShowDialog}><Svgs.CalendarIcon /></span>
                   {showDialog && (
                     <CalendarDialog show={showDialog} onClose={handleCloseDialog} />
                   )}
                 </div>
                 <div className=" relative">
                   <Input label={"Select time"} className={"text-base"} placeholder={'00:00'} />
-                  <span className="absolute right-4 top-[38px] cursor-pointer" onClick={handleShowDialog}><Svgs.TimerIcon /></span>
+                  <span className="absolute right-4 top-[44px] cursor-pointer" onClick={handleShowDialog}><Svgs.TimerIcon /></span>
                 </div>
               </div>
               <div>

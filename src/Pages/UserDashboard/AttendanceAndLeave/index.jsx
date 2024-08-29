@@ -75,7 +75,7 @@ function AttendanceAndLeaveUser() {
               <div>
                 <h1 className=' text-2xl font-bold font-public-sans text-gray-1'>Team Memebers</h1>
               </div>
-              <div onClick={() => { navigate('/user/myteamlast') }} className='flex items-center cursor-pointer justify-center md:justify-start'>
+              <div onClick={() => { navigate('/user/my-teammembers') }} className='flex items-center cursor-pointer justify-center md:justify-start'>
                 <img src='/images/member1.png' alt="" />
                 <img src='/images/member2.png' width={'32px'} alt="" />
                 <img src='/images/member3 (2).png' width={'32px'} alt="" />

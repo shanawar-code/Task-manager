@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { Calenderhr, Crossiconssvg, Fileattachsvg } from '../../../../assets/svgs';
 import SuccessfulDialog from '../../../../components/Elements/SuccessfulDialog';
 
-function Addnewemployee() {
+function Addnewemployee({onClose}) {
 
   const [formData, setFormData] = useState({
     fullName: '',
@@ -113,11 +113,11 @@ function Addnewemployee() {
 
   const handleClosePopup = () => {
     setShowsPopup(false);
+    onClose()
   }
   return (
-
-
-    <div className='flex justify-center overflow-y-auto'>
+    <>
+    {!showPopup?(<div className='flex justify-center overflow-y-auto'>
       <div className="bg-white p-[24px] rounded-[16px] max-w-2xl w-full ">
         {activeStep === 0 && (<h2 className="lg:text-[24px] text-[18px]  font-semibold mb-6 text-center text-gray-1 font-public-sans">Basic info</h2>)}
         {activeStep === 1 && (<h2 className="lg:text-[24px] text-[18px]  font-semibold mb-6 text-center text-gray-1 font-public-sans">Personal info</h2>)}
@@ -141,8 +141,8 @@ function Addnewemployee() {
               </div>
               {index < steps.length - 1 && (
 
-                <div className={`  absolute inset-1/4 left-1/2  w-full h-0.5 bg-gray-300 transform -translate-y-1/4`} >
-                  <div className={`flex-grow h-fit border-t-2 border-dashed ${index < activeStep ? "border-[#f8595c]" : "border-gray-500"}`}></div>
+                <div className={`  absolute inset-1/4 left-1/2  w-full h-0.5  transform -translate-y-1/4`} >
+                  <div className={`flex-grow h-fit border-t-2 border-dashed ${index < activeStep ? "border-[#f8595c]" : " border-[#828282]"}`}></div>
                 </div>
               )}
             </div>
@@ -387,22 +387,23 @@ function Addnewemployee() {
           {activeStep !== 4 ? (
             <button onClick={handleNextClick} disabled={activeStep === steps.length - 1} className="lg:text-base w-[162px] text-sm font-mulish font-bold 
          py-[14px] px-[24px] bg-btn-gradient text-white rounded-lg
-         shadow-sm hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500">{activeStep === 4 ? 'Submit' : 'Next'}
+         shadow-sm hover:bg-red-600 focus:outline-none">{activeStep === 4 ? 'Submit' : 'Next'}
             </button>
           ) : (
             <>
               <button onClick={handleShowPopup} className="lg:text-base w-[162px] text-sm font-mulish font-bold 
         py-[14px] px-[24px] bg-btn-gradient text-white rounded-lg
-        shadow-sm hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500">{activeStep === 4 ? 'Submittt' : 'Next'}
+        shadow-sm hover:bg-red-600 focus:outline-none ">{activeStep === 4 ? 'Submittt' : 'Next'}
               </button>
-              {showPopup && (<SuccessfulDialog heading={'Employee added successfully'} show={showPopup} onClose={handleClosePopup} />)}
+             
             </>
           )}
 
         </div>
       </div>
     </div>
-
+):(<SuccessfulDialog heading={'Employee added successfully'} show={showPopup} onClose={handleClosePopup} />)}
+    </>
 
 
   )

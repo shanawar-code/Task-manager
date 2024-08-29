@@ -25,7 +25,7 @@ function Tasks() {
                             <div>
                                 <h1 className=' text-2xl font-bold font-public-sans text-gray-1'>Team Memebers</h1>
                             </div>
-                            <div onClick={() => { navigate('/user/myteamlast') }} className='flex items-center justify-center md:justify-start'>
+                            <div onClick={() => { navigate('/user/my-teammembers') }} className='flex items-center justify-center md:justify-start'>
                                 <img className=' cursor-pointer' src='/images/member1.png' alt="" />
                                 <img className=' cursor-pointer' src='/images/member2.png' width={'32px'} alt="" />
                                 <img className=' cursor-pointer' src='/images/member3 (2).png' width={'32px'} alt="" />

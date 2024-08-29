@@ -6,7 +6,7 @@ import { Input } from '../../../../components/Input';
 
 
 
-function Addsalary() {
+function Addsalary({onClose}) {
 
 
   const [formData, setFormData] = useState({
@@ -40,13 +40,13 @@ function Addsalary() {
 
   const handleClosePopup = () => {
     setShowsPopup(false);
+    onClose()
   }
   return (
-
-
-    <div className='flex justify-center overflow-y-auto'>
-      <div className="bg-white mt-[24px] rounded-[16px]  w-full  ">
-        <h2 className="lg:text-[24px] text-[18px]  font-semibold mb-6 text-center text-gray-1 font-public-sans">Add salary</h2>
+    <>
+    {!showPopup ? (<div className='flex justify-center '>
+      <div className="bg-white  rounded-[16px]  w-full py-4 ">
+        <h2 className="lg:text-[24px] text-[18px]  font-semibold  text-center text-gray-1 font-public-sans">Add salary</h2>
 
 
         <div>
@@ -126,7 +126,7 @@ function Addsalary() {
          py-[14px] px-[24px] bg-btn-gradient text-white rounded-lg
          shadow-sm hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500">{'Save'}
             </button>
-            {showPopup && (<SuccessfulDialog heading={'Salary added successfully'} show={showPopup} onClose={handleClosePopup} />)}
+           
           </div>
 
 
@@ -139,9 +139,8 @@ function Addsalary() {
 
 
       </div>
-    </div>
-
-
+    </div>):(<SuccessfulDialog heading={'Salary added successfully'} show={showPopup} onClose={handleClosePopup} />)}
+    </>
 
   )
 }

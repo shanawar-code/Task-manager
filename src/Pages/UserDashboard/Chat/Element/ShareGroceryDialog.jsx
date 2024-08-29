@@ -41,7 +41,7 @@ function ShareGroceryDialog({ show, onClose }) {
   return (
     <>
     {!showPopup?( <div className="fixed inset-0 flex items-center justify-center bg-white bg-opacity-30 z-50">
-      <div ref={popupRef} className=" p-5 scroll-smooth bg-white shadow-lg border rounded-xl max-w-[600px] md:w-[400px] lg:w-[528px]">
+      <div ref={popupRef} className=" p-5 scroll-smooth bg-white shadow-lg border rounded-xl w-[90vw] md:w-[38vw]">
         <div>
           <div className="flex items-center justify-center">
             <h1 className=" md:text-2xl font-semibold font-public-sans text-gray-1">Share Grocery dashboard</h1>
@@ -52,7 +52,7 @@ function ShareGroceryDialog({ show, onClose }) {
           </div>
           <div className="flex flex-col items-center mt-5">
             <h1 className=" text-base font-mulish font-bold text-gray-1 my-2">Share QR code</h1>
-            <span><img src="images/qrcode.png" width={200} alt="" /></span>
+            <span><img src="/images/qrcode.png" width={200} alt="" /></span>
           </div>
           <div className="flex items-center justify-center gap-4 mt-[48px]">
             <button className=" text-xs md:text-base font-bold font-mulish text-gray-2 flex items-center gap-[6px] px-[14.5px] py-[11px] rounded-xl border border-gray-2">
