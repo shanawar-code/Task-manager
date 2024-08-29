@@ -73,7 +73,7 @@ function AttendanceAndLeaveUser() {
           <div className='flex flex-col sm:flex-row items-center justify-center sm:justify-between gap-3'>
             <div className='flex flex-col gap-4'>
               <div>
-                <h1 className=' text-2xl font-bold font-public-sans text-gray-1'>Team Memebers</h1>
+                <h1 className=' text-2xl font-bold font-public-sans text-gray-1'>Team Members</h1>
               </div>
               <div onClick={() => { navigate('/user/my-teammembers') }} className='flex items-center cursor-pointer justify-center md:justify-start'>
                 <img src='/images/member1.png' alt="" />
@@ -176,8 +176,8 @@ function AttendanceAndLeaveUser() {
           <div className=' col-span-12 lg:col-span-4'>
             <RoundedCard customPadding={'p-3'}>
               <div className=' calender'>
-                <Calendar />
-                {/* <CalendarDialog/> */}
+                <Calendar/>
+                <CalendarDialog/>
               </div>
               <div className=''>
                 <div className=' my-6'>

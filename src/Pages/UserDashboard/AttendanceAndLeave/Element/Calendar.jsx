@@ -85,52 +85,15 @@ function Calendar({ show, onClose, hidden}) {
 
 
 
-
-
-
-
-    const navigate = useNavigate()
-    const handleSubmit = (e) => {
-      e.preventDefault();
-      navigate('/')
-    };
-  
-    const popupRef = useRef();
-  
-    const handleClickOutside = (event) => {
-      if (popupRef.current && !popupRef.current.contains(event.target)) {
-        onClose();
-      }
-    };
-  
-    useEffect(() => {
-      if (show) {
-        document.addEventListener("mousedown", handleClickOutside);
-      } else {
-        document.removeEventListener("mousedown", handleClickOutside);
-      }
-  
-      return () => {
-        document.removeEventListener("mousedown", handleClickOutside);
-      };
-    }, [show]);
-  
-    if (!show) return null;
-
   return (
-    <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
-    <div ref={popupRef} className=''>
+   
      
-        <div className=" mx-auto  bg-white rounded-xl border w-[90vw] sm:w-full">
+      
         <div className="w-80 mx-auto p-4 rounded-lg">
       {renderHeader()}
       {renderDays()}
       {renderCells()}
     </div>
-        </div>
-     
-    </div>
-  </div>
   )
 }
 

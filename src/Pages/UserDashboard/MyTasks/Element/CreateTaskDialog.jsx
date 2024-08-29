@@ -76,7 +76,7 @@ function CreateTaskDialog({ show, onClose }) {
   return (
     <>
     {!showPopup ? ( <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
-      <div ref={popupRef} className="p-5 bg-white shadow-lg rounded-xl border w-[95vw] sm:w-[500px] md:w-[600px] lg:w-[848px] overflow-y-auto h-[90vh] md:h-fit">
+      <div ref={popupRef} className="p-5 bg-white shadow-lg rounded-xl border w-[95vw] sm:w-[500px] md:w-[600px] lg:w-[848px] overflow-y-auto ">
         <div className="flex flex-col gap-3">
           <div className="flex items-center justify-center text-center">
             <h1 className="text-2xl font-semibold font-public-sans text-gray-700">
