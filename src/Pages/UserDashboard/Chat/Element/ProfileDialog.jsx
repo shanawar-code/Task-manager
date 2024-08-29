@@ -18,6 +18,7 @@ function ProfileDialog({ show, onClose }) {
 
   const handleClosePopup = () => {
     setShowPopup(false)
+    onClose()
   }
 
 
@@ -40,6 +41,25 @@ function ProfileDialog({ show, onClose }) {
     }
   };
 
+
+  useEffect(() => {
+    if (show || showPopup) {
+      // Disable scrolling on the background when the popup is open
+      document.body.style.overflow = "hidden";
+    } else {
+      // Enable scrolling again when the popup is closed
+      document.body.style.overflow = "auto";
+    }
+
+    return () => {
+      // Clean up by enabling scrolling when the component unmounts
+      document.body.style.overflow = "auto";
+    };
+  }, [show, showPopup]);
+
+
+
+
   useEffect(() => {
     if (show) {
       document.addEventListener("mousedown", handleClickOutside);
@@ -55,7 +75,8 @@ function ProfileDialog({ show, onClose }) {
   if (!show) return null;
 
   return (
-    <div className="fixed inset-0 flex items-start justify-end bg-white bg-opacity-30 z-50">
+    <>
+    {!showPopup?( <div className="fixed inset-0 flex items-start justify-end bg-white bg-opacity-30 z-50">
       <div
         ref={popupRef}
         className=" p-5 scroll-smooth bg-white shadow-lg rounded-tr-xl border w-[360px] overflow-y-scroll h-full"
@@ -88,7 +109,6 @@ function ProfileDialog({ show, onClose }) {
             <button onClick={handleShowPopup} className=" bg-[#feefef] rounded-xl text-[#fa6569] px-[16px] py-[8px] ">
               Remove Orton
             </button>
-            {showPopup && (<DeleteDialog content={'Are you sure want to remove Orton as colleage'} show={showPopup} onClose={handleClosePopup} />)}
           </div>
         </div>
         <div>
@@ -146,7 +166,9 @@ function ProfileDialog({ show, onClose }) {
           </div>
         </div>
       </div>
-    </div>
+    </div>):(<DeleteDialog content={'Are you sure want to remove Orton as colleage'} show={showPopup} onClose={handleClosePopup} />)}
+   
+    </>
   );
 }
 

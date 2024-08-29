@@ -18,8 +18,15 @@ function FindColleagues() {
     setShowPopup(false);
   };
 
+  const [inputValue, setInputValue] = useState('')
 
+  const handleInputValue=(val)=>{
+    setInputValue(val)
+  }
 
+  const removeInputValue=()=>{
+    setInputValue('')
+  }
 
 
   const navigate = useNavigate()
@@ -30,7 +37,7 @@ function FindColleagues() {
           <div className="upersection grid grid-cols-12 ">
             <div className="leftuper p-3 flex justify-between col-span-12 md:col-span-4 items-center md:border-r border-b">
               <div className="flex items-center gap-3">
-                <div onClick={() => (navigate('/chat'))}>
+                <div onClick={() => (navigate('/user/chat'))}>
                   <img className=" cursor-pointer" src='/images/womenOnline (4).png' alt="" />
                 </div>
                 <div>
@@ -51,8 +58,8 @@ function FindColleagues() {
                   <span>
                     <Svgs.SearchBar />
                   </span>
-                  <input className="bg-transparent focus:outline-none w-full text-sm font-normal font-public-sans text-gray-1" type="text" placeholder="Search" />
-                  <span className=" cursor-pointer"><Svgs.Cross /></span>
+                  <input value={inputValue} onChange={(e)=>{handleInputValue(e.target.value)}} className="bg-transparent focus:outline-none w-full text-sm font-normal font-public-sans text-gray-1" type="text" placeholder="Search" />
+                  <span onClick={() => (navigate('/user/chat'))} className=" cursor-pointer"><Svgs.Cross /></span>
                 </div>
 
               </div>

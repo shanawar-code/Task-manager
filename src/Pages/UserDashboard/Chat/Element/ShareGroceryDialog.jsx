@@ -15,6 +15,7 @@ function ShareGroceryDialog({ show, onClose }) {
 
   const handleClosePopup = () => {
     setShowPopup(false);
+    onClose()
   };
 
   const handleClickOutside = (event) => {
@@ -38,7 +39,8 @@ function ShareGroceryDialog({ show, onClose }) {
   if (!show) return null;
 
   return (
-    <div className="fixed inset-0 flex items-center justify-center bg-white bg-opacity-30 z-50">
+    <>
+    {!showPopup?( <div className="fixed inset-0 flex items-center justify-center bg-white bg-opacity-30 z-50">
       <div ref={popupRef} className=" p-5 scroll-smooth bg-white shadow-lg border rounded-xl max-w-[600px] md:w-[400px] lg:w-[528px]">
         <div>
           <div className="flex items-center justify-center">
@@ -47,7 +49,6 @@ function ShareGroceryDialog({ show, onClose }) {
           <div className=" relative mt-[48px]">
             <Input label={'Sharing link'} value={'Grocerydashobard232Wlfgewe45dgfdsk'} className={' text-xs md:text-base'} />
             <span onClick={handleShowPopup} className=" cursor-pointer absolute top-9 md:top-10 right-1 md:right-4"><Svgs.CopyIcon /></span>
-            {showPopup && (<SuccessfulDialog heading={'Link copied'} show={showPopup} onClose={handleClosePopup} />)}
           </div>
           <div className="flex flex-col items-center mt-5">
             <h1 className=" text-base font-mulish font-bold text-gray-1 my-2">Share QR code</h1>
@@ -63,7 +64,8 @@ function ShareGroceryDialog({ show, onClose }) {
           </div>
         </div>
       </div>
-    </div>
+    </div>):(<SuccessfulDialog heading={'Link copied'} show={showPopup} onClose={handleClosePopup} />)}   
+    </>
   );
 }
 

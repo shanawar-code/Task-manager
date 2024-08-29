@@ -31,10 +31,8 @@ export const LoginPage = () => {
                 navigate("/user/dashboard")
 
             }
-            console.log(values)
         }
     })
-    console.log(values)
 
     return (
         <div className='grid grid-cols-12  h-screen '>
@@ -53,7 +51,7 @@ export const LoginPage = () => {
 
             {/* Right Side (Form) */}
 
-            <div className='col-span-12 lg:col-span-5 flex flex-col items-center justify-center  lg:px-20 py-8 lg:py-8 bg-white'>
+            <div className='col-span-12 lg:col-span-5 flex flex-col items-center justify-center lg:px-20 py-8 lg:py-8 bg-white'>
                 <div className='flex items-center justify-center flex-col gap-[64px]'>
                     <h1 className='text-2xl lg:text-[31px] font-mulish text-gray-1 font-bold text-center'>
                         Sign in to Dashboard

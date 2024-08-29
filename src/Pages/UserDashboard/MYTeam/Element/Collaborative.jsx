@@ -17,6 +17,7 @@ function Collaborate({ show, onClose }) {
 
   const handleClosePopup = () => {
     setShowPopup(false)
+    onClose()
   }
 
   const [showDialog, setShowDialog] = useState(false);
@@ -71,9 +72,10 @@ function Collaborate({ show, onClose }) {
   if (!show) return null;
 
   return (
-    <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
+    <>
+    {!showPopup?( <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
       <div className="">
-        <div ref={popupRef} className="bg-white shadow-lg rounded-xl border p-6 mx-2 overflow-y-auto h-full  md:w-[598px]">
+        <div ref={popupRef} className="bg-white shadow-lg rounded-xl border p-6 mx-2 w-[90vw] md:w-[50vw]">
           <div className="flex flex-col gap-3">
             <div className="flex items-center justify-center text-center">
               <h1 className="text-xl md:text-2xl font-semibold font-public-sans text-gray-700">
@@ -89,12 +91,14 @@ function Collaborate({ show, onClose }) {
           </div>
           <div className="flex items-center justify-center gap-4 mt-6">
             <Button text={'Create task'} className={'w-[162px] h-[48px]'} customPadding={'py-[14px] px-[24px]'} handleClick={handleShowPopup} />
-            {showPopup && (<SuccessfulDialog heading={'Collaboration successful'} show={showPopup} onClose={handleClosePopup} />)}
+            
           </div>
 
         </div>
       </div>
-    </div>
+    </div>):(<SuccessfulDialog heading={'Collaboration successful'} show={showPopup} onClose={handleClosePopup} />)}
+   
+    </>
   );
 }
 

@@ -12,6 +12,7 @@ import RoundedCard from "../../../components/Elements/RoundedCard.jsx";
 import CreateTaskDialog from '../MyTasks/Element/CreateTaskDialog.jsx'
 import Collaborate from "../MYTeam/Element/Collaborative.jsx";
 import MoreOptions from "../../../components/Elements/MoreOptions.jsx";
+import MoreOptionsContainer from "./MoreOptionsContainer.jsx";
 
 
 export function Dashboard() {
@@ -80,6 +81,8 @@ export function Dashboard() {
     setShowCollaborative(false)
 
   }
+
+
   const [showMoreOptions, setShowMoreOptions] = useState(false)
   const [showEdit, setShowEdit] = useState(null)
   const handleShowMoreOptions = (index) => {
@@ -92,6 +95,7 @@ export function Dashboard() {
     setShowEdit(null)
   }
 
+  
 
 
 
@@ -273,12 +277,12 @@ export function Dashboard() {
                                 <img src={"/images/groupimg2.png"} width={'32px'} className="-mr-2" alt="" />
                                 <img src={"/images/groupimg3.png"} width={'32px'} alt="" />
                               </div>
-                              <div onClick={() => { handleShowMoreOptions(index) }} className=" cursor-pointer p-1">
-                                <span className=""><Svgs.Verticaldots /></span>
-                                {showEdit === index && showMoreOptions && (<MoreOptions show={showMoreOptions} onClose={handleCloseMoreOptions} />)}
-                              </div>
+                              <div    className=" cursor-pointer p-1">
+                                <span className=""><Svgs.Verticaldots/></span>
+                                
                             </div>
                           </div>
+                    </div>
                         </>
                       );
                     })}
@@ -329,6 +333,9 @@ export function Dashboard() {
               </RoundedCard>
             </div>
           </div>
+
+
+        
         </div>
       </Layout>
     </>

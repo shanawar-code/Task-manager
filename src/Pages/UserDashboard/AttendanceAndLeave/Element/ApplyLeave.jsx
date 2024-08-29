@@ -18,6 +18,7 @@ function ApplyLeaveDialog({ show, onClose }) {
 
   const handleClosePopup = () => {
     setShowPopup(false)
+    onClose()
   }
 
   const [showDialog, setShowDialog] = useState(false);
@@ -72,9 +73,10 @@ function ApplyLeaveDialog({ show, onClose }) {
   if (!show) return null;
 
   return (
-    <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
+    <>
+    {!showPopup?(  <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
       <div className="py-3 ">
-        <div ref={popupRef} className="bg-white shadow-lg rounded-xl border p-6 mx-2   md:w-[598px]">
+        <div ref={popupRef} className="bg-white shadow-lg rounded-xl border p-6 mx-2 w-[90vw]  md:w-[44vw]">
           <div className="flex flex-col gap-3">
             <div className="flex items-center justify-center text-center">
               <h1 className="text-xl md:text-2xl font-semibold font-public-sans text-gray-700">
@@ -109,12 +111,13 @@ function ApplyLeaveDialog({ show, onClose }) {
           </div>
           <div className="flex items-center justify-center gap-4 mt-[48px]">
             <Button text={'Apply'} className={'w-[162px] h-[48px]'} customPadding={'py-[14px] px-[24px]'} handleClick={handleShowPopup} />
-            {showPopup && (<SuccessfulDialog heading={'Leave applied successfully'} show={showPopup} onClose={handleClosePopup} />)}
+            
           </div>
 
         </div>
       </div>
-    </div>
+    </div>):(<SuccessfulDialog heading={'Leave applied successfully'} show={showPopup} onClose={handleClosePopup} />)}
+  </>
   );
 }
 

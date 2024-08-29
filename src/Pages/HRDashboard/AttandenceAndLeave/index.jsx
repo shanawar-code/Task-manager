@@ -6,7 +6,7 @@ import ApplyLeaveDialog from '../../UserDashboard/AttendanceAndLeave/Element/App
 import ReviweLeaveDialog from '../../UserDashboard/AttendanceAndLeave/Element/ReviewLeaveDialog'
 import Calendar from '../../UserDashboard/AttendanceAndLeave/Element/Calendar'
 import RoundedCard from '../../../components/Elements/RoundedCard'
-import { Blueline, Countone, Countthree, Counttwo, Greenline, Plus, Plusfour } from '../../../assets/svgs'
+import { Blueline, Countone, Countthree, Counttwo, Greenline, Plus, Plusfour } from '../../../assets/svgs/index.js'
 import Editlogintime from './Editlogintime'
 import Svgs from '../../../assets/svgs/index.js'
 

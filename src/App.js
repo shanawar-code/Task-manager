@@ -1,11 +1,10 @@
 import "./App.css";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import MyTaskCard from "./Pages/UserDashboard/MyTasks/MyTaskCard";
-import { LoginPage } from "./Pages/Auth/LogIn/index";
+import { LoginPage } from "./Pages/Auth/LogIn/Index";
 import { SignUpPage } from "./Pages/Auth/SignUp/index";
 import MyTeam from "./Pages/UserDashboard/MYTeam";
 import MYTeamLast from "./Pages/UserDashboard/MYTeam/TeamMembers";
-import FindColleagues from "./Pages/UserDashboard/Chat/FindColleagues";
 import RequireAuth from "./components/RequireAuth";
 import { Dashboard } from "./Pages/UserDashboard/Dashboard";
 import Tasks from "./Pages/UserDashboard/MyTasks";
@@ -21,6 +20,8 @@ import Chat from "./Pages/UserDashboard/Chat";
 import MyProfileHR from "./Pages/HRDashboard/Myprofile";
 import DocumentsHR from "./Pages/HRDashboard/Documents";
 import AttendanceAndLeaveHR from "./Pages/HRDashboard/AttandenceAndLeave";
+import FindColleagues from "./Pages/UserDashboard/Chat/FindColleagues";
+import MoreOptionsContainer from "./Pages/UserDashboard/Dashboard/MoreOptionsContainer";
 
 
 
@@ -64,15 +65,19 @@ function App() {
         {
           path: "attendance-leave",
           element: <AttendanceAndLeaveUser />,
-        },
+        },      
         {
-          path: "findcolleagues",
-          element: <FindColleagues />,
+          path: 'findcolleagues',
+          element: <FindColleagues/>
         },
         {
           path: "myteamlast",
           element: <MYTeamLast />,
         },
+        {
+          path: 'more-options-container',
+          element: <MoreOptionsContainer/>
+        }
       ],
     },
 

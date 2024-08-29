@@ -16,7 +16,6 @@ export const SideBar = ({ active }) => {
 
     const location = useLocation();
 
-    console.log('*********** i am here working', sidebarOpen)
     const navigate = useNavigate();
 
     const userSideBarData = [
@@ -149,7 +148,6 @@ export const SideBar = ({ active }) => {
 
     const handleSideBarClick = (path) => {
         navigate(path)
-        console.log(path)
     }
 
     const [showName, setShowName] = useState(true);

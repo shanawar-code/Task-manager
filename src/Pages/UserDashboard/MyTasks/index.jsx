@@ -20,7 +20,7 @@ function Tasks() {
         <>
             <Layout active={'My Tasks'}>
                 <div className=' my-5 md:my-0'>
-                    <div className='flex flex-wrap items-center justify-center sm:justify-between'>
+                    <div className='flex flex-col sm:flex-row items-center justify-center sm:justify-between'>
                         <div className='flex flex-col gap-4'>
                             <div>
                                 <h1 className=' text-2xl font-bold font-public-sans text-gray-1'>Team Memebers</h1>
@@ -39,7 +39,7 @@ function Tasks() {
                                 <span className='cursor-pointer w-[32px] h-[32px] flex items-center justify-center bg-[#f3f3f3] rounded-full'><Svgs.ShareGray /></span>
                             </div>
                             <div>
-                                <Button className={'flex items-center justify-center gap-4'} customPadding={'px-[16px] py-[8px]'} text={<><Svgs.AddIconWhite /> Add new card </>} />
+                                <Button className={'flex items-center justify-center gap-2 w-[149px] h-[40px]'} customPadding={'px-[16px] py-[8px]'} text={<><Svgs.AddIconWhite /> Add new card </>} />
                             </div>
 
                         </div>

@@ -16,6 +16,7 @@ function ReviweLeaveDialog({ show, onClose}) {
     const handleClosePopup=()=>{
       setShowPopup(false)
       // setIsVisible()
+      onClose()
     }
 
 
@@ -61,9 +62,9 @@ function ReviweLeaveDialog({ show, onClose}) {
 
   return (
     <>
-     <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
-      <div className=" h-[100vh] overflow-y-auto overflow-x-hidden flex justify-center items-center">
-           <div ref={popupRef} className="bg-white shadow-lg rounded-xl border p-6 md:w-[528px] ">
+    {!showPopup?( <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
+      <div className=" flex justify-center items-center">
+           <div ref={popupRef} className="bg-white shadow-lg rounded-xl border p-6 w-[90vw] md:w-[50vw] overflow-y-auto h-[70vh] grocery-scrollbar-none">
            <div className="flex items-center justify-center">
              <h1 className=" text-2xl font-semibold font-public-sans text-gray-1">Review leave</h1>
            </div>
@@ -95,12 +96,12 @@ function ReviweLeaveDialog({ show, onClose}) {
            <div className="flex items-center justify-center gap-4 mt-[48px]">
              <button className="px-[24px] py-[14.5px] text-base font-bold font-mulish text-gray-2">Refuse</button>
              <button onClick={handleShowPopup} className="flex items-center justify-center h-[48px] px-[20px] py-[14.5px] text-base font-bold font-mulish text-gray-2 border rounded-xl hover:transition-all hover:scale-105">Approve</button>
-             { showPopup && (<SuccessfulDialog heading={'Leave approved'}  show={showPopup} onClose={handleClosePopup}/>)}
            </div>
           
        </div>
        </div>
-       </div>
+       </div>):(<SuccessfulDialog heading={'Leave approved'}  show={showPopup} onClose={handleClosePopup}/>)}
+    
        </>
   );
 }
