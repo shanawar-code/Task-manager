@@ -1,8 +1,8 @@
 import "./App.css";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import MyTaskCard from "./Pages/UserDashboard/MyTasks/MyTaskCard";
-import { LoginPage } from "./Pages/Auth/LogIn/index";
-import { SignUpPage } from "./Pages/Auth/SignUp/index";
+import { LoginPage } from "./Pages/Auth/Login";
+import { SignUpPage } from "./Pages/Auth/Signup";
 import MyTeam from "./Pages/UserDashboard/MYTeam";
 import RequireAuth from "./components/RequireAuth";
 import { Dashboard } from "./Pages/UserDashboard/Dashboard";
