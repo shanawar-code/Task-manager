@@ -18,7 +18,7 @@ function Applicants() {
   }
 
 
-  
+
   const applicants = [
     {
       name: 'Catherine',
@@ -112,34 +112,34 @@ function Applicants() {
 
         <div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 sm:px-4  lg:px-0 mt-6">
-          <DashboardCard 
-            tasks={'Open positions'} 
-            value={'5'}  
-            tasksCount={'4'} taskcountclass={`text-[#00B037] `}
-             svg={<Svgs.Employs />}
-             employees={'new aplicants'} employeesclass={`text-gray-4`}
-             />
-            <DashboardCard 
-            tasks={'Interviewing'}
-             value={'4'} 
-              tasksCount={'1'} taskcountclass={`text-[#F4A012]`}
-               svg={<Svgs.Chair/>}
-               employees={'Interview today'} employeesclass={`text-[#F4A012]`}
-               />
             <DashboardCard
-             tasks={'This week hired'} 
-             value={'2'}  
-             tasksCount={'100%'} taskcountclass={`text-[#00B037]`}
-             svg={<Svgs.Attdenence />}
-             employees={'target achieved'} employeesclass={`text-gray-4`}
-            
-             />
-            <DashboardCard 
-            tasks={'Total aplicants'} 
-            value={'63'}   
-            tasksCount={'2'} taskcountclass={`text-[#F54D4D]`}
-            svg={<Svgs.Attdenence />}
-            employees={'applicants rejected'} employeesclass={`text-gray-4`}
+              tasks={'Open positions'}
+              value={'5'}
+              tasksCount={'4'} taskcountclass={`text-[#00B037] `}
+              svg={<Svgs.Employs />}
+              employees={'new aplicants'} employeesclass={`text-gray-4`}
+            />
+            <DashboardCard
+              tasks={'Interviewing'}
+              value={'4'}
+              tasksCount={'1'} taskcountclass={`text-[#F4A012]`}
+              svg={<Svgs.Chair />}
+              employees={'Interview today'} employeesclass={`text-[#F4A012]`}
+            />
+            <DashboardCard
+              tasks={'This week hired'}
+              value={'2'}
+              tasksCount={'100%'} taskcountclass={`text-[#00B037]`}
+              svg={<Svgs.Attdenence />}
+              employees={'target achieved'} employeesclass={`text-gray-4`}
+
+            />
+            <DashboardCard
+              tasks={'Total aplicants'}
+              value={'63'}
+              tasksCount={'2'} taskcountclass={`text-[#F54D4D]`}
+              svg={<Svgs.Attdenence />}
+              employees={'applicants rejected'} employeesclass={`text-gray-4`}
             />
 
           </div>
@@ -160,40 +160,41 @@ function Applicants() {
                   </div>
                 </div>
                 <div className='mt-[20px]'>
-                {applicants.map((applicant, index) => (
-                  <div
-                    key={index}
-                    className={`flex  justify-between w-[100%] items-center ${index === applicants.length - 1 ? '' : ''} border-b  hover:bg-gray-100`}
-                  >
-                    <div className="py-[10px] mx-[16px]  flex  flex-wrap items-center w-[16.2%] ">
-                      <img
-                        src="/images/catherine.png"
-                        alt="profile"
-                        className="w-[42px] h-[42px] rounded-full mr-3"
-                      />
-                      <div>
-                        <p className='lg:text-sm text-xs font-public-sans text-gray-1 font-medium'>{applicant.name}</p>
-                        <p className="lg:text-xs text-[10px] text-[#00B037] font-public-sans">{applicant.email}</p>
+                  {applicants.map((applicant, index) => (
+                    <div
+                      key={index}
+                      className={`flex  justify-between w-[100%] items-center ${index === applicants.length - 1 ? '' : ''} border-b  hover:bg-gray-100`}
+                    >
+                      <div className="py-[10px] mx-[16px]  flex  flex-wrap items-center w-[16.2%] ">
+                        <img
+                          src="/images/catherine.png"
+                          alt="profile"
+                          className="w-[42px] h-[42px] rounded-full mr-3"
+                        />
+                        <div>
+                          <p className='lg:text-sm text-xs font-public-sans text-gray-1 font-medium'>{applicant.name}</p>
+                          <p className="lg:text-xs text-[10px] text-[#00B037] font-public-sans">{applicant.email}</p>
+                        </div>
+                      </div>
+                      <div className=" lg:w-[16.2%] p-2 ">
+                        <span className={`px-[12px] py-[6px] lg:text-sm text-[10px] font-public-sans font-medium rounded-full ${applicant.positionColor}`}>
+                          {applicant.position}
+                        </span>
+                      </div>
+                      <div className="lg:w-[16.2%] p-2  text-gray-1 font-medium font-public-sans lg:text-sm text-xs">{applicant.contact}</div>
+                      <div className="lg:w-[16.2%] p-2  text-gray-1 font-medium font-public-sans lg:text-sm text-xs">{applicant.date}</div>
+                      <div className="lg:w-[16.2%] p-2   font-medium font-public-sans text-sm">
+                        <span className={`px-[12px] py-[6px] rounded-full lg:text-sm text-xs font-public-sans font-medium ${applicant.statusColor}`}>
+                          {applicant.status}
+                        </span>
+                      </div>
+                      <div className="px-[20px] p-2 text-right">
+                        <button className="text-gray-500 hover:text-gray-700">
+                          <Svgs.Threedots />
+                        </button>
                       </div>
                     </div>
-                    <div className=" lg:w-[16.2%] p-2 ">
-                      <span className={`px-[12px] py-[6px] lg:text-sm text-[10px] font-public-sans font-medium rounded-full ${applicant.positionColor}`}>
-                        {applicant.position}
-                      </span>
-                    </div>
-                    <div className="lg:w-[16.2%] p-2  text-gray-1 font-medium font-public-sans lg:text-sm text-xs">{applicant.contact}</div>
-                    <div className="lg:w-[16.2%] p-2  text-gray-1 font-medium font-public-sans lg:text-sm text-xs">{applicant.date}</div>
-                    <div className="lg:w-[16.2%] p-2   font-medium font-public-sans text-sm">
-                      <span className={`px-[12px] py-[6px] rounded-full lg:text-sm text-xs font-public-sans font-medium ${applicant.statusColor}`}>
-                        {applicant.status}
-                      </span>
-                    </div>
-                    <div className="px-[20px] p-2 text-right">
-                      <button className="text-gray-500 hover:text-gray-700">
-                        <Svgs.Threedots />
-                      </button>          </div>
-                  </div>
-                ))}
+                  ))}
                 </div>
               </div>
             </div>

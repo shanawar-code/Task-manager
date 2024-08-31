@@ -1,8 +1,7 @@
 import "./App.css";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import MyTaskCard from "./Pages/UserDashboard/MyTasks/MyTaskCard";
-import { LoginPage } from "./Pages/Auth/Login";
-import { SignUpPage } from "./Pages/Auth/Signup";
+
 import MyTeam from "./Pages/UserDashboard/MYTeam";
 import RequireAuth from "./components/RequireAuth";
 import { Dashboard } from "./Pages/UserDashboard/Dashboard";
@@ -22,6 +21,8 @@ import AttendanceAndLeaveHR from "./Pages/HRDashboard/AttandenceAndLeave";
 import FindColleagues from "./Pages/UserDashboard/Chat/FindColleagues";
 import Employeesdetail from "./Pages/HRDashboard/Employees/Employeesdetail";
 import TeamMembers from "./Pages/UserDashboard/MYTeam/TeamMembers";
+import { SignUpPage } from "./Pages/Auth/Signup/index";
+import { LoginPage } from "./Pages/Auth/Login/index";
 
 
 

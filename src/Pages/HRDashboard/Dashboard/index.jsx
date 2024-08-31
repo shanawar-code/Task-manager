@@ -65,41 +65,41 @@ function Dashboard_hr() {
   const [selectedRole, setSelectedRole] = React.useState('Python developer');
   const roles = ['Python developer', 'Web designer', 'UI UX designer', 'Web developer'];
 
-  
+
 
   return (
     <>
       <Layout active={'Dashboard'}>
         <div className="">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 sm:px-4  lg:px-0">
-          <DashboardCard 
-            tasks={'Total Employee'} 
-            value={'25'}  
-            tasksCount={'4'} taskcountclass={`text-[#00B037] `}
-             svg={<Employs />}
-             employees={'new employees'} employeesclass={`text-gray-4`}
-             />
-            <DashboardCard 
-            tasks={'Total Employee'}
-             value={'2'} 
-              tasksCount={'2'} taskcountclass={`text-[#F4A012]`}
-               svg={<Chair/>}
-               employees={'website designers'} employeesclass={`text-[#F4A012]`}
-               />
             <DashboardCard
-             tasks={'Employees Attendence'} 
-             value={'98%'}  
-             tasksCount={'24'} taskcountclass={`text-[#00B037]`}
-             svg={<Attdenence />}
-             employees={'present today'} employeesclass={`text-gray-4`}
-            
-             />
-            <DashboardCard 
-            tasks={'My Attendence'} 
-            value={'100%'}   valueclass={`text-[#00B037]`}
-            tasksCount={'log in:'} taskcountclass={`text-gray-4`}
-            svg={<Attdenence />}
-            employees={'10:02 AM today'} employeesclass={`text-gray-2`}
+              tasks={'Total Employee'}
+              value={'25'}
+              tasksCount={'4'} taskcountclass={`text-[#00B037] `}
+              svg={<Employs />}
+              employees={'new employees'} employeesclass={`text-gray-4`}
+            />
+            <DashboardCard
+              tasks={'Vacancies'}
+              value={'2'}
+              tasksCount={'2'} taskcountclass={`text-[#F4A012]`}
+              svg={<Chair />}
+              employees={'website designers'} employeesclass={`text-[#F4A012]`}
+            />
+            <DashboardCard
+              tasks={'Employees Attendence'}
+              value={'98%'}
+              tasksCount={'24'} taskcountclass={`text-[#00B037]`}
+              svg={<Attdenence />}
+              employees={'present today'} employeesclass={`text-gray-4`}
+
+            />
+            <DashboardCard
+              tasks={'My Attendence'}
+              value={'100%'} valueclass={`!text-[#00B037]`}
+              tasksCount={'Log in:'} taskcountclass={`text-gray-4`}
+              svg={<Attdenence />}
+              employees={'10:02 AM today'} employeesclass={`text-gray-2`}
             />
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4 mt-4 sm:px-4  lg:px-0">
@@ -270,7 +270,7 @@ function Dashboard_hr() {
                   <div className="flex justify-between items-center">
                     <h3 className="md:text-[16px] text-[14px] text-gray-1 font-semibold font-public-sans">Meetings</h3>
 
-                    <Button text={'Create new meeting'} customPadding={`py-[8px] px-[16px] text-sm`}/>
+                    <Button text={'Create new meeting'} customPadding={`py-[8px] px-[16px] text-sm`} />
 
 
                   </div>
