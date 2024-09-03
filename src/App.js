@@ -21,8 +21,8 @@ import AttendanceAndLeaveHR from "./Pages/HRDashboard/AttandenceAndLeave";
 import FindColleagues from "./Pages/UserDashboard/Chat/FindColleagues";
 import Employeesdetail from "./Pages/HRDashboard/Employees/Employeesdetail";
 import TeamMembers from "./Pages/UserDashboard/MYTeam/TeamMembers";
-import { SignUpPage } from "./Pages/Auth/Signup/index";
-import { LoginPage } from "./Pages/Auth/Login/index";
+import { SignUpPage } from "./Pages/Auth/Signup";
+import { LoginPage } from "./Pages/Auth/Login";
 
 
 
