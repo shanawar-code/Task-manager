@@ -1,7 +1,6 @@
 import React from "react";
-import Svgs from '../../../assets/svgs/index.js'
-import { Layout } from "../../../components/Layout/DashboardLayout.jsx";
-import ProfileDialog from "./Element/ProfileDialog.jsx";
+import Svgs from 'assets/svgs/Index'
+import { Layout } from "components/Layout/DashboardLayout.jsx";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
@@ -20,11 +19,11 @@ function FindColleagues() {
 
   const [inputValue, setInputValue] = useState('')
 
-  const handleInputValue=(val)=>{
+  const handleInputValue = (val) => {
     setInputValue(val)
   }
 
-  const removeInputValue=()=>{
+  const removeInputValue = () => {
     setInputValue('')
   }
 
@@ -58,7 +57,7 @@ function FindColleagues() {
                   <span>
                     <Svgs.SearchBar />
                   </span>
-                  <input value={inputValue} onChange={(e)=>{handleInputValue(e.target.value)}} className="bg-transparent focus:outline-none w-full text-sm font-normal font-public-sans text-gray-1" type="text" placeholder="Search" />
+                  <input value={inputValue} onChange={(e) => { handleInputValue(e.target.value) }} className="bg-transparent focus:outline-none w-full text-sm font-normal font-public-sans text-gray-1" type="text" placeholder="Search" />
                   <span onClick={() => (navigate('/user/chat'))} className=" cursor-pointer"><Svgs.Cross /></span>
                 </div>
 

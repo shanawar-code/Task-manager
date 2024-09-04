@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
-import { Layout } from '../../../components/Layout/DashboardLayout';
-import Button from '../../../components/Button';
+import { Layout } from 'components/Layout/DashboardLayout';
+import Button from 'components/Button';
 import ShareGroceryDialog from './Elements/ShareGroceryDialog.jsx';
-import Svgs, { Arrows, Threedots } from '../../../assets/svgs/index.js'
+import Svgs, { Arrows, Threedots } from 'assets/svgs/Index.js'
 import Moreoptions from './Elements/Moreoptions.jsx';
 
 function Payroll() {
@@ -30,7 +30,7 @@ function Payroll() {
   const handleClosePopups = (index) => {
     setShowPopups(false)
     setPopupsindex(index)
-    
+
   }
 
 
@@ -199,50 +199,50 @@ function Payroll() {
                   </div>
                 </div>
                 <div className='mt-[20px]'>
-                {Payroll.map((payroll, index) => (
-                  <div
-                    key={index}
-                    className={`flex  justify-between w-[100%] items-center ${index === payroll.length - 1 ? '' : ''} border-b  hover:bg-gray-100`}
-                  >
-                    <div className="py-[10px] mx-[16px]  flex   items-center w-full  ">
-                      <img
-                        src="/images/catherine.png"
-                        alt="profile"
-                        className="w-[42px] h-[42px] rounded-full mr-3"
-                      />
-                      <div className=''>
-                        <p className='lg:text-sm text-xs font-public-sans text-gray-1 font-medium'>{payroll.name}</p>
-                        <p className="lg:text-xs text-[10px] text-[#00B037] font-public-sans">{payroll.email}</p>
+                  {Payroll.map((payroll, index) => (
+                    <div
+                      key={index}
+                      className={`flex  justify-between w-[100%] items-center ${index === payroll.length - 1 ? '' : ''} border-b  hover:bg-gray-100`}
+                    >
+                      <div className="py-[10px] mx-[16px]  flex   items-center w-full  ">
+                        <img
+                          src="/images/catherine.png"
+                          alt="profile"
+                          className="w-[42px] h-[42px] rounded-full mr-3"
+                        />
+                        <div className=''>
+                          <p className='lg:text-sm text-xs font-public-sans text-gray-1 font-medium'>{payroll.name}</p>
+                          <p className="lg:text-xs text-[10px] text-[#00B037] font-public-sans">{payroll.email}</p>
+                        </div>
+                      </div>
+
+                      <div className=" lg: p-2 w-full  min-w-[186px] ">
+                        <span className={`ml-6  px-[12px] py-[6px] lg:text-sm text-[10px] font-public-sans font-medium rounded-full ${payroll.positionColor}`}>
+                          {payroll.position}
+                        </span>
+                      </div>
+                      <div className='w-  flex flex-col text-center w-full  min-w-[140px]'>
+                        <p className='mr-6 lg:text-xs text-[10px] font-public-sans text-gray-4 '>{payroll.rate}</p>
+                        <p className="mr-6 lg:text-sm font-medium text-xs text-gray-1 font-public-sans">{payroll.amount_rate}</p>
+                      </div>
+                      <div className='ml-12  w-full  min-w-[156px]'>
+                        <p className=' lg:text-xs text-[10px] font-public-sans text-gray-4 '>{payroll.date}</p>
+                        <p className=" lg:text-sm font-medium text-xs text-gray-1 font-public-sans">{payroll.period_date}</p>
+                      </div>
+                      <div className="lg: p-2  text-gray-1 font-medium font-public-sans lg:text-sm text-xs"></div>
+                      <div className="lg: p-2   font-medium font-public-sans text-sm w-full min-w-[156px]">
+                        <span className={`px-[12px] py-[6px] rounded-full lg:text-sm text-xs font-public-sans font-medium ${payroll.statusColor}`}>
+                          {payroll.period_status}
+                        </span>
+                      </div>
+
+
+                      <div className='className="px-[20px] p-2 text-right w-3/12"'>
+                        <button onClick={() => { handleShowPopups(index) }} className="text-gray-500 hover:text-gray-700"><Threedots /></button>
+                        {popupsindex === index && showPopups && (<Moreoptions show={showPopups} onClose={handleClosePopups} />)}
                       </div>
                     </div>
-
-                    <div className=" lg: p-2 w-full  min-w-[186px] ">
-                      <span className={`ml-6  px-[12px] py-[6px] lg:text-sm text-[10px] font-public-sans font-medium rounded-full ${payroll.positionColor}`}>
-                        {payroll.position}
-                      </span>
-                    </div>
-                    <div className='w-  flex flex-col text-center w-full  min-w-[140px]'>
-                      <p className='mr-6 lg:text-xs text-[10px] font-public-sans text-gray-4 '>{payroll.rate}</p>
-                      <p className="mr-6 lg:text-sm font-medium text-xs text-gray-1 font-public-sans">{payroll.amount_rate}</p>
-                    </div>
-                    <div className='ml-12  w-full  min-w-[156px]'>
-                      <p className=' lg:text-xs text-[10px] font-public-sans text-gray-4 '>{payroll.date}</p>
-                      <p className=" lg:text-sm font-medium text-xs text-gray-1 font-public-sans">{payroll.period_date}</p>
-                    </div>
-                    <div className="lg: p-2  text-gray-1 font-medium font-public-sans lg:text-sm text-xs"></div>
-                    <div className="lg: p-2   font-medium font-public-sans text-sm w-full min-w-[156px]">
-                      <span className={`px-[12px] py-[6px] rounded-full lg:text-sm text-xs font-public-sans font-medium ${payroll.statusColor}`}>
-                        {payroll.period_status}
-                      </span>
-                    </div>
-
-
-                    <div className='className="px-[20px] p-2 text-right w-3/12"'>
-                      <button onClick={() => { handleShowPopups(index) }} className="text-gray-500 hover:text-gray-700"><Threedots /></button>
-                      {popupsindex === index && showPopups && (<Moreoptions show={showPopups} onClose={handleClosePopups} />)}
-                    </div>
-                  </div>
-                ))}
+                  ))}
                 </div>
               </div>
             </div>

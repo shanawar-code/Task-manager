@@ -1,10 +1,9 @@
 import React from 'react'
-import { Layout } from '../../../components/Layout/DashboardLayout.jsx'
-import Svgs from '../../../assets/svgs/index.js'
-import RoundedCard from '../../../components/Elements/RoundedCard.jsx'
-import Button from '../../../components/Button.jsx'
+import { Layout } from 'components/Layout/DashboardLayout.jsx'
+import Svgs from 'assets/svgs/Index.js'
+import RoundedCard from 'components/Elements/RoundedCard.jsx'
+import Button from 'components/Button.jsx'
 import { useState } from 'react'
-import SuccessfulDialog from '../../../components/Elements/SuccessfulDialog.jsx'
 import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
 import CreateNewTeamDialog from './Element/CreateNewTeamDialog.jsx'

@@ -1,7 +1,7 @@
 import React from 'react'
-import { Layout } from '../../../components/Layout/DashboardLayout'
-import RoundedCard from '../../../components/Elements/RoundedCard'
-import Svgs from '../../../assets/svgs'
+import { Layout } from 'components/Layout/DashboardLayout'
+import RoundedCard from 'components/Elements/RoundedCard'
+import Svgs from 'assets/svgs/Index'
 
 
 function MyProfileHR() {

@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
-import { Layout } from '../../../components/Layout/DashboardLayout';
-import Button from '../../../components/Button';
-import Svgs from '../../../assets/svgs/index.js'
-import RoundedCard from '../../../components/Elements/RoundedCard.jsx';
+import { Layout } from 'components/Layout/DashboardLayout';
+import Button from 'components/Button';
+import Svgs from 'assets/svgs/Index.js'
+import RoundedCard from 'components/Elements/RoundedCard.jsx';
 import ShareGroceryDialog from './Elements/ShareGroceryDialog.jsx';
 
 function DocumentsHR() {

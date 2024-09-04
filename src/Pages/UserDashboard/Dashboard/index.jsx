@@ -1,18 +1,16 @@
 import React from "react";
-import Cards from "../../../components/Elements/DashboardCard.jsx";
+import Cards from "components/Elements/DashboardCard.jsx";
 import { useState } from "react";
 import VerifiedSuccessful from "./Element/CreateAMeeting.jsx";
-import Svgs from "../../../assets/svgs/index.js";
-import Button from "../../../components/Button.jsx";
-import UltimateCard from "../../../components/Elements/UltimateCard.jsx";
+import Svgs from "assets/svgs/Index.js";
+import Button from "components/Button.jsx";
+import UltimateCard from "components/Elements/UltimateCard.jsx";
 import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
-import { Layout } from "../../../components/Layout/DashboardLayout.jsx";
-import RoundedCard from "../../../components/Elements/RoundedCard.jsx";
+import { Layout } from "components/Layout/DashboardLayout.jsx";
+import RoundedCard from "components/Elements/RoundedCard.jsx";
 import CreateTaskDialog from '../MyTasks/Element/CreateTaskDialog.jsx'
 import Collaborate from "../MYTeam/Element/Collaborative.jsx";
-import MoreOptions from "../../../components/Elements/MoreOptions.jsx";
-import MoreOptionsContainer from "./MoreOptionsContainer.jsx";
 
 
 export function Dashboard() {
@@ -95,7 +93,7 @@ export function Dashboard() {
     setShowEdit(null)
   }
 
-  
+
 
 
 
@@ -277,12 +275,12 @@ export function Dashboard() {
                                 <img src={"/images/groupimg2.png"} width={'32px'} className="-mr-2" alt="" />
                                 <img src={"/images/groupimg3.png"} width={'32px'} alt="" />
                               </div>
-                              <div    className=" cursor-pointer p-1">
-                                <span className=""><Svgs.Verticaldots/></span>
-                                
+                              <div className=" cursor-pointer p-1">
+                                <span className=""><Svgs.Verticaldots /></span>
+
+                              </div>
                             </div>
                           </div>
-                    </div>
                         </>
                       );
                     })}
@@ -335,7 +333,7 @@ export function Dashboard() {
           </div>
 
 
-        
+
         </div>
       </Layout>
     </>

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import moment from 'moment';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
-import Svgs from '../assets/svgs/index.js'
+import Svgs from 'assets/svgs/Index'
 
 const DateInput = ({ name, onChange, value, add }) => {
 

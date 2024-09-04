@@ -1,8 +1,8 @@
 import React from 'react'
-import { Layout } from '../../../components/Layout/DashboardLayout.jsx'
-import Svgs from '../../../assets/svgs/index.js'
-import RoundedCard from '../../../components/Elements/RoundedCard.jsx'
-import Button from '../../../components/Button.jsx'
+import { Layout } from 'components/Layout/DashboardLayout.jsx'
+import Svgs from 'assets/svgs/Index.js'
+import RoundedCard from 'components/Elements/RoundedCard.jsx'
+import Button from 'components/Button.jsx'
 import Calendar from './Element/Calendar.jsx'
 import ReviweLeaveDialog from './Element/ReviewLeaveDialog.jsx'
 import { useState } from 'react'
@@ -176,8 +176,8 @@ function AttendanceAndLeaveUser() {
           <div className=' col-span-12 lg:col-span-4'>
             <RoundedCard customPadding={'p-3'}>
               <div className=' calender'>
-                <Calendar/>
-                <CalendarDialog/>
+                <Calendar />
+                <CalendarDialog />
               </div>
               <div className=''>
                 <div className=' my-6'>

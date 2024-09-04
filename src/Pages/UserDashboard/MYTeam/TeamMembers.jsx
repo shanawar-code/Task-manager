@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import Svgs from "../../../assets/svgs/index.js";
-import Button from "../../../components/Button.jsx";
-import { Layout } from "../../../components/Layout/DashboardLayout.jsx";
+import Svgs from "assets/svgs/Index.js";
+import Button from "components/Button.jsx";
+import { Layout } from "components/Layout/DashboardLayout.jsx";
 import AddNewMemberDialog from "./Element/AddNewMemberDialog.jsx";
 
 function TeamMembers() {
@@ -85,7 +85,7 @@ function TeamMembers() {
 
   const handleClosePopup = () => {
     setShowPopup(false)
-    
+
   }
 
   return (

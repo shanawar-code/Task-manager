@@ -1,12 +1,12 @@
 import React, { useState, useRef } from "react";
-import MoreOptions from "../../../components/Elements/MoreOptions";
-import Svgs from '../../../assets/svgs/index.js'
+import MoreOptions from "components/Elements/MoreOptions";
+import Svgs from 'assets/svgs/Index'
 
 
 const MoreOptionsContainer = () => {
   const [activePopup, setActivePopup] = useState(null); // To track which popup is active
   const iconRefs = useRef([]); // To store references to the 3 dots icons
-  
+
   const handleShowPopup = (index) => {
     setActivePopup(index); // Show the popup for the corresponding icon
   };
@@ -28,7 +28,7 @@ const MoreOptionsContainer = () => {
             onClick={() => handleShowPopup(index)}
             className="text-3xl"
           >
-           <Svgs.Verticaldots/>
+            <Svgs.Verticaldots />
           </button>
 
           {/* Conditionally rendering the MoreOptions popup based on activePopup */}

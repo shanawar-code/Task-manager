@@ -1,7 +1,7 @@
 import React from 'react'
-import { Layout } from '../../../components/Layout/DashboardLayout'
-import RoundedCard from '../../../components/Elements/RoundedCard'
-import Svgs from '../../../assets/svgs/index.js'
+import { Layout } from 'components/Layout/DashboardLayout'
+import RoundedCard from 'components/Elements/RoundedCard'
+import Svgs from 'assets/svgs/Index'
 import { useState } from 'react';
 
 
@@ -182,7 +182,7 @@ function MyProfileUser() {
               </div>
 
               <div className='my-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3'>
-                {Array(6).fill().map((_,index) => (
+                {Array(6).fill().map((_, index) => (
                   <div key={index} className='bg-[#f5f5f5] px-[16px] py-[18px] rounded-xl shadow flex items-center justify-between min-w-[200px]'>
                     <div className='flex items-center gap-[14px]'>
                       <span><Svgs.PDF /></span>

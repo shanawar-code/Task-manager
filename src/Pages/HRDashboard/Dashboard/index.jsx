@@ -2,12 +2,11 @@ import React, { useState } from 'react';
 
 import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
-import { Attdenence, Calenderhr, Chair, Employs, Threedots } from '../../../assets/svgs';
-import { Layout } from '../../../components/Layout/DashboardLayout';
-import { Employeessvg } from '../../../assets/svgs';
-import RoundedCard from '../../../components/Elements/RoundedCard';
-import Button from '../../../components/Button';
-import DashboardCard from '../../../components/Elements/DashboardCard';
+import { Attdenence, Calenderhr, Chair, Employs, Threedots } from 'assets/svgs/Index';
+import { Layout } from 'components/Layout/DashboardLayout';
+import RoundedCard from 'components/Elements/RoundedCard';
+import Button from 'components/Button';
+import DashboardCard from 'components/Elements/DashboardCard';
 
 
 function Dashboard_hr() {

@@ -1,10 +1,10 @@
 import React from "react";
 import { useState, useEffect, useRef } from "react";
-import SuccessfulDialog from "../../../../components/Elements/SuccessfulDialog";
-import { Input } from "../../../../components/Input";
-import Svgs from '../../../../assets/svgs/index.js'
-import Button from "../../../../components/Button.jsx";
-import SelectDropdown from "../../../../components/SelectDropdown.jsx";
+import SuccessfulDialog from "components/Elements/SuccessfulDialog";
+import { Input } from "components/Input";
+import Svgs from 'assets/svgs/Index.js'
+import Button from "components/Button.jsx";
+import SelectDropdown from "components/SelectDropdown.jsx";
 import CalendarDialog from "../../Dashboard/Element/CalendarDialog.jsx";
 
 
@@ -74,50 +74,50 @@ function ApplyLeaveDialog({ show, onClose }) {
 
   return (
     <>
-    {!showPopup?(  <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
-      <div className="py-3 ">
-        <div ref={popupRef} className="bg-white shadow-lg rounded-xl border p-6 mx-2 w-[90vw]  md:w-[44vw]">
-          <div className="flex flex-col gap-3">
-            <div className="flex items-center justify-center text-center">
-              <h1 className="text-xl md:text-2xl font-semibold font-public-sans text-gray-700">
-                Apply leave
-              </h1>
-            </div>
-            <div className=''>
-              <SelectDropdown label="Leave type" options={[{ label: 'Casual leave', value: 'Casual leave' }]} name="role" id="role" selectClass={' w-full'} className={' w-full'} />
-            </div>
-            <div className="">
-              <div className=" relative">
-                <Input label={"Date"} className={"text-base"} placeholder={'00/00/0000'} />
-                <span className="absolute right-4 top-[44px] cursor-pointer" onClick={handleShowDialog}><Svgs.CalendarIcon /></span>
-                {showDialog && (
-                  <CalendarDialog show={showDialog} onClose={handleCloseDialog} />
-                )}
+      {!showPopup ? (<div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
+        <div className="py-3 ">
+          <div ref={popupRef} className="bg-white shadow-lg rounded-xl border p-6 mx-2 w-[90vw]  md:w-[44vw]">
+            <div className="flex flex-col gap-3">
+              <div className="flex items-center justify-center text-center">
+                <h1 className="text-xl md:text-2xl font-semibold font-public-sans text-gray-700">
+                  Apply leave
+                </h1>
               </div>
+              <div className=''>
+                <SelectDropdown label="Leave type" options={[{ label: 'Casual leave', value: 'Casual leave' }]} name="role" id="role" selectClass={' w-full'} className={' w-full'} />
+              </div>
+              <div className="">
+                <div className=" relative">
+                  <Input label={"Date"} className={"text-base"} placeholder={'00/00/0000'} />
+                  <span className="absolute right-4 top-[44px] cursor-pointer" onClick={handleShowDialog}><Svgs.CalendarIcon /></span>
+                  {showDialog && (
+                    <CalendarDialog show={showDialog} onClose={handleCloseDialog} />
+                  )}
+                </div>
+
+              </div>
+              <div>
+                <label
+                  htmlFor=""
+                  className="text-base font-bold font-mulish text-gray-700"
+                >
+                  Meeting notes
+                </label>
+                <textarea
+                  className=" resize-none rounded-xl border w-full h-[130px] p-4 my-2 outline-none"
+                  placeholder="Description"
+                ></textarea>
+              </div>
+            </div>
+            <div className="flex items-center justify-center gap-4 mt-[48px]">
+              <Button text={'Apply'} className={'w-[162px] h-[48px]'} customPadding={'py-[14px] px-[24px]'} handleClick={handleShowPopup} />
 
             </div>
-            <div>
-              <label
-                htmlFor=""
-                className="text-base font-bold font-mulish text-gray-700"
-              >
-                Meeting notes
-              </label>
-              <textarea
-                className=" resize-none rounded-xl border w-full h-[130px] p-4 my-2 outline-none"
-                placeholder="Description"
-              ></textarea>
-            </div>
-          </div>
-          <div className="flex items-center justify-center gap-4 mt-[48px]">
-            <Button text={'Apply'} className={'w-[162px] h-[48px]'} customPadding={'py-[14px] px-[24px]'} handleClick={handleShowPopup} />
-            
-          </div>
 
+          </div>
         </div>
-      </div>
-    </div>):(<SuccessfulDialog heading={'Leave applied successfully'} show={showPopup} onClose={handleClosePopup} />)}
-  </>
+      </div>) : (<SuccessfulDialog heading={'Leave applied successfully'} show={showPopup} onClose={handleClosePopup} />)}
+    </>
   );
 }
 

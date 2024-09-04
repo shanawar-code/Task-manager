@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import Svgs from '../assets/svgs/index.js'
+import Svgs from 'assets/svgs/Index'
 
 export const Input = ({ label, placeholder, value, type, onChange, className, error, onKeyPress, id }) => {
 
@@ -21,7 +21,7 @@ export const Input = ({ label, placeholder, value, type, onChange, className, er
             id={id}
             type={`${type === 'password' && show === true ? 'password' : 'text'}`}
             placeholder={placeholder}
-            className={` outline-none max-w-full w-full bg-transparent  caret-custom-blue group ${className} `}
+            className={` outline-none max-w-full w-full focus-within:bg-transparent bg-transparent  caret-custom-blue group ${className} `}
           />
           {type === 'password' && <span onClick={() => { setShow(!show) }} className=' cursor-pointer'>{show === true ? <Svgs.PasswordShow /> : <Svgs.PasswordHide />}</span>
           }

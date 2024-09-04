@@ -1,8 +1,7 @@
 import React from "react";
-import Svgs from '../assets/svgs/index.js'
+import Svgs from 'assets/svgs/Index'
 import { useNavigate } from "react-router-dom";
-import { useState } from "react";
-import { useSidebarContext } from "../Context/ContextLayout.jsx";
+import { useSidebarContext } from "Context/ContextLayout.jsx";
 
 
 export const NavBar = () => {

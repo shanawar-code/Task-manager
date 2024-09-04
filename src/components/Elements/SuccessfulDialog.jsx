@@ -2,10 +2,10 @@ import React from "react";
 import { useState, useEffect, useRef } from "react";
 import { Input } from "../Input";
 import Button from "../Button";
-import Svgs from '../../assets/svgs/index.js'
+import Svgs from 'assets/svgs/Index'
 function SuccessfulDialog({ show, onClose, hidden, heading, onClick }) {
 
-  
+
 
   const popupRef = useRef();
 

@@ -1,9 +1,8 @@
 import React from "react";
 import { useState, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
-import Svgs from "../../../../assets/svgs/index.js";
+import Svgs from "assets/svgs/Index.js";
 import DeleteDialog from "./DeleteDialog.jsx";
-import SuccessfulDialog from "../../../../components/Elements/SuccessfulDialog.jsx";
 import ChatMediaDialog from "./ChatMediaDialog.jsx";
 
 

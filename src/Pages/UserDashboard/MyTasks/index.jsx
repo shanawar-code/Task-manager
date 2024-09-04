@@ -1,11 +1,9 @@
 import React from 'react'
-import Button from '../../../components/Button'
-import { Layout } from '../../../components/Layout/DashboardLayout'
+import Button from 'components/Button'
+import { Layout } from 'components/Layout/DashboardLayout'
 import MyTaskCard from './MyTaskCard'
-import Svgs from '../../../assets/svgs/index.js'
-import { useState } from 'react'
-import CreateTaskDialog from './Element/CreateTaskDialog'
-import { useSidebarContext } from '../../../Context/ContextLayout.jsx'
+import Svgs from 'assets/svgs/Index'
+import { useSidebarContext } from 'Context/ContextLayout.jsx'
 import { useNavigate } from 'react-router-dom'
 
 

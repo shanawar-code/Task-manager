@@ -1,12 +1,9 @@
-import React, { act, useState } from 'react'
-import { Applicantssvg, AttendanceSvg, Chat, Dashboard, Logout, MyTasks, Payrollsvg, Setting, Team } from '../assets/svgs/index.js'
+import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import Svgs from '../assets/svgs/index.js'
+import Svgs from 'assets/svgs/Index'
 import { useLocation } from "react-router-dom";
-import { useSidebarContext } from '../Context/ContextLayout.jsx';
-import { Input } from './Input.jsx';
-import { useUserContext } from '../Context/UserProvider';
-import { useEffect } from 'react';
+import { useSidebarContext } from 'Context/ContextLayout.jsx';
+import { useUserContext } from 'Context/UserProvider';
 
 export const SideBar = ({ active }) => {
 

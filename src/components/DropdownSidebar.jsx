@@ -1,5 +1,4 @@
 // import React, { useState } from 'react';
-// import Svgs, { Applicantssvg, Employeessvg, Payrollsvg } from '../assets/svgs/index.js'
 // import { useNavigate } from 'react-router-dom';
 // import { useUserContext } from '../Context/UserProvider.jsx';
 
@@ -180,7 +179,7 @@
 
 
 import React, { useState } from 'react';
-import Svgs from '../assets/svgs/index.js';
+import Svgs from 'assets/svgs/Index.js';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { useUserContext } from '../Context/UserProvider.jsx';
 
@@ -349,9 +348,9 @@ export const DropdownSidebar = ({ active }) => {
 
   // Determine which data to use based on user role
   const sideBarData = user.role === 'HR' ? HRSideBarData : userSideBarData;
-  
-  
-  
+
+
+
   const sideBarDataForIcon = user.role === 'HR' ? HRSideBarDataForIcon : userSideBarDataForIcon;
 
 
@@ -373,12 +372,12 @@ export const DropdownSidebar = ({ active }) => {
       >
         {/* Render the icon for the active route */}
         <div className='flex items-center gap-4'>
-        <span>
-        {sideBarDataForIcon.find(item => location.pathname.startsWith(item.navigate))?.icon(true) || <Svgs.Menu />}
-        </span>
-        <span className="text-base font-normal font-public-sans bg-btn-gradient text-transparent bg-clip-text">
-          {sideBarData.find(item => location.pathname.startsWith(item.navigate))?.name || active}
-        </span>
+          <span>
+            {sideBarDataForIcon.find(item => location.pathname.startsWith(item.navigate))?.icon(true) || <Svgs.Menu />}
+          </span>
+          <span className="text-base font-normal font-public-sans bg-btn-gradient text-transparent bg-clip-text">
+            {sideBarData.find(item => location.pathname.startsWith(item.navigate))?.name || active}
+          </span>
         </div>
         <svg
           className={`w-5 h-5 transition-transform duration-300 ${isDropdownOpen ? 'rotate-180' : ''}`}

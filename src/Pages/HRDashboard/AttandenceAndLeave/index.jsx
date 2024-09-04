@@ -1,14 +1,13 @@
 import React from 'react'
-import { Layout } from '../../../components/Layout/DashboardLayout'
+import { Layout } from 'components/Layout/DashboardLayout'
 import { useState } from 'react'
-import Button from '../../../components/Button'
+import Button from 'components/Button'
 import ApplyLeaveDialog from '../../UserDashboard/AttendanceAndLeave/Element/ApplyLeave'
-import ReviweLeaveDialog from '../../UserDashboard/AttendanceAndLeave/Element/ReviewLeaveDialog'
 import Calendar from '../../UserDashboard/AttendanceAndLeave/Element/Calendar'
-import RoundedCard from '../../../components/Elements/RoundedCard'
-import { Blueline, Countone, Countthree, Counttwo, Greenline, Plus, Plusfour } from '../../../assets/svgs/index.js'
+import RoundedCard from 'components/Elements/RoundedCard'
+import { Blueline, Greenline, Plus, Plusfour } from 'assets/svgs/Index'
 import Editlogintime from './Editlogintime'
-import Svgs from '../../../assets/svgs/index.js'
+import Svgs from 'assets/svgs/Index'
 
 
 function AttendanceAndLeaveHR() {

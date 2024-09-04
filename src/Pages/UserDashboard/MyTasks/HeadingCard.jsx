@@ -1,5 +1,5 @@
+import Svgs from 'assets/svgs/Index';
 import React from 'react'
-import Svgs from '../../../assets/svgs/index.js'
 import { useState } from 'react';
 
 function HeadingCard({ title, value }) {

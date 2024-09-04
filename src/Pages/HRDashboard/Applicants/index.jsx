@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
-import { Layout } from '../../../components/Layout/DashboardLayout'
+import { Layout } from 'components/Layout/DashboardLayout'
 import ShareGroceryDialog from './Elements/ShareGroceryDialog';
-import Svgs from '../../../assets/svgs/index.js'
-import Button from '../../../components/Button.jsx';
-import DashboardCard from '../../../components/Elements/DashboardCard';
+import Svgs from 'assets/svgs/Index'
+import Button from 'components/Button.jsx';
+import DashboardCard from 'components/Elements/DashboardCard';
 
 
 function Applicants() {

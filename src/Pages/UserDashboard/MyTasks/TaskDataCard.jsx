@@ -1,6 +1,5 @@
 import React from 'react'
-import Svgs from '../../../assets/svgs/index.js'
-import MoreOptions from "../../../components/Elements/MoreOptions.jsx";
+import Svgs from 'assets/svgs/Index'
 import { useState } from 'react';
 
 

@@ -1,6 +1,6 @@
 import React from "react";
 import { useState, useEffect, useRef } from "react";
-import Svgs from '../../../../assets/svgs/index.js'
+import Svgs from 'assets/svgs/Index'
 
 
 

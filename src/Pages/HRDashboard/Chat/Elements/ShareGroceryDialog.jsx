@@ -1,8 +1,8 @@
 import React from "react";
 import { useState, useEffect, useRef } from "react";
-import Svgs from "../../../../assets/svgs/index.js";
-import { Input } from "../../../../components/Input.jsx";
-import SuccessfulDialog from "../../../../components/Elements/SuccessfulDialog.jsx";
+import Svgs from "assets/svgs/Index";
+import { Input } from "components/Input.jsx";
+import SuccessfulDialog from "components/Elements/SuccessfulDialog.jsx";
 
 function ShareGroceryDialog({ show, onClose }) {
   const popupRef = useRef();

@@ -1,10 +1,9 @@
 import React from "react";
 import { useState, useEffect, useRef } from "react";
-import SuccessfulDialog from "../../../../components/Elements/SuccessfulDialog";
-import { Input } from "../../../../components/Input";
-import Svgs from '../../../../assets/svgs/index.js'
-import Button from "../../../../components/Button.jsx";
-import SelectDropdown from "../../../../components/SelectDropdown.jsx";
+import SuccessfulDialog from "components/Elements/SuccessfulDialog";
+import Svgs from 'assets/svgs/Index'
+import Button from "components/Button.jsx";
+import SelectDropdown from "components/SelectDropdown.jsx";
 
 
 function AddNewMemberDialog({ show, onClose }) {
@@ -73,39 +72,39 @@ function AddNewMemberDialog({ show, onClose }) {
 
   return (
     <>
-    {!showPopup?( <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
-      <div className="py-3 ">
-        <div ref={popupRef} className="bg-white shadow-lg rounded-xl border p-6 mx-2 w-[90vw]  md:w-[50vw]">
-          <div className="flex flex-col gap-3">
-            <div className="flex items-center justify-center text-center">
-              <h1 className="text-xl md:text-2xl font-semibold font-public-sans text-gray-700">
-                Add new member
-              </h1>
+      {!showPopup ? (<div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
+        <div className="py-3 ">
+          <div ref={popupRef} className="bg-white shadow-lg rounded-xl border p-6 mx-2 w-[90vw]  md:w-[50vw]">
+            <div className="flex flex-col gap-3">
+              <div className="flex items-center justify-center text-center">
+                <h1 className="text-xl md:text-2xl font-semibold font-public-sans text-gray-700">
+                  Add new member
+                </h1>
+              </div>
+              <div className="flex items-center gap-4 my-6">
+                <div className=" w-2/3">
+                  <SelectDropdown options={[{ value: 'Select', label: 'Select' }]} selectClass={' w-full'} className={' w-full'} label={'Select employee'} />
+                </div>
+                <div className="w-1/3">
+                  <SelectDropdown options={[{ value: 'Select', label: 'Select' }]} selectClass={' w-full'} className={' w-full'} label={'Role'} />
+                </div>
+              </div>
+
+              <div className="flex items-center justify-center my-6">
+                <button className="flex items-center justify-center w-full md:w-[200px] h-[44px] gap-3 border border-[#FB6D72] rounded-[8px] text-[#F33F41] text-sm font-semibold font-public-sans hover:scale-105 transition-all duration-700">
+                  <Svgs.AddIconRed />
+                  Add more employees
+                </button>
+              </div>
             </div>
-            <div className="flex items-center gap-4 my-6">
-              <div className=" w-2/3">
-                <SelectDropdown options={[{ value: 'Select', label: 'Select' }]} selectClass={' w-full'} className={' w-full'} label={'Select employee'} />
-              </div>
-              <div className="w-1/3">
-                <SelectDropdown options={[{ value: 'Select', label: 'Select' }]} selectClass={' w-full'} className={' w-full'} label={'Role'} />
-              </div>
+            <div className="flex items-center justify-center gap-4 mt-6">
+              <Button text={'Create team'} className={'w-[162px] h-[48px]'} customPadding={'py-[14px] px-[24px]'} handleClick={handleShowPopup} />
             </div>
 
-            <div className="flex items-center justify-center my-6">
-              <button className="flex items-center justify-center w-full md:w-[200px] h-[44px] gap-3 border border-[#FB6D72] rounded-[8px] text-[#F33F41] text-sm font-semibold font-public-sans hover:scale-105 transition-all duration-700">
-                <Svgs.AddIconRed />
-                Add more employees
-              </button>
-            </div>
           </div>
-          <div className="flex items-center justify-center gap-4 mt-6">
-            <Button text={'Create team'} className={'w-[162px] h-[48px]'} customPadding={'py-[14px] px-[24px]'} handleClick={handleShowPopup} />
-          </div>
-
         </div>
-      </div>
-    </div>):(<SuccessfulDialog heading={'Team member added successfully'} show={showPopup} onClose={handleClosePopup} />)}
-   </>
+      </div>) : (<SuccessfulDialog heading={'Team member added successfully'} show={showPopup} onClose={handleClosePopup} />)}
+    </>
   );
 }
 
