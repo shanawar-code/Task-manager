@@ -48,7 +48,7 @@ import { useState } from "react";
 import { useSidebarContext } from "../../Context/ContextLayout";
 // import { useSidebarContext } from "../../Context/ContextLayout.jsx";
 
-export const Layout = ({ active, children }) => {
+export const Layout = ({ active, children , custom_padding }) => {
 
 
   const { pathname } = useLocation();

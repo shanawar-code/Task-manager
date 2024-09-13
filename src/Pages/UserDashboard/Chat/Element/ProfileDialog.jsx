@@ -75,10 +75,10 @@ function ProfileDialog({ show, onClose }) {
 
   return (
     <>
-      {!showPopup ? (<div className="fixed inset-0 flex items-start justify-end bg-white bg-opacity-30 z-50">
+      {!showPopup ? (<div className="fixed inset-0 flex items-start justify-end z-50 bg-black bg-opacity-70 md:bg-white md:bg-opacity-60">
         <div
           ref={popupRef}
-          className=" p-5 scroll-smooth bg-white shadow-lg rounded-tr-xl border w-[360px] overflow-y-scroll h-full"
+          className=" p-5 bg-white shadow-lg md:rounded-tr-xl rounded-tl-xl border w-[360px] overflow-y-auto h-screen xl:mt-[115px]  lg:mt-[193px] md:mt-[180px] md:mr-8 grocery-scrollbar-none"
         >
           <div className=" border-b">
             <div>

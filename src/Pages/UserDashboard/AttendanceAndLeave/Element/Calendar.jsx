@@ -1,116 +1,242 @@
-import React from 'react'
-import { useNavigate } from 'react-router-dom';
-import { format, addMonths, subMonths, startOfMonth, endOfMonth, startOfWeek, endOfWeek, addDays } from "date-fns";
-import { useState, useEffect, useRef } from "react";
+// import React from 'react'
+// import { useNavigate } from 'react-router-dom';
+// import { format, addMonths, subMonths, startOfMonth, endOfMonth, startOfWeek, endOfWeek, addDays } from "date-fns";
+// import { useState, useEffect, useRef } from "react";
 
-function Calendar({ show, onClose, hidden}) {
+// function Calendar({ show, onClose, hidden}) {
 
-    const [currentMonth, setCurrentMonth] = useState(new Date());
+//     const [currentMonth, setCurrentMonth] = useState(new Date());
 
-    const renderHeader = () => {
-      return (
-        <div className="flex justify-between items-center mb-10">
-          <div>
-          <h2 className="text-xl font-semibold font-public-sans text-gray-1">
-            {format(currentMonth, "MMMM yyyy")}
-          </h2>
-          </div>
-          <div className="flex items-center gap-4">
-          <button onClick={prevMonth} className="text-lg font-bold"><img src={'images/arrow-left.png'} alt="" /></button>
-          <button onClick={nextMonth} className="text-lg font-bold"><img src={'images/arrow-right.png'} alt="" /></button>
-          </div>
-        </div>
-      );
-    };
+//     const renderHeader = () => {
+//       return (
+//         <div className="flex justify-between items-center mb-10">
+//           <div>
+//           <h2 className="text-xl font-semibold font-public-sans text-gray-1">
+//             {format(currentMonth, "MMMM yyyy")}
+//           </h2>
+//           </div>
+//           <div className="flex items-center gap-4">
+//           <button onClick={prevMonth} className="text-lg font-bold"><img src={'images/arrow-left.png'} alt="" /></button>
+//           <button onClick={nextMonth} className="text-lg font-bold"><img src={'images/arrow-right.png'} alt="" /></button>
+//           </div>
+//         </div>
+//       );
+//     };
   
-    const renderDays = () => {
-      const days = [];
-      const date = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
-      for (let i = 0; i < 7; i++) {
-        days.push(
-          <div key={i} className="text-xs text-center font-semibold font-public-sans text-gray-1">
-            {date[i].toUpperCase()}
-          </div>
-        );
-      }
-      return <div className="grid grid-cols-7 mb-2">{days}</div>;
-    };
+//     const renderDays = () => {
+//       const days = [];
+//       const date = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
+//       for (let i = 0; i < 7; i++) {
+//         days.push(
+//           <div key={i} className="text-xs text-center font-semibold font-public-sans text-gray-1">
+//             {date[i].toUpperCase()}
+//           </div>
+//         );
+//       }
+//       return <div className="grid grid-cols-7 mb-2">{days}</div>;
+//     };
   
-    const renderCells = () => {
-      const monthStart = startOfMonth(currentMonth);
-      const monthEnd = endOfMonth(monthStart);
-      const startDate = startOfWeek(monthStart);
-      const endDate = endOfWeek(monthEnd);
+//     const renderCells = () => {
+//       const monthStart = startOfMonth(currentMonth);
+//       const monthEnd = endOfMonth(monthStart);
+//       const startDate = startOfWeek(monthStart);
+//       const endDate = endOfWeek(monthEnd);
   
-      const rows = [];
-      let days = [];
-      let day = startDate;
-      let formattedDate = "";
+//       const rows = [];
+//       let days = [];
+//       let day = startDate;
+//       let formattedDate = "";
   
-      while (day <= endDate) {
-        for (let i = 0; i < 7; i++) {
-          formattedDate = format(day, "d");
-          const cloneDay = day;
-          days.push(
-            <div
-              className={`text-center py-2 ${
-                !isSameMonth(day, monthStart) ? "text-gray-400 text-sm font-normal font-mulish " : ""
-              } ${
-                isToday(day) ? "bg-blue-500 text-white rounded-full" : ""
-              }`}
-              key={day}
-            >
-              <span>{formattedDate}</span>
-            </div>
-          );
-          day = addDays(day, 1);
-        }
-        rows.push(
-          <div className="grid grid-cols-7" key={day}>
-            {days}
-          </div>
-        );
-        days = [];
-      }
-      return <div>{rows}</div>;
-    };
+//       while (day <= endDate) {
+//         for (let i = 0; i < 7; i++) {
+//           formattedDate = format(day, "d");
+//           const cloneDay = day;
+//           days.push(
+//             <div
+//               className={`text-center py-2 ${
+//                 !isSameMonth(day, monthStart) ? "text-gray-400 text-sm font-normal font-mulish " : ""
+//               } ${
+//                 isToday(day) ? "bg-blue-500 text-white rounded-full" : ""
+//               }`}
+//               key={day}
+//             >
+//               <span>{formattedDate}</span>
+//             </div>
+//           );
+//           day = addDays(day, 1);
+//         }
+//         rows.push(
+//           <div className="grid grid-cols-7" key={day}>
+//             {days}
+//           </div>
+//         );
+//         days = [];
+//       }
+//       return <div>{rows}</div>;
+//     };
   
-    const nextMonth = () => {
-      setCurrentMonth(addMonths(currentMonth, 1));
-    };
+//     const nextMonth = () => {
+//       setCurrentMonth(addMonths(currentMonth, 1));
+//     };
   
-    const prevMonth = () => {
-      setCurrentMonth(subMonths(currentMonth, 1));
-    };
+//     const prevMonth = () => {
+//       setCurrentMonth(subMonths(currentMonth, 1));
+//     };
 
 
 
-  return (
+//   return (
    
      
       
-        <div className="w-80 mx-auto p-4 rounded-lg">
+//         <div className="w-80 mx-auto p-4 rounded-lg">
+//       {renderHeader()}
+//       {renderDays()}
+//       {renderCells()}
+//     </div>
+//   )
+// }
+
+
+// function isToday(date) {
+//     const today = new Date();
+//     return (
+//       date.getDate() === today.getDate() &&
+//       date.getMonth() === today.getMonth() &&
+//       date.getFullYear() === today.getFullYear()
+//     );
+//   }
+  
+//   function isSameMonth(date, monthStart) {
+//     return date.getMonth() === monthStart.getMonth();
+//   }
+
+
+
+// export default Calendar
+
+import React, { useState } from 'react';
+import { format, addMonths, subMonths, startOfMonth, endOfMonth, startOfWeek, endOfWeek, addDays } from 'date-fns';
+
+function Calendar() {
+  const [currentMonth, setCurrentMonth] = useState(new Date());
+  const [selectedDate, setSelectedDate] = useState(null);
+
+  const renderHeader = () => {
+    return (
+      <div className="flex justify-between items-center mb-10">
+        <div>
+          <h2 className="text-xl font-semibold font-public-sans text-gray-1">
+            {format(currentMonth, "MMMM yyyy")}
+          </h2>
+        </div>
+        <div className="flex items-center gap-4">
+          <button onClick={prevMonth} className="text-lg font-bold">
+            <img src={'images/arrow-left.png'} alt="" />
+          </button>
+          <button onClick={nextMonth} className="text-lg font-bold">
+            <img src={'images/arrow-right.png'} alt="" />
+          </button>
+        </div>
+      </div>
+    );
+  };
+
+  const renderDays = () => {
+    const days = [];
+    const date = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
+    for (let i = 0; i < 7; i++) {
+      days.push(
+        <div key={i} className="text-xs text-center font-semibold font-public-sans text-gray-1">
+          {date[i].toUpperCase()}
+        </div>
+      );
+    }
+    return <div className="grid grid-cols-7 mb-2">{days}</div>;
+  };
+
+  const renderCells = () => {
+    const monthStart = startOfMonth(currentMonth);
+    const monthEnd = endOfMonth(monthStart);
+    const startDate = startOfWeek(monthStart);
+    const endDate = endOfWeek(monthEnd);
+
+    const rows = [];
+    let days = [];
+    let day = startDate;
+    let formattedDate = "";
+
+    while (day <= endDate) {
+      for (let i = 0; i < 7; i++) {
+        formattedDate = format(day, "d");
+        const cloneDay = day;
+        days.push(
+          <div
+            className={`text-center py-2 cursor-pointer ${
+              !isSameMonth(day, monthStart) ? "text-gray-400 text-sm font-normal font-mulish " : ""
+            } ${
+              selectedDate && isSameDay(day, selectedDate) ? "bg-blue-500 text-white rounded-full" :
+              !selectedDate && isToday(day) ? "bg-blue-500 text-white rounded-full" : ""
+            }`}
+            key={day}
+            onClick={() => handleDateClick(cloneDay)}
+          >
+            <span>{formattedDate}</span>
+          </div>
+        );
+        day = addDays(day, 1);
+      }
+      rows.push(
+        <div className="grid grid-cols-7" key={day}>
+          {days}
+        </div>
+      );
+      days = [];
+    }
+    return <div>{rows}</div>;
+  };
+
+  const nextMonth = () => {
+    setCurrentMonth(addMonths(currentMonth, 1));
+  };
+
+  const prevMonth = () => {
+    setCurrentMonth(subMonths(currentMonth, 1));
+  };
+
+  const handleDateClick = (date) => {
+    setSelectedDate(date);
+    console.log(date);
+  };
+
+  return (
+    <div className="w-80 mx-auto p-4 rounded-lg">
       {renderHeader()}
       {renderDays()}
       {renderCells()}
     </div>
-  )
+  );
 }
 
-
 function isToday(date) {
-    const today = new Date();
-    return (
-      date.getDate() === today.getDate() &&
-      date.getMonth() === today.getMonth() &&
-      date.getFullYear() === today.getFullYear()
-    );
-  }
-  
-  function isSameMonth(date, monthStart) {
-    return date.getMonth() === monthStart.getMonth();
-  }
+  const today = new Date();
+  return (
+    date.getDate() === today.getDate() &&
+    date.getMonth() === today.getMonth() &&
+    date.getFullYear() === today.getFullYear()
+  );
+}
 
+function isSameMonth(date, monthStart) {
+  return date.getMonth() === monthStart.getMonth();
+}
 
+function isSameDay(date1, date2) {
+  return (
+    date1.getDate() === date2.getDate() &&
+    date1.getMonth() === date2.getMonth() &&
+    date1.getFullYear() === date2.getFullYear()
+  );
+}
 
-export default Calendar
+export default Calendar;

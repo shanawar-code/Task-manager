@@ -10,6 +10,8 @@ import CreateNewTeamDialog from './Element/CreateNewTeamDialog.jsx'
 import AddNewMemberDialog from './Element/AddNewMemberDialog.jsx'
 import Collaborate from './Element/Collaborative.jsx'
 import { useNavigate } from 'react-router-dom'
+import HeadingCard from './HeadingCard.jsx'
+
 
 
 function MyTeam() {
@@ -86,6 +88,16 @@ function MyTeam() {
     setShowCollaborative(false)
 
   }
+  const [isEditing, setIsEditing] = useState(false);
+  const constantText = 'Python developer team'; // This is the constant text
+
+  const handleEditClick = () => {
+    setIsEditing(true); // Enable editing when the edit icon is clicked
+  };
+
+  const handleBlur = () => {
+    setIsEditing(false); // Exit editing mode when input loses focus
+  };
 
 
   return (
@@ -111,14 +123,14 @@ function MyTeam() {
             </div>
           </div>
         </div>
+      
         <div className='grid grid-cols-12 gap-5 my-8'>
           <div className=' col-span-12 lg:col-span-8'>
             <div className='overflow-x-auto '>
               <RoundedCard customPadding={'py-6'} className={'min-w-[500px]'}>
                 <div className=' mb-8 px-6 flex items-center justify-between'>
                   <div className='flex items-center gap-[11px]'>
-                    <h1 className=' text-base font-semibold font-public-sans text-gray-1'>Python developer team</h1>
-                    <span><Svgs.WritingPencil /></span>
+                  <HeadingCard title={"Python developer team"} value={"2"} />
                   </div>
                   <div>
                     <Button handleClick={handleShowPopup} text={'Add new member'} customPadding={'px-[12px] py-[8px]'} />

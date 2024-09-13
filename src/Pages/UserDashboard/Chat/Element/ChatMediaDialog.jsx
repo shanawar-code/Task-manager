@@ -82,18 +82,18 @@ function ChatMediaDialog({ show, onClose }) {
 
   return (
     <div className="fixed inset-0 flex items-start justify-end bg-white bg-opacity-10 z-50">
-      <div ref={popupRef} className=" p-5 scroll-smooth bg-white shadow-lg border rounded-xl overflow-y-scroll h-full">
+      <div ref={popupRef} className=" p-5 scroll-smooth bg-white shadow-lg border rounded-xl overflow-y-scroll h-full xl:w-[58%] sm:w-[65%] xl:mt-[115px] lg::mt-[193px] md:mt-[180px]">
         <div className="flex items-center justify-between border-b-2 pb-4">
           <h1 className=" text-xl font-medium font-public-sans text-gray-1">Media</h1>
           <span onClick={onClose} className=" cursor-pointer"><Svgs.CrossIcon /></span>
         </div>
         {imgData.map((value, index) => (
-          <div key={index} className="grid grid-cols-5 gap-5 my-5">
-            <img src={value.src} alt="" />
-            <img src={value.src} alt="" />
-            <img src={value.src} alt="" />
-            <img src={value.src} alt="" />
-            <img src={value.src} alt="" />
+          <div key={index} className="grid grid-cols-5 gap-5 my-5 w-full">
+            <img className="w-[78%]" src={value.src} alt="" />
+            <img  className="w-[78%]" src={value.src} alt="" />
+            <img className="w-[78%]" src={value.src} alt="" />
+            <img  className="w-[78%]" src={value.src} alt="" />
+            <img className="w-[78%]" src={value.src} alt="" />
           </div>
         ))}
         <div className="flex items-center justify-center">

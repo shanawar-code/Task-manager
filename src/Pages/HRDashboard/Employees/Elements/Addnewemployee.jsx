@@ -123,7 +123,7 @@ function Addnewemployee({ onClose }) {
           {activeStep === 1 && (<h2 className="lg:text-[24px] text-[18px]  font-semibold mb-6 text-center text-gray-1 font-public-sans">Personal info</h2>)}
           {activeStep === 2 && (<h2 className="lg:text-[24px] text-[18px]  font-semibold mb-6 text-center text-gray-1 font-public-sans">Upload documents</h2>)}
           {activeStep === 3 && (<h2 className="lg:text-[24px] text-[18px]  font-semibold mb-6 text-center text-gray-1 font-public-sans">Bank details</h2>)}
-          {activeStep === 4 && (<h2 className="lg:text-[24px] text-[18px]  font-semibold mb-6 text-center text-gray-1 font-public-sans">Add skills</h2>)}
+          {activeStep === 4 && (<h2 className="lg:text-[24px] text-[18px]  font-semibold mb-6 text-center text-gray-1 font-public-sans"> skills</h2>)}
           <div className="flex justify-between relative py-[32px] gap-[10px]  overflow-x-auto ">
             {steps.map((step, index) => (
               <div key={index} className="flex-1 items-center  relative justify-center  ">
@@ -137,14 +137,21 @@ function Addnewemployee({ onClose }) {
                   <div className={`py-[8px]  text-[12px] font-medium font-public-sans
                   ${index <= activeStep ? "text-transparent bg-clip-text bg-btn-gradient" : "text-gray-2 "} `}>
                     {step}
+                     {/* {activeStep === 0 && (<h2 className=" mb-6 text-center text-gray-1 font-public-sans">Basic info</h2>)}
+          {activeStep === 1 && (<h2 className=" text-center text-gray-1 font-public-sans">Personal info</h2>)}
+          {activeStep === 2 && (<h2 className="  font-semibold mb-6 text-center text-gray-1 font-public-sans">Upload documents</h2>)}
+          {activeStep === 3 && (<h2 className="  font-semibold mb-6 text-center text-gray-1 font-public-sans">Bank details</h2>)}
+          {activeStep === 4 && (<h2 className="  font-semibold mb-6 text-center text-gray-1 font-public-sans">Add skills</h2>)} */}
                   </div>
                 </div>
                 {index < steps.length - 1 && (
 
-                  <div className={`  absolute inset-1/4 left-1/2  w-full h-0.5  transform -translate-y-1/4`} >
-                    <div className={`flex-grow h-fit border-t-2 border-dashed ${index < activeStep ? "border-[#f8595c]" : " border-[#828282]"}`}></div>
+                  <div className={`  sm:absolute sm:inset-1/4 sm:left-1/2 sm:w-full md:h-0.5  sm:transform sm:-translate-y-1/4`} >
+                    <div className={`sm:flex-grow sm:h-fit sm:border-t-2 sm:border-dashed ${index < activeStep ? "sm:border-[#f8595c]" : " sm:border-[#828282]"}`}></div>
                   </div>
+                  
                 )}
+                
               </div>
             ))}
           </div>

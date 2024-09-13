@@ -23,6 +23,8 @@ import Employeesdetail from "./Pages/HRDashboard/Employees/Employeesdetail";
 import TeamMembers from "./Pages/UserDashboard/MYTeam/TeamMembers";
 import { SignUpPage } from "./Pages/Auth/SignUp/Index";
 import { LoginPage } from "./Pages/Auth/LogIn/Index";
+import ChatDialog from "Pages/UserDashboard/Chat/Element/ChatDialog";
+import ChatProfile from "Pages/HRDashboard/Chat/ChatProfile";
 
 
 
@@ -70,6 +72,10 @@ function App() {
         {
           path: 'my-teammembers',
           element: <TeamMembers />
+        },
+        {
+          path: 'chat-dialog',
+          element :<ChatDialog/>
         }
 
       ],
@@ -116,6 +122,10 @@ function App() {
           path: "employeesdetails",
           element: <Employeesdetail />
         },
+        {
+          path: 'chat-profile',
+          element :<ChatProfile/>
+        }
 
       ]
     },
