@@ -58,6 +58,7 @@ function Addnewemployee({ onClose }) {
       console.log(`${label} uploaded:`, file.name);
     }
   }
+  
   const FileUpload = ({ label }) => {
     return (
       <div className='flex flex-col '>
@@ -123,10 +124,86 @@ function Addnewemployee({ onClose }) {
           {activeStep === 1 && (<h2 className="lg:text-[24px] text-[18px]  font-semibold mb-6 text-center text-gray-1 font-public-sans">Personal info</h2>)}
           {activeStep === 2 && (<h2 className="lg:text-[24px] text-[18px]  font-semibold mb-6 text-center text-gray-1 font-public-sans">Upload documents</h2>)}
           {activeStep === 3 && (<h2 className="lg:text-[24px] text-[18px]  font-semibold mb-6 text-center text-gray-1 font-public-sans">Bank details</h2>)}
-          {activeStep === 4 && (<h2 className="lg:text-[24px] text-[18px]  font-semibold mb-6 text-center text-gray-1 font-public-sans"> skills</h2>)}
-          <div className="flex justify-between relative py-[32px] gap-[10px]  overflow-x-auto ">
-            {steps.map((step, index) => (
+          {activeStep === 4 && (<h2 className="lg:text-[24px] text-[18px]  font-semibold mb-6 text-center text-gray-1 font-public-sans">Add skills</h2>)}
+          <div className="flex justify-between relative  gap-[10px]  overflow-x-auto ">
+            {/* {steps.map((step, index) => {
+              return(
+                <>
               <div key={index} className="flex-1 items-center  relative justify-center  ">
+                <div className="flex flex-col items-center justify-center overflow-x-auto min-w-[80px]">
+                  <div
+                    className={`cursor-pointer rounded-full w-[40px] h-[40px] g flex items-center justify-center mx-auto lg:text-[20px] text-[16px] font-public-sans
+                  font-medium px-[13.5px] py-[8px] 
+                  ${index <= activeStep ? "bg-btn-gradient text-white" : "bg-gray-5 text-gray-4"} z-10 shadow-md  hidden `}>
+                       {activeStep === 0 && (<h2 className="sm:hidden">1</h2>)}
+                       
+                      {activeStep === 1 && (<h2 className="sm:hidden">2</h2>)}
+                      {activeStep === 2 && (<h2 className="sm:hidden">3</h2>)}
+                      {activeStep === 3 && (<h2 className="sm:hidden">4</h2>)}
+                      {activeStep === 4 && (<h2 className="sm:hidden">5</h2>)}
+
+                      <h2 className='hidden sm:block'>{index+1}</h2>
+                      
+                  </div>
+                  <div className={`py-[8px]  text-[12px] font-medium font-public-sans
+                  ${index <= activeStep ? "text-transparent bg-clip-text bg-btn-gradient" : "text-gray-2  hidden "} `}>
+                    <div className='hidden sm:block'>{step}</div>
+                    {activeStep === 0 && (<h2 className="sm:hidden">Basic info</h2>)}
+                    {activeStep === 1 && (<h2 className="sm:hidden">Personal info</h2>)}
+                    {activeStep === 2 && (<h2 className="sm:hidden">Documents</h2>)}
+                    {activeStep === 3 && (<h2 className="sm:hidden">Bank details</h2>)}
+                    {activeStep === 4 && (<h2 className="sm:hidden">Skills</h2>)}
+                  </div>
+                </div>
+                {index < steps.length - 1 && (
+
+                  <div className={`  absolute inset-1/4 left-1/2  w-full h-0.5  transform -translate-y-1/4   hidden sm:block`} >
+                    <div className={`flex-grow h-fit border-t-2 border-dashed ${index < activeStep ? "border-[#f8595c]" : " border-[#828282]"}`}></div>
+                  </div>
+                )}
+              </div>
+                
+                </>
+              )
+})} */}
+{steps.map((step, index) => {
+  const isActive = index === activeStep;
+  const stepNumber = index + 1;
+
+  return (
+    isActive && (
+      <div key={index} className="flex-1 items-center relative justify-center  sm:hidden">
+        <div className="flex flex-col items-center justify-center overflow-x-auto min-w-[80px]">
+          <div
+            className={`cursor-pointer rounded-full w-[40px] h-[40px] flex items-center justify-center mx-auto lg:text-[20px] text-[16px] font-public-sans font-medium px-[13.5px] py-[8px] ${isActive ? "bg-btn-gradient text-white" : "bg-gray-5 text-gray-4"} z-10 shadow-md`}
+          >
+            {/* Show step number */}
+            <h2 className={`hidden sm:block`}>{stepNumber}</h2>
+            <h2 className={`block sm:hidden`}>{stepNumber}</h2>
+          </div>
+
+          <div className={`py-[8px] text-[12px] font-medium font-public-sans ${isActive ? "text-transparent bg-clip-text bg-btn-gradient" : "text-gray-2 hidden"}`}>
+            {/* Show step description */}
+            <div className='hidden sm:block'>{step}</div>
+            <h2 className={`sm:hidden`}>{["Basic info", "Personal info", "Documents", "Bank details", "Skills"][index]}</h2>
+          </div>
+        </div>
+
+        {/* Display connecting line if not the last step */}
+        {index < steps.length - 1 && (
+          <div className={`absolute inset-1/4 left-1/2 w-full h-0.5 transform -translate-y-1/4 hidden sm:block`}>
+            <div className={`flex-grow h-fit border-t-2 border-dashed ${isActive ? "border-[#f8595c]" : "border-[#828282]"}`}></div>
+          </div>
+        )}
+      </div>
+    )
+  );
+})}
+
+ </div>
+ <div className="flex justify-between relative sm:py-[32px] gap-[10px]  overflow-x-auto ">
+            {steps.map((step, index) => (
+              <div key={index} className="flex-1 items-center  relative justify-center  hidden sm:block">
                 <div className="flex flex-col items-center justify-center overflow-x-auto min-w-[80px]">
                   <div
                     className={`cursor-pointer rounded-full w-[40px] h-[40px] g flex items-center justify-center mx-auto lg:text-[20px] text-[16px] font-public-sans
@@ -137,24 +214,18 @@ function Addnewemployee({ onClose }) {
                   <div className={`py-[8px]  text-[12px] font-medium font-public-sans
                   ${index <= activeStep ? "text-transparent bg-clip-text bg-btn-gradient" : "text-gray-2 "} `}>
                     {step}
-                     {/* {activeStep === 0 && (<h2 className=" mb-6 text-center text-gray-1 font-public-sans">Basic info</h2>)}
-          {activeStep === 1 && (<h2 className=" text-center text-gray-1 font-public-sans">Personal info</h2>)}
-          {activeStep === 2 && (<h2 className="  font-semibold mb-6 text-center text-gray-1 font-public-sans">Upload documents</h2>)}
-          {activeStep === 3 && (<h2 className="  font-semibold mb-6 text-center text-gray-1 font-public-sans">Bank details</h2>)}
-          {activeStep === 4 && (<h2 className="  font-semibold mb-6 text-center text-gray-1 font-public-sans">Add skills</h2>)} */}
                   </div>
                 </div>
                 {index < steps.length - 1 && (
 
-                  <div className={`  sm:absolute sm:inset-1/4 sm:left-1/2 sm:w-full md:h-0.5  sm:transform sm:-translate-y-1/4`} >
-                    <div className={`sm:flex-grow sm:h-fit sm:border-t-2 sm:border-dashed ${index < activeStep ? "sm:border-[#f8595c]" : " sm:border-[#828282]"}`}></div>
+                  <div className={`  absolute inset-1/4 left-1/2  w-full h-0.5  transform -translate-y-1/4`} >
+                    <div className={`flex-grow h-fit border-t-2 border-dashed ${index < activeStep ? "border-[#f8595c]" : " border-[#828282]"}`}></div>
                   </div>
-                  
                 )}
-                
               </div>
             ))}
           </div>
+
 
 
           {activeStep === 0 && (
@@ -354,7 +425,7 @@ function Addnewemployee({ onClose }) {
           )}
 
           {activeStep === 4 && (
-            <div className="flex ">
+            <div className="flex  ">
               <div className="   w-full ">
                 <div className="">
                   <label className="block text-[16px] font-mulish font-bold text-gray-1 ">Add skills</label>
@@ -400,7 +471,7 @@ function Addnewemployee({ onClose }) {
               <>
                 <button onClick={handleShowPopup} className="lg:text-base w-[162px] text-sm font-mulish font-bold 
         py-[14px] px-[24px] bg-btn-gradient text-white rounded-lg
-        shadow-sm hover:bg-red-600 focus:outline-none ">{activeStep === 4 ? 'Submittt' : 'Next'}
+        shadow-sm hover:bg-red-600 focus:outline-none ">{activeStep === 4 ? 'Submit' : 'Next'}
                 </button>
 
               </>
